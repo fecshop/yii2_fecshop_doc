@@ -27,15 +27,9 @@ FecShop 文档说明
 *  [Fecshop 后台部分](fecshop-about-backend.md)
 *  [Fecshop 核心部分](fecshop-about-core.md)
 
-*  [Fecshop Appadmin](fecshop-mitl-entrance-appadmin.md)
-*  [Fecshop Appfront](fecshop-mitl-entrance-appfront.md)
-*  [Fecshop Apphtml5](fecshop-mitl-entrance-apphtml5.md)
-*  [Fecshop Appserver](fecshop-mitl-entrance-appserver.md)
-*  [Fecshop Appapi](fecshop-mitl-entrance-appapi.md)
-
-
 系统特性
 --------
+*  [Fecshop 多语言](fecshop-feature-mutil-languages.md)
 *  [Fecshop 多store](fecshop-feature-mutil-stores.md)
 *  [Fecshop 多模板](fecshop-feature-mutil-themes.md)
 *  [Fecshop 组件服务](fecshop-feature-component-services.md)

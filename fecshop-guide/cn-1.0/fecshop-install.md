@@ -53,5 +53,6 @@ nginx root 分别指向 appfront/web ,appadmin/web,apphtml5/web
 
 #### 4.通过migrate安装数据库mysql和mongodb 
 
+#### 5.[配置Fecshop](fecshop-init-config.md)
 
-#### 5.访问配置的域名。如果出现asset文件夹权限问题，设置一下文件夹777即可。 
+#### 6.访问配置的域名。如果出现asset文件夹权限问题，设置一下文件夹777即可。 
