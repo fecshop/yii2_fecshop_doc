@@ -1,7 +1,9 @@
 Fecshop 多语言特性
 ==================
 
-> Fecshop支持多语言特性，但是appadmin暂时不支持多语言。
+> Fecshop支持多语言特性，是基于多store来实现的，也就是一个store一种语言
+> 通过不同的store的切换，进行语言的转换
+> 对于多个入口，目前appadmin暂时不支持多语言，appadmin还没有store的概念，只有一个中文后台。
 
 ### 多语言分为两个部分：
 - 数据库数据：这个是数据库提供的数据，譬如产品的名字，这部分是
@@ -53,7 +55,7 @@ Yii::$app->page->translate->category = 'appfront';
 				'appfront' => [
 					//'class' => 'yii\i18n\PhpMessageSource',
 					'class' => 'fecshop\yii\i18n\PhpMessageSource',
-					'basePath' => [
+					'basePaths' => [
 						'@fecshop/app/appfront/languages',
 						'@appfront/languages',
 					],
@@ -68,7 +70,7 @@ Yii::$app->page->translate->category = 'appfront';
 由于 [[yii\i18n\PhpMessageSource]],是不支持多个basePath的，为了让二次开发者和fecshop
 都有各自的basePath，二次开发者的翻译配置可以覆盖fecshop的翻译配置，
 这样用户就可以重写fecshop的翻译文件，于是，我对fecshop的
-翻译功能进行了重写，让basePath可以支持多个路径，在basePath数组中，下面的路径的翻译配置可以覆盖上面的路径翻译配置，
+翻译功能进行了重写，让basePath可以支持多个路径，在basePaths数组中，下面的路径的翻译配置可以覆盖上面的路径翻译配置，
 重写后的地址为：[[@fecshop\yii\i18n\PhpMessageSource]]
 这样可以支持多个basePath,譬如上面的配置[[@appfront/languages]]的配置会覆盖[[@fecshop/app/appfront/languages]]
 的配置，这样，用户可以在[[@appfront/languages]]中重写
