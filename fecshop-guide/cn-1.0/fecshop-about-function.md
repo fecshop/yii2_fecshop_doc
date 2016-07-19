@@ -3,7 +3,11 @@
 
 Fecshop是一款功能强大的电商系统，提供一下功能：
 
-1.多Store，多语言，多域名，多货币
+1.多Store，多语言，多域名，多货币，多模板。用户可以根据需要，添加[多个fecshop store](fecshop-feature-mutil-stores.md) ,
+每个store设置不同的语言，[fecshop 多语言](fecshop-feature-mutil-stores.md),
+每个store可以切换不同的货币，也就是 [Fecshop 多货币](fecshop-function-mutil-currency.md)
+，同时，fecshop也支持[不同的store
+设置不同的模板](fecshop-feature-mutil-themes.md)，
 
 ```php
 支持不同Store使用不同的语言：譬如Store A 使用中文，Store B使用英文

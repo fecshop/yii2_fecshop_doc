@@ -5,6 +5,7 @@ Fecshop 全称为Fancy ECommerce Shop，是一款优秀的开源电商系统，�
 目的是为了方便yii2用户快速的
 开发商城，Fecshop作为一款可以持续性发展的商城系统，
 在框架层面有以下特性：
+
 1. 由于商城系统的复杂性，原始的框架MVC结构，显的有点力不从心，Fecshop框架
 加入了Block层，
 Controller层只负责调度， Model只负责数据库映射，中间的处理逻辑由block来完成，View层
@@ -24,7 +25,7 @@ model，组织数据，事务处理等操作，将数据结果返回给上层，
 将某个底层由mysql换成mongodb，或者为了应付高并发读写并且多事务性的功能部分，
 进行分库分表的设计方式。
 
-4. 多模板系统，Fecshop设置了多个模板路径，各个模板路径下的文件被加载
+4. Fecshop[ 多模板系统](fecshop-feature-mutil-themes.md)，Fecshop设置了多个模板路径，各个模板路径下的文件被加载
 的优先级不同，其中，Fecshop的模板路径下的文件最全面，但是优先级最低，
 ，第三方模板路径优先级其次，用户本地模板路径优先级最高，
 用户可以通过
@@ -51,7 +52,7 @@ Fecshop可以通过composer进行核心功能的升级，用户只需要通过co
 7. 快速高效，Fecshop Servises遵循Yii2的懒加载方式，只初始化使用到的组件服务，
 缓存方面有整页缓存，block部分缓存，动态数据ajax加载等方式，让您的网站快速响应。
 
-8. 多入口模式，分为 appadmin（后台）， appfront（PC前端），apphtml5（手机web），
+8. [Fecshop 多入口模式](fecshop-feature-mutil-entrances.md)，分为 appadmin（后台）， appfront（PC前端），apphtml5（手机web），
 appserver（手机app服务），appapi（erp，或者其他接口对接），
 不同的业务，不同的设备，进入不同的入口，各个入口共用服务层services，
 但是modules部分独立，这样相互干扰最小，可以相互独立开发。
