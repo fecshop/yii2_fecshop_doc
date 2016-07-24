@@ -9,56 +9,51 @@ FecShop 文档说明
 ![Alt text](./images/img.jpg "images title")
 
 
-关于
+关于与安装
 -----
 
-*  [Fecshop 架构特点](fecshop-about-fecshop.md)
-*  [Fecshop 功能介绍](fecshop-about-function.md)
-*  [Fecshop 系统结构](fecshop-about-system-contruct.md)
+*  [Fecshop 关于-架构特点](fecshop-about-fecshop.md)
+*  [Fecshop 关于-功能介绍](fecshop-about-function.md)
+*  [Fecshop 关于-系统结构](fecshop-about-system-contruct.md)
+*  [Fecshop 安装-composer](fecshop-install.md)
+*  [Fecshop 安装-初始配置](fecshop-init-config.md)
 
 
-安装配置
--------
-*  [Fecshop 安装](fecshop-install.md)
-*  [Fecshop 初始配置](fecshop-init-config.md)
+结构与配置
+-----
 
-系统结构
+*  [Fecshop 结构-入口部分](fecshop-about-entrance.md)
+*  [Fecshop 结构-基础部分](fecshop-about-base.md)
+*  [Fecshop 结构-后台部分](fecshop-about-backend.md)
+*  [Fecshop 结构-核心部分](fecshop-about-core.md)
+*  [Fecshop 配置-配置结构](fecshop-config-contruct.md)
+*  [Fecshop 配置-核心配置](fecshop-config-core.md)
+*  [Fecshop 配置-第三方配置](fecshop-config-thrid.md)
+*  [Fecshop 配置-本地配置](fecshop-config-local.md)
+*  [Fecshop 配置-配置覆盖](fecshop-config-rewrite.md)
+
+
+功能介绍
 --------
-*  [Fecshop 入口部分](fecshop-about-entrance.md)
-*  [Fecshop 基础部分](fecshop-about-base.md)
-*  [Fecshop 后台部分](fecshop-about-backend.md)
-*  [Fecshop 核心部分](fecshop-about-core.md)
-
-系统特性
------
+*  [Fecshop 功能概叙](fecshop-feature-summary.md)
+*  [Fecshop Url自定义](fecshop-feature-url-custom.md)
+*  [Fecshop 多语言](fecshop-feature-mutil-languages.md)
 *  [Fecshop 多store](fecshop-feature-mutil-stores.md)
+*  [Fecshop 多货币](fecshop-feature-mutil-currency.md)
 *  [Fecshop 多模板](fecshop-feature-mutil-themes.md)
-*  [Fecshop 组件服务](fecshop-feature-component-services.md)
-*  [Fecshop 模块化](fecshop-feature-modules.md)
 *  [Fecshop 多入口](fecshop-feature-mutil-entrances.md)
-*  [Fecshop Block块](fecshop-feature-block.md)
-*  [Fecshop 核心功能扩展化](fecshop-feature-core-extensions.md)
-*  [Fecshop 配置化重写](fecshop-feature-config-rewrite.md)
+*  [Fecshop 配置层](fecshop-feature-config.md)
+*  [Fecshop 模块层](fecshop-feature-modules.md)
+*  [Fecshop Block层](fecshop-feature-block.md)
+*  [Fecshop 服务层](fecshop-feature-component-services.md)
+*  [Fecshop 独立功能块](fecshop-feature-independent-block.md)
+*  [Fecshop 权限管理](fecshop-feature-role.md)
+*  [Fecshop 缓存管理](fecshop-feature-cache.md)
+*  [Fecshop 脚本管理](fecshop-feature-script.md)
+*  [Fecshop 后台日志](fecshop-feature-admin-log.md)
+*  [Fecshop 重写功能](fecshop-feature-rewrite.md)
 *  [Fecshop 升级](fecshop-feature-upgrade.md)
 
-
-
-配置文件
------
-*  [Fecshop 配置结构](fecshop-config-contruct.md)
-*  [Fecshop 核心配置](fecshop-config-core.md)
-*  [Fecshop 第三方配置](fecshop-config-thrid.md)
-*  [Fecshop 本地配置](fecshop-config-local.md)
-*  [Fecshop 配置覆盖](fecshop-config-rewrite.md)
-
-
-功能特性
------
-
-*  [Fecshop 多语言管理](fecshop-function-mutil-lang.md)
-*  [Fecshop 多货币管理](fecshop-function-mutil-currency.md)
-*  [Fecshop 多Store管理](fecshop-function-mutil-store.md)
-*  [Fecshop 缓存管理](fecshop-function-cache.md)
 
 
 
@@ -106,38 +101,21 @@ FecShop 文档说明
 *  [Fecshop Wholesale](fecshop-services-wholesale.md)
 
 
-多入口
+
+
+脚本和API
 -----
-*  [Fecshop Appadmin](fecshop-mitl-entrance-appadmin.md)
-*  [Fecshop Appfront](fecshop-mitl-entrance-appfront.md)
-*  [Fecshop Apphtml5](fecshop-mitl-entrance-apphtml5.md)
-*  [Fecshop Appserver](fecshop-mitl-entrance-appserver.md)
-*  [Fecshop Appapi](fecshop-mitl-entrance-appapi.md)
-
-
-脚本说明
------
-*  [Fecshop full-text-search脚本](fecshop-script-full-text-search.md)
-*  [Fecshop 刷新缓存脚本](fecshop-script-reflush-cache.md)
-*  [Fecshop sitemap脚本](fecshop-script-sitemap.md)
-*  [Fecshop 产品销量脚本](fecshop-script-product-sales.md)
-*  [Fecshop 看了还看脚本](fecshop-script-view-also-view.md)
-
-
-
-定时任务
------
-*  [Fecshop 定时生成sitemap](fecshop-cron-sitemap.md)
-*  [Fecshop other](fecshop-cron-other.md)
-
-
-
-API功能
------
-*  [Fecshop 订单接口](fecshop-api-order.md)
-*  [Fecshop 产品接口](fecshop-api-product.md)
-*  [Fecshop 邮件接口](fecshop-api-email.md)
-*  [Fecshop 用户接口](fecshop-api-customer.md)
+*  [Fecshop 脚本-full-text-search](fecshop-script-full-text-search.md)
+*  [Fecshop 脚本-刷新缓存](fecshop-script-reflush-cache.md)
+*  [Fecshop 脚本-sitemap](fecshop-script-sitemap.md)
+*  [Fecshop 脚本-产品销量](fecshop-script-product-sales.md)
+*  [Fecshop 脚本-看了还看](fecshop-script-view-also-view.md)
+*  [Fecshop 脚本-定时生成sitemap](fecshop-cron-sitemap.md)
+*  [Fecshop 脚本-other](fecshop-cron-other.md)
+*  [Fecshop 接口-订单](fecshop-api-order.md)
+*  [Fecshop 接口-产品](fecshop-api-product.md)
+*  [Fecshop 接口-邮件](fecshop-api-email.md)
+*  [Fecshop 接口-用户](fecshop-api-customer.md)
 
 
 
@@ -149,7 +127,6 @@ API功能
 *  [Fecshop 第三方模板制作](fecshop-theme-thrid-develop.md)
 *  [Fecshop 本地模板开发](fecshop-theme-local-develop.md)
 *  [Fecshop 多设备模板](fecshop-theme-mutil-devide.md)
-
 
 
 
@@ -167,6 +144,7 @@ API功能
 *  [Fecshop 重写layout](fecshop-develop-rewrite-layouts.md)
 *  [Fecshop 重写view](fecshop-develop-rewrite-view.md)
 *  [Fecshop 重写Js和Css](fecshop-develop-rewrite-js-and-css.md)
+
 
 
 
