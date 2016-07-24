@@ -31,13 +31,19 @@ Fecshop Url自定义
 ],
 ```
 
-- 参数[[storage]]：设置url rewrite表 使用mongodb还是mysql.
-- 参数[[randomCount]]：设置生成的随机字符串的个数。
+- 参数[[storage]]：设置url rewrite表 使用mongodb还是mysql，本功能目前支持双数据库，您可以选择一个数据库来存储，当您选择后，
+在线上开始运营后，请不要轻易改变，因为由mysqldb变成mongodb后，在mongodb的url_write表中是不存在mysql存储的自定义url的，如果您坚持要这么做，
+您需要想办法，把mysql的自定义url，插入到mongodb的表中。
+- 参数[[randomCount]]：设置生成的随机字符串的个数，当url存在重复，或者 字符串过滤后（字符串生成url，需要过滤去一些特殊字符）为空等情况，都会使用到随机数字，来实现自定义url的唯一性。
+譬如，在自定义url表中存在了一个自定义url, fashion-hand-bag， 如果你
+继续自定义url为fashion-hand-bag，系统会在后面加入一些随机数字，
+fashion-hand-bag-23943828 ，来实现自定义url的唯一性。
 
 **对应关系**：自定义url和原来的url的对应关系是由url服务完成的，
 url服务的全部代码如下：
 
 ```
+
 <?php
 /**
  * FecShop file.
@@ -51,8 +57,6 @@ use Yii;
 use yii\base\InvalidValueException;
 use yii\base\InvalidConfigException;
 use yii\base\BootstrapInterface;
-use fecshop\models\mongodb\UrlRewrite as MongodbUrlRewrite;
-use fecshop\models\mysqldb\UrlRewrite as MysqldbUrlRewrite;
 use fec\helpers\CUrl;
 /**
  * 
@@ -61,13 +65,15 @@ use fec\helpers\CUrl;
  */
 class Url extends Service 
 {
+	public 	  $randomCount = 8;
 	
 	protected $_secure;
-	protected $_http;
-	protected $_baseUrl;
+	protected $_currentBaseUrl;
 	protected $_origin_url;
-	public 	  $storage = 'mysqldb';
-	public 	  $randomCount = 8;
+	protected $_httpType;
+	protected $_httpBaseUrl;
+	protected $_httpsBaseUrl;
+	
 	/**
 	 * save custom url to mongodb collection url_rewrite
 	 * @param $str|String, example:  fashion handbag women
@@ -98,10 +104,10 @@ class Url extends Service
 			$urlKey = $this->generateUrlByName($str);
 		}
 		if(strlen($urlKey)<=1){
-			$urlKey .= $this->getRandom(5);
+			$urlKey .= $this->getRandom();
 		}
 		if(strlen($urlKey)<=2){
-			$urlKey .= '-'.$this->getRandom(5);
+			$urlKey .= '-'.$this->getRandom();
 		}
 		$urlKey = $this->getRewriteUrlKey($urlKey,$originUrl);
 		$UrlRewrite = $this->findOne([
@@ -113,7 +119,7 @@ class Url extends Service
 		$UrlRewrite->type = $type;
 		$UrlRewrite->custom_url_key = $urlKey;
 		$UrlRewrite->origin_url = $originUrl;
-		$UrlRewrite->save($arr);
+		$UrlRewrite->save();
 		return $urlKey;
 	}
 	
@@ -138,37 +144,33 @@ class Url extends Service
 	 */
 	public function getOriginUrl($urlKey){
 		
-		$model = $this->find();
-		$UrlData = $model->where([
-			'custom_url_key' => $urlKey,
-		])->asArray()->one();
-		if($UrlData['custom_url_key']){
-			return $UrlData['origin_url'];
-		}
-		return ;
+		return Yii::$app->url->rewrite->getOriginUrl($urlKey);
 	}
 	
 	/**
 	 * @property $path|String, for example about-us.html,  fashion-handbag/women.html
 	 * genarate current store url by path.
 	 */
-	public function getUrlByPath($path){
-		return $this->getBaseUrl().'/'.$path;
+	public function getUrlByPath($path,$https=false){
+		if($https){
+			$baseUrl 	= $this->getHttpsBaseUrl();
+		}else{
+			$baseUrl 	= $this->getHttpBaseUrl();
+		}
+		return $baseUrl.'/'.$path;
 	}
-	
-	
 	
 	/**
 	 * get current base url , is was generate by http(or https ).'://'.store_code  
 	 */
-	public function getBaseUrl(){
-		if(!$this->_baseUrl){
+	public function getCurrentBaseUrl(){
+		if(!$this->_currentBaseUrl){
 			$homeUrl = $this->homeUrl();
-			if(!$this->_http)
-				$this->_http = $this->secure() ? 'https' : 'http';
-			$this->_baseUrl = str_replace("http",$this->_http,$homeUrl);
+			if(!$this->_httpType)
+				$this->_httpType = $this->secure() ? 'https' : 'http';
+			$this->_currentBaseUrl = str_replace("http",$this->_httpType,$homeUrl);
 		}
-		return $this->_baseUrl;
+		return $this->_currentBaseUrl;
 	}
 	
 	
@@ -181,31 +183,51 @@ class Url extends Service
 	
 	
 	
+	/**
+	 * get http format base url.
+	 */
+	protected function getHttpBaseUrl(){
+		if(!$this->_httpBaseUrl){
+			$homeUrl = $this->homeUrl();
+			if(strstr($homeUrl,'https://')){
+				$this->_httpBaseUrl = str_replace('https://','http://',$homeUrl);
+			}else{
+				$this->_httpBaseUrl = $homeUrl;
+			}
+		}
+		return $this->_httpBaseUrl;
+	}
+	/**
+	 * get https format base url.
+	 */
+	protected function getHttpsBaseUrl(){
+		if(!$this->_httpsBaseUrl){
+			$homeUrl = $this->homeUrl();
+			if(strstr($homeUrl,'http://')){
+				$this->_httpsBaseUrl = str_replace('http://','https://',$homeUrl);
+			}else{
+				$this->_httpsBaseUrl = $homeUrl;
+			}
+		}
+		return $this->_httpsBaseUrl;
+	}
+	
+	
+	
+	
+	
+	
 	
 	protected function newModel(){
-		if($this->storage == 'mysqldb'){
-			return  new MysqldbUrlRewrite;
-		}else if($this->storage == 'mongodb'){
-			return  new MongodbUrlRewrite;
-		}
+		return Yii::$app->url->rewrite->newModel();
 	}
 	protected function find(){
-		if($this->storage == 'mysqldb'){
-			return MysqldbUrlRewrite::find();
-		}else if($this->storage == 'mongodb'){
-			return MongodbUrlRewrite::find();
-		}
+		return Yii::$app->url->rewrite->find();
 	}
 	
 	
 	protected function findOne($where){
-		if($this->storage == 'mysqldb'){
-			$model = MysqldbUrlRewrite::findOne($where);
-			
-		}else if($this->storage == 'mongodb'){
-			$model = MongodbUrlRewrite::findOne($where);
-		}
-		return $model;
+		return Yii::$app->url->rewrite->findOne($where);
 	}
 	
 	
@@ -285,6 +307,8 @@ class Url extends Service
 	}
 	
 }
+
+
 ```
 
 通过调用 saveRewriteUrlKeyByStr($str,$originUrl,$originUrlKey,$type='system')方法，

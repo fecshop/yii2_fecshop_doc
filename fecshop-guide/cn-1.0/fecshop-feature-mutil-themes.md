@@ -26,23 +26,78 @@ public $thirdThemeDir;	# 第三方模板路径。
 public $fecshopThemeDir ; # fecshop模板路径。
 ```
 ### 1.多模板的三个路径变量
-$localThemeDir 和  $thirdThemeDir 是在文件：@app\config\fecshop_local_services\page.php
+$localThemeDir 和  $thirdThemeDir 是在文件：@app\config\fecshop_local_services\stores.php
 中定义的（当然也可能是在其他的文件中定义，不过最终都是给page/theme子服务配置参数），打开这个文件可以看到
 
 ```php
 
-return [
-	'page' => [
-		'childService' => [
-			'theme' => [
-				'localThemeDir' 	=> '@appfront/theme/terry/theme01',
-				# 定义第三方模板路径
-				'thirdThemeDir'		=> [],
-				# 下面是fecshop模板路径，但是，下面即使定义了会无效，在初始化的时候会被重新赋值。
-				#'fecshopThemeDir'	=> '',
+<?php
+   return [
+   'store' => [
+		'class' => 'fecshop\services\Store',
+		'stores' => [
+			# store_code ,define by domain and fold.
+			# 语言必须在fecshoplang中定义，否则将无法得到语言属性。
+			# 在添加store的时候，必须查看 添加的语言在 fecshoplang中是否定义。
+			'fecshop.appfront.fancyecommerce.com' => [
+				'language' 		=> 'en_US',
+				'languageName' 	=> 'English',
+				
+				//'localThemeDir'	=> '@appfront/theme/terry/theme01',
+				'thirdThemeDir'	=> [],
+				'currency' 		=> 'USD',
 			],
+			'fecshop.appfront.fancyecommerce.com/fr' => [
+				'language' 		=> 'fr_FR',
+				'languageName' 	=> 'Français',
+				'localThemeDir'	=> '@appfront/theme/terry/theme01',
+				'thirdThemeDir'	=> [],
+				'currency' 		=> 'RMB',
+			],
+			'fecshop.appfront.fancyecommerce.com/es' => [
+				'language' 		=> 'es_ES',
+				'languageName' 	=> 'Español',
+				'localThemeDir'	=> '@appfront/theme/terry/theme01',
+				'thirdThemeDir'	=> [],
+				'currency' 		=> 'USD',
+			],
+			'fecshop.appfront.fancyecommerce.com/cn' => [
+				'language' 		=> 'zh_CN',
+				'languageName' 	=> '中文',
+				'localThemeDir'	=> '@appfront/theme/terry/theme01',
+				'thirdThemeDir'	=> [],
+				'currency' 		=> 'RMB',
+			],
+		],
+		
+	],
+			
+];
 
 ```
+
+也就是在各个store中定义，当前store的[[localThemeDir]]  和 [[thirdThemeDir]]。
+然后在store service 的[[bootstrap()]]中可以看到下面的代码：
+
+```php
+/**
+ * set local theme dir.
+ */ 
+if(isset($store['localThemeDir']) && $store['localThemeDir']){
+	Yii::$app->page->theme->localThemeDir = $store['localThemeDir'];
+}
+/**
+ * set third theme dir.
+ */ 
+if(isset($store['thirdThemeDir']) && $store['thirdThemeDir']){
+	Yii::$app->page->theme->thirdThemeDir = $store['thirdThemeDir'];
+}
+```
+
+也就是在初始化的时候，通过将store的 [[localThemeDir]] 和 [[thirdThemeDir]]，赋值于
+page的子服务theme中，完成对[[page->theme]]服务的初始化。
+
+下面是page的子服务theme的三个参数的详细解说:
 
 - 变量：[[localThemeDir]]:  本地路径,这个在配置文件中定义，
 - 变量：[[thirdThemeDir]]:  对于第三方，这个需要安装后，在这里配置上即可。

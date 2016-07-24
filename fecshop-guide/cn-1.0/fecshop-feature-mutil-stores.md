@@ -29,22 +29,22 @@ Fecshop 多store特性
 			'www.aaa.com' => [
 				'language' 		=> 'en_US',
 				'languageName' 		=> 'English',
-				'themePackage'	=> 'default',
-				'theme'	=> 'default',
+				'localThemeDir'	=> '@appfront/theme/terry/theme01',
+				'thirdThemeDir'	=> [],
 				'currency' => 'USD',
 			],
 			'www.bbb.com' => [
 				'language' 		=> 'fr_FR',
 				'languageName' 		=> 'Français',
-				'themePackage'	=> 'default',
-				'theme'	=> 'default',
+				'localThemeDir'	=> '@appfront/theme/terry/theme01',
+				'thirdThemeDir'	=> [],
 				'currency' => 'RMB',
 			],
 			'www.ccc.com' => [
 				'language' 		=> 'es_ES',
 				'languageName' 		=> 'Español',
-				'themePackage'	=> 'default',
-				'theme'	=> 'default',
+				'localThemeDir'	=> '@appfront/theme/terry/theme01',
+				'thirdThemeDir'	=> [],
 				'currency' => 'USD',
 			],
 			
@@ -64,9 +64,11 @@ Fecshop 多store特性
  
 参数：[[languageName]]: 为按照当前store的语言的名称，譬如www.ccc.com是西班牙语，Español是西班牙的语言，代表西班牙语
 
-参数：[[themePackage]]: 代表当前store 对应的模板包名，这个和模板设置有关
+参数：[[localThemeDir]]: 代表当前store 的本地的模板路径，在[fecshop多模板](fecshop-feature-mutil-themes.md)中，这是优先级最高的模板路径
+您需要使用别名的方式填写绝对路径，譬如：[[@appfront/theme/terry/theme01]].
 
-参数：[[theme]]: 代表当前store对应的模板名，这个和模板设置有关。
+参数：[[thirdThemeDir]]: 代表当前store 的第三方模板路径，是多个路径数组，每个数组子项是一个路径，如果您使用了第三方模板，那么，这里可以填写第三方的模板路径，用@别名开头。
+优先级次于[[localThemeDir]]，但高于fecshop多模板中的[[fecshopThemeDir]]路径。
 
 参数：[[currency]]: 这个是当前store的默认货币。
 

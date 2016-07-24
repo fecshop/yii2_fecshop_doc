@@ -45,11 +45,11 @@ FecShop 文档说明
 *  [Fecshop Block层](fecshop-feature-block.md)
 *  [Fecshop 服务层](fecshop-feature-component-services.md)
 *  [Fecshop 独立功能块](fecshop-feature-independent-block.md)
-*  [Fecshop 权限管理](fecshop-function-cache.md)
-*  [Fecshop 缓存管理](fecshop-function-cache.md)
-*  [Fecshop 脚本管理](fecshop-function-cache.md)
-*  [Fecshop 后台日志](fecshop-function-cache.md)
-*  [Fecshop 重写功能](fecshop-feature-core-extensions.md)
+*  [Fecshop 权限管理](fecshop-feature-role.md)
+*  [Fecshop 缓存管理](fecshop-feature-cache.md)
+*  [Fecshop 脚本管理](fecshop-feature-script.md)
+*  [Fecshop 后台日志](fecshop-feature-admin-log.md)
+*  [Fecshop 重写功能](fecshop-feature-rewrite.md)
 *  [Fecshop 升级](fecshop-feature-upgrade.md)
 
 
