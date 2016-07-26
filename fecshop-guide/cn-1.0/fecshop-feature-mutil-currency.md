@@ -42,7 +42,7 @@ Fecshop 多货币
 
 货币服务是 Page服务的子服务，文件为：@fecshop\services\page\Currency
 
-得到配置中的所有货币。[[Yii::$app->page->currency->getCurrencys();]] 
+得到配置中的所有货币。[[Yii::$service->page->currency->getCurrencys();]] 
 代码如下：
 
 ```
@@ -96,11 +96,11 @@ if(isset($store['currency']) && !empty($store['currency'])){
 	$currency = '';
 }
 
-Yii::$app->page->currency->initCurrency($currency);
+Yii::$service->page->currency->initCurrency($currency);
 
 ```
 
-也就是通过[[Yii::$app->page->currency->initCurrency($currency);]],
+也就是通过[[Yii::$service->page->currency->initCurrency($currency);]],
 来初始化当前store的货币，当前的默认货币是由store服务的配置文件中配置的
 
 ```
@@ -139,7 +139,7 @@ Yii::$app->page->currency->initCurrency($currency);
 
 可以看到每一个store有一个默认货币。
 通过这个currency，赋值到currency子服务中，
-Yii::$app->page->currency->initCurrency($currency);
+Yii::$service->page->currency->initCurrency($currency);
 ，下面我们查看currency子服务的initCurrency($currency)方法：
 
 ```
@@ -210,7 +210,7 @@ public function getCurrentCurrencyPrice($price){
 
 $price是基础货币，通过上面的方法得到了当前货币
 下的价格值,执行函数为：
-Yii::$app->page->currency->getCurrentCurrencyPrice($price);
+Yii::$service->page->currency->getCurrentCurrencyPrice($price);
 
 
 

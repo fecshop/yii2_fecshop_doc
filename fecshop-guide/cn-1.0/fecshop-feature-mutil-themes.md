@@ -84,13 +84,13 @@ $localThemeDir 和  $thirdThemeDir 是在文件：@app\config\fecshop_local_serv
  * set local theme dir.
  */ 
 if(isset($store['localThemeDir']) && $store['localThemeDir']){
-	Yii::$app->page->theme->localThemeDir = $store['localThemeDir'];
+	Yii::$service->page->theme->localThemeDir = $store['localThemeDir'];
 }
 /**
  * set third theme dir.
  */ 
 if(isset($store['thirdThemeDir']) && $store['thirdThemeDir']){
-	Yii::$app->page->theme->thirdThemeDir = $store['thirdThemeDir'];
+	Yii::$service->page->theme->thirdThemeDir = $store['thirdThemeDir'];
 }
 ```
 
@@ -113,13 +113,13 @@ class AppfrontController extends FecController
 	 * layoutFile is current layout relative path.
 	 */
 	public function init(){
-		if(!Yii::$app->page->theme->fecshopThemeDir){
-			Yii::$app->page->theme->fecshopThemeDir = Yii::getAlias(CConfig::param('appfrontBaseTheme'));
+		if(!Yii::$service->page->theme->fecshopThemeDir){
+			Yii::$service->page->theme->fecshopThemeDir = Yii::getAlias(CConfig::param('appfrontBaseTheme'));
 		}
 	...
 ```
 
-可以看到，[[Yii::$app->page->theme->fecshopThemeDir]] 是由配置 [[appfrontBaseTheme]] 来决定的，下面我们去找配置
+可以看到，[[Yii::$service->page->theme->fecshopThemeDir]] 是由配置 [[appfrontBaseTheme]] 来决定的，下面我们去找配置
 在文件 [[@fecshop\app\appfront\config\appfront.php]] 中可以看到如下配置：
 
 ```
@@ -157,17 +157,17 @@ return [
 	 * 2.get content by yii view compontent  function renderFile()  , 
 	 */
 	public function render($view, $params = []){
-		$viewFile = Yii::$app->page->theme->getViewFile($view);
+		$viewFile = Yii::$service->page->theme->getViewFile($view);
 		$content = Yii::$app->view->renderFile($viewFile, $params, $this);
         return $this->renderContent($content);
     }
 
 ```
-也就是通过[[Yii::$app->page->theme->getViewFile($view)]],找到view文件，下面
-，通过renderFile，将内容画出来，那么关键就是查看[[Yii::$app->page->theme->getViewFile($view)]]的实现原理
+也就是通过[[Yii::$service->page->theme->getViewFile($view)]],找到view文件，下面
+，通过renderFile，将内容画出来，那么关键就是查看[[Yii::$service->page->theme->getViewFile($view)]]的实现原理
 
 
-下面我们查看[[Yii::$app->page->theme->getViewFile($view)]]的实现原理：
+下面我们查看[[Yii::$service->page->theme->getViewFile($view)]]的实现原理：
 
 fecshop\services\page\Theme:
 
@@ -187,7 +187,7 @@ fecshop\services\page\Theme:
 			$relativeFile = $module->id.'/';
 		}
 		$relativeFile .= Yii::$app->controller->id.'/'.$view.'.php';
-		$absoluteDir = Yii::$app->page->theme->getThemeDirArr();
+		$absoluteDir = Yii::$service->page->theme->getThemeDirArr();
 		foreach($absoluteDir as $dir){
 			if($dir){
 				$file = $dir.'/'.$relativeFile;
@@ -212,7 +212,7 @@ fecshop\services\page\Theme:
 	}
 	
 ```
-可以看到[[$absoluteDir = Yii::$app->page->theme->getThemeDirArr();]],
+可以看到[[$absoluteDir = Yii::$service->page->theme->getThemeDirArr();]],
 找出来所有的模板路径，通过优先级依次和view文件的相对路径拼起来，
 然后查看文件是否存在，存在则返回，那么我们查看这个函数
 
@@ -251,29 +251,29 @@ public function getThemeDirArr(){
 
 > 多模板的layout文件和view文件类似。
 
-当前的layout的相对路径由[[Yii::$app->page->theme->layoutFile]]
+当前的layout的相对路径由[[Yii::$service->page->theme->layoutFile]]
 得到，当前的layout多模板路径和上面view文件类似，
 多模板路径和view文件拼起来的路径，查看文件是否存在，存在则返回。
 
 Example：
 
 在 @fecshop\app\appfront\modules\Cms\Module的init方法，可以看到：
-[[Yii::$app->page->theme->layoutFile = 'home.php';]]
+[[Yii::$service->page->theme->layoutFile = 'home.php';]]
 ，layout默认设置为home.php文件，
 如果不设置，在
 在AppfrontController.php中会执行下面的代码：
 
 ```
 public function init(){
-		if(!Yii::$app->page->theme->fecshopThemeDir){
-			Yii::$app->page->theme->fecshopThemeDir = Yii::getAlias(CConfig::param('appfrontBaseTheme'));
+		if(!Yii::$service->page->theme->fecshopThemeDir){
+			Yii::$service->page->theme->fecshopThemeDir = Yii::getAlias(CConfig::param('appfrontBaseTheme'));
 		}
-		if(!Yii::$app->page->theme->layoutFile){
-			Yii::$app->page->theme->layoutFile = CConfig::param('appfrontBaseLayoutName');
+		if(!Yii::$service->page->theme->layoutFile){
+			Yii::$service->page->theme->layoutFile = CConfig::param('appfrontBaseLayoutName');
 		}
 ```
 
-参数[[Yii::$app->page->theme->layoutFile]],会被设置。
+参数[[Yii::$service->page->theme->layoutFile]],会被设置。
 
 通过上面，我们基本明白了多模板系统view 和 layout 的加载原理
 
@@ -286,7 +286,7 @@ public function init(){
 
 ```
 <?php
-\Yii::$app->page->asset->register($this);
+\Yii::$service->page->asset->register($this);
 ?>
 ```
 
@@ -295,7 +295,7 @@ public function init(){
 ```
 public function register($view){
 		$assetArr = [];
-		$themeDir = Yii::$app->page->theme->getThemeDirArr();
+		$themeDir = Yii::$service->page->theme->getThemeDirArr();
 		if( is_array($themeDir) && !empty($themeDir)){
 			if( is_array($this->jsOptions) && !empty($this->jsOptions)){
 				foreach($this->jsOptions as $jsOption){

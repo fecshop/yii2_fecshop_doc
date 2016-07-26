@@ -144,7 +144,7 @@ class Url extends Service
 	 */
 	public function getOriginUrl($urlKey){
 		
-		return Yii::$app->url->rewrite->getOriginUrl($urlKey);
+		return Yii::$service->url->rewrite->getOriginUrl($urlKey);
 	}
 	
 	/**
@@ -219,15 +219,15 @@ class Url extends Service
 	
 	
 	protected function newModel(){
-		return Yii::$app->url->rewrite->newModel();
+		return Yii::$service->url->rewrite->newModel();
 	}
 	protected function find(){
-		return Yii::$app->url->rewrite->find();
+		return Yii::$service->url->rewrite->find();
 	}
 	
 	
 	protected function findOne($where){
-		return Yii::$app->url->rewrite->findOne($where);
+		return Yii::$service->url->rewrite->findOne($where);
 	}
 	
 	
@@ -314,7 +314,7 @@ class Url extends Service
 通过调用 saveRewriteUrlKeyByStr($str,$originUrl,$originUrlKey,$type='system')方法，
 来将某个url加入到url自定义中。
 
-@fecshop\services\url [[ Yii::$app->url->saveRewriteUrlKeyByStr($str,$originUrl,$originUrlKey,$type='system'); ]]
+@fecshop\services\url [[ Yii::$service->url->saveRewriteUrlKeyByStr($str,$originUrl,$originUrlKey,$type='system'); ]]
 
 - [[$str]]是字符串，一般使用title或者name生成，譬如Article使用的是title
 ，product使用的是name。
@@ -391,7 +391,7 @@ protected function resolveRequestUri()
 		if($urlParamSuffix){
 			$urlParamSuffix = '#'.$urlParamSuffix;
 		}
-		if($originUrlPath = Yii::$app->url->getOriginUrl($urlKey)){
+		if($originUrlPath = Yii::$service->url->getOriginUrl($urlKey)){
 			if(strstr($originUrlPath,'?')){
 				if($urlParam){
 					$url = $originUrlPath.'&'.$urlParam.$urlParamSuffix;

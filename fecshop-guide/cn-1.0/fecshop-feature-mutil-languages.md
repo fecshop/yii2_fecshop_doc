@@ -22,7 +22,7 @@ Fecshop 多语言特性
 在文件 @fecshop\services\Store 的bootstrap方法中可以看到如下的代码：
 
 ```php
-Yii::$app->page->translate->setLanguage($store['language']);
+Yii::$service->page->translate->setLanguage($store['language']);
 ```
 
 这个代码是设置当前的语言，也就是在初始化bootstrap的时候就进行语言的初始化设置。
@@ -35,7 +35,7 @@ Yii::$app->page->translate->setLanguage($store['language']);
 ,在这个base controller的init方法执行了代码：
 
 ```php
-Yii::$app->page->translate->category = 'appfront';
+Yii::$service->page->translate->category = 'appfront';
 ```
 
 我们appfront的controller都必须继承于[[@fecshop\app\appfront\modules\AppfrontController]],
@@ -82,7 +82,7 @@ fecshop的翻译了。
 我们可以通过下面的语法使用翻译：
 
 ```php
-echo Yii::$app->page->translate->__('fecshop,{username}', ['username' => 'terry']);
+echo Yii::$service->page->translate->__('fecshop,{username}', ['username' => 'terry']);
 
 ```
 
@@ -103,7 +103,7 @@ return [
 5.执行翻译：
 
 ```
-echo Yii::$app->page->translate->__('fecshop,{username}', ['username' => 'terry']);
+echo Yii::$service->page->translate->__('fecshop,{username}', ['username' => 'terry']);
 ```
 
 可以看到输出：
@@ -124,7 +124,7 @@ fr_FR fecshop,terry
 - 然后，通过下面的方法即可调用：
 
 ```php
-echo Yii::$app->page->translate->__('fecshop,{username}', ['username' => 'terry']);
+echo Yii::$service->page->translate->__('fecshop,{username}', ['username' => 'terry']);
 ```
 
 - 如果当前的store的语言为：fr_FR，那么就会被按照语言文件
