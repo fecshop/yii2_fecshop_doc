@@ -50,6 +50,7 @@ FecShop 文档说明
 
 服务介绍
 -----
+*  [Fecshop 服务原理](fecshop-services-abc.md)
 *  [Fecshop AdminUser](fecshop-services-admin-user.md)
 *  [Fecshop CMS](fecshop-services-cms.md)
 *  [Fecshop Page](fecshop-services-cms.md)

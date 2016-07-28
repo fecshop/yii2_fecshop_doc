@@ -1,7 +1,7 @@
 关于 Fecshop 的框架特点
 =======================
 
-Fecshop 全称为Fancy ECommerce Shop，是一款优秀的开源电商系统，遵循BSD协议，
+Fecshop 全称为Fancy ECommerce Shop，是一款优秀的开源电商系统，遵循OSL3.0协议，
 目的是为了方便yii2用户快速的
 开发商城，Fecshop作为一款可以持续性发展的商城系统，
 在框架层面有以下特性：
