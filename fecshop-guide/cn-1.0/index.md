@@ -6,9 +6,6 @@ FecShop 文档说明
 2016 (c) FecShop Software LLC。
 
 
-![Alt text](./images/img.jpg "images title")
-
-
 关于与安装
 -----
 
@@ -53,7 +50,7 @@ FecShop 文档说明
 *  [Fecshop 服务原理](fecshop-services-abc.md)
 *  [Fecshop AdminUser](fecshop-services-admin-user.md)
 *  [Fecshop CMS](fecshop-services-cms.md)
-*  [Fecshop Page](fecshop-services-cms.md)
+*  [Fecshop Page](fecshop-services-page.md)
 *  [Fecshop Helper](fecshop-services-helper.md)
 *  [Fecshop Store ](fecshop-services-store.md)
 *  [Fecshop Url](fecshop-services-url.md)
@@ -80,17 +77,12 @@ FecShop 文档说明
 
 二次开发
 -----
-*  [Fecshop 第三方扩展开发](fecshop-develop-thrid.md)
-*  [Fecshop 本地二次开发](fecshop-develop-local.md)
-*  [Fecshop 后台扩展开发](fecshop-develop-admin.md)
 *  [Fecshop 服务开发](fecshop-develop-services.md)
 *  [Fecshop 模块开发](fecshop-develop-modules.md)
-*  [Fecshop 重写服务](fecshop-develop-rewrite-services.md)
-*  [Fecshop 重写模块](fecshop-develop-rewrite-modules.md)
-*  [Fecshop 重写controller](fecshop-develop-rewrite-controllers.md)
-*  [Fecshop 重写layout](fecshop-develop-rewrite-layouts.md)
-*  [Fecshop 重写view](fecshop-develop-rewrite-view.md)
-*  [Fecshop 重写Js和Css](fecshop-develop-rewrite-js-and-css.md)
+*  [Fecshop 第三方扩展开发](fecshop-develop-thrid.md)
+*  [Fecshop 本地二次开发](fecshop-develop-local.md)
+
+
 
 
 
