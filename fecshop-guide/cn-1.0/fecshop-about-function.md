@@ -1,7 +1,7 @@
 关于 Fecshop功能介绍
 ====================
 
-Fecshop是一款功能强大的电商系统，提供一下功能：
+Fecshop是一款电商系统，提供一下功能：
 
 1.多Store，多语言，多域名，多货币，多模板。用户可以根据需要，添加[多个fecshop store](fecshop-feature-mutil-stores.md) ,
 每个store设置不同的语言，[fecshop 多语言](fecshop-feature-mutil-stores.md),
