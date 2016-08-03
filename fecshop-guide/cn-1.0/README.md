@@ -5,6 +5,10 @@ FecShop 文档说明
 
 2016 (c) FecShop Software LLC。
 
+目前进度
+-----
+*  [Fecshop 开发进度](fecshop-jindu.md)
+*  [Fecshop 开发LOG](fecshop-jindu-log.md)
 
 关于与安装
 -----
@@ -47,7 +51,9 @@ FecShop 文档说明
 
 服务介绍
 -----
-*  [Fecshop 服务原理](fecshop-services-abc.md)
+*  [Fecshop Service 原理](fecshop-services-abc.md)
+*  [Fecshop Service 规则](fecshop-services-rule.md)
+
 *  [Fecshop AdminUser](fecshop-services-admin-user.md)
 *  [Fecshop CMS](fecshop-services-cms.md)
 *  [Fecshop Page](fecshop-services-page.md)
