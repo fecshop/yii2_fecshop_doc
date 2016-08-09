@@ -118,16 +118,11 @@ mysql这个就不用说了，地球人基本都知道，不知道的去搜索。
 ```
 
 
-#### 3.配置nginx
 
-```
-nginx root 分别指向 appfront/web(PC端) ,appadmin/web(后台端),apphtml5/web(手机web端),
-appapi/web(API端),appserver/web(手机app端),
-```
 
-#### 4.通过migrate安装数据库mysql和mongodb 
+#### 3.通过migrate安装数据库mysql和mongodb 
 
-#### 5.配置store.
+#### 4.配置store.
 
 下面我们先只配置pc端的appfront
 在配置文件`@appfront\config\fecshop_local_services\Store.php`
@@ -143,12 +138,12 @@ appapi/web(API端),appserver/web(手机app端),
 			# 语言必须在fecshoplang中定义，否则将无法得到语言属性。
 			# 在添加store的时候，必须查看 添加的语言在 fecshoplang中是否定义。
 			'fecshop.appfront.fancyecommerce.com' => [
-				'language' 		=> 'en_US',
-				'languageName' 	=> 'English',
+				'language' 		=> 'en_US',  # 语言
+				'languageName' 	=> 'English', # 语言名称
 				
-				//'localThemeDir'	=> '@appfront/theme/terry/theme01',
-				'thirdThemeDir'	=> [],
-				'currency' 		=> 'USD',
+				//'localThemeDir'	=> '@appfront/theme/terry/theme01', #本地模板路径
+				'thirdThemeDir'	=> [],  #第三方模板
+				'currency' 		=> 'USD', # 默认货币
 				'mobile'		=> [ # 当设备满足什么条件的时候，进行跳转。
 					'enable'		=> true,
 					'condition'		=> ['phone','tablet'],
@@ -199,42 +194,98 @@ appapi/web(API端),appserver/web(手机app端),
 
 ```
 
-下面我们只配置一个store，如果您想配置多store，请参看文旦：
+Fecshop 多store的介绍，请参看文旦：
 [Fecshop 多store](fecshop-feature-mutil-stores.md)
 
-对于`stores`下面的配置，我们只要
 
-```
-'fecshop.appfront.fancyecommerce.com' => [
-				'language' 		=> 'en_US',
-				'languageName' 	=> 'English',
-				
-				//'localThemeDir'	=> '@appfront/theme/terry/theme01',
-				'thirdThemeDir'	=> [],
-				'currency' 		=> 'USD',
-				'mobile'		=> [ # 当设备满足什么条件的时候，进行跳转。
-					'enable'		=> true,
-					'condition'		=> ['phone','tablet'],
-					'redirectUrl' 	=> 'fecshop.apphtml5.fancyecommerce.com',	
-				],
-			],
-```
 
-其他的去掉。
+`fecshop.appfront.fancyecommerce.com`替换成您的域名
 
-把`fecshop.appfront.fancyecommerce.com`替换成您的域名
-`language`为您的语言，`languageName`为在相应语言下的写法全称，
-譬如西班牙语下为`Español`,
+`language`为您的语言，
+
+`languageName`为在相应语言下的写法全称，譬如西班牙语下为`Español`,
+
 `thirdThemeDir` 为第三方模板路径，可以是多个，这个是模板路径数组，
+
 `currency` 为当前的默认货币，
-`mobile` 为当设备为什么时候进行跳转，
-这个只有PC端  appfront 有这个。
+
+`mobile` 为当设备为什么时候进行跳转，这个只有PC端  appfront 有这个。
 
 
-#### 5.访问appfront 和appadmin对应的域名即可。
+#### 5. 设置语言对应：
+
+配置文件为：`@common/config/fecshop_local_services/FecshopLang.php`
+
+```
+return [
+	'fecshoplang' => [
+		
+		'allLangCode' => [
+			'en_US' => 'en',
+			'fr_FR' => 'fr',
+			'de_DE' => 'de',
+			'es_ES' => 'es',
+			'ru_RU' => 'ru',
+			'pt_PT' => 'pt',
+			'zh_CN' => 'zh',
+		],
+		'defaultLangCode' => 'en',
+		
+	],
+];
+```
+
+`allLangCode`为所有语言的对应二位简码，如果您添加
+的store中这里存在没有的语言，那么您需要在这里添加
+上去
+
+`defaultLangCode`为默认的语言二位简码。
+
+### 6. 设置图片的路径和url
+
+打开：common\config\fecshop_local_services\Image.php
+为各个入口设置图片的base dir 和base domain。
+
+```
+'image' => [
+	'appbase'	=> [
+		'appfront' => [
+			'basedir' => '@appimage/appfront',
+			'basedomain' => 'http://img.appfront.fancyecommerce.com',
+		],
+		'apphtml5' => [
+			'basedir' => '@appimage/apphtml5',
+			'basedomain' => 'http://img.apphtml5.fancyecommerce.com',
+		],
+		//'appadmin' => [
+		//	'basedir' => '@appimage/appadmin',
+		//	'basedomain' => 'http://img.appadmin.fancyecommerce.com',
+		//],
+		'common' => [
+			'basedir' => '@appimage/common',
+			'basedomain' => 'http://img.fancyecommerce.com',
+		],
+	],
+],
+```
 
 
+#### 7. 配置nginx
 
+```
+nginx root 分别指向 
+
+appfront/web(PC端) 
+appadmin/web(后台端),
+apphtml5/web(手机web端),
+appapi/web(API端),
+appserver/web(手机app端),
+当然，如果您不使用某个入口，可以不设置。
+
+另外，您需要配置一下图片的域名和相应的根路径、
+```
+
+#### 8. 访问appfront 和appadmin对应的域名即可。
 
 
 
