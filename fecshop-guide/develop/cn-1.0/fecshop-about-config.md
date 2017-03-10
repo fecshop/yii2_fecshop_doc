@@ -1,13 +1,13 @@
-Fecshop ³õÊ¼ÅäÖÃ
+Fecshop åˆå§‹é…ç½®
 ================
 
-> µ±ÄúÊÖ¶¯°²×°ºÃLinxu ºÍFecshopµÄ´úÂëºó£¬¾Í¿ÉÒÔ½øĞĞÅäÖÃÁË¡£
+> å½“æ‚¨æ‰‹åŠ¨å®‰è£…å¥½Linux å’ŒFecShopçš„ä»£ç åï¼Œå°±å¯ä»¥è¿›è¡Œé…ç½®äº†ã€‚
 
 
-1¡¢ÅäÖÃ fecshop app advanced
+1ã€é…ç½® fecshop app advanced
 
 ```
-ÔÚcommon/main-local.phpÖĞÅäÖÃmysql£¬mongodb£¬redis
+åœ¨common/main-local.phpä¸­é…ç½®mysqlï¼Œmongodbï¼Œredis
 
 ```
 
@@ -18,34 +18,34 @@ return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=fecshop',  # FecshopÊÇmysqlµÄÊı¾İ¿âÃû×Ö£¬ÄúĞèÒªµ½mysqlÖĞ½¨Á¢Ò»¸öÊı¾İ¿â
-            'username' => 'root',  # mysqlµÄÕË»§
-            'password' => '123456', # mysqlµÄÃÜÂë
+            'dsn' => 'mysql:host=localhost;dbname=fecshop',  # Fecshopæ˜¯mysqlçš„æ•°æ®åº“åå­—ï¼Œæ‚¨éœ€è¦åˆ°mysqlä¸­å»ºç«‹ä¸€ä¸ªæ•°æ®åº“
+            'username' => 'root',  # mysqlçš„è´¦æˆ·
+            'password' => '123456', # mysqlçš„å¯†ç 
             'charset' => 'utf8',
         ],
         'mongodb' => [
             'class' => 'yii\mongodb\Connection',
-            # ÓĞÕË»§µÄÅäÖÃ£¬usernameÊÇÓÃ»§Ãû£¬passwordÊÇÃÜÂë£¬fecshopÊÇÊı¾İ¿â
+            # æœ‰è´¦æˆ·çš„é…ç½®ï¼Œusernameæ˜¯ç”¨æˆ·åï¼Œpasswordæ˜¯å¯†ç ï¼Œfecshopæ˜¯æ•°æ®åº“
             //'dsn' => 'mongodb://username:password@localhost:27017/fecshop',
-            # ÎŞÕË»§µÄÅäÖÃ£¬fecshopÊÇÊı¾İ¿â
+            # æ— è´¦æˆ·çš„é…ç½®ï¼Œfecshopæ˜¯æ•°æ®åº“
             'dsn' => 'mongodb://127.0.0.1:27017/fecshop',
-            # ¸´ÖÆ¼¯ Èç¹ûÄúµÄmongodbÊÇ¸´ÖÆ¼¯£¨´óÕ¾£©£¬¿ÉÒÔÊ¹ÓÃÏÂÃæµÄ¸´ÖÆ¼¯µÄÅäÖÃ·½Ê½¡£
+            # å¤åˆ¶é›† å¦‚æœæ‚¨çš„mongodbæ˜¯å¤åˆ¶é›†ï¼ˆå¤§ç«™ï¼‰ï¼Œå¯ä»¥ä½¿ç”¨ä¸‹é¢çš„å¤åˆ¶é›†çš„é…ç½®æ–¹å¼ã€‚
             //'dsn' => 'mongodb://10.10.10.252:10001/fecshop,mongodb://10.10.10.252:10002/fecshop,mongodb://10.10.10.252:10004/fecshop?replicaSet=terry&readPreference=primaryPreferred',
         ],
 
 
 ```
 
-mongodbÄ¬ÈÏÊÇÃ»ÓĞÃÜÂëµÄ£¬Äú¿ÉÒÔ½«mongodbµÄ¶Ë¿ÚÔÚiptablesÌí¼ÓĞÅÈÎºÍ¶Ë¿Ú·â±Õ¼´¿É
-±£Ö¤°²È«£¬µ±È»£¬ÄúÒ²¿ÉÒÔÅäÖÃmongodbµÄÓÃ»§ÃûºÍÃÜÂë¡£
+mongodbé»˜è®¤æ˜¯æ²¡æœ‰å¯†ç çš„ï¼Œæ‚¨å¯ä»¥å°†mongodbçš„ç«¯å£åœ¨iptablesæ·»åŠ ä¿¡ä»»å’Œç«¯å£å°é—­å³å¯
+ä¿è¯å®‰å…¨ï¼Œå½“ç„¶ï¼Œæ‚¨ä¹Ÿå¯ä»¥é…ç½®mongodbçš„ç”¨æˆ·åå’Œå¯†ç ã€‚
 
 
-4¡¢ÅäÖÃ»·¾³
+4ã€é…ç½®ç¯å¢ƒ
 
-4.1 Ìí¼Óhost
+4.1 æ·»åŠ host
 
-´ò¿ªC:\Windows\System32\drivers\etc\hosts£¬Ìí¼ÓÈçÏÂ´úÂë£¨Èç¹ûÊÇÆäËûIP£¬½«
-127.0.0.1 Ìæ»»³ÉÆäËûIP¼´¿É¡££©£º
+æ‰“å¼€C:\Windows\System32\drivers\etc\hostsï¼Œæ·»åŠ å¦‚ä¸‹ä»£ç ï¼ˆå¦‚æœæ˜¯å…¶ä»–IPï¼Œå°†
+127.0.0.1 æ›¿æ¢æˆå…¶ä»–IPå³å¯ã€‚ï¼‰ï¼š
 
 ```
 127.0.0.1       rock.fecshoptest.com
@@ -64,51 +64,51 @@ mongodbÄ¬ÈÏÊÇÃ»ÓĞÃÜÂëµÄ£¬Äú¿ÉÒÔ½«mongodbµÄ¶Ë¿ÚÔÚiptablesÌí¼ÓĞÅÈÎºÍ¶Ë¿Ú·â±Õ¼´¿É
 ```
 
 
-4.2¡¢ÅäÖÃnginx
+4.2ã€é…ç½®nginx
 
 ```
-appfront.fecshoptest.com appfront.fecshoptest.es Ö¸Ïò fecshop/appfront/web 
+appfront.fecshoptest.com appfront.fecshoptest.es æŒ‡å‘ fecshop/appfront/web 
  
-appadmin.fecshoptest.com Ö¸Ïòfecshop/appadmin/web
+appadmin.fecshoptest.com æŒ‡å‘fecshop/appadmin/web
 
-apphtml5.fecshoptest.com Ö¸Ïòfecshop/apphtml5/web
+apphtml5.fecshoptest.com æŒ‡å‘fecshop/apphtml5/web
 
-appapi.fecshoptest.com 	 Ö¸Ïòfecshop/appapi/web
+appapi.fecshoptest.com 	 æŒ‡å‘fecshop/appapi/web
 
-appserver.fecshoptest.com Ö¸Ïòfecshop/appserver/web
+appserver.fecshoptest.com æŒ‡å‘fecshop/appserver/web
 
-img.fecshoptest.com 	Ö¸Ïòfecshop/appimage/common
+img.fecshoptest.com 	æŒ‡å‘fecshop/appimage/common
 
-img2.fecshoptest.com 	Ö¸Ïòfecshop/appimage/appadmin
+img2.fecshoptest.com 	æŒ‡å‘fecshop/appimage/appadmin
 
-img3.fecshoptest.com 	Ö¸Ïòfecshop/appimage/appfront
+img3.fecshoptest.com 	æŒ‡å‘fecshop/appimage/appfront
 
-img4.fecshoptest.com 	Ö¸Ïòfecshop/appimage/apphtml5
+img4.fecshoptest.com 	æŒ‡å‘fecshop/appimage/apphtml5
 
-img5.fecshoptest.com 	Ö¸Ïòfecshop/appimage/appserver
+img5.fecshoptest.com 	æŒ‡å‘fecshop/appimage/appserver
 
 ```
 
-5¡¢ÅäÖÃÓïÑÔ£¨¿ÉÒÔÏÈÊ¹ÓÃÄ¬ÈÏ£©£º
+5ã€é…ç½®è¯­è¨€ï¼ˆå¯ä»¥å…ˆä½¿ç”¨é»˜è®¤ï¼‰ï¼š
 
 
-ÔÚÅäÖÃÎÄ¼ş£¨£º`@common\config\fecshop_local_services\FecshopLang.php`
-
-
-
-6¡¢ÅäÖÃ»õ±Ò£¨¿ÉÒÔÏÈÊ¹ÓÃÄ¬ÈÏ£©£º
-
-
-ÔÚÎÄ¼ş£º`@common\config\fecshop_local_services\Page.php`
+åœ¨é…ç½®æ–‡ä»¶ï¼ˆï¼š`@common\config\fecshop_local_services\FecshopLang.php`
 
 
 
-7¡¢ÅäÖÃstoreµÄÓòÃûºÍÍ¼Æ¬µÄÓòÃû£¬Äú¿ÉÒÔºÍÎÒÏÂÃæµÄÊ¾Àı´úÂëÒ»ÖÂ£¬
+6ã€é…ç½®è´§å¸ï¼ˆå¯ä»¥å…ˆä½¿ç”¨é»˜è®¤ï¼‰ï¼š
 
 
-storeÔÚÅäÖÃÎÄ¼ş£º`@app\config\fecshop_local_services\Store.php`
+åœ¨æ–‡ä»¶ï¼š`@common\config\fecshop_local_services\Page.php`
 
-Æ©ÈçÎÒµÄ´úÂë(Äú¿ÉÒÔºÍÎÒµÄ±£³ÖÒ»ÖÂ£¬ÏàÓ¦ÓòÃûÒÑ¾­ÔÚÉÏÃæÌí¼Óhost)£º
+
+
+7ã€é…ç½®storeçš„åŸŸåå’Œå›¾ç‰‡çš„åŸŸåï¼Œæ‚¨å¯ä»¥å’Œæˆ‘ä¸‹é¢çš„ç¤ºä¾‹ä»£ç ä¸€è‡´ï¼Œ
+
+
+storeåœ¨é…ç½®æ–‡ä»¶ï¼š`@app\config\fecshop_local_services\Store.php`
+
+è­¬å¦‚æˆ‘çš„ä»£ç (æ‚¨å¯ä»¥å’Œæˆ‘çš„ä¿æŒä¸€è‡´ï¼Œç›¸åº”åŸŸåå·²ç»åœ¨ä¸Šé¢æ·»åŠ host)ï¼š
 
 ```
 <?php
@@ -116,28 +116,28 @@ storeÔÚÅäÖÃÎÄ¼ş£º`@app\config\fecshop_local_services\Store.php`
    'store' => [
 		'class' => 'fecshop\services\Store',
 		'stores' => [
-			# Êı¾İµÄkey¾ÍÊÇÓòÃû
+			# æ•°æ®çš„keyå°±æ˜¯åŸŸå
 			'appfront.fecshoptest.com' => [
-				'language' 		=> 'en_US',   # ÓïÑÔ±ØĞëÔÚÉÏÃæµÚÎå²½µÄfecshoplangÖĞ¶¨Òå£¬·ñÔò½«ÎŞ·¨µÃµ½ÓïÑÔÊôĞÔ¡£
-				'languageName' 	=> 'English', # ÔÚÌí¼ÓstoreµÄÊ±ºò£¬±ØĞë²é¿´ Ìí¼ÓµÄÓïÑÔÔÚ fecshoplangÖĞÊÇ·ñ¶¨Òå¡£
-				# ¶¨Òå±¾µØÄ£°åÂ·¾¶£¬ÓÃÀ´ÖØĞ´fecshopµÄÄ£°å£¬»òÕß¿ª·¢ĞÂµÄÄ£°åÎÄ¼ş¡£
+				'language' 		=> 'en_US',   # è¯­è¨€å¿…é¡»åœ¨ä¸Šé¢ç¬¬äº”æ­¥çš„fecshoplangä¸­å®šä¹‰ï¼Œå¦åˆ™å°†æ— æ³•å¾—åˆ°è¯­è¨€å±æ€§ã€‚
+				'languageName' 	=> 'English', # åœ¨æ·»åŠ storeçš„æ—¶å€™ï¼Œå¿…é¡»æŸ¥çœ‹ æ·»åŠ çš„è¯­è¨€åœ¨ fecshoplangä¸­æ˜¯å¦å®šä¹‰ã€‚
+				# å®šä¹‰æœ¬åœ°æ¨¡æ¿è·¯å¾„ï¼Œç”¨æ¥é‡å†™fecshopçš„æ¨¡æ¿ï¼Œæˆ–è€…å¼€å‘æ–°çš„æ¨¡æ¿æ–‡ä»¶ã€‚
 				//'localThemeDir'	=> '@appfront/theme/terry/theme01',
-				# ¶¨ÒåµÚÈı·½Ä£°åÂ·¾¶£¬ÓÃÀ´ÖØĞ´fecshopµÄÄ£°å£¬»òÕß¿ª·¢ĞÂµÄÄ£°åÎÄ¼ş¡£
+				# å®šä¹‰ç¬¬ä¸‰æ–¹æ¨¡æ¿è·¯å¾„ï¼Œç”¨æ¥é‡å†™fecshopçš„æ¨¡æ¿ï¼Œæˆ–è€…å¼€å‘æ–°çš„æ¨¡æ¿æ–‡ä»¶ã€‚
 				'thirdThemeDir'	=> [],
-				# µ±Ç°ÓïÑÔµÄÄ¬ÈÏ»õ±Ò£¬»õ±Ò±ØĞëÔÚÉÏÃæµÚÁù²½µÄÅäÖÃÖĞ´æÔÚ
+				# å½“å‰è¯­è¨€çš„é»˜è®¤è´§å¸ï¼Œè´§å¸å¿…é¡»åœ¨ä¸Šé¢ç¬¬å…­æ­¥çš„é…ç½®ä¸­å­˜åœ¨
 				'currency' 		=> 'USD',
-				'mobile'		=> [ # µ±Éè±¸Âú×ãÊ²Ã´Ìõ¼şµÄÊ±ºò£¬½øĞĞÌø×ª¡£
+				'mobile'		=> [ # å½“è®¾å¤‡æ»¡è¶³ä»€ä¹ˆæ¡ä»¶çš„æ—¶å€™ï¼Œè¿›è¡Œè·³è½¬ã€‚
 					'enable'		=> true,
-					'condition'		=> ['phone','tablet'], # phone ´ú±íÊÖ»ú£¬tablet´ú±íÆ½°å
-					'redirectUrl' 	=> 'apphtml5.fecshoptest.com',	# Èç¹ûÊÇÒÆ¶¯Éè±¸·ÃÎÊ½øĞĞÓòÃûÌø×ª
+					'condition'		=> ['phone','tablet'], # phone ä»£è¡¨æ‰‹æœºï¼Œtabletä»£è¡¨å¹³æ¿
+					'redirectUrl' 	=> 'apphtml5.fecshoptest.com',	# å¦‚æœæ˜¯ç§»åŠ¨è®¾å¤‡è®¿é—®è¿›è¡ŒåŸŸåè·³è½¬
 				],
-				# µÚÈı·½ÕËºÅµÇÂ¼ÅäÖÃ
+				# ç¬¬ä¸‰æ–¹è´¦å·ç™»å½•é…ç½®
 				'thirdLogin' => [
-					'facebook' =>[                       #fb apiÅäÖÃ £¬fb¿ÉÒÔÒ»¸öappÉèÖÃpcºÍÊÖ»úÁ½¸öÓòÃû 
+					'facebook' =>[                       #fb apié…ç½® ï¼Œfbå¯ä»¥ä¸€ä¸ªappè®¾ç½®pcå’Œæ‰‹æœºä¸¤ä¸ªåŸŸå 
 						'facebook_app_id'     => '184963',
 						'facebook_app_secret' => '2e097dd7139',
 					],
-					"google" => [                       #¹È¸èapi visit https://code.google.com/apis/console to generate your google api
+					"google" => [                       #è°·æ­Œapi visit https://code.google.com/apis/console to generate your google api
 						'CLIENT_ID'  	 => '38037grhccontent.com',
 						'CLIENT_SECRET'  => 'ei8RaoCHYm0rrwO',
 					],
@@ -156,8 +156,8 @@ storeÔÚÅäÖÃÎÄ¼ş£º`@app\config\fecshop_local_services\Store.php`
 				'currency' 		=> 'RMB',
 				'mobile'		=> [
 					'enable'			=> true,
-					'condition'			=> ['phone'], # phone ´ú±íÊÖ»ú£¬tablet´ú±íÆ½°å¡£
-					'redirectDomain' 	=> 'apphtml5.fecshoptest.com/fr', # Ìø×ªºóµÄurl¡£
+					'condition'			=> ['phone'], # phone ä»£è¡¨æ‰‹æœºï¼Œtabletä»£è¡¨å¹³æ¿ã€‚
+					'redirectDomain' 	=> 'apphtml5.fecshoptest.com/fr', # è·³è½¬åçš„urlã€‚
 				],
 			],
 			'appfront.fecshoptest.es' => [
@@ -174,7 +174,7 @@ storeÔÚÅäÖÃÎÄ¼ş£º`@app\config\fecshop_local_services\Store.php`
 			],
 			'appfront.fecshoptest.com/cn' => [
 				'language' 		=> 'zh_CN',
-				'languageName' 	=> 'ÖĞÎÄ',
+				'languageName' 	=> 'ä¸­æ–‡',
 				'localThemeDir'	=> '@appfront/theme/terry/theme01',
 				'thirdThemeDir'	=> [],
 				'currency' 		=> 'RMB',
@@ -191,13 +191,13 @@ storeÔÚÅäÖÃÎÄ¼ş£º`@app\config\fecshop_local_services\Store.php`
 ];
 ```
 
-¸÷¸ö´úÂëµÄ¾ßÌåº¬Òå£¬ÔÚ×¢ÊÍÖĞÒÑ¾­ËµÃ÷£¬¹ØÓÚµÚÈı·½facebookºÍgoogleµÇÂ¼£¬ÈçºÎ»ñÈ¡
-CLIENT_ID£¬CLIENT_SECRET¿ÉÒÔ²Î¿´ÎÒµÄ²©ÎÄ£º
-[ facebook login ÉêÇë app_id ºÍ app_secret](http://blog.csdn.net/terry_water/article/details/55095721) £¬
-[ google login api ÉêÇë CLIENT_SECRET ºÍ CLIENT_SECRET](http://blog.csdn.net/terry_water/article/details/55095209)
+å„ä¸ªä»£ç çš„å…·ä½“å«ä¹‰ï¼Œåœ¨æ³¨é‡Šä¸­å·²ç»è¯´æ˜ï¼Œå…³äºç¬¬ä¸‰æ–¹facebookå’Œgoogleç™»å½•ï¼Œå¦‚ä½•è·å–
+CLIENT_IDï¼ŒCLIENT_SECRETå¯ä»¥å‚çœ‹æˆ‘çš„åšæ–‡ï¼š
+[ facebook login ç”³è¯· app_id å’Œ app_secret](http://blog.csdn.net/terry_water/article/details/55095721) ï¼Œ
+[ google login api ç”³è¯· CLIENT_SECRET å’Œ CLIENT_SECRET](http://blog.csdn.net/terry_water/article/details/55095209)
 
-7¡¢Í¼Æ¬ÓòÃûÅäÖÃÎÄ¼ş£º`@common\config\fecshop_local_services\Image.php`
-,Æ©ÈçÎÒµÄ´úÂë(Äú¿ÉÒÔºÍÎÒµÄ±£³ÖÒ»ÖÂ£¬ÏàÓ¦ÓòÃûÒÑ¾­ÔÚÉÏÃæÌí¼Óhost)£º
+7ã€å›¾ç‰‡åŸŸåé…ç½®æ–‡ä»¶ï¼š`@common\config\fecshop_local_services\Image.php`
+,è­¬å¦‚æˆ‘çš„ä»£ç (æ‚¨å¯ä»¥å’Œæˆ‘çš„ä¿æŒä¸€è‡´ï¼Œç›¸åº”åŸŸåå·²ç»åœ¨ä¸Šé¢æ·»åŠ host)ï¼š
 
 ```
 <?php
@@ -231,18 +231,18 @@ return [
 ];
 ```
 
-Äú¿ÉÄÜ»áÎÊ£¬ÎªÊ²Ã´Òª¸øÍ¼Æ¬ÅäÖÃÓòÃû£¬Í¼Æ¬ºÍÍøÕ¾Ê¹ÓÃÒ»¸öÓòÃû²»¾Í¿ÉÒÔÂğ£¿
-Ô­Òò£ºä¯ÀÀÆ÷¼ÓÔØÒ³ÃæµÄÊ±ºò£¬Ã¿Ò»¸öÓòÃû¼ÓÔØµÄÁ´½Ó¸öÊıÊÇÓĞÏŞÖÆµÄ£¬°Ñ
-Í¼Æ¬Ê¹ÓÃ²»Í¬µÄÓòÃû£¬¿ÉÒÔÈÃÍ¼Æ¬¶ÀÁ¢¼ÓÔØ£¬¼Ó¿ìÒ³ÃæµÄË¢ĞÂ¡£
+æ‚¨å¯èƒ½ä¼šé—®ï¼Œä¸ºä»€ä¹ˆè¦ç»™å›¾ç‰‡é…ç½®åŸŸåï¼Œå›¾ç‰‡å’Œç½‘ç«™ä½¿ç”¨ä¸€ä¸ªåŸŸåä¸å°±å¯ä»¥å—ï¼Ÿ
+åŸå› ï¼šæµè§ˆå™¨åŠ è½½é¡µé¢çš„æ—¶å€™ï¼Œæ¯ä¸€ä¸ªåŸŸååŠ è½½çš„é“¾æ¥ä¸ªæ•°æ˜¯æœ‰é™åˆ¶çš„ï¼ŒæŠŠ
+å›¾ç‰‡ä½¿ç”¨ä¸åŒçš„åŸŸåï¼Œå¯ä»¥è®©å›¾ç‰‡ç‹¬ç«‹åŠ è½½ï¼ŒåŠ å¿«é¡µé¢çš„åŠ è½½ã€‚
 
 
 
-8¡¢ÅäÖÃÊÇ·ñÇ¿ÖÆ¸´ÖÆassetsµ½webÄ¿Â¼£¬Èç¹ûÊÇ¿ª·¢»·¾³£¬°´ÕÕÏÂÃæ½øĞĞÅäÖÃ£¨¿ÉÑ¡ÅäÖÃ£¬¿ÉÒÔÏÈ²»¹ÜÕâ¸ö£©¡£
+8ã€é…ç½®æ˜¯å¦å¼ºåˆ¶å¤åˆ¶assetsåˆ°webç›®å½•ï¼Œå¦‚æœæ˜¯å¼€å‘ç¯å¢ƒï¼ŒæŒ‰ç…§ä¸‹é¢è¿›è¡Œé…ç½®ï¼ˆå¯é€‰é…ç½®ï¼Œå¯ä»¥å…ˆä¸ç®¡è¿™ä¸ªï¼‰ã€‚
 
-`@app/config/main.php`ÀïÃæ¿ÉÒÔ¿´µ½ÏÂÃæµÄÅäÖÃ
+`@app/config/main.php`é‡Œé¢å¯ä»¥çœ‹åˆ°ä¸‹é¢çš„é…ç½®
 
 
-Õâ¸öÊÇyii2µÄÖªÊ¶·¶³ë
+è¿™ä¸ªæ˜¯yii2çš„çŸ¥è¯†èŒƒç•´
 
 ```
 'assetManager' => [
@@ -250,39 +250,42 @@ return [
 ],
 ```
 
-Èç¹ûÊÇÏßÉÏ£¬ ½«forceCopyÉèÖÃ³Éfalse `['forceCopy' => false]`
+å¦‚æœæ˜¯çº¿ä¸Šï¼Œ å°†forceCopyè®¾ç½®æˆfalse `['forceCopy' => false]`
 
-Ô­Òò£º±¾µØ¿ª·¢¾­³£ĞŞ¸Äcss£¬Òò´Ë£¬Ã¿´Î¾ÍĞèÒªyiiµÄasset½«css·¢²¼µ½webÂ·¾¶ÏÂÃæ£¨ÕâÀïµÄ·¢²¼£¬¾ÍÊÇyii2ÔÚ³õÊ¼»¯µÄÊ±ºò¾Í»áÇ¿ÖÆ°ÑĞèÒªµÄcss¸´ÖÆµ½
-web/assetsÂ·¾¶ÏÂÃæ£¬Æ©Èçyii2·â×°µÄbootstrapÇ°¶Ë¿ò¼Ü£©£¬
-Èç¹ûÊÇÏßÉÏ»·¾³£¬ÕâÑù·Ç³£ºÄ·Ñ×ÊÔ´£¬Òò´Ë£¬ÏßÉÏ¹Ø±Õ¼´¿É£¬Èç¹ûÄú·¢²¼ÁËĞÂµÄcssÎÄ¼ş£¬
-ÄÇÃ´ÄúĞèÒªÊÖ¶¯Çå¿Õ@app/web/assetsÏÂÃæµÄÎÄ¼ş¼Ğ£¨Èç¹ûÏßÉÏ·ÃÎÊÁ¿²»´ó£¬¿ªÆôÒ²ÎŞËùÎ½£¬ºÇºÇ¡££©¡£
+åŸå› ï¼šæœ¬åœ°å¼€å‘ç»å¸¸ä¿®æ”¹cssï¼Œå› æ­¤ï¼Œæ¯æ¬¡å°±éœ€è¦yiiçš„assetå°†csså‘å¸ƒåˆ°webè·¯å¾„ä¸‹é¢ï¼ˆè¿™é‡Œçš„å‘å¸ƒï¼Œå°±æ˜¯yii2åœ¨åˆå§‹åŒ–çš„æ—¶å€™å°±ä¼šå¼ºåˆ¶æŠŠéœ€è¦çš„csså¤åˆ¶åˆ°
+web/assetsè·¯å¾„ä¸‹é¢ï¼Œè­¬å¦‚yii2å°è£…çš„bootstrapå‰ç«¯æ¡†æ¶ï¼‰ï¼Œ
+å¦‚æœæ˜¯çº¿ä¸Šç¯å¢ƒï¼Œè¿™æ ·éå¸¸è€—è´¹èµ„æºï¼Œå› æ­¤ï¼Œçº¿ä¸Šå…³é—­å³å¯ï¼Œå¦‚æœæ‚¨å‘å¸ƒäº†æ–°çš„cssæ–‡ä»¶ï¼Œ
+é‚£ä¹ˆæ‚¨éœ€è¦æ‰‹åŠ¨æ¸…ç©º@app/web/assetsä¸‹é¢çš„æ–‡ä»¶å¤¹ï¼ˆå¦‚æœçº¿ä¸Šè®¿é—®é‡ä¸å¤§ï¼Œå¼€å¯ä¹Ÿæ— æ‰€è°“ï¼Œå‘µå‘µã€‚ï¼‰ã€‚
 
-9¡¢µ¼ÈëÊı¾İ¿â±í(migrate)£¬ÔÚfecshop¸ùÄ¿Â¼Ö´ĞĞÏÂÃæµÄÃüÁîĞĞ
+9ã€å¯¼å…¥æ•°æ®åº“è¡¨(migrate)ï¼Œåœ¨fecshopæ ¹ç›®å½•æ‰§è¡Œä¸‹é¢çš„å‘½ä»¤è¡Œ
 
-9.1¡¢Yii2 migratge·½Ê½µ¼Èë±í¡£
+9.1ã€Yii2 migratgeæ–¹å¼å¯¼å…¥è¡¨ã€‚
 
-mysql(µ¼ÈëmysqlµÄ±í£¬Êı¾İ£¬Ë÷Òı):
+mysql(å¯¼å…¥mysqlçš„è¡¨ï¼Œæ•°æ®ï¼Œç´¢å¼•):
 
 ```
 ./yii migrate --interactive=0 --migrationPath=@fecshop/migrations/mysqldb
 ```
 
-mongodb(µ¼ÈëmongodbµÄ±í£¬Êı¾İ£¬Ë÷Òı):
+mongodb(å¯¼å…¥mongodbçš„è¡¨ï¼Œæ•°æ®ï¼Œç´¢å¼•):
 
 ```
 ./yii mongodb-migrate  --interactive=0 --migrationPath=@fecshop/migrations/mongodb
 ```
 
-9.2¡¢²âÊÔÊı¾İ°²×°£º
+9.2ã€æµ‹è¯•æ•°æ®å®‰è£…ï¼š
 
-mongodbµÄÊ¾ÀıÊı¾İ´æ·ÅÂ·¾¶Îª£º
+mongodbçš„ç¤ºä¾‹æ•°æ®å­˜æ”¾è·¯å¾„ä¸ºï¼š
 
 `./vendor/fancyecommerce/fecshop/migrations/mongodb-example-data/example_data.js`
 
-¿ÉÒÔÍ¨¹ımongodbµÄºóÌ¨£¬»òÕßÍ¨¹ıphpµÄrockmongo°²×°ÕâĞ©mongodbÖĞµÄÊ¾ÀıÊı¾İ¡£
+å¯ä»¥é€šè¿‡mongodbçš„åå°ï¼Œæˆ–è€…é€šè¿‡phpçš„rockmongoå®‰è£…è¿™äº›mongodbä¸­çš„ç¤ºä¾‹æ•°æ®ã€‚
 
-mongodbµÄÊ¾ÀıÊı¾İ²úÆ·Í¼Æ¬±È½Ï´ó£¬Ã»ÓĞ·Åµ½°æ±¾¿âÀïÃæ£¬Äã¿ÉÒÔµ½°Ù¶ÈÔÆÅÌÏÂÔØ`appimage.zip`£¬ÏÂÔØµØÖ·Îª£º`https://pan.baidu.com/s/1kVwRD2Z`
-Èç¹û¸²¸ÇÍ¼Æ¬ºó£¬½«appimage¸²¸Çµ½¸ùÄ¿Â¼¼´¿É£¬¸²¸Çºó£¬Èç¹û·¢ÏÖ²úÆ·Í¼Æ¬Ã»ÓĞ³öÀ´£¬ÄÇÃ´ÄúĞèÒªÇå¿Õ `appimage/common/media/catalog/product/cache/*`ÏÂÃæËùÓĞÎÄ¼şºÍÎÄ¼ş¼Ğ£¬
-Çå¿Õä¯ÀÀÆ÷Í¼Æ¬»º´æ£¬ÖØĞÂË¢ĞÂÒ³Ãæ¼´¿É¡£
+mongodbçš„ç¤ºä¾‹æ•°æ®äº§å“å›¾ç‰‡æ¯”è¾ƒå¤§ï¼Œæ²¡æœ‰æ”¾åˆ°ç‰ˆæœ¬åº“é‡Œé¢ï¼Œä½ å¯ä»¥åˆ°ç™¾åº¦äº‘ç›˜ä¸‹è½½`appimage.zip`ï¼Œä¸‹è½½åœ°å€ä¸ºï¼š`https://pan.baidu.com/s/1kVwRD2Z`
+å¦‚æœè¦†ç›–å›¾ç‰‡åï¼Œå°†appimageè¦†ç›–åˆ°æ ¹ç›®å½•å³å¯ï¼Œè¦†ç›–åï¼Œå¦‚æœå‘ç°äº§å“å›¾ç‰‡æ²¡æœ‰å‡ºæ¥ï¼Œé‚£ä¹ˆæ‚¨éœ€è¦æ¸…ç©º `appimage/common/media/catalog/product/cache/*`ä¸‹é¢æ‰€æœ‰æ–‡ä»¶å’Œæ–‡ä»¶å¤¹ï¼Œ
+æ¸…ç©ºæµè§ˆå™¨å›¾ç‰‡ç¼“å­˜ï¼Œé‡æ–°åˆ·æ–°é¡µé¢å³å¯ã€‚
 
-10¡¢¿ªÆônginx  mysql  mongodb  php£¬Äã¾Í¿ÉÒÔ·ÃÎÊ±¾µØÅäÖÃµÄfecshopÁË¡£
+10ã€å¼€å¯nginx  mysql  mongodb  phpï¼Œä½ å°±å¯ä»¥è®¿é—®æœ¬åœ°é…ç½®çš„fecshopäº†ã€‚
+
+
+

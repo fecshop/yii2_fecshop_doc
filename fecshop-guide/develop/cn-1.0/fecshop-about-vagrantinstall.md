@@ -1,55 +1,59 @@
-Fecshop vagrant°²×°
+Fecshop vagrantå®‰è£…
 ====================
 
-> VagrantÊÇÒ»¸ö»ùÓÚRubyµÄ¹¤¾ß£¬ÓÃÓÚ´´½¨ºÍ²¿ÊğĞéÄâ»¯¿ª·¢»·¾³¡£
->Ëü Ê¹ÓÃOracleµÄ¿ªÔ´VirtualBoxĞéÄâ»¯ÏµÍ³£¬Ê¹ÓÃ Chef´´½¨×Ô¶¯»¯ĞéÄâ»·¾³¡£
+> Vagrantæ˜¯ä¸€ä¸ªåŸºäºRubyçš„å·¥å…·ï¼Œç”¨äºåˆ›å»ºå’Œéƒ¨ç½²è™šæ‹ŸåŒ–å¼€å‘ç¯å¢ƒã€‚
+> å®ƒ ä½¿ç”¨Oracleçš„å¼€æºVirtualBoxè™šæ‹ŸåŒ–ç³»ç»Ÿï¼Œä½¿ç”¨ Chefåˆ›å»ºè‡ªåŠ¨åŒ–è™šæ‹Ÿç¯å¢ƒã€‚
 
-1. vagrant ½Ì³Ì
+linux é…ç½®ï¼Œphp mysql nginx mongodb redisç­‰ç¯å¢ƒé…ç½®ä»¥åŠfecshopçš„å®‰è£…é…ç½®
+æˆ‘éƒ½å·²ç»å¼„å¥½ï¼Œç„¶åé€šè¿‡vagrantæ‰“åŒ…æˆäº†ä¸€ä¸ªboxï¼Œæ‚¨åªéœ€è¦ä¸‹è½½æˆ‘çš„boxï¼Œç„¶ååŠ è½½
+è¿‡æ¥å°±å¯ä»¥äº†ï¼Œéå¸¸çš„ç®€ä¾¿ï¼ŒåæœŸååšä¸€ä¸ªdockerçš„çº¿ä¸Šç¯å¢ƒéƒ¨ç½²çš„åŒ…ï¼Œä¸‹é¢çš„è¯¦ç»†æ­¥éª¤ï¼š
 
-Äã¿ÉÄÜÃ»ÓĞÊ¹ÓÃvagrant£¬Õâ¸öÃ»ÓĞ¹ØÏµ£¬ÎÒÕûÀíÁËÒ»·İvagrantÊ¹ÓÃµÄ½Ì³Ì£¬µØÖ·ÈçÏÂ£º
-[vagrant ÏÂÔØ²¿Êğlinux»·¾³](http://www.fancyecommerce.com/2016/09/22/vagrant-%E4%B8%8B%E8%BD%BD%E9%83%A8%E7%BD%B2linux%E7%8E%AF%E5%A2%83/)
+1.vagrant æ•™ç¨‹
+
+ä½ å¯èƒ½æ²¡æœ‰ä½¿ç”¨vagrantï¼Œè¿™ä¸ªæ²¡æœ‰å…³ç³»ï¼Œæˆ‘æ•´ç†äº†ä¸€ä»½vagrantä½¿ç”¨çš„æ•™ç¨‹ï¼Œåœ°å€å¦‚ä¸‹ï¼š
+[vagrant ä¸‹è½½éƒ¨ç½²linuxç¯å¢ƒ](http://www.fancyecommerce.com/2016/09/22/vagrant-%E4%B8%8B%E8%BD%BD%E9%83%A8%E7%BD%B2linux%E7%8E%AF%E5%A2%83/)
 
 
-2. Ìí¼ÓFecshop »·¾³µÄbox
+2.æ·»åŠ Fecshop ç¯å¢ƒçš„box
 
-ÅäÖÃ»·¾³±È½Ï¸´ÔÓ£¬ÎÒ±¾µØÒÑ¾­ÅäÖÃºÃÁËfecshopµÄ»·¾³£¬²¢´ò°ü³ÉÒ»¸öbox£¬
-µØÖ·ÔÚ°Ù¶ÈÔÆÅÌ£¬ÏÂÔØµØÖ·Îª£ºhttps://pan.baidu.com/s/1kVwRD2Z£¬ 
-½øÈëºó´ò¿ªÎÄ¼ş¼Ğ£¬ÏÂÔØ package.box£¬¸ù¾İÉÏÃæµÄ½Ì³Ì¼ÓÔØ½øÀ´box¼´¿É¡£
+é…ç½®ç¯å¢ƒæ¯”è¾ƒå¤æ‚ï¼Œæˆ‘æœ¬åœ°å·²ç»é…ç½®å¥½äº†fecshopçš„ç¯å¢ƒï¼Œå¹¶æ‰“åŒ…æˆä¸€ä¸ªboxï¼Œ
+åœ°å€åœ¨ç™¾åº¦äº‘ç›˜ï¼Œä¸‹è½½åœ°å€ä¸ºï¼šhttps://pan.baidu.com/s/1kVwRD2Zï¼Œ 
+è¿›å…¥åæ‰“å¼€æ–‡ä»¶å¤¹ï¼Œä¸‹è½½ package.boxï¼Œæ ¹æ®ä¸Šé¢çš„æ•™ç¨‹åŠ è½½è¿›æ¥boxå³å¯ã€‚
 
-°²×°Íê³Éºó£¬¸÷¸öÈë¿ÚµÄÓòÃûºÍ¶ÔÓ¦µÄÎÄ¼şÂ·¾¶Îª£º
+å®‰è£…å®Œæˆåï¼Œå„ä¸ªå…¥å£çš„åŸŸåå’Œå¯¹åº”çš„æ–‡ä»¶è·¯å¾„ä¸ºï¼š
 
 ```
-pc¶ËµØÖ·£ºappfront.fecshoptest.com appfront.fecshoptest.es Ö¸Ïò /www/web/develop/fecshop/appfront/web 
+pcç«¯åœ°å€ï¼šappfront.fecshoptest.com appfront.fecshoptest.es æŒ‡å‘ /www/web/develop/fecshop/appfront/web 
 
-ºóÌ¨¶ËµØÖ·£ºappadmin.fecshoptest.com Ö¸Ïò/www/web/develop/fecshop/appadmin/web
+åå°ç«¯åœ°å€ï¼šappadmin.fecshoptest.com æŒ‡å‘/www/web/develop/fecshop/appadmin/web
 
-html5¶ËµØÖ·£¨Î´¿ª·¢£©£ºapphtml5.fecshoptest.com Ö¸Ïò/www/web/develop/fecshop/apphtml5/web
+html5ç«¯åœ°å€ï¼ˆæœªå¼€å‘ï¼‰ï¼šapphtml5.fecshoptest.com æŒ‡å‘/www/web/develop/fecshop/apphtml5/web
 
-api¶ËµØÖ·£¨Î´¿ª·¢£©£ºappapi.fecshoptest.com     Ö¸Ïò/www/web/develop/fecshop/appapi/web
+apiç«¯åœ°å€ï¼ˆæœªå¼€å‘ï¼‰ï¼šappapi.fecshoptest.com     æŒ‡å‘/www/web/develop/fecshop/appapi/web
 
-ÊÖ»úapp¶ËµØÖ·£¨Î´¿ª·¢£©£ºappserver.fecshoptest.com Ö¸Ïò/www/web/develop/fecshop/appserver/web
+æ‰‹æœºappç«¯åœ°å€ï¼ˆæœªå¼€å‘ï¼‰ï¼šappserver.fecshoptest.com æŒ‡å‘/www/web/develop/fecshop/appserver/web
 
-commonÍ¼Æ¬¶ËµØÖ·£ºimg.fecshoptest.com     Ö¸Ïò/www/web/develop/fecshop/appimage/common
+commonå›¾ç‰‡ç«¯åœ°å€ï¼šimg.fecshoptest.com     æŒ‡å‘/www/web/develop/fecshop/appimage/common
 
-appadminÍ¼Æ¬¶ËµØÖ·£ºimg2.fecshoptest.com  Ö¸Ïò/www/web/develop/fecshop/appimage/appadmin
+appadminå›¾ç‰‡ç«¯åœ°å€ï¼šimg2.fecshoptest.com  æŒ‡å‘/www/web/develop/fecshop/appimage/appadmin
 
-appfrontÍ¼Æ¬¶ËµØÖ·£ºimg3.fecshoptest.com  Ö¸Ïò/www/web/develop/fecshop/appimage/appfront
+appfrontå›¾ç‰‡ç«¯åœ°å€ï¼šimg3.fecshoptest.com  æŒ‡å‘/www/web/develop/fecshop/appimage/appfront
 
-apphtml5Í¼Æ¬¶ËµØÖ·£ºimg4.fecshoptest.com  Ö¸Ïò/www/web/develop/fecshop/appimage/apphtml5
+apphtml5å›¾ç‰‡ç«¯åœ°å€ï¼šimg4.fecshoptest.com  æŒ‡å‘/www/web/develop/fecshop/appimage/apphtml5
 
-appserverÍ¼Æ¬¶ËµØÖ·£ºimg5.fecshoptest.com     Ö¸Ïò/www/web/develop/fecshop/appimage/appserver
+appserverå›¾ç‰‡ç«¯åœ°å€ï¼šimg5.fecshoptest.com     æŒ‡å‘/www/web/develop/fecshop/appimage/appserver
 
-rock mongo·ÃÎÊµØÖ·£ºrock.fecshoptest.com    ÕËºÅ£ºadmin  ÃÜÂë£º123456
+rock mongoè®¿é—®åœ°å€ï¼šrock.fecshoptest.com    è´¦å·ï¼šadmin  å¯†ç ï¼š123456
 
-phpmyadmin·ÃÎÊµØÖ·: my.fecshoptest.com      ÕËºÅ£ºroot   ÃÜÂë£º123456
+phpmyadminè®¿é—®åœ°å€: my.fecshoptest.com      è´¦å·ï¼šroot   å¯†ç ï¼š123456
 
-ºóÌ¨¶ËµØÖ·£ºappadmin.fecshoptest.com·ÃÎÊºó£¬ºóÌ¨µÄÓÃ»§ÃûºÍÃÜÂëÎªadmin  123456
+åå°ç«¯åœ°å€ï¼šappadmin.fecshoptest.comè®¿é—®åï¼Œåå°çš„ç”¨æˆ·åå’Œå¯†ç ä¸ºadmin  123456
 ```
 
-ÉÏÃæµÄÓòÃûĞèÒª±¾µØwindowsÌí¼Óhosts
+ä¸Šé¢çš„åŸŸåéœ€è¦æœ¬åœ°windowsæ·»åŠ hosts
 
-´ò¿ªC:\Windows\System32\drivers\etc\hosts£¬Ìí¼ÓÈçÏÂ´úÂë£¨Èç¹ûÊÇÆäËûIP£¬½«
-127.0.0.1 Ìæ»»³ÉÆäËûIP¼´¿É¡££©£º
+æ‰“å¼€C:\Windows\System32\drivers\etc\hostsï¼Œæ·»åŠ å¦‚ä¸‹ä»£ç ï¼ˆå¦‚æœæ˜¯å…¶ä»–IPï¼Œå°†
+127.0.0.1 æ›¿æ¢æˆå…¶ä»–IPå³å¯ã€‚ï¼‰ï¼š
 
 ```
 127.0.0.1       rock.fecshoptest.com
@@ -68,8 +72,8 @@ phpmyadmin·ÃÎÊµØÖ·: my.fecshoptest.com      ÕËºÅ£ºroot   ÃÜÂë£º123456
 ```
 
 
-ÕâÑù¾Í¿ÉÒÔ·ÃÎÊÁË£¬Æ©Èç£ºappfront.fecshoptest.com ·ÃÎÊÇ°¶Ëpc web£¬
-appadmin.fecshoptest.com ·ÃÎÊºóÌ¨web
+è¿™æ ·å°±å¯ä»¥è®¿é—®äº†ï¼Œè­¬å¦‚ï¼šappfront.fecshoptest.com è®¿é—®å‰ç«¯pc webï¼Œ
+appadmin.fecshoptest.com è®¿é—®åå°web
 
 
 
