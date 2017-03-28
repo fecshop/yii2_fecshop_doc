@@ -17,7 +17,7 @@ FecShop 开发说明
 
 Fecshop 结构与初始化
 --------------------
-*  [Fecshop 架构结构](fecshop-construct-framework.md)
+*  [Fecshop 架构简叙](fecshop-construct-framework.md)
 *  [Fecshop 配置结构](fecshop-init-config-construction.md)
 *  [Fecshop index.php初始化](fecshop-init-index.md)
 *  [Fecshop 功能初始化](fecshop-init-func.md)

@@ -2,11 +2,16 @@ Fecshop 全手动安装
 ==================
 
 > 本文是在linux下面部署开发环境， 
-> 如果您想要自己部署环境和安装，那么请按照下面的步骤进行：
+> 是纯净linux一步一步的配置fecshop的整个环境，
+> 整个过程比较繁琐，如果您想快速部署，可以使用vagrant进行快速部署，我已经打包好
+> vagrant box,您直接加载过来就可以.
+>
+> 详细参看[Fecshop vagrant安装](fecshop-about-vagrantinstall.md)
 
 
 linux作为开发环境
 -----------------
+
 在linux下面做开发环境，你可能很不习惯，你可以用编辑器的ftp的远程功能
 加载linux的文件，开发起来和本地win没有太多的不同（会有一些文件权限和svn提交代码
 需要使用命令行的不同），这是我整理的一篇详细博文：
@@ -46,7 +51,7 @@ composer self-update
 
 ```
 composer global require "fxp/composer-asset-plugin:^1.2.0"
-composer create-project fancyecommerce/yii2_fecshop_app_advanced fecshop 1.0.1.3
+composer create-project fancyecommerce/fecshop-app-advanced  fecshop_1016 1.0.1.6
 cd fecshop
 ./init
 ```

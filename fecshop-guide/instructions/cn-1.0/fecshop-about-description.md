@@ -6,6 +6,9 @@
 > 可以联系邮箱：2358269014@qq.com
 
 
+1.简介
+------------
+
 Fecshop 全称为Fancy ECommerce Shop，是基于php Yii2框架之上开发的一款优秀的开源电商系统，
 遵循OSL3.0开源协议，Fecshop支持多语言，多货币，架构上支持pc，手机web，手机app，和erp对接等入口，您可以免费快速的定制和部署属于您的电商系统。
 预计到2017-05月份 ，完成appfront（pc前端web），appadmin（后台）
@@ -25,6 +28,32 @@ service层和block层，数据库采用了nosql和mysql结合的方式，
 总之，Fecshop目前的定位是为了让程序员们有一个方便学习，扩展，开发的电商框架系统，
 如果您发现有哪些代码结构可以优化，调整，或者您有更加合理的建议，可以发送到邮箱：
 2358269014@qq.com。
+
+2.安装Fecsop
+------------
+
+2.1、vagrant安装：
+
+通过vagrant加载box的方式直接安装，环境和fecshop的配置都已经弄好，详细可以参看文档地址：[Fecshop vagrant安装](http://www.fecshop.com/doc/fecshop-guide/develop/cn-1.0/guide-fecshop-about-vagrantinstall.html)
+
+
+2.2、全手动安装：
+
+从基础linux一步一步的配置的方式，详细参看文档： [Fecshop 全手动安装](http://www.fecshop.com/doc/fecshop-guide/develop/cn-1.0/guide-fecshop-about-hand-install.html)
+
+推荐使用第一种方式快速部署。
+
+3、fecshop 配置：
+----------------
+
+配置详细参看：[fecshop 配置](http://www.fecshop.com/doc/fecshop-guide/develop/cn-1.0/guide-fecshop-about-config.html)
+
+如果您使用vagrant box的安装方式，上面的这些步骤，在box都配置好了。
+
+
+
+4、fecshop 其他：
+----------------
 
 **FecShop 多语言演示地址：** http://fecshop.appfront.fancyecommerce.com/
 

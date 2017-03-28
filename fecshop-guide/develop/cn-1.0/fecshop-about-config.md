@@ -196,6 +196,21 @@ CLIENT_ID，CLIENT_SECRET可以参看我的博文：
 [ facebook login 申请 app_id 和 app_secret](http://blog.csdn.net/terry_water/article/details/55095721) ，
 [ google login api 申请 CLIENT_SECRET 和 CLIENT_SECRET](http://blog.csdn.net/terry_water/article/details/55095209)
 
+如果您的各个语言使用了子域名（譬如cn.fecshop.com , fr.fecshop.com 等），由于子域名之间session默认是不能共享的，为了更好的共享session，让语言切换后，
+购物车和登录信息存在，您需要在入口文件index.php里面设置`session.cookie_domain`
+，大约在index.php第3行找到代码
+
+```
+#ini_set('session.cookie_domain', '.fancyecommerce.com'); //初始化域名，
+```
+
+将前面的注释去掉，将`.fancyecommerce.com`替换成您的域名,
+如果您使用的是 `www.fecshop.com/cn` , `www.fecshop.com/fr`,
+这种方式，则不需要设置 `session.cookie_domain`,
+如果您想使用后缀模式区分多语言，譬如添加it语言，您需要到@app/web中添加一个文件夹it，
+然后在文件夹里面新建@app/web/it/index.php文件，并新建文件夹@app/web/it/assets，并设置可写,
+目前fecshop只添加了cn和fr两个例子，你可以参考这两个。
+
 7、图片域名配置文件：`@common\config\fecshop_local_services\Image.php`
 ,譬如我的代码(您可以和我的保持一致，相应域名已经在上面添加host)：
 
@@ -287,5 +302,8 @@ mongodb的示例数据产品图片比较大，没有放到版本库里面，你�
 
 10、开启nginx  mysql  mongodb  php，你就可以访问本地配置的fecshop了。
 
+11、如果是线上，需要开启一些脚本。
+
+详细参看：[Fecshop 脚本介绍](http://www.fecshop.com/doc/fecshop-guide/instructions/cn-1.0/guide-fecshop_cron_script.html)
 
 
