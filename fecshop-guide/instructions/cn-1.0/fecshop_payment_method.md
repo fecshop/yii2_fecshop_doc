@@ -66,12 +66,16 @@ return [
 		],
 		'childService' => [
 			'paypal' => [
-				'use_local_certs' => true,	# 
 				'express_payment_method' => 'paypal_express',
 				'version' => '109.0',
+				
+				# 是否使用证书的方式进行paypal api对接（https ssl）
+				# 如果配置为true，那么必须在crt_file中配置证书地址。
+				# 默认不使用证书验证
+				'use_local_certs' => false,	
 				'crt_file' 	=> [
-					'www.sandbox.paypal.com' 	=>'@fecshop/services/payment/cert/paypal.crt',
-					'api-3t.sandbox.paypal.com' =>'@fecshop/services/payment/cert/api-3tsandboxpaypalcom.crt',
+					'www.paypal.com' 	=>'@fecshop/services/payment/cert/paypal.crt',
+					'api-3t.paypal.com' =>'@fecshop/services/payment/cert/api-3tsandboxpaypalcom.crt',
 				
 				],
 			],
@@ -83,7 +87,12 @@ return [
 
 ### 设置paypal
 
-首先需要下载证书，我本地是沙盒环境，下载的是沙盒环境的证书：
+默认是不需要使用证书的，也就是 use_local_certs 设置为false
+
+如果您为了更加安全，想使用证书的方式，那么设置 use_local_certs 为true，
+下面是详细步骤（如果您use_local_certs 设置为false，则不需要操作下面的步骤）：
+
+首先需要下载证书，我本地是沙盒环境，下载的是沙盒环境的证书：首先需要下载证书，我本地是沙盒环境，下载的是沙盒环境的证书：首先需要下载证书，我本地是沙盒环境，下载的是沙盒环境的证书：首先需要下载证书，我本地是沙盒环境，下载的是沙盒环境的证书：
 
 #### 1. `www.sandbox.paypal.com`
 ,打开火狐浏览器访问地址：https://www.sandbox.paypal.com/cgi-bin/webscr，

@@ -36,7 +36,7 @@ FecShop 使用说明
 *  [Fecshop cron脚本](fecshop_cron_script.md)
 *  [Fecshop 验证码](fecshop_yzm.md)
 *  [Fecshop 缓存](fecshop_cache.md)
-
+*  [Fecshop 搜索](fecshop_search.md)
 
 
 
