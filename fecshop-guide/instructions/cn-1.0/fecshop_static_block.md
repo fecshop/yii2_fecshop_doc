@@ -22,7 +22,16 @@ Fecshop 静态块
 其中，{{imgBaseUrl}}为 对应的文件路径为@appimage/app入口名/
 
 
+### 使用方法
 
+1.首先在后台新建一个static block，譬如key为home-big-img
 
+2.在代码中调用
 
+```
+Yii::$service->cms->staticblock->getStoreContentByIdentify('home-big-img','appfront')
+```
+
+第一个参数为key，第二个参数为入口的名字，这个参数的作用
+是为了生成url（域名部分）。
 

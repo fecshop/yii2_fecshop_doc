@@ -25,7 +25,7 @@ return [
 			'zip'
 		],
 		#处理多少分钟后，支付状态为pending的订单，归还库存。
-		'minuteBeforeThatReturnPendingStock' 	=>  60,
+		'minuteBeforeThatReturnPendingStock' 	=>  600,
 		# 脚本一次性处理多少个pending订单。
 		'orderCountThatReturnPendingStock' 		=>  30,
 		# 订单状态配置
@@ -40,17 +40,33 @@ return [
 ];
 ```
 
-`increment_id` 为订单编号格式，
-`requiredAddressAttr` 为下单界面必填的字段
-`minuteBeforeThatReturnPendingStock` 这个是后台脚本，将pending（未支付的订单）
-的库存释放掉，这里的单位是分钟，如果您的库存是在erp中管理，如果没有库存
-可以通过采购部门采购的话，相当于您是0库存，可以不需要跑这个脚本。
-`orderCountThatReturnPendingStock` 这个后台脚本一次性处理多少个pending订单。
+`increment_id` ：为订单编号格式
+
+`requiredAddressAttr`： 为下单界面必填的字段
+
+`minuteBeforeThatReturnPendingStock`： 这个是下面的后台脚本
+（释放未付款订单库存的脚本）所用到的参数，将pending（未支付的订单）
+的库存释放掉，这里的单位是分钟，如果您的库存为零库存（
+零库存指的是，如果没有库存
+可以通过采购部门采购，相当于您不需要考虑库存），可以不需要跑这个脚本。
+
+`orderCountThatReturnPendingStock`： 这个后台脚本一次性处理多少个pending订单。
+
+> **注意**：通过脚本将pending的库存返还给产品后，订单的状态将会变成取消状态，
+> 订单取消状态，是无法进行支付的，因此，`minuteBeforeThatReturnPendingStock`
+> 尽量设置的大一些，我设置的默认为10个小时，对于零库存商城
+> （也就是产品库存为0没有关系，可以继续卖，然后采购部门去采购，这属于零库存模式），
+> 这种模式可以批量将产品的所有库存设置的非常大，下面的这个脚本也不需要跑。
+> ，下面的这个脚本就是根据上面设置的参数来处理pending状态订单，释放产品库存的脚本。
 
 
-#### 释放未付款订单库存的脚本
+### 释放未付款订单库存的脚本
 
 文件为： `@fecshop/shell/order/returnPendingProductQtyStock.sh`
+，来与通过上面的参数`orderCountThatReturnPendingStock` 和
+`minuteBeforeThatReturnPendingStock`来配置脚本的参数
+
+### 订单支付状态的进一步验证
 
 如果您感觉还是不放心，订单传递到erp进行发货处理的时候，加入一层付款成功验证，
 譬如paypal，您可以去官方网站下载付款成功的订单，也就是csv表格
@@ -58,7 +74,7 @@ return [
 另外还需要验证一下货币和金额。
 
 
-#### 下单后购物车的清空：
+### 下单后购物车的清空：
 
 游客用户下单后，购物车是不清空的，支付成功后返回网站再清空购物车产品
 

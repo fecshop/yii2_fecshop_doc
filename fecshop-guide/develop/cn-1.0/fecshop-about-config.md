@@ -42,7 +42,7 @@ mongodb默认是没有密码的，您可以将mongodb的端口在iptables添加�
 
 4、配置环境
 
-4.1 添加host
+4.1 添加host（本地需要配置，如果是线上服务器就不需要了）
 
 打开C:\Windows\System32\drivers\etc\hosts，添加如下代码（如果是其他IP，将
 127.0.0.1 替换成其他IP即可。）：
@@ -64,28 +64,29 @@ mongodb默认是没有密码的，您可以将mongodb的端口在iptables添加�
 ```
 
 
-4.2、配置nginx
+4.2、配置nginx，注意下面的  `**fecshop**` 代表fecshop的相对根目录的文件路径，
+请根据自己安装的文件路径填写。
 
 ```
-appfront.fecshoptest.com appfront.fecshoptest.es 指向 fecshop/appfront/web 
+appfront.fecshoptest.com appfront.fecshoptest.es 指向 **fecshop**/appfront/web 
  
-appadmin.fecshoptest.com 指向fecshop/appadmin/web
+appadmin.fecshoptest.com 指向 **fecshop**/appadmin/web
 
-apphtml5.fecshoptest.com 指向fecshop/apphtml5/web
+apphtml5.fecshoptest.com 指向 **fecshop**/apphtml5/web
 
-appapi.fecshoptest.com 	 指向fecshop/appapi/web
+appapi.fecshoptest.com 	 指向 **fecshop**/appapi/web
 
-appserver.fecshoptest.com 指向fecshop/appserver/web
+appserver.fecshoptest.com 指向 **fecshop**/appserver/web
 
-img.fecshoptest.com 	指向fecshop/appimage/common
+img.fecshoptest.com 	指向 **fecshop**/appimage/common
 
-img2.fecshoptest.com 	指向fecshop/appimage/appadmin
+img2.fecshoptest.com 	指向 **fecshop**/appimage/appadmin
 
-img3.fecshoptest.com 	指向fecshop/appimage/appfront
+img3.fecshoptest.com 	指向 **fecshop**/appimage/appfront
 
-img4.fecshoptest.com 	指向fecshop/appimage/apphtml5
+img4.fecshoptest.com 	指向 **fecshop**/appimage/apphtml5
 
-img5.fecshoptest.com 	指向fecshop/appimage/appserver
+img5.fecshoptest.com 	指向 **fecshop**/appimage/appserver
 
 ```
 
@@ -247,7 +248,7 @@ return [
 ```
 
 您可能会问，为什么要给图片配置域名，图片和网站使用一个域名不就可以吗？
-原因：浏览器加载页面的时候，每一个域名加载的链接个数是有限制的，把
+原因：浏览器加载页面的时候，每一个域名加载的链接的并发个数是有限制的，把
 图片使用不同的域名，可以让图片独立加载，加快页面的加载。
 
 
@@ -296,14 +297,64 @@ mongodb的示例数据存放路径为：
 
 可以通过mongodb的后台，或者通过php的rockmongo安装这些mongodb中的示例数据。
 
-mongodb的示例数据产品图片比较大，没有放到版本库里面，你可以到百度云盘下载`appimage.zip`，下载地址为：`https://pan.baidu.com/s/1kVwRD2Z`
-如果覆盖图片后，将appimage覆盖到根目录即可，覆盖后，如果发现产品图片没有出来，那么您需要清空 `appimage/common/media/catalog/product/cache/*`下面所有文件和文件夹，
+很多人对mongodb的使用不是很熟悉，mongodb作为nosql数据库，
+在国内其实很流行，很多公司都有使用
+
+通过mongodb命令的方式导入
+
+`fecshop_test`为mongodb的数据库名字，请改成您的数据库的名字。
+
+```
+mongorestore -d fecshop_test /www/web/develop/fecshop/vendor/fancyecommerce/fecshop/migrations/mongodb-example-data/fecshop_test
+```
+
+
+9.3产品图片
+
+对于产品的示例数据 对应的图片文件比较大，没有放到版本库里面，你可以到百度云盘下载`appimage.zip`，下载地址为：`https://pan.baidu.com/s/1kVwRD2Z`
+将appimage覆盖到根目录即可，覆盖后，如果发现产品图片没有出来，那么您需要清空 `appimage/common/media/catalog/product/cache/*`下面所有文件和文件夹，
 清空浏览器图片缓存，重新刷新页面即可。
+
+9.4产品搜索
+
+对于产品搜索，中文搜索需要安装xunSearch，英文用的是mongodb 的 full text search，
+[xunSearch安装教程](http://www.fancyecommerce.com/2016/09/24/xunsearch-安装，使用/)
+,安装完成后，需要跑脚本同步到搜索工具中，命令行如下：
+
+```
+cd vendor/fancyecommerce/fecshop/shell/search
+sh fullSearchSync.sh
+```
+
+[Fecshop搜索详细文档](http://www.fecshop.com/doc/fecshop-guide/instructions/cn-1.0/guide-fecshop_search.html#)
+ 
 
 10、开启nginx  mysql  mongodb  php，你就可以访问本地配置的fecshop了。
 
-11、如果是线上，需要开启一些脚本。
+
+11、后台的账户密码为： admin  admin123（如果不对，就是123456）
+
+12、如果是线上，需要开启一些脚本。
 
 详细参看：[Fecshop 脚本介绍](http://www.fecshop.com/doc/fecshop-guide/instructions/cn-1.0/guide-fecshop_cron_script.html)
+
+13、其他（非必要）
+
+13.1开启单文件配置
+
+fecshop的配置最终是由N个配置php文件合并而成，在每次初始化
+前执行，为了加速，可以先把配置文件合并成单文件，然后在加载
+就会比较节省资源。
+
+入口文件@app/web/index.php 代码： `$use_merge_config_file = false;` 处设置。
+fecshop 使用合并配置（config）数组进行加速，true 代表打开。
+打开配置加速开关前，您需要执行 http://www.domain.com/index-merge-config.php 进行生成单文件配置数组。
+注意：打开后，当您修改了配置，都需要重新生成单文件配置数组，否则修改的配置不会生效,
+建议：本地开发环境关闭，开发环境如果访问量不大，关闭也行，如果访问量大，建议打开
+
+参考资料：[yii2 配置加速 – N个配置文件生成一个配置文件](http://www.fancyecommerce.com/2017/04/10/yii2-%E9%85%8D%E7%BD%AE%E5%8A%A0%E9%80%9F-n%E4%B8%AA%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AA%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/)
+
+
+
 
 

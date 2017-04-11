@@ -186,7 +186,7 @@ rock mongo访问地址：rock.fecshoptest.com    账号：admin  密码：123456
 
 phpmyadmin访问地址: my.fecshoptest.com      账号：root   密码：123456
 
-后台端地址：appadmin.fecshoptest.com访问后，后台的用户名和密码为admin  123456
+后台端地址：appadmin.fecshoptest.com访问后，后台的用户名和密码为admin  123456（如果密码不对，就试试admin123）
 ```
 
 
