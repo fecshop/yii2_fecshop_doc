@@ -312,8 +312,26 @@ mongorestore -d fecshop_test /www/web/develop/fecshop/vendor/fancyecommerce/fecs
 9.3产品图片
 
 对于产品的示例数据 对应的图片文件比较大，没有放到版本库里面，你可以到百度云盘下载`appimage.zip`，下载地址为：`https://pan.baidu.com/s/1kVwRD2Z`
-将appimage覆盖到根目录即可，覆盖后，如果发现产品图片没有出来，那么您需要清空 `appimage/common/media/catalog/product/cache/*`下面所有文件和文件夹，
+将appimage覆盖到根目录即可，覆盖后，
+设置一下文件可写可读：
+
+```
+chmod 777 -R  appimage
+```
+
+如果发现产品图片没有出来，那么您需要清空 `appimage/common/media/catalog/product/cache/*`下面所有文件和文件夹，
+
+```
+cd appimage/common/media/catalog/product/cache/
+pwd
+rm -rf ./*
+```
+
+上面使用了rm -rf命令，一定要谨慎，pwd看看是否进入了相关文件夹，看好文件路径是否正确，在执行删除，以免造成删除
+了其他文件。
+
 清空浏览器图片缓存，重新刷新页面即可。
+
 
 9.4产品搜索
 
@@ -338,9 +356,11 @@ sh fullSearchSync.sh
 
 详细参看：[Fecshop 脚本介绍](http://www.fecshop.com/doc/fecshop-guide/instructions/cn-1.0/guide-fecshop_cron_script.html)
 
-13、其他（非必要）
 
-13.1开启单文件配置
+
+二：其他
+
+1.开启单文件配置（非必要）
 
 fecshop的配置最终是由N个配置php文件合并而成，在每次初始化
 前执行，为了加速，可以先把配置文件合并成单文件，然后在加载
@@ -355,6 +375,8 @@ fecshop 使用合并配置（config）数组进行加速，true 代表打开。
 参考资料：[yii2 配置加速 – N个配置文件生成一个配置文件](http://www.fancyecommerce.com/2017/04/10/yii2-%E9%85%8D%E7%BD%AE%E5%8A%A0%E9%80%9F-n%E4%B8%AA%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AA%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/)
 
 
+2.上线注意的问题
 
+对于上线，您需要做一些线上的配置，这些可以参看[上线前的配置](http://www.fecshop.com/doc/fecshop-guide/instructions/cn-1.0/guide-fecshop_online_config.html)
 
 

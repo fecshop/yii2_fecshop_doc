@@ -39,18 +39,62 @@ return [
 
 您只要配置完上面的文件，就把smtp配置好了。
 
-### 邮件模板配置
+### 邮件选择smtp配置
 
 fecshop的配置文件为：`@fecshop/config/services/Email.php`
 
 在邮件模板里面可以指定使用上面配置文件中的mailerConfig里面的
 `数组key`，譬如`default`。
 
+在customer子服务中就可以设置，譬如：
 
-以`Yii::$service->email->customer`为例，里面的`mailerConfig`
-可以使用上面配置的值，譬如下面配置中使用的`'mailerConfig'  => 'default'`
+```
+'login' => [
+			'enable' => true,
+			# 邮件内容的动态数据提供部分
+			'widget'		=> 'fecshop\services\email\widgets\customer\account\login\Body',
+			# 邮件内容的view部分
+			'viewPath' 	=> '@fecshop/services/email/views/customer/account/login',
+			# 如果不定义 mailerConfig，则会使用email service里面的默认配置
+			'mailerConfig'  => 'default',
+		],
+```
 
 
+### 公用配置
+
+对于邮件里面会出现一些store方面的公用配置,在配置文件中可以看到
+
+```
+		//公用配置
+		'mailerInfo'	=> [
+			#在邮件中显示的Store的名字
+			'storeName' 	=> 'FecShop',
+			# 在邮件中显示的电话
+			'phone'			=> 'xxxxxxxxxx',
+			# 在邮件中显示的联系邮箱地址。
+			'contacts'	=> [
+				'emailAddress' => '2358269014@qq.com',
+			],
+			
+		],
+```
+
+修改成您自己的信息即可.
+
+**注意**：不要在 vendor/fancyecommerce下面修改任何文件，
+对配置的更改，您应该在您的配置目录下添加，
+譬如您可以在 @appfront/config/fecshop_local_services/Email.php 下面
+添加配置，在系统初始化的时候，高优先级的配置会覆盖fecshop的配置。
+
+### 邮件模板：
+
+在文件 `@fecshop/config/services/Email.php`中对
+子服务 customer 里面，有很多邮件模板的配置
+
+`viewPath` 就是邮件模板html部分 ， `widget`是动态数据提供部分。
+
+譬如:
 
 ```
 'customer' => [

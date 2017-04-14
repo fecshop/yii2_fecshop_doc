@@ -28,10 +28,10 @@ Fecshop 服务（Service）
 *  [Fecshop 服务使用](fecshop-service-use.md)
 
 
-
-
-
-
+Fecshop 二开扩展
+----------------
+*  [Fecshop 后台配置](fecshop-admin-config.md)
+*  [Fecshop 重写功能](fecshop-rewrite-func.md)
 
 
 
