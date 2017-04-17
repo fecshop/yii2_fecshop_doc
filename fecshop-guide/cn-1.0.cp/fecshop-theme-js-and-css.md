@@ -7,7 +7,7 @@ js 和 css 的重写和view ，layout类似，也是通过
 ### 1. fecshop如何添加js和css
 
 在layout.php文件的顶部可以看到代码，譬如：
-譬如：@fecshop/app/appfront/theme/base/front/layouts/home.php
+譬如：`@fecshop/app/appfront/theme/base/front/layouts/home.php`
 
 ```
 
@@ -66,16 +66,19 @@ $cssOptions = [
 	
 ```
 
-每一个layout文件，都可以自定义当前的js和css文件。
+每一个layout文件，都可以自定义当前的js和css文件
+,js和css的文件是放到模板路径下的assets文件夹下面.
 
-js和css的文件是放到模板路径下的assets文件夹下面，如果要重写css或者js，
-只需要在高优先级的模板路径下创建js或者css文件即可。
 
-譬如：我想要重写 js文件：@fecshop/app/appfront/theme/base/front/assets/js/js.js
+### 重写css或者js：
 
-如果本地模板路径为：@appfront/theme/terry/theme01，
-那么，新建文件 @appfront/theme/terry/theme01/assets/js/js.js 即可，
-在加载js的文件，就会加载 @appfront/theme/terry/theme01/assets/js/js.js，
+如果要重写css或者js，只需要在高优先级的模板路径下创建js或者css文件即可。
+
+譬如：我想要重写 js文件：`@fecshop/app/appfront/theme/base/front/assets/js/js.js`
+
+如果本地模板路径为：`@appfront/theme/terry/theme01`，
+那么，新建文件 `@appfront/theme/terry/theme01/assets/js/js.js` 即可，
+在加载js的文件，就会加载 `@appfront/theme/terry/theme01/assets/js/js.js`，
 这样就完成了js文件的重写。
 
 

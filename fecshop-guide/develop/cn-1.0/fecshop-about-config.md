@@ -7,7 +7,7 @@ Fecshop 初始配置
 1、配置 fecshop app advanced
 
 ```
-在common/main-local.php中配置mysql，mongodb，redis
+在common/config/main-local.php中配置mysql，mongodb，redis
 
 ```
 

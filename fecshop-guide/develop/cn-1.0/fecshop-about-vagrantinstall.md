@@ -94,7 +94,7 @@ box地址在百度云盘，下载地址为：[百度云盘vagrant box 下载地�
 ```
 c:\Users\lenovo>d:
 
-D:\>cd vagrant_lib\package
+D:\>cd vagrant_lib
 
 D:\vagrant_lib>vagrant box add fecshop package.box
 
