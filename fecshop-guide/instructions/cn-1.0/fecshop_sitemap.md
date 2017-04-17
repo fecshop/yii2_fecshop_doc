@@ -5,7 +5,7 @@ Fecshop SiteMap
 
 ### 配置文件
 
-配置文件为：`@fecshop/config/services/Sitemap.php`,您可以通过配置的方式
+配置文件为：`@console/config/fecshop_local_services/Sitemap.php`,您可以通过配置的方式
 对该配置文件进行重写。
 
 ```
@@ -22,27 +22,27 @@ return [
 			'appfront' => [
 				# store的key(域名)，
 				'fecshop.appfront.fancyecommerce.com' => [
-					'https'			=> false,  # false代表使用http，true代表使用https			
+					'https'			=> true,  # false代表使用http，true代表使用https			
 					'sitemapDir' 	=> '@appfront/web/sitemap.xml', # sitemap存放的地址
-					'showScriptName'=> true,	# 是否显示index.php ，譬如http://www.fecshop.com/index.php/xxxxxx,当nginx没有设置重写，这里需要设置为true,这样url中会存在index.php，否则会404
+					'showScriptName'=> false,	# 是否显示index.php ，譬如http://www.fecshop.com/index.php/xxxxxx,当nginx没有设置重写，这里需要设置为true,这样url中会存在index.php，否则会404
 												# 这个设置对seo来说，设置为false最合适，也就是隐藏 url中index.php ，这种设置需要开启nginx的url重写
 				],
 				# store的key(域名)
 				'fecshop.appfront.fancyecommerce.com/fr' => [
-					'https'			=> false,  # false代表使用http，true代表使用https			
+					'https'			=> true,  # false代表使用http，true代表使用https			
 					'sitemapDir' 	=> '@appfront/web/fr/sitemap.xml', # sitemap存放的地址
-					'showScriptName'=> true,
+					'showScriptName'=> false,
 				],
 				
 				'fecshop.appfront.es.fancyecommerce.com' => [
-					'https'			=> false,  # false代表使用http，true代表使用https			
+					'https'			=> true,  # false代表使用http，true代表使用https			
 					'sitemapDir' 	=> '@appfront/web/sitemap_es.xml',
-					'showScriptName'=> true,
+					'showScriptName'=> false,
 				],
 				'fecshop.appfront.fancyecommerce.com/cn' => [
-					'https'			=> false,  # false代表使用http，true代表使用https			
-					'sitemapDir' 	=> '@appfront/web/sitemap_cn.xml',
-					'showScriptName'=> true,
+					'https'			=> true,  # false代表使用http，true代表使用https			
+					'sitemapDir' 	=> '@appfront/web/cn/sitemap.xml',
+					'showScriptName'=> false,
 				],
 			]
 		],
