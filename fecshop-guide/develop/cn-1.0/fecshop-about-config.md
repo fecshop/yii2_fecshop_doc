@@ -291,22 +291,19 @@ mongodb(导入mongodb的表，数据，索引):
 
 9.2、测试数据安装：
 
-mongodb的示例数据存放路径为：
 
-`./vendor/fancyecommerce/fecshop/migrations/mongodb-example-data/example_data.js`
+下载地址为：[测试mongodb数据库js数据](https://pan.baidu.com/s/1kVwRD2Z) ， 
+进入后打开文件夹，下载 mongo-fecshop_test-20170419-065157.js即可
 
-可以通过mongodb的后台，或者通过php的rockmongo安装这些mongodb中的示例数据。
-
-很多人对mongodb的使用不是很熟悉，mongodb作为nosql数据库，
-在国内其实很流行，很多公司都有使用
-
-通过mongodb命令的方式导入
-
-`fecshop_test`为mongodb的数据库名字，请改成您的数据库的名字。
+然后把该文件上传到您的系统中，譬如，我放到了该路径下:/www/restore/mongo-fecshop_test-20170419-065157.js
 
 ```
-mongorestore -d fecshop_test /www/web/develop/fecshop/vendor/fancyecommerce/fecshop/migrations/mongodb-example-data/fecshop_test
+mongo 127.0.0.1:27017/fecshop --quiet /www/restore/mongo-fecshop_test-20170419-065157.js
 ```
+
+`127.0.0.1:27017/fecshop`  27017为mongodb的默认端口，fecshop为数据库.
+
+执行上面的命令，会把数据导入到mongodb的fecshop数据库中。
 
 
 9.3产品图片

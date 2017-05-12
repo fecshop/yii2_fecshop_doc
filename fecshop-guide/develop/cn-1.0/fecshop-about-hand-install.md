@@ -51,11 +51,15 @@ composer self-update
 
 ```
 composer global require "fxp/composer-asset-plugin:^1.2.0"
-composer create-project fancyecommerce/fecshop-app-advanced  fecshop 1.0.1.9
+composer create-project fancyecommerce/fecshop-app-advanced  fecshop 1.0.2.2
 cd fecshop
 composer update    
 ./init
 ```
+
+如果上面安装很慢，那么您可以使用[composer 中国镜像](https://pkg.phpcomposer.com/)
+
+具体的使用方法可以参看我整理的文档：[composer 默认地址改为中国镜像地址，以及中国镜像地址还原成默认地址](http://www.fancyecommerce.com/2017/04/19/composer-%E9%BB%98%E8%AE%A4%E5%9C%B0%E5%9D%80%E6%94%B9%E4%B8%BA%E4%B8%AD%E5%9B%BD%E9%95%9C%E5%83%8F%E5%9C%B0%E5%9D%80%EF%BC%8C%E4%BB%A5%E5%8F%8A%E4%B8%AD%E5%9B%BD%E9%95%9C%E5%83%8F%E5%9C%B0%E5%9D%80/)
 
 
 执行完上面，就安装完成了。你可以点击这里进行下一步，

@@ -27,6 +27,10 @@ Fecshop 服务（Service）
 *  [Fecshop 服务原理](fecshop-service-abc.md)
 *  [Fecshop 服务使用](fecshop-service-use.md)
 
+Fecshop Api（接口）
+----------------------
+*  [Fecshop Api](fecshop-api.md)
+
 
 Fecshop 二开扩展
 ----------------
