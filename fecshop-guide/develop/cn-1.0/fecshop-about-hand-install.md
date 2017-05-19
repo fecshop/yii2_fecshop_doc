@@ -51,11 +51,13 @@ composer self-update
 
 ```
 composer global require "fxp/composer-asset-plugin:^1.2.0"
-composer create-project fancyecommerce/fecshop-app-advanced  fecshop 1.0.2.2
+composer create-project fancyecommerce/fecshop-app-advanced  fecshop 1.0.2.3
 cd fecshop
 composer update    
 ./init
 ```
+
+注意：一定要执行`composer update` ，不少朋友没有执行，导致版本太低，报错。
 
 如果上面安装很慢，那么您可以使用[composer 中国镜像](https://pkg.phpcomposer.com/)
 

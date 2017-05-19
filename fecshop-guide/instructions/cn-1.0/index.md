@@ -42,6 +42,7 @@ FecShop 使用说明
 *  [Fecshop 后台编辑器](fecshop_admin_edit.md)
 *  [Fecshop 事件Event](fecshop_event.md)
 *  [Fecshop 配置加速](fecshop_config_speed.md)
+*  [Fecshop Log日志](fecshop_log.md)
 
 线上问题：
 ---------
