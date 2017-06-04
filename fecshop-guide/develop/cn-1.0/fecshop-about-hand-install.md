@@ -32,6 +32,7 @@ Linux作为开发环境，线上线下同样的配置，会省略去很多线下
 需要安装mongodb php mysq等等，详情参看文章：
 [Fecshop 环境部署 以及 安装步骤](http://www.fancyecommerce.com/2017/03/06/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/)
 
+**注意**：redis版本一定要高，2.2.7一下的版本是不行的，不支持php-redis，建议安装2.8+的版本。
 
 
 2、安装 fecshop app advanced
