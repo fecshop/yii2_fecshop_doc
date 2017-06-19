@@ -26,6 +26,16 @@ Linux作为开发环境，线上线下同样的配置，会省略去很多线下
 环境配置部分：
 -----------
 
+**一定要按照下面的步骤按照**
+
+**一定要按照下面的步骤按照**
+
+**一定要按照下面的步骤按照**
+
+**重要的事情说三遍**
+
+**如果不按照下面的步骤安装出现问题，请不要
+去论坛发帖求助，浪费大家时间。**
 
 1、Linux环境配置：
 
@@ -51,12 +61,14 @@ composer self-update
 安装fecshop app advanced
 
 ```
-composer global require "fxp/composer-asset-plugin:^1.2.0"
-composer create-project fancyecommerce/fecshop-app-advanced  fecshop 1.0.2.5
+composer global require "fxp/composer-asset-plugin:^1.3.1"
+composer create-project fancyecommerce/fecshop-app-advanced  fecshop 1.0.3.1
 cd fecshop
 composer update    
 ./init
 ```
+
+如果报错：jquery.inputmask包找不到，可以参看这里的解决：http://www.fecshop.com/topic/58
 
 注意：一定要执行`composer update` ，不少朋友没有执行，导致版本太低，报错。
 

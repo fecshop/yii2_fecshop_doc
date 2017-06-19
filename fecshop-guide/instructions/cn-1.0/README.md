@@ -45,6 +45,7 @@ FecShop 使用说明
 *  [Fecshop Log日志](fecshop_log.md)
 *  [Fecshop 事务](fecshop_transaction.md)
 *  [Fecshop 消息MQ](fecshop_amqp.md)
+*  [Fecshop 产品图片](fecshop_product_image.md)
 
 线上问题：
 ---------

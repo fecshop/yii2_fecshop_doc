@@ -103,11 +103,32 @@ img5.fecshoptest.com 	指向 **fecshop**/appimage/appserver
 在文件：`@common\config\fecshop_local_services\Page.php`
 
 
+**注意：**
+
+`@`是Yii2框架的一个语法，是一个`namespaces`的名字，
+在后面的文档中会多次出现。
+
+`@app` : 指的是入口代称，这个也是Yii2中使用的代称，指的是执行入口，譬如：
+pc端入口为 @appfront，也就是根目录的appfront文件夹，
+wap端入口为 @apphtml5， 也就是根目录的apphtml5文件夹。
+
+
+`@fecshop` 指的是  vendor/fancyecommerce/fecshop 文件夹路径
+
+`@fec` 指的是 vendor/fancyecommerce/fec 文件夹路径
+
+`@fecadmin` 指的是 vendor/fancyecommerce/fec_admin 文件夹路径
+
+`appadmin`,`appfront`,`appapi`,`apphtml5`,`appimage`,`appserver`,
+`common`,`console`, 指的都是根目录下面的文件夹。
+
 
 7、配置store的域名和图片的域名，您可以和我下面的示例代码一致，
 
 
 store在配置文件：`@app\config\fecshop_local_services\Store.php`
+
+对于初次配置，您可以只配置 @appfront 对于其他app入口，可以先不配置。
 
 譬如我的代码(您可以和我的保持一致，相应域名已经在上面添加host)：
 
@@ -192,14 +213,16 @@ store在配置文件：`@app\config\fecshop_local_services\Store.php`
 ];
 ```
 
-各个代码的具体含义，在注释中已经说明，关于第三方facebook和google登录，如何获取
+各个代码的具体含义，在注释中已经说明。
+
+第三方登录：facebook和google登录，（** 初始配置，可以先不管这个，后面在说**）如何获取
 CLIENT_ID，CLIENT_SECRET可以参看我的博文：
 [ facebook login 申请 app_id 和 app_secret](http://blog.csdn.net/terry_water/article/details/55095721) ，
 [ google login api 申请 CLIENT_SECRET 和 CLIENT_SECRET](http://blog.csdn.net/terry_water/article/details/55095209)
 
 如果您的各个语言使用了子域名（譬如cn.fecshop.com , fr.fecshop.com 等），由于子域名之间session默认是不能共享的，为了更好的共享session，让语言切换后，
 购物车和登录信息存在，您需要在入口文件index.php里面设置`session.cookie_domain`
-，大约在index.php第3行找到代码
+，大约在`@app/web/index.php`第3行找到代码
 
 ```
 #ini_set('session.cookie_domain', '.fancyecommerce.com'); //初始化域名，
@@ -250,7 +273,7 @@ return [
 您可能会问，为什么要给图片配置域名，图片和网站使用一个域名不就可以吗？
 原因：浏览器加载页面的时候，每一个域名加载的链接的并发个数是有限制的，把
 图片使用不同的域名，可以让图片独立加载，加快页面的加载。
-
+更多的信息参看[网站的图片，css，js 为什么要和网站的域名不一样](http://www.fancyecommerce.com/2017/04/17/%E7%BD%91%E7%AB%99%E7%9A%84%E5%9B%BE%E7%89%87%EF%BC%8Ccss%EF%BC%8Cjs-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%92%8C%E7%BD%91%E7%AB%99%E7%9A%84%E5%9F%9F%E5%90%8D%E4%B8%8D%E4%B8%80%E6%A0%B7/)
 
 
 8、配置是否强制复制assets到web目录，如果是开发环境，按照下面进行配置（可选配置，可以先不管这个）。
@@ -288,6 +311,9 @@ mongodb(导入mongodb的表，数据，索引):
 ```
 ./yii mongodb-migrate  --interactive=0 --migrationPath=@fecshop/migrations/mongodb
 ```
+
+如果Mongodb migrate报错：`PHP Compile Error 'yii\base\ErrorException' with message 'require_once(): Failed opening required 'Array/m170228_072455_fecshop_tables.php' (include_path='.:')'`
+可以参看这里解决：http://www.fecshop.com/topic/45
 
 9.2、测试数据安装：
 
@@ -352,7 +378,8 @@ sh fullSearchSync.sh
 12、如果是线上，需要开启一些脚本。
 
 详细参看：[Fecshop 脚本介绍](http://www.fecshop.com/doc/fecshop-guide/instructions/cn-1.0/guide-fecshop_cron_script.html)
-
+这个里面有一个测试环境也要跑的脚本：`@fecshop/shell/fullSearchSync.sh` ,
+这个脚本是将产品数据复制到搜索工具中，否则将无法进行搜索工作。
 
 
 二：其他

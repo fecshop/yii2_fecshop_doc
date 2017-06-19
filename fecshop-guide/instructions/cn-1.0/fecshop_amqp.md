@@ -12,8 +12,26 @@ queue的支持，需要安装rabbitMq和php amqp扩展
 
 1.2 [rabbitmq php 安装amqp扩展](http://www.fancyecommerce.com/2017/06/02/rabbitmq-php-%e5%ae%89%e8%a3%85amqp%e6%89%a9%e5%b1%95/)
 
-fecshop中使用了queue 组件，这是一个Yii2的扩展，地址为：https://github.com/zhuravljov/yii2-queue
-在fecshop中已经通过composer安装该组件,您不需要安装。
+1.3 安装  [Yii2 php-amqplib](https://github.com/zhuravljov/yii2-queue)扩展 ，您在根目录的composer.json
+中`require`部分添加代码` "php-amqplib/php-amqplib": "2.6.*"`
+和 `"php-amqplib/php-amqplib": "2.6.*"` 即可。
+即可
+
+```
+ "require": {
+    "php": ">=5.4.0",
+    "yiisoft/yii2": ">=2.0.6",
+    "yiisoft/yii2-bootstrap": "*",
+    "yiisoft/yii2-swiftmailer": "*",
+    "yiisoft/yii2-apidoc": "~2.0.0",
+    "fancyecommerce/fecshop": ">=1.1.3.1",
+    "php-amqplib/php-amqplib": "2.6.*",  
+    "zhuravljov/yii2-queue": "*"
+         
+},
+```
+
+然后执行 `composer update` ,安装。 
 
 ### 2.Mq的设置
 
