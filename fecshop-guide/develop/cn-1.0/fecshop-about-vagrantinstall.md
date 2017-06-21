@@ -138,7 +138,8 @@ vagrant up
 
 
 
-如果在出现ssh信息，后面有一些警告信息，可以不用理会，直接用ssh连接即可，如果出现其他报错，请查看文章：http://www.fancyecommerce.com/2016/09/22/vagrant-%E4%B8%8B%E8%BD%BD%E9%83%A8%E7%BD%B2linux%E7%8E%AF%E5%A2%83/，
+如果在出现ssh信息，后面有一些警告信息，可以不用理会，直接用ssh连接即可，如果出现其他报错，请查看文章：http://www.fancyecommerce.com/2016/09/22/vagrant-%E4%B8%8B%E8%BD%BD%E9%83%A8%E7%BD%B2linux%E7%8E%AF%E5%A2%83/ 
+，
 这里面有一些对vagrant报错的解决方案，如果出现其他的报错，请使用bing.com或者google搜搜。
 
 启动成功后，您就可以通过ssh连接了，注意ssh的端口为2222，而不是22，
@@ -208,16 +209,140 @@ appadmin.fecshoptest.com 访问后台web
     vagrant destroy  # 销毁当前虚拟机
 ```
 
+### 6.vagrant 常见问题以及方法
+
+1.在启动的时候报错：`default : warning: Authentication failure . Retrying...`
+
+这个没啥大问题，可以直接连接使用。
+
+2.vagrant的fecshop文件如何映射到本地？
+
+vagrant box安装后，在虚拟linux中的文件路径为/www/web/develop/fecshop
+，您可以先启动vagrant，将fecshop文件夹改下名字，譬如为：
+/www/web/develop/fecshop_cp，然后修改 Vagrantfile，内容如下：
+
+```
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+Vagrant.configure("2") do |config|
+  # The most common configuration options are documented and commented below.
+  # For a complete reference, please see the online documentation at
+  # https://docs.vagrantup.com.
+
+  # Every Vagrant development environment requires a box. You can search for
+  # boxes at https://atlas.hashicorp.com/search.
+  config.vm.box = "centos-6.6-x86_64"
+  config.vm.hostname = "dev"
+  config.ssh.username = "root"
+  config.ssh.password = "123456"
+  config.ssh.insert_key = "true"
+  config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
+  config.ssh.forward_agent = true
+  # Disable automatic box update checking. If you disable this, then
+  # boxes will only be checked for updates when the user runs
+  # `vagrant box outdated`. This is not recommended.
+  # config.vm.box_check_update = false
+
+  # Create a forwarded port mapping which allows access to a specific port
+  # within the machine from a port on the host machine. In the example below,
+  # accessing "localhost:8080" will access port 80 on the guest machine.
+   config.vm.network "forwarded_port", guest: 80, host: 80
+
+  # Create a private network, which allows host-only access to the machine
+  # using a specific IP.
+  ## config.vm.network "private_network", ip: "192.168.10.12"
+
+  # Create a public network, which generally matched to bridged network.
+  # Bridged networks make the machine appear as another physical device on
+  # your network.
+  ## config.vm.network "public_network"
+
+  # Share an additional folder to the guest VM. The first argument is
+  # the path on the host to the actual folder. The second argument is
+  # the path on the guest to mount the folder. And the optional third
+  # argument is a set of non-required options.
+  # config.vm.synced_folder "../data", "/vagrant_data"
+    config.vm.synced_folder "D:\\linux\\fecshop", "/www/web/develop/fecshop"
+  # Provider-specific configuration so you can fine-tune various
+  # backing providers for Vagrant. These expose provider-specific options.
+  # Example for VirtualBox:
+  #
+  config.vm.provider "virtualbox" do |vb|
+    # Display the VirtualBox GUI when booting the machine
+    # vb.gui = true
+    vb.name = "dev"
+    # Customize the amount of memory on the VM:
+    vb.memory = "2048"
+  end
+  #
+  # View the documentation for the provider you are using for more
+  # information on available options.
+
+  # Define a Vagrant Push strategy for pushing to Atlas. Other push strategies
+  # such as FTP and Heroku are also available. See the documentation at
+  # https://docs.vagrantup.com/v2/push/atlas.html for more information.
+  # config.push.define "atlas" do |push|
+  #   push.app = "YOUR_ATLAS_USERNAME/YOUR_APPLICATION_NAME"
+  # end
+
+  # Enable provisioning with a shell script. Additional provisioners such as
+  # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
+  # documentation for more information about their specific syntax and use.
+  # config.vm.provision "shell", inline: <<-SHELL
+  #   apt-get update
+  #   apt-get install -y apache2
+  # SHELL
+end
+
+```
+
+把上面的内容复制到您的`Vagrantfile`中，下面是对该配置文件中的解释。
+
+下面的这个部分是对centos的一些定义，譬如下面配置的root账户密码等
+
+```
+config.vm.box = "centos-6.6-x86_64"
+  config.vm.hostname = "dev"
+  config.ssh.username = "root"
+  config.ssh.password = "123456"
+  config.ssh.insert_key = "true"
+  config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
+  config.ssh.forward_agent = true
+```
+
+`config.vm.network "forwarded_port", guest: 80, host: 80` : 端口映射配置，
+将vagrant的80映射到本地的80
+，这里要注意，要把本地的占用80端口的东西给关掉。
+
+`config.vm.network "private_network", ip: "192.168.10.12"` : 默认给注释了。
+这个是映射ip，如果注释这个代码，linux的ip为`127.0.0.1`
+
+`config.vm.synced_folder "D:\\linux\\fecshop", "/www/web/develop/fecshop"`:
+这个是地址映射，将window的 `D:\\linux\\fecshop` 挂载到
+linux的`/www/web/develop/fecshop`中，这里需要注意的是，如果linux中存在
+一个文件夹 /www/web/develop/fecshop，那么，按照上面的配置后重启vagrant
+，则linux文件夹将无法访问，访问的是当前配置
+的文件夹（就是"D:\\linux\\fecshop"），因此，在上面，我们先把vagrant中的`/www/web/develop/fecshop`改为`/www/web/develop/fecshop_cp`。
+然后在做上面的配置
+
+在window需要新建文件夹：`"D:\\linux\\fecshop"`
 
 
+配置完成后，重启vagrant，shell连接进入linux，然后执行
 
+```
+\cp -rf /www/web/develop/fecshop_cp/. /www/web/develop/fecshop/
+```
 
-
-
-
-
-
-
+即可，然后在 `D:\\linux\\fecshop` 就可以看到相应的文件了，
+然后用phpstorm加载这里的文件即可，当`D:\\linux\\fecshop`中的文件被改动
+，linux中 `/www/web/develop/fecshop/` 就会改动，因为这属于磁盘挂载类型，
+这样就可以愉快的做开发了。
 
 
 

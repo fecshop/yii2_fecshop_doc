@@ -24,6 +24,8 @@ FecShop 使用说明
 *  [Fecshop 分类](fecshop_category.md)
 
 *  [Fecshop 产品](fecshop_product.md)
+*  [Fecshop 产品图片](fecshop_product_image.md)
+*  [Fecshop 库存](fecshop_stock.md)
 *  [Fecshop 评论](fecshop_product_review.md)
 *  [Fecshop 购物车](fecshop_cart.md)
 *  [Fecshop 优惠券](fecshop_coupon.md)
@@ -45,7 +47,6 @@ FecShop 使用说明
 *  [Fecshop Log日志](fecshop_log.md)
 *  [Fecshop 事务](fecshop_transaction.md)
 *  [Fecshop 消息MQ](fecshop_amqp.md)
-*  [Fecshop 产品图片](fecshop_product_image.md)
 
 线上问题：
 ---------
