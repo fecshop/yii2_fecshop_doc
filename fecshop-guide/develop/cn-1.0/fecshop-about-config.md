@@ -317,11 +317,12 @@ mongodb(导入mongodb的表，数据，索引):
 
 9.2、测试数据安装：
 
+测试数据下载地址为：[测试mongodb数据库js数据](https://pan.baidu.com/s/1kVwRD2Z) ， 
+进入后下载文件夹：fecshop数据测试包 ，这个文件夹里面所有的文件。
 
-下载地址为：[测试mongodb数据库js数据](https://pan.baidu.com/s/1kVwRD2Z) ， 
-进入后打开文件夹，下载 mongo-fecshop_test-20170419-065157.js即可
+9.2.1、导入mongodb测试数据
 
-然后把该文件上传到您的系统中，譬如，我放到了该路径下:/www/restore/mongo-fecshop_test-20170419-065157.js
+上面下载的文件夹中的文件`mongo-fecshop_test-20170419-065157.js`上传到您的系统中，譬如，我放到了该路径下:/www/restore/mongo-fecshop_test-20170419-065157.js
 
 ```
 mongo 127.0.0.1:27017/fecshop --quiet /www/restore/mongo-fecshop_test-20170419-065157.js
@@ -331,8 +332,13 @@ mongo 127.0.0.1:27017/fecshop --quiet /www/restore/mongo-fecshop_test-20170419-0
 
 执行上面的命令，会把数据导入到mongodb的fecshop数据库中。
 
+> 对于导出，可以直接用rockmongo的库导出功能直接导出js文件。
 
-9.3产品图片
+9.2.2、导入mysql测试数据（产品库存在mysql中）
+
+把`mysql_fecshop.sql` 导入到mysql中，导入mysql，这个大家都知道，这个就不说了。可以用phpmyadmin导入。
+
+9.2.3、产品图片
 
 对于产品的示例数据 对应的图片文件比较大，没有放到版本库里面，你可以到百度云盘下载`appimage.zip`，下载地址为：`https://pan.baidu.com/s/1kVwRD2Z`
 将appimage覆盖到根目录即可，覆盖后，
@@ -350,13 +356,13 @@ pwd
 rm -rf ./*
 ```
 
-上面使用了rm -rf命令，一定要谨慎，pwd看看是否进入了相关文件夹，看好文件路径是否正确，在执行删除，以免造成删除
+上面使用了**rm -rf命令，一定要谨慎**，pwd看看是否进入了相关文件夹，看好文件路径是否正确，在执行删除，以免造成删除
 了其他文件。
 
 清空浏览器图片缓存，重新刷新页面即可。
 
 
-9.4产品搜索
+9.3产品搜索
 
 对于产品搜索，中文搜索需要安装xunSearch，英文用的是mongodb 的 full text search，
 [xunSearch安装教程](http://www.fancyecommerce.com/2016/09/24/xunsearch-安装，使用/)

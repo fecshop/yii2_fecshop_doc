@@ -47,6 +47,8 @@ Linux作为开发环境，线上线下同样的配置，会省略去很多线下
 
 2、安装 fecshop app advanced
 
+** 可能浏览器存在缓存，导致内容不是最新内容，因此，可以频繁多次刷新下页面，让其不读取浏览器缓存，而是读取最新的内容**
+
 安装这个扩展的首选方式是通过 [composer](http://getcomposer.org/download/).
 
 安装composer
@@ -62,7 +64,7 @@ composer self-update
 
 ```
 composer global require "fxp/composer-asset-plugin:^1.3.1"
-composer create-project fancyecommerce/fecshop-app-advanced  fecshop 1.0.3.1
+composer create-project fancyecommerce/fecshop-app-advanced  fecshop 1.0.3.3
 cd fecshop
 composer update    
 ./init
