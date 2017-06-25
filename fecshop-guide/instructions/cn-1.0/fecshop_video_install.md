@@ -1,0 +1,71 @@
+Fecshop 安装视频
+================
+
+> fecshop对技术初学者的安装有一定的难度，因此做了一下安装视频
+> ,视频还是陆续制作上传中。
+
+
+### 1. 虚拟Linux环境
+
+1.1 Vagrant + Virtual box 安装linux环境
+
+优酷观看地址： [1.vagrant搭建linux虚拟机](http://v.youku.com/v_show/id_XMjg0NzAwMTM2MA==.html?spm=a2h3j.8428770.3416059.1)  
+
+百度云盘地址： [1.vagrant搭建linux虚拟机.avi](http://pan.baidu.com/s/1skUvhU1#list/path=%2F%E8%A7%86%E9%A2%91%2F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA) 
+
+
+### 2.在linux上面安装相应的软件
+
+下面安装的软件，可以去官网下载，也可以去我的百度云盘下载，
+下载地址为：http://pan.baidu.com/s/1b63eXo#list/path=%2F
+
+2.1 安装mysql
+
+优酷观看地址： 
+
+百度云盘地址：[2.Linux下安装mysql.avi](http://pan.baidu.com/s/1skUvhU1#list/path=%2F%E8%A7%86%E9%A2%91%2F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA) 
+
+2.2 安装php.avi
+
+优酷观看地址： 
+
+百度云盘地址：[3.安装php.avi](http://pan.baidu.com/s/1skUvhU1#list/path=%2F%E8%A7%86%E9%A2%91%2F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA) 
+
+
+2.3 安装nginx和redis
+
+优酷观看地址：  
+
+百度云盘地址：[4.安装nginx和redis.avi](http://pan.baidu.com/s/1skUvhU1#list/path=%2F%E8%A7%86%E9%A2%91%2F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA) 
+
+
+2.4 安装php的扩展
+
+优酷观看地址：  
+
+百度云盘地址：[5.安装php的扩展.avi](http://pan.baidu.com/s/1skUvhU1#list/path=%2F%E8%A7%86%E9%A2%91%2F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA) 
+
+
+
+2.5 composer安装fecshop
+
+优酷观看地址：  
+
+百度云盘地址：[6.composer安装fecshop.avi](http://pan.baidu.com/s/1skUvhU1#list/path=%2F%E8%A7%86%E9%A2%91%2F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA) 
+
+
+
+2.6 fecshop的配置
+
+优酷观看地址：  
+
+百度云盘地址：[7.fecshop的配置.avi](http://pan.baidu.com/s/1skUvhU1#list/path=%2F%E8%A7%86%E9%A2%91%2F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA) 
+
+
+上面7个视频都已经做好，百度云盘在上传中，优酷视频明天上传。
+
+
+
+
+
+
