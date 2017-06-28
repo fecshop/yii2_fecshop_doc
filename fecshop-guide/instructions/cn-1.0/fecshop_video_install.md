@@ -21,27 +21,27 @@ Fecshop 安装视频
 
 2.1 安装mysql
 
-优酷观看地址： 
+优酷观看地址：[2.Linux下安装mysql.avi](http://v.youku.com/v_show/id_XMjg0NzU0NTUwNA==.html?spm=a2h3j.8428770.3416059.1)
 
 百度云盘地址：[2.Linux下安装mysql.avi](http://pan.baidu.com/s/1skUvhU1#list/path=%2F%E8%A7%86%E9%A2%91%2F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA) 
 
 2.2 安装php.avi
 
-优酷观看地址： 
+优酷观看地址：[3.安装php.avi]() 
 
 百度云盘地址：[3.安装php.avi](http://pan.baidu.com/s/1skUvhU1#list/path=%2F%E8%A7%86%E9%A2%91%2F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA) 
 
 
 2.3 安装nginx和redis
 
-优酷观看地址：  
+优酷观看地址：[4.安装nginx和redis.avi](http://v.youku.com/v_show/id_XMjg1MzM5MzA2OA==.html?spm=a2h3j.8428770.3416059.1)  
 
 百度云盘地址：[4.安装nginx和redis.avi](http://pan.baidu.com/s/1skUvhU1#list/path=%2F%E8%A7%86%E9%A2%91%2F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA) 
 
 
 2.4 安装php的扩展
 
-优酷观看地址：  
+优酷观看地址：[5.安装php的扩展.avi](http://v.youku.com/v_show/id_XMjg1MzM5MjkwNA==.html?spm=a2h3j.8428770.3416059.1)  
 
 百度云盘地址：[5.安装php的扩展.avi](http://pan.baidu.com/s/1skUvhU1#list/path=%2F%E8%A7%86%E9%A2%91%2F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA) 
 
@@ -49,7 +49,7 @@ Fecshop 安装视频
 
 2.5 composer安装fecshop
 
-优酷观看地址：  
+优酷观看地址：[6.composer安装fecshop.avi](http://v.youku.com/v_show/id_XMjg1MzM5MjY0NA==.html?spm=a2h3j.8428770.3416059.1)  
 
 百度云盘地址：[6.composer安装fecshop.avi](http://pan.baidu.com/s/1skUvhU1#list/path=%2F%E8%A7%86%E9%A2%91%2F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA) 
 
@@ -57,7 +57,7 @@ Fecshop 安装视频
 
 2.6 fecshop的配置
 
-优酷观看地址：  
+优酷观看地址：[7.fecshop的配置.avi](http://v.youku.com/v_show/id_XMjg1MzM5MjQ0MA==.html?spm=a2h3j.8428770.3416059.1)  
 
 百度云盘地址：[7.fecshop的配置.avi](http://pan.baidu.com/s/1skUvhU1#list/path=%2F%E8%A7%86%E9%A2%91%2F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA) 
 
