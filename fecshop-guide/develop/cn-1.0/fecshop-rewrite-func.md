@@ -26,6 +26,8 @@ Fecshop 重写功能
 然后将`class`对应的文件指向我自己重写后的php文件，即可实现重写该
 Yii2组件。相信这个大家基本都知道。
 
+Yii2组件的更多知识，可以参看[Yii2 组件](http://www.yiichina.com/doc/guide/2.0/structure-application-components)
+
 ###2. 重写模块（Yii2 module）
 
 `module`是Yii2框架里面的一个概念，
@@ -53,6 +55,8 @@ return [
 
 上面是模块的配置，如果你想要重构整个模块（module），
 那么您可以通过上面进行配置`class`，指向您重写的文件。
+
+对于Yii2 modules的更多知识可以参看 [Yii2 modules](http://www.yiichina.com/doc/guide/2.0/structure-modules)
 
 ### 3. 重写Services（fecshop 服务）
 
@@ -224,10 +228,13 @@ Yii2本身是有多语言翻译功能，但是缺少重写机制，我进行了�
 > 注意: 模板的重写是文件的替换，翻译文件的重写是文件内容合并，相当于两个数组合并（merge）
 > 如果相同的key，本地的翻译会覆盖fecshop的翻译。
 
+### 6.邮件重写
 
+详情参看：[fecshop邮件](http://www.fecshop.com/doc/fecshop-guide/instructions/cn-1.0/guide-fecshop_email.html)
 
+可以通过配置的方式重写邮件模板。
 
-### 6.万能重写（小万能）
+### 7.万能重写（小万能）
 
 > 不支持：模板部分和翻译部分
 

@@ -2,7 +2,7 @@ Fecshop 安装视频
 ================
 
 > fecshop对技术初学者的安装有一定的难度，因此做了一下安装视频
-> ,视频还是陆续制作上传中。
+> ,fecshop安装视频都已经撸完，并已经全部上传完成，优酷视频质量差一些，高清视频可以去百度网盘下载。
 
 
 ### 1. 虚拟Linux环境
@@ -27,7 +27,7 @@ Fecshop 安装视频
 
 2.2 安装php.avi
 
-优酷观看地址：[3.安装php.avi]() 
+优酷观看地址：[3.安装php.avi](http://v.youku.com/v_show/id_XMjg1NDMyMTMzMg==.html?spm=a2h3j.8428770.3416059.1) 
 
 百度云盘地址：[3.安装php.avi](http://pan.baidu.com/s/1skUvhU1#list/path=%2F%E8%A7%86%E9%A2%91%2F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA) 
 
@@ -39,11 +39,11 @@ Fecshop 安装视频
 百度云盘地址：[4.安装nginx和redis.avi](http://pan.baidu.com/s/1skUvhU1#list/path=%2F%E8%A7%86%E9%A2%91%2F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA) 
 
 
-2.4 安装php的扩展
+2.4 安装php的扩展（里面含有安装mongodb的部分）
 
-优酷观看地址：[5.安装php的扩展.avi](http://v.youku.com/v_show/id_XMjg1MzM5MjkwNA==.html?spm=a2h3j.8428770.3416059.1)  
+优酷观看地址：[5.安装php的扩展和安装mongodb.avi](http://v.youku.com/v_show/id_XMjg1MzM5MjkwNA==.html?spm=a2h3j.8428770.3416059.1)  
 
-百度云盘地址：[5.安装php的扩展.avi](http://pan.baidu.com/s/1skUvhU1#list/path=%2F%E8%A7%86%E9%A2%91%2F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA) 
+百度云盘地址：[5.安装php的扩展和安装mongodb.avi](http://pan.baidu.com/s/1skUvhU1#list/path=%2F%E8%A7%86%E9%A2%91%2F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA) 
 
 
 
@@ -62,7 +62,7 @@ Fecshop 安装视频
 百度云盘地址：[7.fecshop的配置.avi](http://pan.baidu.com/s/1skUvhU1#list/path=%2F%E8%A7%86%E9%A2%91%2F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA) 
 
 
-上面7个视频都已经做好，百度云盘在上传中，优酷视频明天上传。
+
 
 
 
