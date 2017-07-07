@@ -43,7 +43,9 @@ Fecshop 二开扩展
 *  [Fecshop 模块开发](fecshop-develop-modules.md)
 *  [Fecshop 插件开发](fecshop-develop-plugin.md)
 
-
+Fecshop Server（接口）
+----------------------
+*  [Fecshop Server](fecshop-server.md)
 
 
 
