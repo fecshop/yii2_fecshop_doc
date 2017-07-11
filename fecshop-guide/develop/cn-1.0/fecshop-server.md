@@ -59,6 +59,16 @@ echo json_encode([
 用户在上面哪一步获取`access-token`成功后，每次请求都需要在request headers里面加上`access-token`，
 这个作为用户登录的`access-token`.
 
+作为服务端appserver，需要用户登录验证的部分，
+controller都需要继承
+`@fecshop/app/appserver/modules/AppserverTokenController.php`
+，在这个controller的behaviors()中已经加入了用户登录的验证，如果用户
+没有登录，将会返回json报错信息：
+
+```
+['status' => 'ERROR', 'code' => 401,'message' => 'token is time out'];
+```
+
 
 ### 4.登录用户的 过期时间 和 速度控制
 
@@ -100,6 +110,7 @@ echo json_encode([
 3.需要`access-token`页面：譬如用户中心，下单页面。
 
 当然存在一些页面，`uuid` 和 `access-token` 都需要。
+
 
 
 
