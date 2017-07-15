@@ -19,6 +19,7 @@ FecShop 使用说明
 *  [Fecshop 多语言](fecshop_mutil_lang.md)
 *  [Fecshop 静态块](fecshop_static_block.md)
 *  [Fecshop page页（文章）](fecshop_page.md)
+*  [Fecshop 首页（HOME）](fecshop_home.md)
 *  [Fecshop 404页](fecshop_404.md)
 *  [Fecshop 小部件](fecshop_widget.md)
 *  [Fecshop 分类](fecshop_category.md)

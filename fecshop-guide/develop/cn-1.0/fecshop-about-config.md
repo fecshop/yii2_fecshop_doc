@@ -4,7 +4,7 @@ Fecshop 初始配置
 > 当您手动安装好Linux 和FecShop的代码后，就可以进行配置了。
 
 
-1、配置 fecshop app advanced
+1、配置 [fecshop](http://www.fecshop.com) app advanced
 
 ```
 在common/config/main-local.php中配置mysql，mongodb，redis
@@ -64,7 +64,7 @@ mongodb默认是没有密码的，您可以将mongodb的端口在iptables添加�
 ```
 
 
-4.2、配置nginx，注意下面的  `**fecshop**` 代表fecshop的相对根目录的文件路径，
+4.2、配置nginx，注意下面的  `**fecshop**` 代表[fecshop](http://www.fecshop.com)的相对根目录的文件路径，
 请根据自己安装的文件路径填写。
 
 ```
@@ -233,7 +233,7 @@ CLIENT_ID，CLIENT_SECRET可以参看我的博文：
 这种方式，则不需要设置 `session.cookie_domain`,
 如果您想使用后缀模式区分多语言，譬如添加it语言，您需要到@app/web中添加一个文件夹it，
 然后在文件夹里面新建@app/web/it/index.php文件，并新建文件夹@app/web/it/assets，并设置可写,
-目前fecshop只添加了cn和fr两个例子，你可以参考这两个。
+目前[fecshop](http://www.fecshop.com)只添加了cn和fr两个例子，你可以参考这两个。
 
 7、图片域名配置文件：`@common\config\fecshop_local_services\Image.php`
 ,譬如我的代码(您可以和我的保持一致，相应域名已经在上面添加host)：
@@ -318,7 +318,7 @@ mongodb(导入mongodb的表，数据，索引):
 9.2、测试数据安装：
 
 测试数据下载地址为：[测试mongodb数据库js数据](https://pan.baidu.com/s/1kVwRD2Z) ， 
-进入后下载文件夹：fecshop数据测试包 ，这个文件夹里面所有的文件。
+进入后下载文件夹：[fecshop](http://www.fecshop.com)数据测试包 ，这个文件夹里面所有的文件。
 
 9.2.1、导入mongodb测试数据
 
@@ -330,7 +330,7 @@ mongo 127.0.0.1:27017/fecshop --quiet /www/restore/mongo-fecshop_test-20170419-0
 
 `127.0.0.1:27017/fecshop`  27017为mongodb的默认端口，fecshop为数据库.
 
-执行上面的命令，会把数据导入到mongodb的fecshop数据库中。
+执行上面的命令，会把数据导入到mongodb的[fecshop](http://www.fecshop.com)数据库中。
 
 > 对于导出，可以直接用rockmongo的库导出功能直接导出js文件。
 
@@ -392,12 +392,12 @@ sh fullSearchSync.sh
 
 1.开启单文件配置（非必要）
 
-fecshop的配置最终是由N个配置php文件合并而成，在每次初始化
+[fecshop](http://www.fecshop.com)的配置最终是由N个配置php文件合并而成，在每次初始化
 前执行，为了加速，可以先把配置文件合并成单文件，然后在加载
 就会比较节省资源。
 
 入口文件@app/web/index.php 代码： `$use_merge_config_file = false;` 处设置。
-fecshop 使用合并配置（config）数组进行加速，true 代表打开。
+[fecshop](http://www.fecshop.com)使用合并配置（config）数组进行加速，true 代表打开。
 打开配置加速开关前，您需要执行 http://www.domain.com/index-merge-config.php 进行生成单文件配置数组。
 注意：打开后，当您修改了配置，都需要重新生成单文件配置数组，否则修改的配置不会生效,
 建议：本地开发环境关闭，开发环境如果访问量不大，关闭也行，如果访问量大，建议打开
