@@ -234,9 +234,12 @@ Yii2本身是有多语言翻译功能，但是缺少重写机制，我进行了�
 
 可以通过配置的方式重写邮件模板。
 
-### 7.万能重写（小万能）
+### 7.重写yii2框架的class（classMap的方式，fecshop功能重写基本不会用到）
 
-> 不支持：模板部分和翻译部分
+> 对于Yii2框架的一些框架内部class，如果您想重写，可以用classMap
+> ,但是classMap也有他的缺陷，classMap指向新文件class是不能继承原来的class
+> ,因此，Yii2框架的class如果更新了，重新指向的class文件也需要更新，这种通过classMap
+> 进行重写的方式，有一定的局限性，一般不推荐用这种。
 
 该重写是通过Yii2的`classMap`机制实现的，关于classMap可以参看
 [类映射表Class Map](http://www.yiichina.com/doc/guide/2.0/concept-autoloading#class-map)
@@ -267,24 +270,123 @@ return [
 use的类就变成了 `@appfront/helper/My.php`，而不是`@fecshop/app/appfront/helper/test/My.php`，
 到这里您应该明白了吧。
 
+另外，重写后的文件的namespace要和重写的文件的namespace一致，因此，
+`@appfront/helper/My.php`文件的namespace是`fecshop\app\appfront\helper\test\My`，
+
+在使用过程中如果报错：`Exception (Unknown Class) 'yii\base\UnknownClassException' with message 'Unable to find 'xxxxxx' in file: xxxx.php. Namespace missing?' `，可以参看一下这位朋友的报错：http://www.fecshop.com/topic/135
+
+> classMap 在fecshop中，很少用到，通过fecshop的重写机制
+> 基本可以满足功能的重写。
+
+### 8.通过rewriteMap进行重写Block Model 层
+
+> 对于block层，model层，可以通过rewriteMap进行配置
+> ,进行重新指向，这是一种推荐的重写方式，比classMap要好很多，
+> 重写后的class是可以继承被重写的class的，这样对于升级会好很多。
 
 
-对于功能部分，单个文件的修改还是用classMap的方式，
-在classMap做文件指向，在重写后的文件最好也要有一定的规律，便于
-维护，您可以重写某个Controller，block，model，组件，services，
+打开 @common/config/YiiRewriteMap.php ，您可以通过配置
 
-如果您进行整块功能替换，譬如重写某个services，某个modules
-，那么就可以通过上面的方式进行。
+```
+return [
+    /**
+     * \fecshop\models\mongodb\Category 为原来的类
+     * \appfront\local\local_models\mongodb\Category 为重写后的类
+     * 重写后的类可以继承原来的类。
+     */
+    //'\fecshop\models\mongodb\Category'  => '\appfront\local\local_models\mongodb\Category',
+];
+```
 
+`\fecshop\models\mongodb\Category` : fecshop 核心包的类文件
 
-至此，我们已经可以，在不修改fecshop代码的前提下，修改
-fecshop的任意功能了。
+`\appfront\local\local_models\mongodb\Category` : 本地重写后的类文件。
 
+下面查看本地重写后的类文件的内容。
 
+```
+<?php
+namespace appfront\local\local_models\mongodb;
 
+use yii\mongodb\ActiveRecord;
 
+class Category extends \fecshop\models\mongodb\Category
+{
+    // 重写您想要重写的方法
+}
+```
 
+可以看到，是可以继承原来的类的。我们只需要按照我们的要求，重写
+相应的方法即可。因此这种方式比Yii2的classMap要好很多。
+Yii2的classMap是不能继承原来的类的。
 
+因此，使用这种方式，只需要做一个配置指向，然后实现相应的类就可以了。
+
+### 9. 通过Yii2 的 controllerMap 重写controller
+
+[Yii2 ControllerMap](http://www.yiichina.com/doc/guide/2.0/structure-applications#controllerMap)
+是Yii2 的一种重写ControllerMap的机制。
+
+fecshop module 里面的controller的重写也是通过这个机制进行的，
+下面是一种重写的例子：
+
+我们想要重写appfront的catalog模块的CategoryController,下面是详细步骤：
+
+fecshop系统的controller: `@fecshop\app\appfront\modules\Catalog\controllers\CategoryController`
+
+本地重写的Controller: `@appfront\local\local_modules\Catalog\controllers\CategoryController`
+
+1.新建本地的controller:
+
+```
+<?php
+/**
+ * FecShop file.
+ *
+ * @link http://www.fecshop.com/
+ * @copyright Copyright (c) 2016 FecShop Software LLC
+ * @license http://www.fecshop.com/license/
+ */
+
+namespace appfront\local\local_modules\Catalog\controllers;
+
+use fecshop\app\appfront\modules\AppfrontController;
+use Yii;
+
+/**
+ * @author Terry Zhao <2358269014@qq.com>
+ * @since 1.0
+ */
+class CategoryController extends \fecshop\app\appfront\modules\Catalog\controllers\CategoryController
+{
+    // 重写相应的controller action方法
+}
+```
+
+2.在配置中添加classMap
+
+打开配置文件 `@appfront/config/fecshop_local_modules/Catalog.php`
+
+添加如下配置：
+
+```
+return [
+    'catalog' => [
+        /**
+         * Yii2 controllerMap 重写机制。
+         */
+        'controllerMap' => [
+            'category' => 'appfront\local\local_modules\Catalog\controllers\CategoryController',          
+        ],
+        ...
+    ]
+    ...
+]
+```
+
+完成上面的步骤后，如果访问分类页面，执行的是
+重写后的controller文件，也就是：`@appfront\local\local_modules\Catalog\controllers\CategoryController`
+,您可以在这个文件里面重写原来的action方法。
 
 
 
