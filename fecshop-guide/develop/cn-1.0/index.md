@@ -46,7 +46,7 @@ Fecshop 二开扩展
 Fecshop Server（接口）
 ----------------------
 *  [Fecshop Server](fecshop-server.md)
-
+*  [Fecshop Vue 设置](fecshop-vue-config.md)
 
 
 

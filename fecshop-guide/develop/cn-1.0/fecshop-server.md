@@ -9,13 +9,13 @@ Fecshop Server
 
 ### 1.实现类似session的功能
 
-客户端请求数据后，如果在response headers中存在 `fecshop_uuid` （Yii::$service->session中的常量UUID），
-则客户端需要保存`fecshop_uuid`的值（如果和客户端上次存储的值不同，则需要更新值），
+客户端请求数据后，如果在response headers中存在 `fecshop-uuid` （Yii::$service->session中的常量UUID），
+则客户端需要保存`fecshop-uuid`的值（如果和客户端上次存储的值不同，则需要更新值），
 
 然后在后面的每次请求中，
-request headers都需要带上参数 `fecshop_uuid`，
+request headers都需要带上参数 `fecshop-uuid`，
 
-`fecshop_uuid`:这个是用户的唯一key
+`fecshop-uuid`:这个是用户的唯一key
 ,是在 `Yii::$service->session->getUUID()`中生成，用来标示用户，
 fecshop实现了一个类似session的功能，提供给appserver使用，
 因为有一些功能需要使用到类似session的功能，譬如验证码的存储，无登录用户的购物车数据等存储。
@@ -87,11 +87,11 @@ controller都需要继承
 
 #### 5.1用户唯一识别存储：
 
-如果服务端response headers中含有参数`fecshop_uuid`，那么需要把这个值存储
+如果服务端response headers中含有参数`fecshop-uuid`，那么需要把这个值存储
 起来，如果本地已经存储过一次，那么检查是否一致，如果不一致，把当前
-的`fecshop_uuid`覆盖 之前存储`fecshop_uuid`。
+的`fecshop-uuid`覆盖 之前存储`fecshop-uuid`。
 
-后面的客户端的每次请求，在request headers中都需要带上`fecshop_uuid`
+后面的客户端的每次请求，在request headers中都需要带上`fecshop-uuid`
 
 #### 5.2客户端用户登录：
 
