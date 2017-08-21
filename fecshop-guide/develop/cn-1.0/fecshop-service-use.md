@@ -57,7 +57,7 @@ Test类的类变量`name`中，这个和Yii2的component（组件）的原理类
 
 3.服务停用
 
-如果在配置中加入 ` 'enable' => false ` ，则该services将不可用
+如果在配置中加入 ` 'enableService' => false ` ，则该services将不可用
 
 譬如：
 
@@ -65,7 +65,7 @@ Test类的类变量`name`中，这个和Yii2的component（组件）的原理类
 return [
 	'test' => [
 		'class' => 'appfront\services\Test',
-        'enable'=> false,
+        'enableService'=> false,
 		'name'  => 'terry',
 	]
 ];

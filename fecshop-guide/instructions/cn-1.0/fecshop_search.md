@@ -131,7 +131,7 @@ begin delete Mongodb Search Date
 ### 去除某个搜索
 
 如果您想去除某个搜索，譬如您是做跨境出口电商的，不想做中文，那么
-可以去除xunsearch，您只需要在配置中加入一个` 'enable' => false`就可以了，
+可以去除xunsearch，您只需要在配置中加入一个` 'enableService' => false`就可以了，
 譬如：
 
 ```
@@ -160,7 +160,7 @@ return [
 			],
 			'xunSearch'  => [
 				'class' 		=> 'fecshop\services\search\XunSearch',
-                'enable'        => false,
+                'enableService'        => false,
 				'fuzzy' => true,  # 是否开启模糊查询
 				'synonyms' => true, #是否开启同义词翻译
 				'searchLang'    => [
@@ -172,15 +172,15 @@ return [
 ];
 ```
 
-加入 `'enable'        => false,` 后，xunsearch将可不用。
+加入 `'enableService'        => false,` 后，xunsearch将可不用。
 
 因此，您可以打开文件：@common\config\fecshop_local_services\Search.php
-加入 ` 'enable'        => false,`  即可。
+加入 ` 'enableService'        => false,`  即可。
 
 ```
 'xunSearch'  => [
     'fuzzy'         => true,  // 是否开启模糊查询
-    'enable'        => false,
+    'enableService'        => false,
     'synonyms'      => true, //是否开启同义词翻译
     'searchLang'    => [
         'zh' => 'chinese',
