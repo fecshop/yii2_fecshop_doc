@@ -174,6 +174,21 @@ return [
 
 加入 `'enable'        => false,` 后，xunsearch将可不用。
 
+因此，您可以打开文件：@common\config\fecshop_local_services\Search.php
+加入 ` 'enable'        => false,`  即可。
+
+```
+'xunSearch'  => [
+    'fuzzy'         => true,  // 是否开启模糊查询
+    'enable'        => false,
+    'synonyms'      => true, //是否开启同义词翻译
+    'searchLang'    => [
+        'zh' => 'chinese',
+    ],
+],
+```
+
+
 ### 使用
 
 在前台就可以使用搜索功能进行搜索了。
