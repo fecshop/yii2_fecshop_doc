@@ -9,39 +9,29 @@ Fecshop 全手动安装
 > 详细参看[Fecshop vagrant安装](fecshop-about-vagrantinstall.md)
 
 
-linux作为开发环境
------------------
+参考资料：
 
-在linux下面做开发环境，你可能很不习惯，你可以用编辑器的ftp的远程功能
-加载linux的文件，开发起来和本地win没有太多的不同（会有一些文件权限和svn提交代码
-需要使用命令行的不同），这是我整理的一篇详细博文：
-[Linux 作为开发环境的方法分享](http://www.fancyecommerce.com/2016/08/30/linux-%E4%BD%9C%E4%B8%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%9A%84%E6%96%B9%E6%B3%95%E5%88%86%E4%BA%AB/)
-Linux作为开发环境，线上线下同样的配置，会省略去很多线下程序运行正常，线上出问题的烦恼。
-用vagrant在win下面虚拟linux环境的博文：[vagrant 下载部署linux环境](http://www.fancyecommerce.com/2016/09/22/vagrant-%E4%B8%8B%E8%BD%BD%E9%83%A8%E7%BD%B2linux%E7%8E%AF%E5%A2%83/)
+1.[Linux 作为开发环境的方法分享](http://www.fancyecommerce.com/2016/08/30/linux-%E4%BD%9C%E4%B8%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%9A%84%E6%96%B9%E6%B3%95%E5%88%86%E4%BA%AB/)
 
-当然最省劲的安装， 还是您加载我打包好的vagrant box，直接加载过来即可，详情参看：
-[Fecshop vagrant安装](fecshop-about-vagrantinstall.md)，下面是最原始的安装方式，全手动
-，如果您是一个喜欢琢磨研究，可以按照下面的步骤尝试一遍。
+2.[vagrant 下载部署linux环境(虚拟机)](http://www.fancyecommerce.com/2016/09/22/vagrant-%E4%B8%8B%E8%BD%BD%E9%83%A8%E7%BD%B2linux%E7%8E%AF%E5%A2%83/)
 
-环境配置部分：
------------
+3.[Fecshop vagrant安装](fecshop-about-vagrantinstall.md)。
 
-**一定要按照下面的步骤按照**
 
-**一定要按照下面的步骤按照**
 
-**一定要按照下面的步骤按照**
+### 标准的安装方式
 
-**重要的事情说三遍**
 
-**如果不按照下面的步骤安装出现问题，请不要
-去论坛发帖求助，浪费大家时间。**
+** 一定要按照下面的步骤按照，如果按照下面的步骤安装出现问题，请到[www.fecshop.com](http://www.fecshop.com)
+发帖，形成积累，方便更多的后来人。（帖子100%回复，QQ群的问题不回复） **
 
 如果您对linux不熟悉，感觉障碍很大，可以参看**录制好的视频：**
 [Fecshop 安装视频](http://www.fecshop.com/doc/fecshop-guide/instructions/cn-1.0/guide-fecshop_video_install.html)
-，里面讲解是的搭建Linux虚拟机，配置linux环境，已经安装配置fecshop等内容。
+，里面讲解是的搭建Linux虚拟机，配置linux环境，已经安装配置fecshop等内容，
 
-下面是文档讲述如何搭配环境以及安装fecshop：
+如果有Yii2基础，安装起来还是比较容易，如果没有Yii2基础，会比较费劲一些，
+建议参看视频安装，视频和下面的文档
+内容是同步的，下面是文档讲述如何搭配环境以及安装fecshop：
 
 ### 1、Linux环境配置：
 
@@ -56,24 +46,23 @@ Linux作为开发环境，线上线下同样的配置，会省略去很多线下
 安装有2种方式，建议使用`2.2 通过composer的方式安装`，
 如果网络不行，可以使用 `2.1通过百度网盘安装 `
 
-2.1 通过百度网盘安装(**不建议**)，下载地址为：http://pan.baidu.com/s/1hs1iC2C
+2.1 通过百度网盘安装(**不建议**)，
 
-下载日期最新的文件夹即可，下载完成后，解压，然后进入fecshop，执行init命令，详细如下：
+如果因为墙无法使用composer，可以访问百度云盘，下载地址为：http://pan.baidu.com/s/1hs1iC2C
+**下载日期最新**的压缩包即可，下载完成后，解压，然后进入fecshop，执行init命令，详细如下：
 
 ```
 cd fecshop   
 ./init
 ```
 
-> 不经过composer安装，不会检测环境，因此，上面的环境中需要的php的扩展都要安装。
-> 如果想升级，还是得使用前面第一部的
+> 百度云盘下载，不经过composer安装，不会检测环境，因此，上面的环境中需要的php的扩展都要安装。
+> 如果想升级，还是得使用composer 来升级
 > composer安装，阿里云主机是可以composer安装的。
 > 因此，第一次图省劲可以用百度网盘的方式下载安装，熟练后，还是需要用composer安装，
 > 这样以后升级方便。
 
-2.2 通过composer的方式安装，如果因为墙无法使用composer，可以按照2.2方式安装
-
-** 可能浏览器存在缓存，导致内容不是最新内容，因此，可以频繁多次刷新下页面，让其不读取浏览器缓存，而是读取最新的内容**
+2.2 通过composer的方式安装
 
 安装这个扩展的首选方式是通过 [composer](http://getcomposer.org/download/).
 
@@ -90,7 +79,7 @@ composer 安装fecshop app advanced
 
 ```
 composer global require "fxp/composer-asset-plugin:^1.3.1"
-composer create-project fancyecommerce/fecshop-app-advanced  fecshop 1.0.4.1
+composer create-project fancyecommerce/fecshop-app-advanced  fecshop 1.0.4.2
 cd fecshop
 composer update    
 ./init
@@ -112,6 +101,7 @@ composer update
 ### 3. 配置
 
 执行完上面，就安装完成了。你可以点击这里进行下一步，
-[Fecshop 初始配置](fecshop-about-config.md)
+[Fecshop 初始配置](fecshop-about-config.md)，
+** 注意，配置过程一定要仔细的操作 **。
 
 

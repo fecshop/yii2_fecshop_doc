@@ -32,9 +32,7 @@ API_ROOT: '"//fecshop.appserver.fancyecommerce.com"',
 
 1.2 多语言的设置
 
-开发配置文件：config/dev.env.js
-
-生产配置文件：config/prod.env.js
+配置文件：src/config/store.js
 
 配置内容如下：
 

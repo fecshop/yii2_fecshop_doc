@@ -9,7 +9,8 @@ Fecshop vagrant安装
 > 
 > 链接如下：[Fecshop 全手动安装](fecshop-about-hand-install.md)
 
-
+您加载我打包好的vagrant box，直接加载过来即可，这个里面的fecshop版本比较老，
+需要进一步升级。
 
 vagrant 基础知识：你可能没有使用vagrant，这个没有关系，我整理了一份vagrant使用的教程，地址如下：
 [vagrant 下载部署linux环境](http://www.fancyecommerce.com/2016/09/22/vagrant-%E4%B8%8B%E8%BD%BD%E9%83%A8%E7%BD%B2linux%E7%8E%AF%E5%A2%83/)

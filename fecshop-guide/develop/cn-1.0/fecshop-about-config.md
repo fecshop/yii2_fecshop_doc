@@ -42,25 +42,25 @@ mongodb默认是没有密码的，您可以将mongodb的端口在iptables添加�
 
 4、配置环境
 
-4.1 添加host（本地需要配置，如果是线上服务器就不需要了）
+4.1 添加host（这个相当于做一个域名本地指向配置）
 
 打开C:\Windows\System32\drivers\etc\hosts，添加如下代码（如果是其他IP，将
 127.0.0.1 替换成其他IP即可。）：
 
 ```
-127.0.0.1       rock.fecshoptest.com
-127.0.0.1       my.fecshoptest.com
-127.0.0.1       appadmin.fecshoptest.com
-127.0.0.1       appfront.fecshoptest.com
-127.0.0.1       appfront.fecshoptest.es
-127.0.0.1       apphtml5.fecshoptest.com
-127.0.0.1       appapi.fecshoptest.com
-127.0.0.1       appserver.fecshoptest.com
-127.0.0.1       img.fecshoptest.com		#appimage/common
-127.0.0.1       img2.fecshoptest.com	#appimage/appadmin
-127.0.0.1       img3.fecshoptest.com	#appimage/appfront
-127.0.0.1       img4.fecshoptest.com	#appimage/apphtml5
-127.0.0.1       img5.fecshoptest.com	#appimage/appserver
+127.0.0.1       rock.fecshoptest.com     # rockmongo的域名指向，rockmongo是mongodb的可视化界面，类似于mysql的phpmyadmin
+127.0.0.1       my.fecshoptest.com       # mysql的phpmyadmin的域名指向
+127.0.0.1       appadmin.fecshoptest.com # 后台域名指向
+127.0.0.1       appfront.fecshoptest.com # 前台pc端域名指向
+127.0.0.1       appfront.fecshoptest.es  # 前台pc端 es 语言的域名指向
+127.0.0.1       apphtml5.fecshoptest.com # 前台html端的域名指向
+127.0.0.1       appapi.fecshoptest.com   # api端的域名指向
+127.0.0.1       appserver.fecshoptest.com # server端的域名指向
+127.0.0.1       img.fecshoptest.com		#appimage/common   图片的域名指向
+127.0.0.1       img2.fecshoptest.com	#appimage/appadmin 图片的域名指向
+127.0.0.1       img3.fecshoptest.com	#appimage/appfront 图片的域名指向
+127.0.0.1       img4.fecshoptest.com	#appimage/apphtml5 图片的域名指向
+127.0.0.1       img5.fecshoptest.com	#appimage/appserver图片的域名指向
 ```
 
 

@@ -55,8 +55,23 @@ return [
 这个是上面的配置中的值，在test服务实例化的时候，name参数会被注入到
 Test类的类变量`name`中，这个和Yii2的component（组件）的原理类似。
 
+3.服务停用
 
+如果在配置中加入 ` 'enable' => false ` ，则该services将不可用
 
+譬如：
+
+```
+return [
+	'test' => [
+		'class' => 'appfront\services\Test',
+        'enable'=> false,
+		'name'  => 'terry',
+	]
+];
+```
+
+则该services 不在可用。相当于从配置中删除。
 
 
 
