@@ -79,7 +79,7 @@ composer 安装fecshop app advanced
 
 ```
 composer global require "fxp/composer-asset-plugin:^1.3.1"
-composer create-project fancyecommerce/fecshop-app-advanced  fecshop 1.0.4.2
+composer create-project fancyecommerce/fecshop-app-advanced  fecshop 1.0.4.3
 cd fecshop
 composer update    
 ./init
