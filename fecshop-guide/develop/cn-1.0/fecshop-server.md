@@ -1,9 +1,14 @@
 Fecshop Server
 ============
 
-> fecshop server 是和app类客户端 对接的部分
+> fecshop server 是和app类客户端 对接的部分，
+> fecshop提供了服务端的api，以及用vue做的客户端，
+> ，您可以使用fecshop的appserver api，开发您的app（terry 不会做ios 安卓app），
+> 当然，如果您使用vue，可以使用fecshop vue的。
 
+demo地址： http://demo.fancyecommerce.com/#/
 
+github地址： https://github.com/fecshop/vue_fecshop_appserver
 
 
 

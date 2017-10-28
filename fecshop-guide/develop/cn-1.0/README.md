@@ -27,9 +27,15 @@ Fecshop 服务（Service）
 *  [Fecshop 服务原理](fecshop-service-abc.md)
 *  [Fecshop 服务使用](fecshop-service-use.md)
 
-Fecshop Api（接口）
+Fecshop Api 入口
 ----------------------
 *  [Fecshop Api](fecshop-api.md)
+
+Fecshop Server 入口
+----------------------
+*  [Fecshop Server](fecshop-server.md)
+*  [Fecshop Vue 设置](fecshop-vue-config.md)
+*  [Fecshop Server 状态码](fecshop-server-return-code.md)
 
 
 Fecshop 二开扩展
@@ -43,10 +49,7 @@ Fecshop 二开扩展
 *  [Fecshop 模块开发](fecshop-develop-modules.md)
 *  [Fecshop 插件开发](fecshop-develop-plugin.md)
 
-Fecshop Server（接口）
-----------------------
-*  [Fecshop Server](fecshop-server.md)
-*  [Fecshop Vue 设置](fecshop-vue-config.md)
+
 
 
 

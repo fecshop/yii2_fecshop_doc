@@ -123,8 +123,10 @@ wap端入口为 @apphtml5， 也就是根目录的apphtml5文件夹。
 `common`,`console`, 指的都是根目录下面的文件夹。
 
 
-7、配置store的域名和图片的域名，您可以和我下面的示例代码一致，
+7、配置store的域名，您可以和我下面的示例代码一致，
 
+**注意** 这个是针对前台访问入口的，也就是`appfront(pc)` `apphtml5(wap)` `appserver(app)`
+几个入口的，对于`console`  `appadmin` 是不需要配置`Store.php` 的，因为后台是没有多store的概念的
 
 store在配置文件：`@app\config\fecshop_local_services\Store.php`
 
@@ -235,7 +237,7 @@ CLIENT_ID，CLIENT_SECRET可以参看我的博文：
 然后在文件夹里面新建@app/web/it/index.php文件，并新建文件夹@app/web/it/assets，并设置可写,
 目前[fecshop](http://www.fecshop.com)只添加了cn和fr两个例子，你可以参考这两个。
 
-7、图片域名配置文件：`@common\config\fecshop_local_services\Image.php`
+8、图片域名配置文件：`@common\config\fecshop_local_services\Image.php`
 ,譬如我的代码(您可以和我的保持一致，相应域名已经在上面添加host)：
 
 ```
@@ -276,7 +278,7 @@ return [
 更多的信息参看[网站的图片，css，js 为什么要和网站的域名不一样](http://www.fancyecommerce.com/2017/04/17/%E7%BD%91%E7%AB%99%E7%9A%84%E5%9B%BE%E7%89%87%EF%BC%8Ccss%EF%BC%8Cjs-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%92%8C%E7%BD%91%E7%AB%99%E7%9A%84%E5%9F%9F%E5%90%8D%E4%B8%8D%E4%B8%80%E6%A0%B7/)
 
 
-8、配置是否强制复制assets到web目录，如果是开发环境，按照下面进行配置（可选配置，可以先不管这个）。
+9、配置是否强制复制assets到web目录，如果是开发环境，按照下面进行配置（可选配置，可以先不管这个）。
 
 `@app/config/main.php`里面可以看到下面的配置
 
@@ -296,9 +298,9 @@ web/assets路径下面，譬如yii2封装的bootstrap前端框架），
 如果是线上环境，这样非常耗费资源，因此，线上关闭即可，如果您发布了新的css文件，
 那么您需要手动清空@app/web/assets下面的文件夹（如果线上访问量不大，开启也无所谓，呵呵。）。
 
-9、导入数据库表(migrate)，在fecshop根目录执行下面的命令行
+10、导入数据库表(migrate)，在fecshop根目录执行下面的命令行
 
-9.1、Yii2 migratge方式导入表。
+10.1、Yii2 migratge方式导入表。
 
 mysql(导入mysql的表，数据，索引):
 
@@ -315,12 +317,12 @@ mongodb(导入mongodb的表，数据，索引):
 如果Mongodb migrate报错：`PHP Compile Error 'yii\base\ErrorException' with message 'require_once(): Failed opening required 'Array/m170228_072455_fecshop_tables.php' (include_path='.:')'`
 可以参看这里解决：http://www.fecshop.com/topic/45
 
-9.2、测试数据安装：
+10.2、测试数据安装：
 
 测试数据下载地址为：[测试mongodb数据库js数据](https://pan.baidu.com/s/1kVwRD2Z) ， 
 进入后下载文件夹：[fecshop](http://www.fecshop.com)数据测试包 ，这个文件夹里面所有的文件。
 
-9.2.1、导入mongodb测试数据
+10.2.1、导入mongodb测试数据
 
 上面下载的文件夹中的文件`mongo-fecshop_test-20170419-065157.js`上传到您的系统中，譬如，我放到了该路径下:/www/restore/mongo-fecshop_test-20170419-065157.js
 
@@ -334,11 +336,11 @@ mongo 127.0.0.1:27017/fecshop --quiet /www/restore/mongo-fecshop_test-20170419-0
 
 > 对于导出，可以直接用rockmongo的库导出功能直接导出js文件。
 
-9.2.2、导入mysql测试数据（产品库存在mysql中）
+10.2.2、导入mysql测试数据（产品库存在mysql中）
 
 把`mysql_fecshop.sql` 导入到mysql中，导入mysql，这个大家都知道，这个就不说了。可以用phpmyadmin导入。
 
-9.2.3、产品图片
+10.2.3、产品图片
 
 对于产品的示例数据 对应的图片文件比较大，没有放到版本库里面，你可以到百度云盘下载`appimage.zip`，下载地址为：`https://pan.baidu.com/s/1kVwRD2Z`
 将appimage覆盖到根目录即可，覆盖后，
@@ -362,7 +364,7 @@ rm -rf ./*
 清空浏览器图片缓存，重新刷新页面即可。
 
 
-9.3产品搜索
+10.3产品搜索
 
 对于产品搜索，中文搜索需要安装xunSearch，英文用的是mongodb 的 full text search，
 [xunSearch安装教程](http://www.fancyecommerce.com/2016/09/24/xunsearch-安装，使用/)
@@ -376,12 +378,12 @@ sh fullSearchSync.sh
 [Fecshop搜索详细文档](http://www.fecshop.com/doc/fecshop-guide/instructions/cn-1.0/guide-fecshop_search.html#)
  
 
-10、开启nginx  mysql  mongodb  php，你就可以访问本地配置的fecshop了。
+11、开启nginx  mysql  mongodb  php，你就可以访问本地配置的fecshop了。
 
 
-11、后台的账户密码为： admin  admin123（如果不对，就是123456）
+12、后台的账户密码为： admin  admin123（如果不对，就是123456）
 
-12、如果是线上，需要开启一些脚本。
+13、如果是线上，需要开启一些脚本。
 
 详细参看：[Fecshop 脚本介绍](http://www.fecshop.com/doc/fecshop-guide/instructions/cn-1.0/guide-fecshop_cron_script.html)
 这个里面有一个测试环境也要跑的脚本：`@fecshop/shell/fullSearchSync.sh` ,
