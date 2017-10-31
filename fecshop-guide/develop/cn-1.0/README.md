@@ -61,8 +61,11 @@ Fecshop Server 入口
 *  [Api- Customer 注册提交](fecshop-server-api-customer-register-submit.md)
 *  [Api- Customer 忘记密码初始化](fecshop-server-api-customer-forgot-password-init.md)
 *  [Api- Customer 忘记密码发送验证码](fecshop-server-api-customer-forgot-password-send-code.md)
+
 *  [Api- Customer 忘记密码重置初始化](fecshop-server-api-customer-reset-password-init.md)
 *  [Api- Customer 忘记密码重置提交](fecshop-server-api-customer-reset-password-submit.md)
+
+*  *****
 
 *  [Api- Customer address 列表](fecshop-server-api-customer-address.md)
 *  [Api- Customer address 删除](fecshop-server-api-customer-address-remove.md)

@@ -1,9 +1,9 @@
 Api- 得到分类产品
 ================
 
-> vue 分类页面，得到分类信息的api
+> 忘记密码，提交后，将验证码发送到用户邮箱的api
 
-URL: `/catalog/category/product`
+URL: `/customer/forgot/sendcode`
 
 格式：`json`
 
@@ -29,21 +29,17 @@ URL: `/catalog/category/product`
 
 | 参数名称        | 是否必须    |  类型       |  描述     |
 | ----------------| -----:      | :----:      |:----:     |
-| categoryId      | 必须        |   String     | 分类Id    |
-| sortColumn      | 必须        |   String     | 分类产品的排序字段   |
-| filterAttrs     | 必须        |   ARRAY      | 分类侧栏的属性过滤，没有属性过滤则填写空数组   |
-| filterPrice     | 必须        |   String     | 分类侧栏价格过滤     |
-| p               | 必须        |   Integer    | 页数  |
+| domain          | 必须        |   String     | 域名，用于邮件发送的url中包含域名地址    |
+| email           | 必须        |   String     | email邮箱   |
+| captcha         | 必须        |   String     | 验证码   |
 
 **请求参数示例如下：**
 
 ```
 {
-    categoryId:"57b6ac42f656f246653bf576",
-    sortColumn:"review_count",
-    filterAttrs:{"color":"multicolor","size":"M"},
-    filterPrice:"20-30",
-    p:2
+    domain: "http://demo.fancyecommerce.com",
+    email: "2358269014@qq.com",
+    captcha: "6776"
 }
 ```
 
@@ -56,6 +52,7 @@ URL: `/catalog/category/product`
 | ------------------| -----:      | :----:       |:----:     |
 | access-token      | 选填        |   String     | 用户登录成功，服务端返回access-token，VUE保存到localStorage中，在下一次请求从localStorage取出来放到request header中   |
 | fecshop-uuid      | 必须        |   String     | 用户的唯一标示，VUE第一次访问服务端，服务端会返回fecshop-uuid ，VUE将其保存到本地，后面的每一次请求都需要加上fecshop-uuid    |
+
 
 #### 2.Reponse Body Form-Data：
 
@@ -70,5 +67,9 @@ URL: `/catalog/category/product`
 返回数据举例：
 
 ```
-
+{
+    "code": 200,
+    "message": "process success",
+    "data": []
+}
 ```
