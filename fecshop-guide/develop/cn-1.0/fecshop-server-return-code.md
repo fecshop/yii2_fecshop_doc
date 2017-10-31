@@ -1,4 +1,4 @@
-Fecshop Server api状态码
+Fecshop Server Api- 状态码
 ====================
 
 > fecshop appserver 提供的api的各个状态码返回的含义

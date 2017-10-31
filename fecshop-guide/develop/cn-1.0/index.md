@@ -31,11 +31,15 @@ Fecshop Api 入口
 ----------------------
 *  [Fecshop Api](fecshop-api.md)
 
+
 Fecshop Server 入口
 ----------------------
-*  [Fecshop Server](fecshop-server.md)
-*  [Fecshop Vue 设置](fecshop-vue-config.md)
-*  [Fecshop Server 状态码](fecshop-server-return-code.md)
+*  [Fecshop 服务端说明](fecshop-server.md)
+*  [Fecshop Vue端安装设置开发](fecshop-vue-config.md)
+*  [Api- 状态码](fecshop-server-return-code.md)
+*  [Api- 得到分类信息](fecshop-server-api-category.md)
+*  [Api- 得到分类产品](fecshop-server-api-category-product.md)
+
 
 Fecshop 二开扩展
 ----------------

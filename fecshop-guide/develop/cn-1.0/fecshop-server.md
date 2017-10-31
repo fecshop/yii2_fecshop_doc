@@ -40,7 +40,6 @@ fecshop实现了一个类似session的功能，提供给appserver使用，
 ```
 
 
-
 ### 2.获取登录 access-token
 
 通过访问`/customer/login`来获取 `access-token` ，如果request headers 里面存在`access-token`，则会验证 `access-token` 的有效性，
@@ -49,13 +48,6 @@ fecshop实现了一个类似session的功能，提供给appserver使用，
 如果没有，则会从 request post中获取 `email` 和 `password`，验证成功后，
 生成`access-token`返回json格式
 
-```
-echo json_encode([
-    'access_token' => $accessToken,
-    'status'       => 'success',
-    'code'         => 200,
-]);
-```
 
 另外，服务端还需要做一部分用户登录的其他事情，譬如购物车合并等操作。
 
@@ -68,11 +60,7 @@ echo json_encode([
 controller都需要继承
 `@fecshop/app/appserver/modules/AppserverTokenController.php`
 ，在这个controller的behaviors()中已经加入了用户登录的验证，如果用户
-没有登录，将会返回json报错信息：
-
-```
-['status' => 'ERROR', 'code' => 401,'message' => 'token is time out'];
-```
+没有登录，将会返回json报错信息
 
 
 ### 4.登录用户的 过期时间 和 速度控制
