@@ -1,13 +1,13 @@
-Api- Customer Order 查新订单详细
+Api- Payment Success
 ================
 
-> 在账户中心的订单列表,点击view查看订单详情执行的api
+> 支付成功后，跳转到支付成功页面，访问的api
 
-URL: `/customer/order/view`
+URL: `/payment/success`
 
 格式：`json`
 
-方式：`get`
+方式：`post`
 
 
 一：请求部分
@@ -26,18 +26,12 @@ URL: `/customer/order/view`
 
 #### 2.Request Body Form-Data：
 
-
-| 参数名称        | 是否必须    |  类型       |  描述     |
-| ----------------| -----:      | :----:      |:----:     |
-| order_id        | 必须        |   String     | Order Id    |
-
+无
 
 **请求参数示例如下：**
 
 ```
-{
-    order_id:907
-}
+无
 ```
 
 二：返回部分
@@ -67,21 +61,22 @@ URL: `/customer/order/view`
     "code": 200,
     "message": "process success",
     "data": {
+        "increment_id": "1100000909",
         "order": {
-            "order_id": 907,
-            "increment_id": "1100000907",
-            "order_status": "pending",
+            "order_id": 909,
+            "increment_id": "1100000909",
+            "order_status": "processing",
             "store": "fecshop.appserver.fancyecommerce.com",
-            "created_at": "2017-10-31 12:13:12",
-            "updated_at": 1509423192,
-            "items_count": 15,
-            "total_weight": "825.00",
+            "created_at": 1509504001,
+            "updated_at": 1509504001,
+            "items_count": 1,
+            "total_weight": "55.00",
             "order_currency_code": "EUR",
             "order_to_base_rate": "0.9300",
-            "grand_total": "179.55",
-            "base_grand_total": "193.00",
-            "subtotal": "58.65",
-            "base_subtotal": "63.00",
+            "grand_total": "125.60",
+            "base_grand_total": "135.05",
+            "subtotal": "4.70",
+            "base_subtotal": "5.05",
             "subtotal_with_discount": "0.00",
             "base_subtotal_with_discount": "0.00",
             "is_changed": 1,
@@ -105,37 +100,52 @@ URL: `/customer/order/view`
             "customer_address_zip": "2121",
             "customer_address_street1": "2121",
             "customer_address_street2": "2121",
-            "txn_type": null,
-            "txn_id": null,
-            "payer_id": null,
+            "txn_type": "cart",
+            "txn_id": "6PT41125E9069713B",
+            "payer_id": "FKL4V7D5GCACY",
             "ipn_track_id": null,
             "receiver_id": null,
             "verify_sign": null,
             "charset": null,
-            "payment_fee": null,
-            "payment_type": null,
-            "correlation_id": null,
-            "base_payment_fee": null,
-            "protection_eligibility": null,
-            "protection_eligibility_type": null,
-            "secure_merchant_account_id": null,
-            "build": null,
-            "paypal_order_datetime": null,
+            "payment_fee": "3.99",
+            "payment_type": "instant",
+            "correlation_id": "4d88d1a3eb320",
+            "base_payment_fee": "4.30",
+            "protection_eligibility": "Eligible",
+            "protection_eligibility_type": "ItemNotReceivedEligible,UnauthorizedPaymentEligible",
+            "secure_merchant_account_id": "H4KXD885J8LV2",
+            "build": "40402625",
+            "paypal_order_datetime": "1970-01-01 08:33:37",
             "theme_type": null,
             "if_is_return_stock": 2,
-            "payment_token": "EC-4VA86601S0151002F",
+            "payment_token": "EC-0WB612551K6101423",
             "version": 0,
-            "customer_address_state_name": "Niederösterreich",
-            "customer_address_country_name": "Austria",
-            "currency_symbol": "€",
-            "products": [
+            "items": [
                 {
-                    "imgUrl": "//img.fancyecommerce.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/100/100/2/01/20160905101021_28071.jpg",
-                    "name": "Raglan Sleeves Letter Printed Crew Neck Sweatshirt kahaki-xl",
-                    "sku": "p10001-kahaki-xl",
-                    "qty": "15",
-                    "row_total": "58.65",
+                    "item_id": "936",
+                    "store": "fecshop.appserver.fancyecommerce.com",
+                    "order_id": "909",
+                    "created_at": "1509504001",
+                    "updated_at": "1509504001",
                     "product_id": "580835d0f656f240742f0b7c",
+                    "sku": "p10001-kahaki-xl",
+                    "name": "Raglan Sleeves Letter Printed Crew Neck Sweatshirt kahaki-xl",
+                    "custom_option_sku": "",
+                    "image": "/2/01/20160905101021_28071.jpg",
+                    "weight": "55.00",
+                    "qty": "1",
+                    "row_weight": "55.00",
+                    "price": "4.70",
+                    "base_price": "4.70",
+                    "row_total": "4.70",
+                    "base_row_total": "5.05",
+                    "redirect_url": "/raglan-sleeves-letter-printed-crew-neck-sweatshirt-53386451-77774122",
+                    "spu_options": {
+                        "color": "khaki",
+                        "size": "XL",
+                        "test3": "t_1"
+                    },
+                    "custom_option": [],
                     "custom_option_info": {
                         "color": "khaki",
                         "size": "XL",

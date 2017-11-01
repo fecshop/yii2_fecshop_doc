@@ -1,9 +1,10 @@
-Api- 得到分类产品
+Api- Customer address 编辑切换国家
 ================
 
-> vue 分类页面，得到分类信息的api
+> 在账户中心编辑address的时候，当切换国家，需要获得相应的`州/省`信息，来做select下拉条
+里面的内容，该api就是做这个事情，获取切换国家后对应的 `州/省` 信息
 
-URL: `/catalog/category/product`
+URL: `/customer/address/changecountry`
 
 格式：`json`
 
@@ -29,21 +30,13 @@ URL: `/catalog/category/product`
 
 | 参数名称        | 是否必须    |  类型       |  描述     |
 | ----------------| -----:      | :----:      |:----:     |
-| categoryId      | 必须        |   String     | 分类Id    |
-| sortColumn      | 必须        |   String     | 分类产品的排序字段   |
-| filterAttrs     | 必须        |   ARRAY      | 分类侧栏的属性过滤，没有属性过滤则填写空数组   |
-| filterPrice     | 必须        |   String     | 分类侧栏价格过滤     |
-| p               | 必须        |   Integer    | 页数  |
+| country         | 必须        |   String    | 国家Code   |
 
 **请求参数示例如下：**
 
 ```
 {
-    categoryId:"57b6ac42f656f246653bf576",
-    sortColumn:"review_count",
-    filterAttrs:{"color":"multicolor","size":"M"},
-    filterPrice:"20-30",
-    p:2
+    country: "CN"
 }
 ```
 
@@ -70,5 +63,46 @@ URL: `/catalog/category/product`
 返回数据举例：
 
 ```
-
+{
+    "code": 200,
+    "message": "process success",
+    "data": {
+        "stateIsSelect": 1,
+        "stateArr": {
+            "BJ": "北京市",
+            "SH": "上海市",
+            "TJ": "天津市",
+            "CQ": "重庆市",
+            "HEB": "河北省",
+            "SAX": "山西省",
+            "LN": "辽宁省",
+            "JL": "吉林省",
+            "HLJ": "黑龙江省",
+            "JS": "江苏省",
+            "ZJ": "浙江省",
+            "AH": "安徽省",
+            "FJ": "福建省",
+            "JX": "江西省",
+            "SD": "山东省",
+            "HEN": "河南省",
+            "HUB": "湖北省",
+            "HUN": "湖南省",
+            "GD": "广东省",
+            "HN": "海南省",
+            "SC": "四川省",
+            "HZ": "贵州省",
+            "YN": "云南省",
+            "SNX": "陕西省",
+            "GS": "甘肃省",
+            "QH": "青海省",
+            "TW": "台湾省",
+            "GX": "广西壮族自治区",
+            "NMG": "内蒙古自治区",
+            "XZ": "西藏自治区",
+            "NX": "宁夏回族自治区",
+            "XJ": "新疆维吾尔自治区",
+            "XG": "香港特别行政区"
+        }
+    }
+}
 ```

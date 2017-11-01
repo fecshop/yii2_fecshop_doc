@@ -1,9 +1,9 @@
-Api- Customer 忘记密码重置初始化
+Api- 得到分类产品
 ================
 
-> 忘记密码发送给用户邮箱后，用户点击邮箱里面的链接进入网站后，VUE访问的api
+> vue 分类页面，得到分类信息的api
 
-URL: `/customer/forgot/resetpassword`
+URL: `/catalog/product/favorite`
 
 格式：`json`
 
@@ -27,15 +27,17 @@ URL: `/customer/forgot/resetpassword`
 #### 2.Request Body Form-Data：
 
 
-| 参数名称        | 是否必须    | 类型        | 描述            |
-| ----------------| -----:      | :----:      | :----:          |
-| resetToken      | 必须        |   String    | 重置密码token   |
+| 参数名称        | 是否必须    |  类型       |  描述     |
+| ----------------| -----:      | :----:      |:----:     |
+| product_id      | 必须        |   String     | product id    |
+
+
 
 **请求参数示例如下：**
 
 ```
 {
-    resetToken: "zaow-pri7o_w_p2DTLFs1z0iC4xonLIY_1509445774"
+    product_id:"580835d0f656f240742f0b7c"
 }
 ```
 
@@ -66,7 +68,7 @@ URL: `/customer/forgot/resetpassword`
     "code": 200,
     "message": "process success",
     "data": {
-        "resetPasswordActive": true
+        "content": "success"
     }
 }
 ```

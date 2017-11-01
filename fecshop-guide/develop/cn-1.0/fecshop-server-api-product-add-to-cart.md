@@ -1,13 +1,13 @@
-Api- Customer 忘记密码重置初始化
+Api- Product 加入购物车
 ================
 
-> 忘记密码发送给用户邮箱后，用户点击邮箱里面的链接进入网站后，VUE访问的api
+> 产品页面点击增加产品到购物车按钮后，访问的api
 
-URL: `/customer/forgot/resetpassword`
+URL: `/checkout/cart/add`
 
 格式：`json`
 
-方式：`get`
+方式：`post`
 
 
 一：请求部分
@@ -27,15 +27,25 @@ URL: `/customer/forgot/resetpassword`
 #### 2.Request Body Form-Data：
 
 
-| 参数名称        | 是否必须    | 类型        | 描述            |
-| ----------------| -----:      | :----:      | :----:          |
-| resetToken      | 必须        |   String    | 重置密码token   |
+| 参数名称        | 是否必须    |  类型        |  描述     |
+| ----------------| -----:      | :----:       |:----:     |
+| custom_option   | 必须        |   Object     | 用户的自定义属性的信息    |
+| product_id      | 必须        |   String     | Product Id                |
+| qty             | 必须        |   Integer    | 产品加入购物车的个数      |
+
 
 **请求参数示例如下：**
 
 ```
 {
-    resetToken: "zaow-pri7o_w_p2DTLFs1z0iC4xonLIY_1509445774"
+    custom_option:{
+        "my_color":"red",
+        "my_size":"S",
+        "my_size2":"S2",
+        "my_size3":"S3"
+    },
+    product_id: "581c6833f656f2042f2f0b77",
+    qty: 1
 }
 ```
 
@@ -66,7 +76,7 @@ URL: `/customer/forgot/resetpassword`
     "code": 200,
     "message": "process success",
     "data": {
-        "resetPasswordActive": true
+        "items_count": 18   //购物车中产品总数
     }
 }
 ```

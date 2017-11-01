@@ -1,13 +1,15 @@
-Api- Customer 忘记密码重置初始化
+Api- Onepage Paypal Standard Review
 ================
 
-> 忘记密码发送给用户邮箱后，用户点击邮箱里面的链接进入网站后，VUE访问的api
+> paypal standard支付，在paypal登录后，点击付款跳转回fecshop后，
+> 执行的api,该api进行订单的paypal支付（paypal api支付）
 
-URL: `/customer/forgot/resetpassword`
+
+URL: `/payment/paypal/standard/review`
 
 格式：`json`
 
-方式：`get`
+方式：`post`
 
 
 一：请求部分
@@ -27,15 +29,18 @@ URL: `/customer/forgot/resetpassword`
 #### 2.Request Body Form-Data：
 
 
-| 参数名称        | 是否必须    | 类型        | 描述            |
-| ----------------| -----:      | :----:      | :----:          |
-| resetToken      | 必须        |   String    | 重置密码token   |
+| 参数名称        | 是否必须    |  类型       |  描述     |
+| ----------------| -----:      | :----:      |:----:     |
+| token           | 必须        |   String     | paypal token     |
+| PayerID         | 必须        |   String     | paypal PayerID   |
+
 
 **请求参数示例如下：**
 
 ```
 {
-    resetToken: "zaow-pri7o_w_p2DTLFs1z0iC4xonLIY_1509445774"
+    token: "EC-0WB612551K6101423",
+    PayerID: "FKL4V7D5GCACY"
 }
 ```
 
@@ -65,8 +70,6 @@ URL: `/customer/forgot/resetpassword`
 {
     "code": 200,
     "message": "process success",
-    "data": {
-        "resetPasswordActive": true
-    }
+    "data": []
 }
 ```

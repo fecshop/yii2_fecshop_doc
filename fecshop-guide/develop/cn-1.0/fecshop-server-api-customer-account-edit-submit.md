@@ -1,14 +1,13 @@
-Api- Customer 忘记密码重置初始化
+Api- Customer account编辑提交
 ================
 
-> 忘记密码发送给用户邮箱后，用户点击邮箱里面的链接进入网站后，VUE访问的api
+> 用户中心编辑用户信息，填写完用户的修改信息，点击提交后访问的api
 
-URL: `/customer/forgot/resetpassword`
+URL: `/customer/editaccount/update`
 
 格式：`json`
 
-方式：`get`
-
+方式：`post`
 
 一：请求部分
 ---------
@@ -27,15 +26,23 @@ URL: `/customer/forgot/resetpassword`
 #### 2.Request Body Form-Data：
 
 
-| 参数名称        | 是否必须    | 类型        | 描述            |
-| ----------------| -----:      | :----:      | :----:          |
-| resetToken      | 必须        |   String    | 重置密码token   |
+| 参数名称             | 是否必须    |  类型       |  描述     |
+| ----------------     | -----:      | :----:      |:----:     |
+| firstname            | 必须        |   String    | 用户的first name  |
+| lastname             | 必须        |   String    | 用户的last  name  |
+| current_password     | 必须        |   String    | 用户的当前密码    |
+| new_password         | 必须        |   String    | 用户的新密码      |
+| confirm_new_password | 必须        |   String    | 用户的新密码确认  |
 
 **请求参数示例如下：**
 
 ```
 {
-    resetToken: "zaow-pri7o_w_p2DTLFs1z0iC4xonLIY_1509445774"
+    firstname: "44444",
+    lastname: "666",
+    current_password: "444444",
+    new_password: "111111",
+    confirm_new_password: "111111"
 }
 ```
 
@@ -65,8 +72,6 @@ URL: `/customer/forgot/resetpassword`
 {
     "code": 200,
     "message": "process success",
-    "data": {
-        "resetPasswordActive": true
-    }
+    "data": []
 }
 ```

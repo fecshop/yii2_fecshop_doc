@@ -6,7 +6,7 @@ Api- Customer 注册初始化
 
 URL: `/customer/register/index`
 
-格式：`json`
+格式：`json` 
 
 方式：`get`
 

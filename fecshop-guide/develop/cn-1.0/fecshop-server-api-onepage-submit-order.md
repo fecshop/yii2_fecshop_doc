@@ -42,7 +42,7 @@ URL: `/checkout/onepage/submitorder`
 
 ```
 {
-    address_id:118
+    address_id:118,
     billing:{
         first_name: "2121",        
         last_name： "xxx",

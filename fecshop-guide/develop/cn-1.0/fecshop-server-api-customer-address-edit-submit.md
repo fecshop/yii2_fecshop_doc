@@ -1,13 +1,13 @@
-Api- 得到分类产品
+Api- Customer address 编辑提交
 ================
 
-> vue 分类页面，得到分类信息的api
+> customer address 账户中心编辑address后，保存address的api
 
-URL: `/catalog/category/product`
+URL: `/customer/address/save`
 
 格式：`json`
 
-方式：`get`
+方式：`post`
 
 
 一：请求部分
@@ -29,21 +29,35 @@ URL: `/catalog/category/product`
 
 | 参数名称        | 是否必须    |  类型       |  描述     |
 | ----------------| -----:      | :----:      |:----:     |
-| categoryId      | 必须        |   String     | 分类Id    |
-| sortColumn      | 必须        |   String     | 分类产品的排序字段   |
-| filterAttrs     | 必须        |   ARRAY      | 分类侧栏的属性过滤，没有属性过滤则填写空数组   |
-| filterPrice     | 必须        |   String     | 分类侧栏价格过滤     |
-| p               | 必须        |   Integer    | 页数  |
+| address_id      | 必须        |   String    | Address Id    |
+| first_name      | 必须        |   String    | 用户收货地址填写的first name   |
+| last_name       | 必须        |   String    | 用户收货地址填写的last  name   |
+| email           | 必须        |   String    | 用户的email          |
+| telephone       | 必须        |   String    | 收货地址的telephone  |
+| addressCountry  | 必须        |   String    | 收货地址的国家       |
+| addressState    | 必须        |   String    | 收货地址的州/省      |
+| city            | 必须        |   String    | 收货地址的城市       |
+| street1         | 必须        |   String    | 收货地址的详细街道地址1  |
+| street2         | 必须        |   String    | 收货地址的详细街道地址2  |
+| isDefaultActive | 必须        |   Integer   | 是否是默认收货地址，1代表是，0代表不是  |
+| zip             | 必须        |   String    | 收货地址的邮编       |
 
 **请求参数示例如下：**
 
 ```
 {
-    categoryId:"57b6ac42f656f246653bf576",
-    sortColumn:"review_count",
-    filterAttrs:{"color":"multicolor","size":"M"},
-    filterPrice:"20-30",
-    p:2
+    address_id:118
+    first_name:2121
+    last_name:2121
+    email:fdfd@3232.com
+    telephone:2121
+    addressCountry:AT
+    addressState:NO
+    city:2121
+    street1:2121
+    street2:2121
+    isDefaultActive:1
+    zip:2121
 }
 ```
 
@@ -70,5 +84,9 @@ URL: `/catalog/category/product`
 返回数据举例：
 
 ```
-
+{
+    "code": 200,
+    "message": "process success",
+    "data": []
+}
 ```

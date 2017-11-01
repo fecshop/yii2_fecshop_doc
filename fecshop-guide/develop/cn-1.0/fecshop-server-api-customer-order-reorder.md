@@ -1,9 +1,10 @@
-Api- 得到分类产品
+Api- Customer Order 重新下单
 ================
 
-> vue 分类页面，得到分类信息的api
+> 在账户中心的订单列表，点击reorder，重新下单按钮后，执行的api，该
+> api的作用为：将订单中的产品加入到购物车中
 
-URL: `/catalog/category/product`
+URL: `/customer/order/reorder`
 
 格式：`json`
 
@@ -29,21 +30,14 @@ URL: `/catalog/category/product`
 
 | 参数名称        | 是否必须    |  类型       |  描述     |
 | ----------------| -----:      | :----:      |:----:     |
-| categoryId      | 必须        |   String     | 分类Id    |
-| sortColumn      | 必须        |   String     | 分类产品的排序字段   |
-| filterAttrs     | 必须        |   ARRAY      | 分类侧栏的属性过滤，没有属性过滤则填写空数组   |
-| filterPrice     | 必须        |   String     | 分类侧栏价格过滤     |
-| p               | 必须        |   Integer    | 页数  |
+| order_id        | 必须        |   String     | Order Id    |
+
 
 **请求参数示例如下：**
 
 ```
 {
-    categoryId:"57b6ac42f656f246653bf576",
-    sortColumn:"review_count",
-    filterAttrs:{"color":"multicolor","size":"M"},
-    filterPrice:"20-30",
-    p:2
+    order_id:884
 }
 ```
 
@@ -70,5 +64,9 @@ URL: `/catalog/category/product`
 返回数据举例：
 
 ```
-
+{
+    "code": 200,
+    "message": "process success",
+    "data": []
+}
 ```

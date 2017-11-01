@@ -1,13 +1,13 @@
-Api- Customer 忘记密码重置初始化
+Api- Product Add Review Submit
 ================
 
-> 忘记密码发送给用户邮箱后，用户点击邮箱里面的链接进入网站后，VUE访问的api
+> 产品评论页面，填写完评论信息，点击提交后访问的api
 
-URL: `/customer/forgot/resetpassword`
+URL: `/catalog/reviewproduct/submitreview`
 
 格式：`json`
 
-方式：`get`
+方式：`post`
 
 
 一：请求部分
@@ -27,15 +27,25 @@ URL: `/customer/forgot/resetpassword`
 #### 2.Request Body Form-Data：
 
 
-| 参数名称        | 是否必须    | 类型        | 描述            |
-| ----------------| -----:      | :----:      | :----:          |
-| resetToken      | 必须        |   String    | 重置密码token   |
+| 参数名称        | 是否必须    |  类型        |  描述     |
+| ----------------| -----:      | :----:       |:----:     |
+| product_id      | 必须        |   String     | Product Id    |
+| customer_name   | 必须        |   String     | 评论用户的name   |
+| summary         | 必须        |   String     | 评论的title   |
+| captcha         | 必须        |   String     | 验证码    |
+| review_content  | 必须        |   String     | 评论内容  |
+| selectStar      | 必须        |   Integer    | 评星  |
 
 **请求参数示例如下：**
 
 ```
 {
-    resetToken: "zaow-pri7o_w_p2DTLFs1z0iC4xonLIY_1509445774"
+    product_id: "580835d0f656f240742f0b7c",
+    customer_name: "44444 666",
+    summary: "summary title",
+    captcha: "2744",
+    review_content: "review content ...",
+    selectStar: 5
 }
 ```
 
@@ -65,8 +75,6 @@ URL: `/customer/forgot/resetpassword`
 {
     "code": 200,
     "message": "process success",
-    "data": {
-        "resetPasswordActive": true
-    }
+    "data": []
 }
 ```

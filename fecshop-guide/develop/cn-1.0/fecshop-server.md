@@ -1,4 +1,4 @@
-Fecshop Server
+Fecshop 服务端说明
 ============
 
 > fecshop server 是和app类客户端 对接的部分，

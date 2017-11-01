@@ -1,13 +1,13 @@
-Api- Customer 忘记密码重置初始化
+Api- Onepage checkMoney Standard Start
 ================
 
-> 忘记密码发送给用户邮箱后，用户点击邮箱里面的链接进入网站后，VUE访问的api
+> 在标准支付页面，选择checkMoney（线下支付）的方式支付，生成订单跳转后访问的api
 
-URL: `/customer/forgot/resetpassword`
+URL: `/payment/checkmoney/start`
 
 格式：`json`
 
-方式：`get`
+方式：`post`
 
 
 一：请求部分
@@ -26,17 +26,12 @@ URL: `/customer/forgot/resetpassword`
 
 #### 2.Request Body Form-Data：
 
-
-| 参数名称        | 是否必须    | 类型        | 描述            |
-| ----------------| -----:      | :----:      | :----:          |
-| resetToken      | 必须        |   String    | 重置密码token   |
+无
 
 **请求参数示例如下：**
 
 ```
-{
-    resetToken: "zaow-pri7o_w_p2DTLFs1z0iC4xonLIY_1509445774"
-}
+无
 ```
 
 二：返回部分
@@ -65,8 +60,6 @@ URL: `/customer/forgot/resetpassword`
 {
     "code": 200,
     "message": "process success",
-    "data": {
-        "resetPasswordActive": true
-    }
+    "data": []
 }
 ```

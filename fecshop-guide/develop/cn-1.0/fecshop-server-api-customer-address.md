@@ -1,9 +1,9 @@
-Api- 得到分类产品
+Api- Customer address 列表
 ================
 
-> vue 分类页面，得到分类信息的api
+> 账户中心，获取用户的address列表的api
 
-URL: `/catalog/category/product`
+URL: `/customer/address/index`
 
 格式：`json`
 
@@ -27,24 +27,13 @@ URL: `/catalog/category/product`
 #### 2.Request Body Form-Data：
 
 
-| 参数名称        | 是否必须    |  类型       |  描述     |
-| ----------------| -----:      | :----:      |:----:     |
-| categoryId      | 必须        |   String     | 分类Id    |
-| sortColumn      | 必须        |   String     | 分类产品的排序字段   |
-| filterAttrs     | 必须        |   ARRAY      | 分类侧栏的属性过滤，没有属性过滤则填写空数组   |
-| filterPrice     | 必须        |   String     | 分类侧栏价格过滤     |
-| p               | 必须        |   Integer    | 页数  |
+无
+
 
 **请求参数示例如下：**
 
 ```
-{
-    categoryId:"57b6ac42f656f246653bf576",
-    sortColumn:"review_count",
-    filterAttrs:{"color":"multicolor","size":"M"},
-    filterPrice:"20-30",
-    p:2
-}
+无
 ```
 
 二：返回部分
@@ -70,5 +59,54 @@ URL: `/catalog/category/product`
 返回数据举例：
 
 ```
-
+{
+    "code": 200,
+    "message": "process success",
+    "data": {
+        "addressList": [
+            {
+                "address_id": "117",
+                "first_name": "111",
+                "email": "34343@3232.com",
+                "last_name": "222",
+                "company": null,
+                "telephone": "3232",
+                "fax": null,
+                "street1": "3232",
+                "street2": "3232",
+                "city": "3232",
+                "state": "BJ",
+                "zip": "ewewew",
+                "country": "CN",
+                "customer_id": "46",
+                "created_at": "1506397313",
+                "updated_at": "1509161659",
+                "is_default": "2",
+                "stateName": "北京市",
+                "countryName": "China"
+            },
+            {
+                "address_id": "118",
+                "first_name": "2121",
+                "email": "fdfd@3232.com",
+                "last_name": "2121",
+                "company": null,
+                "telephone": "2121",
+                "fax": null,
+                "street1": "2121",
+                "street2": "2121",
+                "city": "2121",
+                "state": "NO",
+                "zip": "2121",
+                "country": "AT",
+                "customer_id": "46",
+                "created_at": "1506397526",
+                "updated_at": "1509158174",
+                "is_default": "1",
+                "stateName": "Niederösterreich",
+                "countryName": "Austria"
+            }
+        ]
+    }
+}
 ```

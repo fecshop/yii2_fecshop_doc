@@ -1,13 +1,13 @@
-Api- 得到分类产品
+Api- Customer Contacts提交
 ================
 
-> vue 分类页面，得到分类信息的api
+> Customer Contacts 页面，填写联系我们信息后，点击提交按钮访问的api
 
-URL: `/catalog/category/product`
+URL: `/customer/contact/submit`
 
 格式：`json`
 
-方式：`get`
+方式：`post`
 
 
 一：请求部分
@@ -27,23 +27,23 @@ URL: `/catalog/category/product`
 #### 2.Request Body Form-Data：
 
 
-| 参数名称        | 是否必须    |  类型       |  描述     |
-| ----------------| -----:      | :----:      |:----:     |
-| categoryId      | 必须        |   String     | 分类Id    |
-| sortColumn      | 必须        |   String     | 分类产品的排序字段   |
-| filterAttrs     | 必须        |   ARRAY      | 分类侧栏的属性过滤，没有属性过滤则填写空数组   |
-| filterPrice     | 必须        |   String     | 分类侧栏价格过滤     |
-| p               | 必须        |   Integer    | 页数  |
+| 参数名称        | 是否必须    |  类型       |  描述           |
+| ----------------| -----:      | :----:      |:----:           |
+| captcha         | 必须        |   String    | 验证码          |
+| customer_name   | 必须        |   String    | 用户名字        |
+| email           | 必须        |   String    | 用户的邮箱地址  |
+| telephone       | 必须        |   String    | 用户的电话      |
+| comment         | 必须        |   String    | 联系我们的内容  |
 
 **请求参数示例如下：**
 
 ```
 {
-    categoryId:"57b6ac42f656f246653bf576",
-    sortColumn:"review_count",
-    filterAttrs:{"color":"multicolor","size":"M"},
-    filterPrice:"20-30",
-    p:2
+    captcha: "9004",
+    customer_name: "terry",
+    email: "372716335@qq.com",
+    telephone: "18233456766",
+    comment: "gogogoogo test test"
 }
 ```
 
@@ -70,5 +70,11 @@ URL: `/catalog/category/product`
 返回数据举例：
 
 ```
-
+{
+    "code": 200,
+    "message": "process success",
+    "data": {
+        "content": "contact us success"
+    }
+}
 ```

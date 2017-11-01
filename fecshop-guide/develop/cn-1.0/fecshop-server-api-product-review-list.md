@@ -1,9 +1,9 @@
-Api- Customer 忘记密码重置初始化
+Api- Product Review List
 ================
 
-> 忘记密码发送给用户邮箱后，用户点击邮箱里面的链接进入网站后，VUE访问的api
+> vue 分类页面，得到分类信息的api
 
-URL: `/customer/forgot/resetpassword`
+URL: `/catalog/reviewproduct/lists`
 
 格式：`json`
 
@@ -27,15 +27,16 @@ URL: `/customer/forgot/resetpassword`
 #### 2.Request Body Form-Data：
 
 
-| 参数名称        | 是否必须    | 类型        | 描述            |
-| ----------------| -----:      | :----:      | :----:          |
-| resetToken      | 必须        |   String    | 重置密码token   |
+| 参数名称        | 是否必须    |  类型        |  描述     |
+| ----------------| -----:      | :----:       |:----:     |
+| product_id      | 必须        |   String     | Product Id    |
+
 
 **请求参数示例如下：**
 
 ```
 {
-    resetToken: "zaow-pri7o_w_p2DTLFs1z0iC4xonLIY_1509445774"
+    product_id: "580835d0f656f240742f0b7c"
 }
 ```
 
@@ -66,7 +67,47 @@ URL: `/customer/forgot/resetpassword`
     "code": 200,
     "message": "process success",
     "data": {
-        "resetPasswordActive": true
+        "product": {
+            "product_id": "580835d0f656f240742f0b7c",
+            "spu": "p10001",
+            "price_info": {
+                "price": {
+                    "symbol": "€",
+                    "value": 5.63,
+                    "code": "EUR"
+                },
+                "special_price": {
+                    "symbol": "€",
+                    "value": 4.7,
+                    "code": "EUR"
+                }
+            },
+            "imgUrl": "//img.fancyecommerce.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/150/150/2/01/20160905101021_28071.jpg",
+            "name": "Raglan Sleeves Letter Printed Crew Neck Sweatshirt kahaki-xl"
+        },
+        "reviewList": [
+            {
+                "_id": {
+                    "$oid": "5818086ff656f20f292f0b77"
+                },
+                "product_spu": "p10001",
+                "product_id": "580835d0f656f240742f0b7c",
+                "rate_star": "3",
+                "name": "terr fdf",
+                "user_id": 17,
+                "ip": "119.123.79.199",
+                "summary": "fdsfds",
+                "review_content": "fdsaf",
+                "review_date": 1477970031,
+                "store": "fecshop.appfront.fancyecommerce.com/fr",
+                "lang_code": "fr",
+                "status": 1,
+                "audit_user": 2,
+                "audit_date": 1477970038
+            }
+        ],
+        "review_count": 1,
+        "reviw_rate_star_average": 3
     }
 }
 ```

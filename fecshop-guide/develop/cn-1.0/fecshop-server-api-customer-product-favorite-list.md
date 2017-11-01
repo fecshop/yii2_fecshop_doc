@@ -1,9 +1,9 @@
-Api- 得到分类产品
+Api- Customer 产品收藏列表
 ================
 
-> vue 分类页面，得到分类信息的api
+> Customer account 账户中心，产品收藏列表页面的api
 
-URL: `/catalog/category/product`
+URL: `/customer/productfavorite/index`
 
 格式：`json`
 
@@ -26,25 +26,12 @@ URL: `/catalog/category/product`
 
 #### 2.Request Body Form-Data：
 
-
-| 参数名称        | 是否必须    |  类型       |  描述     |
-| ----------------| -----:      | :----:      |:----:     |
-| categoryId      | 必须        |   String     | 分类Id    |
-| sortColumn      | 必须        |   String     | 分类产品的排序字段   |
-| filterAttrs     | 必须        |   ARRAY      | 分类侧栏的属性过滤，没有属性过滤则填写空数组   |
-| filterPrice     | 必须        |   String     | 分类侧栏价格过滤     |
-| p               | 必须        |   Integer    | 页数  |
+无
 
 **请求参数示例如下：**
 
 ```
-{
-    categoryId:"57b6ac42f656f246653bf576",
-    sortColumn:"review_count",
-    filterAttrs:{"color":"multicolor","size":"M"},
-    filterPrice:"20-30",
-    p:2
-}
+无
 ```
 
 二：返回部分
@@ -70,5 +57,132 @@ URL: `/catalog/category/product`
 返回数据举例：
 
 ```
-
+{
+    "code": 200,
+    "message": "process success",
+    "data": {
+        "productList": [
+            {
+                "_id": {
+                    "$oid": "581ae91ff656f20f052f0b77"
+                },
+                "name": "Reindeer Pattern Glitter Christmas Dress",
+                "url_key": "/reindeer-pattern-glitter-christmas-dress",
+                "price": 22.68,
+                "special_price": 21.68,
+                "special_from": 0,
+                "special_to": 0,
+                "image": {
+                    "gallery": [
+                        {
+                            "image": "/2/01/20161024170457_10036.jpg",
+                            "label": "",
+                            "sort_order": "",
+                            "is_thumbnails": "1",
+                            "is_detail": "1"
+                        },
+                        {
+                            "image": "/2/01/20161024170457_13851.jpg",
+                            "label": "",
+                            "sort_order": "",
+                            "is_thumbnails": "1",
+                            "is_detail": "1"
+                        },
+                        {
+                            "image": "/2/01/20161024170457_21098.jpg",
+                            "label": "",
+                            "sort_order": "",
+                            "is_thumbnails": "1",
+                            "is_detail": "1"
+                        },
+                        {
+                            "image": "/2/01/20161101155240_56328.jpg",
+                            "label": "",
+                            "sort_order": "",
+                            "is_thumbnails": "1",
+                            "is_detail": "1"
+                        },
+                        {
+                            "image": "/2/01/20161101155240_94256.jpg",
+                            "label": "",
+                            "sort_order": "",
+                            "is_thumbnails": "1",
+                            "is_detail": "1"
+                        }
+                    ],
+                    "main": {
+                        "image": "/2/01/20161101155240_26690.jpg",
+                        "label": "",
+                        "sort_order": "",
+                        "is_thumbnails": "1",
+                        "is_detail": "1"
+                    }
+                },
+                "updated_at": "2017-09-28 11:04:19",
+                "favorite_id": "59cc66b3bfb7ae575337da64",
+                "imgUrl": "//img.fancyecommerce.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/296/0/2/01/20161101155240_26690.jpg",
+                "price_info": {
+                    "price": {
+                        "symbol": "€",
+                        "value": 21.1,
+                        "code": "EUR"
+                    },
+                    "special_price": {
+                        "symbol": "€",
+                        "value": 20.17,
+                        "code": "EUR"
+                    }
+                },
+                "product_id": "581ae91ff656f20f052f0b77"
+            },
+            {
+                "_id": {
+                    "$oid": "57c3aaa9f656f24f353bf56e"
+                },
+                "name": "Paire de Bouton élégant Agrémentée évider Mesh Shape tricoté Boot poignets pour les femmes",
+                "url_key": "/pair-of-stylish-button-embellished-hollow-out-mesh-shape-knitted-boot-cuffs-for-women",
+                "price": 267.3,
+                "special_price": 143.56,
+                "special_from": 0,
+                "special_to": 0,
+                "image": {
+                    "gallery": [
+                        {
+                            "image": "/2/01/20160722142719_96573.jpg",
+                            "label": "",
+                            "sort_order": "",
+                            "is_thumbnails": "1",
+                            "is_detail": "1"
+                        }
+                    ],
+                    "main": {
+                        "image": "/2/01/20160722142719_52348.jpg",
+                        "label": "",
+                        "sort_order": "",
+                        "is_thumbnails": "1",
+                        "is_detail": "1"
+                    }
+                },
+                "updated_at": "2017-09-14 12:23:44",
+                "favorite_id": "59b9fb15bfb7ae5c51016bd2",
+                "imgUrl": "//img.fancyecommerce.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/296/0/2/01/20160722142719_52348.jpg",
+                "price_info": {
+                    "price": {
+                        "symbol": "€",
+                        "value": 248.59,
+                        "code": "EUR"
+                    },
+                    "special_price": {
+                        "symbol": "€",
+                        "value": 133.52,
+                        "code": "EUR"
+                    }
+                },
+                "product_id": "57c3aaa9f656f24f353bf56e"
+            }
+        ],
+        "count": 2,
+        "numPerPage": null
+    }
+}
 ```

@@ -1,9 +1,9 @@
-Api- 得到分类产品
+Api- Customer account编辑
 ================
 
-> vue 分类页面，得到分类信息的api
+> 用户中心编辑用户信息使用的api
 
-URL: `/catalog/category/product`
+URL: `/customer/editaccount/index`
 
 格式：`json`
 
@@ -26,25 +26,12 @@ URL: `/catalog/category/product`
 
 #### 2.Request Body Form-Data：
 
-
-| 参数名称        | 是否必须    |  类型       |  描述     |
-| ----------------| -----:      | :----:      |:----:     |
-| categoryId      | 必须        |   String     | 分类Id    |
-| sortColumn      | 必须        |   String     | 分类产品的排序字段   |
-| filterAttrs     | 必须        |   ARRAY      | 分类侧栏的属性过滤，没有属性过滤则填写空数组   |
-| filterPrice     | 必须        |   String     | 分类侧栏价格过滤     |
-| p               | 必须        |   Integer    | 页数  |
+无
 
 **请求参数示例如下：**
 
 ```
-{
-    categoryId:"57b6ac42f656f246653bf576",
-    sortColumn:"review_count",
-    filterAttrs:{"color":"multicolor","size":"M"},
-    filterPrice:"20-30",
-    p:2
-}
+无
 ```
 
 二：返回部分
@@ -70,5 +57,17 @@ URL: `/catalog/category/product`
 返回数据举例：
 
 ```
-
+{
+    "code": 200,
+    "message": "process success",
+    "data": {
+        "email": "2358269014@qq.com",
+        "firstname": "44444",
+        "lastname": "666",
+        "minNameLength": 1,
+        "maxNameLength": 30,
+        "minPassLength": 6,
+        "maxPassLength": 30
+    }
+}
 ```
