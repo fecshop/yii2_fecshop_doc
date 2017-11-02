@@ -33,8 +33,8 @@ Fecshop Api 入口
 
 Fecshop Server 入口
 ----------------------
-*  [Fecshop 服务端说明](fecshop-server.md)
-*  [Fecshop 客户端说明（Vue）](fecshop-vue-config.md)
+*  [AppServer 服务端说明](fecshop-server.md)
+*  [Vue 客户端说明](fecshop-vue-config.md)
 *  [Api- 状态码](fecshop-server-return-code.md)
 *  [Api- Captcha验证码](fecshop-server-api-captcha.md)
 *  [Api- Home 得到首页信息](fecshop-server-api-home.md)

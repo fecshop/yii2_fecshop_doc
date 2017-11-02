@@ -72,8 +72,8 @@ URL: `/catalogsearch/index/index`
 {
     "code": 200,
     "content": {
-        "searchText": "dress",
-        "products": [
+        "searchText": "dress",  // 搜索词
+        "products": [ // 不需要注释了，都能看懂
             {
                 "one": {
                     "name": "Reindeer Pattern Glitter Christmas Dress",

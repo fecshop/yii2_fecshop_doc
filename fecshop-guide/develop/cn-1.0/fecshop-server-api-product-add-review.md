@@ -67,7 +67,7 @@ URL: `/catalog/reviewproduct/add`
     "code": 200,
     "message": "process success",
     "data": {
-        "product": {
+        "product": { // 产品信息
             "product_id": "580835d0f656f240742f0b7c",
             "spu": "p10001",
             "price_info": {
@@ -85,8 +85,8 @@ URL: `/catalog/reviewproduct/add`
             "imgUrl": "//img.fancyecommerce.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/150/150/2/01/20160905101021_28071.jpg",
             "product_name": "Raglan Sleeves Letter Printed Crew Neck Sweatshirt kahaki-xl"
         },
-        "customer_name": "44444 666",
-        "reviewCaptchaActive": true
+        "customer_name": "44444 666",  // 当前用户的name
+        "reviewCaptchaActive": true    // 是否需要验证码
     }
 }
 ```

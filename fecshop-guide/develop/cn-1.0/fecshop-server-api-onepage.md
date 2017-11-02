@@ -61,7 +61,7 @@ URL: `/checkout/onepage/index`
     "code": 200,
     "message": "process success",
     "data": {
-        "payments": {
+        "payments": {  // 支付信息
             "check_money": {
                 "label": "Check / Money Order",
                 "imageUrl": "",
@@ -79,7 +79,7 @@ URL: `/checkout/onepage/index`
                 "checked": true
             }
         },
-        "shippings": [
+        "shippings": [  // 货运快递信息
             {
                 "method": "free_shipping",
                 "label": "Free shipping( 7-20 work days)",
@@ -99,34 +99,41 @@ URL: `/checkout/onepage/index`
                 "shipping_i": 2
             }
         ],
-        "current_shipping_method": "fast_shipping",
-        "current_payment_method": "alipay_standard",
-        "cart_info": {
-            "store": "fecshop.appserver.fancyecommerce.com",
-            "items_count": 18,
-            "coupon_code": null,
-            "shipping_method": "fast_shipping",
-            "payment_method": "alipay_standard",
-            "grand_total": "240.93",
-            "shipping_cost": "120.90",
-            "coupon_cost": "0.00",
-            "product_total": "120.03",
-            "base_grand_total": "259.00",
-            "base_shipping_cost": "130.00",
-            "base_coupon_cost": "0.00",
-            "base_product_total": "129.00",
-            "products": [
+        "current_shipping_method": "fast_shipping",  // 当前的货运方式
+        "current_payment_method": "alipay_standard", // 当前的支付方式
+        "cart_info": {  // 购物车信息
+            "store": "fecshop.appserver.fancyecommerce.com", // store
+            "items_count": 18,    // 购物车产品总数
+            "coupon_code": null,   // 优惠券
+            "shipping_method": "fast_shipping",     // 购物车中的货运方式
+            "payment_method": "alipay_standard",    // 购物车中的支付方式
+            "grand_total": "240.93",                // 购物车总额（当前货币）
+            "shipping_cost": "120.90",              // 购物车运费（当前货币）
+            "coupon_cost": "0.00",                  // 购物车优惠券折扣（当前货币）
+            "product_total": "120.03",              // 购物车产品总额（当前货币）
+            "base_grand_total": "259.00",           // 购物车总额（基础货币）
+            "base_shipping_cost": "130.00",         // 购物车运费（基础货币）
+            "base_coupon_cost": "0.00",             // 购物车优惠券折扣（基础货币）
+            "base_product_total": "129.00",         // 购物车产品总额（基础货币）
+            "products": [  // 购物车产品信息
                 {
                     "item_id": 274,
                     "product_id": "580835d0f656f240742f0b7c",
                     "sku": "p10001-kahaki-xl",
                     "name": "Raglan Sleeves Letter Printed Crew Neck Sweatshirt kahaki-xl",
+                     // 产品个数
                     "qty": 15,
+                    // 产品custom_option_sku
                     "custom_option_sku": "",
+                    // 产品单价（当前货币）
                     "product_price": 3.91,
+                    // 产品总价（当前货币）
                     "product_row_price": 58.650000000000006,
+                    // 产品单价（基础货币）
                     "base_product_price": 4.2,
+                    // 产品总价（基础货币）
                     "base_product_row_price": 63,
+                    // 产品name（全部）
                     "product_name": {
                         "name_en": "Raglan Sleeves Letter Printed Crew Neck Sweatshirt kahaki-xl",
                         "name_fr": "",
@@ -136,10 +143,14 @@ URL: `/checkout/onepage/index`
                         "name_pt": "",
                         "name_zh": "袖子信件印刷船员颈部运动衫kahaki xl"
                     },
+                    // 产品的单重
                     "product_weight": 55,
+                    // 产品的总重
                     "product_row_weight": 825,
+                    // 产品url， vue不用这个，这是appfront  apphtml5部分用的
                     "product_url": "/raglan-sleeves-letter-printed-crew-neck-sweatshirt-53386451-77774122",
                     "product_image": {
+                        // 细节图
                         "gallery": [
                             {
                                 "image": "/2/01/20160905101021_56532.jpg",
@@ -177,6 +188,7 @@ URL: `/checkout/onepage/index`
                                 "is_detail": "1"
                             }
                         ],
+                        // 主图
                         "main": {
                             "image": "/2/01/20160905101021_28071.jpg",
                             "label": "",
@@ -186,12 +198,14 @@ URL: `/checkout/onepage/index`
                         }
                     },
                     "custom_option": [],
+                    // spu类的信息
                     "spu_options": {
                         "color": "khaki",
                         "size": "XL",
                         "test3": "t_1"
                     },
                     "imgUrl": "//img.fancyecommerce.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/100/100/2/01/20160905101021_28071.jpg",
+                    // 颜色尺码等用户自定义属性
                     "custom_option_info": {
                         "color": "khaki",
                         "size": "XL",

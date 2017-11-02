@@ -63,16 +63,25 @@ URL: `/customer/productfavorite/index`
     "data": {
         "productList": [
             {
+                // product id
                 "_id": {
                     "$oid": "581ae91ff656f20f052f0b77"
                 },
+                // product name
                 "name": "Reindeer Pattern Glitter Christmas Dress",
+                // product URL，这个是appfront 和apphtml5有效的url方式，vue不使用这个
                 "url_key": "/reindeer-pattern-glitter-christmas-dress",
+                // 价格
                 "price": 22.68,
+                // 特价
                 "special_price": 21.68,
+                // 特价开始时间
                 "special_from": 0,
+                // 特价结束时间
                 "special_to": 0,
+                // 图片
                 "image": {
+                    // 细节图
                     "gallery": [
                         {
                             "image": "/2/01/20161024170457_10036.jpg",
@@ -110,6 +119,7 @@ URL: `/customer/productfavorite/index`
                             "is_detail": "1"
                         }
                     ],
+                    // 主图
                     "main": {
                         "image": "/2/01/20161101155240_26690.jpg",
                         "label": "",
@@ -118,9 +128,13 @@ URL: `/customer/productfavorite/index`
                         "is_detail": "1"
                     }
                 },
+                // 收藏更新时间
                 "updated_at": "2017-09-28 11:04:19",
+                // 收藏表id
                 "favorite_id": "59cc66b3bfb7ae575337da64",
+                // 产品主图
                 "imgUrl": "//img.fancyecommerce.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/296/0/2/01/20161101155240_26690.jpg",
+                // 产品计算后的几个信息，因此上面的价格信息不要使用，直接使用下面计算好的价格信息即可。
                 "price_info": {
                     "price": {
                         "symbol": "€",

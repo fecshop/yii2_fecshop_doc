@@ -90,7 +90,7 @@ URL: `/checkout/onepage/submitorder`
     "code": 200,
     "message": "process success",
     "data": {
-        "redirectUrl": "/payment/paypal/standard/start"
+        "redirectUrl": "/payment/paypal/standard/start" // 生成订单，根据支付房还是，进入相应的支付url，这个就是要跳转的url地址
     }
 }
 ```

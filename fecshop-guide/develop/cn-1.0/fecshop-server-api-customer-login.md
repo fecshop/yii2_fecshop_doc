@@ -61,8 +61,10 @@ URL: `/customer/login/index`
     "code": 200,
     "message": "process success",
     "data": {
-        "loginCaptchaActive": false,
+        "loginCaptchaActive": false,   // 是否需要验证码
+        // google登录地址
         "googleLoginUrl": "https://accounts.google.com/o/oauth2/auth?response_type=code&redirect_uri=http%3A%2F%2Ffecshop.appserver.fancyecommerce.com%2Fcustomer%2Fgoogle%2Floginv&client_id=380372364773-qdj1seag9bh2n0pgrhcv2r5uoc58ltp3.apps.googleusercontent.com&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&access_type=offline&approval_prompt=auto",
+        // fb登录地址
         "facebookLoginUrl": "https://www.facebook.com/v2.10/dialog/oauth?client_id=108618299786621&state=882291ef2ddddfb99cfcacb74181ba33&response_type=code&sdk=php-sdk-5.6.0&redirect_uri=http%3A%2F%2Ffecshop.appserver.fancyecommerce.com%2Fcustomer%2Ffacebook%2Floginv&scope=email"
     }
 }

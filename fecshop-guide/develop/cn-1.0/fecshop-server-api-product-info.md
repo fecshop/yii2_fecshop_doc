@@ -71,6 +71,7 @@ URL: `/catalog/product/index`
             "name": "Raglan Sleeves Letter Printed Crew Neck Sweatshirt kahaki-xl",
             "sku": "p10001-kahaki-xl",
             "spu": "p10001",
+            // 细节图
             "thumbnail_img": [
                 "//img.fancyecommerce.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/400/0/2/01/20160905101021_28071.jpg",
                 "//img.fancyecommerce.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/400/0/2/01/20160905101021_56532.jpg",
@@ -79,6 +80,7 @@ URL: `/catalog/product/index`
                 "//img.fancyecommerce.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/400/0/2/01/20160905101021_28071147710702992998.jpg",
                 "//img.fancyecommerce.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/400/0/2/01/20160905101021_28071147710703579813.jpg"
             ],
+            // 产品评论信息
             "productReview": {
                 "_id": {
                     "$oid": "580835d0f656f240742f0b7c"
@@ -92,13 +94,13 @@ URL: `/catalog/product/index`
                         },
                         "product_spu": "p10001",
                         "product_id": "580835d0f656f240742f0b7c",
-                        "rate_star": "3",
+                        "rate_star": "3",  // 评论星级
                         "name": "terr fdf",
                         "user_id": 17,
                         "ip": "119.123.79.199",
-                        "summary": "fdsfds",
-                        "review_content": "fdsaf",
-                        "review_date": 1477970031,
+                        "summary": "fdsfds", // 评论标题
+                        "review_content": "fdsaf", // 评论内容
+                        "review_date": 1477970031, // 评论日期
                         "store": "fecshop.appfront.fancyecommerce.com/fr",
                         "lang_code": "fr",
                         "status": 1,
@@ -108,7 +110,9 @@ URL: `/catalog/product/index`
                 ],
                 "noActiveStatus": 10
             },
+            // 显示图图片的自定义属性
             "custom_option_showImg_attr": "my_color",
+            // 在描述部分显示的图片
             "image_detail": [
                 "//img.fancyecommerce.com/media/catalog/product/2/01/20160905101021_56532.jpg",
                 "//img.fancyecommerce.com/media/catalog/product/2/01/20160905101022_25969.jpg",
@@ -117,9 +121,13 @@ URL: `/catalog/product/index`
                 "//img.fancyecommerce.com/media/catalog/product/2/01/20160905101021_28071147710703579813.jpg",
                 "//img.fancyecommerce.com/media/catalog/product/2/01/20160905101021_28071.jpg"
             ],
+            // 产品所属的属性组
             "attr_group": "men_group",
+            // 产品评论数
             "review_count": 1,
+            // 产品星级平均值
             "reviw_rate_star_average": 3,
+            // 产品价格信息
             "price_info": {
                 "price": {
                     "symbol": "€",
@@ -132,6 +140,7 @@ URL: `/catalog/product/index`
                     "code": "EUR"
                 }
             },
+            // 产品tier price 信息
             "tier_price": [
                 [
                     "Qty:",
@@ -146,6 +155,7 @@ URL: `/catalog/product/index`
                     "€3.91"
                 ]
             ],
+            // spu options部分
             "options": [
                 {
                     "label": "color",
@@ -484,8 +494,10 @@ URL: `/catalog/product/index`
                 }
             ],
             "custom_option": [],
+            // 产品描述
             "description": "<div style=\"font-family:Tahoma;\">        <strong>Specification</strong><br />        <ul><li><strong>Color:</strong> BLACK, GRAY</li><li><strong>Size:</strong> M, L, XL, 2XL</li><li><strong>Category:</strong> Men &gt; Hoodies &amp; Sweatshirts &gt; Sweatshirts</li></ul></div>                        <br />                                                <br /><div>  </div><div class=\"xxkkk\">    <div class=\"xxkkk20\">            <strong>Material:</strong> Polyester <br />             <strong>Clothing Length:</strong> Regular <br />             <strong>Sleeve Length:</strong> Full <br />             <strong>Style:</strong> Casual <br />             <strong>Weight:</strong> 0.326kg <br />             <strong>Package Contents:</strong> 1 x Sweatshirt             </div>    </div>",
             "_id": "580835d0f656f240742f0b7c",
+            // 买了的人还买了哪些产品
             "buy_also_buy": [
                 {
                     "one": {

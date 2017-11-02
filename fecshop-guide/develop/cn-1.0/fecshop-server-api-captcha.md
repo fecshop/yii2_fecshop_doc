@@ -61,7 +61,7 @@ URL: `/customer/site/captcha`
     "code":200,
     "message":"process success",
     "data":{
-        "image":"xxxxxxxxxxxxxx"
+        "image":"xxxxxxxxxxxxxx"  // 这里是图片文件的编码
     }
 }
 ```

@@ -61,7 +61,7 @@ URL: `/customer/account/index`
     "code": 200,
     "message": "process success",
     "data": {
-        "menuList": {   // 各个菜单的列表
+        "menuList": {   // 各个菜单的列表,key是显示的文字，value是链接url
             "Account Information": "/customer/editaccount",
             "Address Book": "/customer/address",
             "My Orders": "/customer/order",

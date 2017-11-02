@@ -75,7 +75,7 @@ URL: `/catalogsearch/index/product`
 {
     "code": 200,
     "content": {
-        "products": [
+        "products": [ // 不需要注释了，都能看懂
             {
                 "one": {
                     "name": "Alluring Long Sleeve Open Back Draped Maxi Dress",

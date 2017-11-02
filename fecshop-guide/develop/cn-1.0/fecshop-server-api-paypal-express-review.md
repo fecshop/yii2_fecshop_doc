@@ -64,6 +64,8 @@ URL: `/payment/paypal/express/review`
 
 返回数据举例：
 
+各个字段的具体函数参看[fecshop-server-api-onepage.md](fecshop-server-api-onepage.md)
+
 ```
 {
     "code": 200,

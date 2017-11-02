@@ -61,7 +61,7 @@ URL: `/cms/home/index`
     "code": 200,
     "message": "process success",
     "data": {
-        "productList": [
+        "productList": [ // 产品信息
             {
                 "one": {
                     "name": "Paire de Bouton élégant Agrémentée évider Mesh Shape tricoté Boot poignets pour les femmes",
@@ -174,7 +174,7 @@ URL: `/cms/home/index`
                 "two": []
             }
         ],
-        "advertiseImg": {
+        "advertiseImg": { //广告信息
             "bigImgList": [
                 {
                     "imgUrl": "//img.apphtml5.fancyecommerce.com/custom/home_img_1.jpg"
@@ -195,7 +195,7 @@ URL: `/cms/home/index`
                 }
             ]
         },
-        "language": {
+        "language": { // 语言信息
             "langList": [
                 {
                     "code": "fr",
@@ -220,7 +220,7 @@ URL: `/cms/home/index`
             ],
             "currentLang": "fr"
         },
-        "currency": {
+        "currency": {  // 货币信息
             "currencyList": {
                 "EUR": {
                     "code": "EUR",

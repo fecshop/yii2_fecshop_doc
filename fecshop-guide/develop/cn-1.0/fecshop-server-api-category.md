@@ -79,26 +79,33 @@ URL: `/catalog/category/index`
     "code": 200,
     "message": "process success",
     "data": {
-        "name": "Men",
-        "title": null,
-        "image": "",
+        "name": "Men", // 分类的name
+        "title": null, // 分类的title
+        "image": "",   // 分类的图片（有时候在分类页面，内容部分的顶部会搞个宣传图）
         "products": [
             {
                 "one": {
+                    // 分类产品name 
                     "name": "Raglan Sleeves Letter Printed Crew Neck Sweatshirt kahaki-xl",
+                    // 分类产品sku
                     "sku": "p10001-kahaki-xl",
+                    // 分类产品id
                     "_id": "580835d0f656f240742f0b7c",
+                    // 分类产品图片
                     "image": "//img.fancyecommerce.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/296/0/2/01/20160905101021_28071.jpg",
+                    // 分类产品价格
                     "price": {
                         "symbol": "$",
                         "value": 6.05,
                         "code": "USD"
                     },
+                    // 分类产品特价
                     "special_price": {
                         "symbol": "$",
                         "value": 5.05,
                         "code": "USD"A
                     },
+                    // 分类产品Url
                     "url": "/catalog/product/580835d0f656f240742f0b7c",
                     "product_id": "p10001"
                 },

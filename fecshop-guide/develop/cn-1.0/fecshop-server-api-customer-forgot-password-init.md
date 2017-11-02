@@ -61,7 +61,7 @@ URL: `/customer/forgot/password`
     "code": 200,
     "message": "process success",
     "data": {
-        "forgotCaptchaActive": true
+        "forgotCaptchaActive": true  // 是否需要验证码
     }
 }
 ```

@@ -68,6 +68,8 @@ URL: `/checkout/onepage/getshippingandcartinfo`
 
 返回数据举例：
 
+里面的各个字段的具体的含义，可以参看 [fecshop-server-api-onepage.md](fecshop-server-api-onepage.md)
+
 ```
 {
     "code": 200,

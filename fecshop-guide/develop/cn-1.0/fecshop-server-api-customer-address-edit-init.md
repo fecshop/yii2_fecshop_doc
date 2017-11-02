@@ -67,24 +67,24 @@ URL: `/customer/address/edit`
     "message": "process success",
     "data": {
         "address": {
-            "address_id": 118,
-            "first_name": "2121",
-            "email": "fdfd@3232.com",
-            "last_name": "2121",
-            "company": null,
-            "telephone": "2121",
-            "fax": null,
-            "street1": "2121",
-            "street2": "2121",
-            "city": "2121",
-            "state": "NO",
-            "zip": "2121",
-            "country": "AT",
-            "customer_id": 46,
-            "created_at": 1506397526,
-            "updated_at": 1509158174,
-            "is_default": 1,
-            "countryArr": {
+            "address_id": "117",        // customer address表的 id
+            "first_name": "111",        // 收货人的first name
+            "email": "34343@3232.com",  // 收货人的email
+            "last_name": "222",         // 收货人的last name
+            "company": null,            // 收货人的公司
+            "telephone": "3232",        // 收货人的电话
+            "fax": null,                // 收货人的传真
+            "street1": "3232",          // 收货人的街道详细1
+            "street2": "3232",          // 收货人的街道详细2
+            "city": "3232",             // 收货人的城市
+            "state": "BJ",              // 收货人的省/州
+            "zip": "ewewew",            // 收货人的邮编
+            "country": "CN",            // 收货人的国家简码
+            "customer_id": "46",        // 收货人的customer account id
+            "created_at": "1506397313", // 收货地址的创建时间
+            "updated_at": "1509161659", // 收货人地址的更新时间
+            "is_default": "2",          // 是否是默认收货地址，1代表是，2代表否
+            "countryArr": {             // 国家数组，key为国家简码，value为国家全称
                 "AF": "Afghanistan",
                 "AX": "Åland Islands",
                 "AL": "Albania",
@@ -332,7 +332,7 @@ URL: `/customer/address/edit`
                 "ZM": "Zambia",
                 "ZW": "Zimbabwe"
             },
-            "stateArr": {
+            "stateArr": {     // 当前国家对应的state数组
                 "WI": "Wien",
                 "NO": "Niederösterreich",
                 "OO": "Oberösterreich",
@@ -343,7 +343,7 @@ URL: `/customer/address/edit`
                 "BL": "Burgenland",
                 "VB": "Voralberg"
             },
-            "stateIsSelect": 1
+            "stateIsSelect": 1 // 在系统中是否对当前选择的国家配置了省/州？1代表是，2代表否，如果为1，则省显示为下拉条的select，如果为2，则显示为input输入框
         }
     }
 }

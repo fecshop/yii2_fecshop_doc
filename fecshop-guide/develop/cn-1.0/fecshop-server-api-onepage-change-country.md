@@ -68,7 +68,7 @@ URL: `/checkout/onepage/changecountry`
     "code": 200,
     "message": "process success",
     "data": {
-        "stateArr": {
+        "stateArr": {  // 省
             "AL": "Alabama",
             "AK": "Alaska",
             "AS": "American Samoa",

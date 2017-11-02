@@ -67,7 +67,7 @@ URL: `/catalog/reviewproduct/lists`
     "code": 200,
     "message": "process success",
     "data": {
-        "product": {
+        "product": { // 评论产品的信息
             "product_id": "580835d0f656f240742f0b7c",
             "spu": "p10001",
             "price_info": {
@@ -92,18 +92,18 @@ URL: `/catalog/reviewproduct/lists`
                 },
                 "product_spu": "p10001",
                 "product_id": "580835d0f656f240742f0b7c",
-                "rate_star": "3",
+                "rate_star": "3",  // 评论星级
                 "name": "terr fdf",
                 "user_id": 17,
                 "ip": "119.123.79.199",
-                "summary": "fdsfds",
-                "review_content": "fdsaf",
-                "review_date": 1477970031,
+                "summary": "fdsfds",  // 评论标题
+                "review_content": "fdsaf", // 评论内容
+                "review_date": 1477970031, // 评论日期
                 "store": "fecshop.appfront.fancyecommerce.com/fr",
-                "lang_code": "fr",
-                "status": 1,
-                "audit_user": 2,
-                "audit_date": 1477970038
+                "lang_code": "fr", // 语言
+                "status": 1,       // 评论状态
+                "audit_user": 2,   // 审核user
+                "audit_date": 1477970038 // 审核时间
             }
         ],
         "review_count": 1,

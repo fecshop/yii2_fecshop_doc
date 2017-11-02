@@ -67,8 +67,8 @@ URL: `/customer/address/changecountry`
     "code": 200,
     "message": "process success",
     "data": {
-        "stateIsSelect": 1,
-        "stateArr": {
+        "stateIsSelect": 1,  // 在系统中是否对当前选择的国家配置了省/州？1代表是，2代表否，如果为1，则省显示为下拉条的select，如果为2，则显示为input输入框
+        "stateArr": {  // 当stateIsSelect 为1时，这里显示当前国家对应的省的数组。如果stateIsSelect 为2，这里为空
             "BJ": "北京市",
             "SH": "上海市",
             "TJ": "天津市",

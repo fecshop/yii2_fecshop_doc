@@ -61,13 +61,13 @@ URL: `/customer/editaccount/index`
     "code": 200,
     "message": "process success",
     "data": {
-        "email": "2358269014@qq.com",
-        "firstname": "44444",
-        "lastname": "666",
-        "minNameLength": 1,
-        "maxNameLength": 30,
-        "minPassLength": 6,
-        "maxPassLength": 30
+        "email": "2358269014@qq.com",  // 用户的邮箱
+        "firstname": "44444",          // 用户的first name
+        "lastname": "666",             // 用户的last name
+        "minNameLength": 1,            // 用户name的最小字符长度
+        "maxNameLength": 30,           // 用户name的最大字符长度
+        "minPassLength": 6,            // 用户password的最小字符长度
+        "maxPassLength": 30            // 用户password的最大字符长度
     }
 }
 ```

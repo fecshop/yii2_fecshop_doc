@@ -70,6 +70,7 @@ URL: `/payment/paypal/standard/start`
     "code": 200,
     "message": "process success",
     "data": {
+        // 跳转到paypal进行支付的url
         "redirectUrl": "https://www.sandbox.paypal.com/cgi-bin/webscr?useraction=commit&cmd=_express-checkout&token=EC-72680210AS337062K"
     }
 }

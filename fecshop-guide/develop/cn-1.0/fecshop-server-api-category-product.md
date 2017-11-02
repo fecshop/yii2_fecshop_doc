@@ -79,22 +79,29 @@ URL: `/catalog/category/product`
         "products": [
             {
                 "one": {
-                    "name": "Reindeer Pattern Glitter Christmas Dress222",
-                    "sku": "222212",
-                    "_id": "581c6833f656f2042f2f0b77",
-                    "image": "//img.fancyecommerce.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/296/0/2/01/20161024170457_10036.jpg",
+                    // 分类产品name 
+                    "name": "Raglan Sleeves Letter Printed Crew Neck Sweatshirt kahaki-xl",
+                    // 分类产品sku
+                    "sku": "p10001-kahaki-xl",
+                    // 分类产品id
+                    "_id": "580835d0f656f240742f0b7c",
+                    // 分类产品图片
+                    "image": "//img.fancyecommerce.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/296/0/2/01/20160905101021_28071.jpg",
+                    // 分类产品价格
                     "price": {
                         "symbol": "$",
-                        "value": 22.99,
+                        "value": 6.05,
                         "code": "USD"
                     },
+                    // 分类产品特价
                     "special_price": {
                         "symbol": "$",
-                        "value": 18.99,
-                        "code": "USD"
+                        "value": 5.05,
+                        "code": "USD"A
                     },
-                    "url": "/catalog/product/581c6833f656f2042f2f0b77",
-                    "product_id": "222212"
+                    // 分类产品Url
+                    "url": "/catalog/product/580835d0f656f240742f0b7c",
+                    "product_id": "p10001"
                 },
                 "two": {
                     "name": "Leaves Pattern Waisted Zippered Dress",

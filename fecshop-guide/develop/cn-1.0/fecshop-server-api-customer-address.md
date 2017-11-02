@@ -63,27 +63,27 @@ URL: `/customer/address/index`
     "code": 200,
     "message": "process success",
     "data": {
-        "addressList": [
+        "addressList": [        // 用户的address列表
             {
-                "address_id": "117",
-                "first_name": "111",
-                "email": "34343@3232.com",
-                "last_name": "222",
-                "company": null,
-                "telephone": "3232",
-                "fax": null,
-                "street1": "3232",
-                "street2": "3232",
-                "city": "3232",
-                "state": "BJ",
-                "zip": "ewewew",
-                "country": "CN",
-                "customer_id": "46",
-                "created_at": "1506397313",
-                "updated_at": "1509161659",
-                "is_default": "2",
-                "stateName": "北京市",
-                "countryName": "China"
+                "address_id": "117",        // customer address表的 id
+                "first_name": "111",        // 收货人的first name
+                "email": "34343@3232.com",  // 收货人的email
+                "last_name": "222",         // 收货人的last name
+                "company": null,            // 收货人的公司
+                "telephone": "3232",        // 收货人的电话
+                "fax": null,                // 收货人的传真
+                "street1": "3232",          // 收货人的街道详细1
+                "street2": "3232",          // 收货人的街道详细2
+                "city": "3232",             // 收货人的城市
+                "state": "BJ",              // 收货人的省/州
+                "zip": "ewewew",            // 收货人的邮编
+                "country": "CN",            // 收货人的国家简码
+                "customer_id": "46",        // 收货人的customer account id
+                "created_at": "1506397313", // 收货地址的创建时间
+                "updated_at": "1509161659", // 收货人地址的更新时间
+                "is_default": "2",          // 是否是默认收货地址，1代表是，2代表否
+                "stateName": "北京市",      // 收货人的省市全称
+                "countryName": "China"      // 收货人的国家全称
             },
             {
                 "address_id": "118",

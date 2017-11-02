@@ -66,7 +66,7 @@ URL: `/customer/forgot/resetpassword`
     "code": 200,
     "message": "process success",
     "data": {
-        "resetPasswordActive": true
+        "resetPasswordActive": true // 充值密码页面，验证token是否有效、
     }
 }
 ```

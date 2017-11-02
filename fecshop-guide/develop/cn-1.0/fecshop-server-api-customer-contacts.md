@@ -61,8 +61,8 @@ URL: `/customer/contact/index`
     "code": 200,
     "message": "process success",
     "data": {
-        "customer_name": "",
-        "customer_email": "",
+        "customer_name": "",   // 当前登录用户的name，由first name 和last name组成。
+        "customer_email": "",  // 当前登录用户的email
         "contactsCaptchaActive": true,   // 是否需要验证码
         "contactsEmail": "2358269014@qq.com"  // fecshop客服的邮箱
     }

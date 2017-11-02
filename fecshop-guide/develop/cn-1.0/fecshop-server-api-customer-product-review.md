@@ -64,20 +64,21 @@ URL: `/customer/productreview/index`
         "productList": [
             {
                 "_id": {
-                    "$oid": "59f1b535bfb7ae43950d79b3"
+                    "$oid": "59f1b535bfb7ae43950d79b3"      // 产品id
                 },
-                "product_spu": "p10001",
-                "product_id": "580835d0f656f240742f0b7c",
-                "rate_star": "4",
-                "name": "44444 6666",
-                "user_id": 46,
-                "ip": "183.14.76.189",
-                "summary": "9999999999999",
-                "review_content": "99999999999999999999543253453299",
-                "review_date": "2017-10-26 18:13:09",
-                "store": "fecshop.appserver.fancyecommerce.com",
-                "lang_code": "en",
-                "status": 10,
+                "product_spu": "p10001",                    // 产品SPU
+                "product_id": "580835d0f656f240742f0b7c",   // 产品ID
+                "rate_star": "4",                           // 产品评论星级
+                "name": "44444 6666",                       // 产品评论人name
+                "user_id": 46,                              // 产品评论人customer id
+                "ip": "183.14.76.189",                      // 产品评论人的ip
+                "summary": "9999999999999",                 // 产品评论标题
+                "review_content": "99999999999999999999543253453299",       // 产品评论的内容
+                "review_date": "2017-10-26 18:13:09",       // 产品评论时间
+                "store": "fecshop.appserver.fancyecommerce.com",            // store
+                "lang_code": "en",                          // 评论所在store的语言
+                "status": 10,                               // 评论状态
+                // 产品的图片
                 "imgUrl": "//img.fancyecommerce.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/80/80/2/01/20160905101021_28071.jpg"
             },
             {
