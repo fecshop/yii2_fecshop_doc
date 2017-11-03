@@ -54,7 +54,16 @@ URL: `/payment/success`
 | message         | 必须        |   String    | 返回状态字符串描述  |
 | data            | 必须        |   Array     | 返回详细数据        |
 
-返回数据举例：
+#### 3.参数code所有返回状态码：（完整的返回状态码详细参看:[Api- 状态码](fecshop-server-return-code.md) ）
+
+| code Value      |        描述                                        |
+| ----------------| --------------------------------------------------:| 
+| 200             | 成功状态码                                         |  
+| 1500012         | order：无法从dbsession中获取order increment id                  | 
+
+
+
+#### 4.返回数据举例：
 
 各个字段的具体函数参看[fecshop-server-api-onepage.md](fecshop-server-api-onepage.md)
 

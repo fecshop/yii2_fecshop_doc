@@ -66,7 +66,16 @@ URL: `/checkout/onepage/getshippingandcartinfo`
 | message         | 必须        |   String    | 返回状态字符串描述  |
 | data            | 必须        |   Array     | 返回详细数据        |
 
-返回数据举例：
+#### 3.参数code所有返回状态码：（完整的返回状态码详细参看:[Api- 状态码](fecshop-server-return-code.md) ）
+
+| code Value      |        描述                                        |
+| ----------------| --------------------------------------------------:| 
+| 200             | 成功状态码                                         |  
+| 1500008;        | Order: 下订单页面，切换address，从customer address中无法获取country                  | 
+
+
+
+#### 4.返回数据举例：
 
 里面的各个字段的具体的含义，可以参看 [fecshop-server-api-onepage.md](fecshop-server-api-onepage.md)
 

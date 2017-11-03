@@ -1,42 +1,42 @@
 Api- Cart Paypal Express Review SubmitOrder
 ================
 
-> ¹ºÎï³µÒ³Ãæµã»÷paypal°´Å¥£¬Ìø×ªµ½paypalµÇÂ¼£¬È»ºóµã»÷continueÌø×ª»ØfecshopÒ³Ãæ£¬
-> Ò³Ãæ³õÊ¼»¯ºó£¬±à¼­¶©µ¥ĞÅÏ¢£¬È»ºóµã»÷Ìá½»ºó·ÃÎÊµÄapi
+> è´­ç‰©è½¦é¡µé¢ç‚¹å‡»paypalæŒ‰é’®ï¼Œè·³è½¬åˆ°paypalç™»å½•ï¼Œç„¶åç‚¹å‡»continueè·³è½¬å›fecshopé¡µé¢ï¼Œ
+> é¡µé¢åˆå§‹åŒ–åï¼Œç¼–è¾‘è®¢å•ä¿¡æ¯ï¼Œç„¶åç‚¹å‡»æäº¤åè®¿é—®çš„api
 
 URL: `/payment/paypal/express/submitorder`
 
-¸ñÊ½£º`json`
+æ ¼å¼ï¼š`json`
 
-·½Ê½£º`post`
+æ–¹å¼ï¼š`post`
 
 
-Ò»£ºÇëÇó²¿·Ö
+ä¸€ï¼šè¯·æ±‚éƒ¨åˆ†
 ---------
 
 #### 1.Request Header
 
 
-| ²ÎÊıÃû³Æ          | ÊÇ·ñ±ØĞë    |  ÀàĞÍ        |  ÃèÊö     |
+| å‚æ•°åç§°          | æ˜¯å¦å¿…é¡»    |  ç±»å‹        |  æè¿°     |
 | ------------------| -----:      | :----:       |:----:     |
-| access-token      | ±ØĞë        |   String     | ´ÓlocalStorageÈ¡³öÀ´µÄÖµ£¬Ê¶±ğÓÃ»§µÇÂ¼×´Ì¬µÄ±êÊ¾£¬ÓÃ»§µÇÂ¼³É¹¦£¬·şÎñ¶Ë·µ»Øaccess-token£¬VUE±£´æµ½localStorageÖĞ£¬ÔÚÏÂÒ»´ÎÇëÇó´ÓlocalStorageÈ¡³öÀ´·Åµ½request headerÖĞ   |
-| fecshop-uuid      | ±ØĞë        |   String     | ´ÓlocalStorageÈ¡³öÀ´µÄÖµ£¬ÓÃ»§µÄÎ¨Ò»±êÊ¾£¬VUEµÚÒ»´Î·ÃÎÊ·şÎñ¶Ë£¬·şÎñ¶Ë»á·µ»Øfecshop-uuid £¬VUE½«Æä±£´æµ½±¾µØ£¬ºóÃæµÄÃ¿Ò»´ÎÇëÇó¶¼ĞèÒª¼ÓÉÏfecshop-uuid    |
-| fecshop-currency  | ±ØĞë        |   String     | ´ÓlocalStorageÈ¡³öÀ´µÄÖµ£¬µ±Ç°µÄ»õ±ÒÖµ  |
-| fecshop-lang      | ±ØĞë        |   String     | ´ÓlocalStorageÈ¡³öÀ´µÄÖµ£¬µ±Ç°µÄÓïÑÔcode  |
+| access-token      | å¿…é¡»        |   String     | ä»localStorageå–å‡ºæ¥çš„å€¼ï¼Œè¯†åˆ«ç”¨æˆ·ç™»å½•çŠ¶æ€çš„æ ‡ç¤ºï¼Œç”¨æˆ·ç™»å½•æˆåŠŸï¼ŒæœåŠ¡ç«¯è¿”å›access-tokenï¼ŒVUEä¿å­˜åˆ°localStorageä¸­ï¼Œåœ¨ä¸‹ä¸€æ¬¡è¯·æ±‚ä»localStorageå–å‡ºæ¥æ”¾åˆ°request headerä¸­   |
+| fecshop-uuid      | å¿…é¡»        |   String     | ä»localStorageå–å‡ºæ¥çš„å€¼ï¼Œç”¨æˆ·çš„å”¯ä¸€æ ‡ç¤ºï¼ŒVUEç¬¬ä¸€æ¬¡è®¿é—®æœåŠ¡ç«¯ï¼ŒæœåŠ¡ç«¯ä¼šè¿”å›fecshop-uuid ï¼ŒVUEå°†å…¶ä¿å­˜åˆ°æœ¬åœ°ï¼Œåé¢çš„æ¯ä¸€æ¬¡è¯·æ±‚éƒ½éœ€è¦åŠ ä¸Šfecshop-uuid    |
+| fecshop-currency  | å¿…é¡»        |   String     | ä»localStorageå–å‡ºæ¥çš„å€¼ï¼Œå½“å‰çš„è´§å¸å€¼  |
+| fecshop-lang      | å¿…é¡»        |   String     | ä»localStorageå–å‡ºæ¥çš„å€¼ï¼Œå½“å‰çš„è¯­è¨€code  |
 
 
-#### 2.Request Body Form-Data£º
+#### 2.Request Body Form-Dataï¼š
 
 
-| ²ÎÊıÃû³Æ          | ÊÇ·ñ±ØĞë    |  ÀàĞÍ       |  ÃèÊö     |
+| å‚æ•°åç§°          | æ˜¯å¦å¿…é¡»    |  ç±»å‹       |  æè¿°     |
 | ----------------  | -----:      | :----:      |:----:     |
-| address_id        | ±ØĞë        |   String    | Èç¹ûÓÃ»§µÇÂ¼ÕË»§£¬Ê¹ÓÃµÄÊÇ±£´æµÄaddressĞÅÏ¢£¬ÔòÕâÀïĞèÒª´«µİaddress id   |
-| billing           | ±ØĞë        |   Array     | ¶©µ¥µÄÓÃ»§ĞÅÏ¢ºÍµØÖ·ĞÅÏ¢   |
-| token             | ±ØĞë        |   String    | Paypal Token    |
-| PayerID           | ±ØĞë        |   String    | Paypal PayerID  |
-| shipping_method   | ±ØĞë        |   String    | ÎïÁ÷¿ìµİµÄcode  |
+| address_id        | å¿…é¡»        |   String    | å¦‚æœç”¨æˆ·ç™»å½•è´¦æˆ·ï¼Œä½¿ç”¨çš„æ˜¯ä¿å­˜çš„addressä¿¡æ¯ï¼Œåˆ™è¿™é‡Œéœ€è¦ä¼ é€’address id   |
+| billing           | å¿…é¡»        |   Array     | è®¢å•çš„ç”¨æˆ·ä¿¡æ¯å’Œåœ°å€ä¿¡æ¯   |
+| token             | å¿…é¡»        |   String    | Paypal Token    |
+| PayerID           | å¿…é¡»        |   String    | Paypal PayerID  |
+| shipping_method   | å¿…é¡»        |   String    | ç‰©æµå¿«é€’çš„code  |
 
-**ÇëÇó²ÎÊıÊ¾ÀıÈçÏÂ£º**
+**è¯·æ±‚å‚æ•°ç¤ºä¾‹å¦‚ä¸‹ï¼š**
 
 ```
 {
@@ -59,27 +59,39 @@ URL: `/payment/paypal/express/submitorder`
 }
 ```
 
-¶ş£º·µ»Ø²¿·Ö
+äºŒï¼šè¿”å›éƒ¨åˆ†
 ----------
 
 #### 1.Reponse Header
 
-| ²ÎÊıÃû³Æ          | ÊÇ·ñ±ØĞë    |  ÀàĞÍ        |  ÃèÊö     |
+| å‚æ•°åç§°          | æ˜¯å¦å¿…é¡»    |  ç±»å‹        |  æè¿°     |
 | ------------------| -----:      | :----:       |:----:     |
-| access-token      | Ñ¡Ìî        |   String     | ÓÃ»§µÇÂ¼³É¹¦£¬·şÎñ¶Ë·µ»Øaccess-token£¬VUE±£´æµ½localStorageÖĞ£¬ÔÚÏÂÒ»´ÎÇëÇó´ÓlocalStorageÈ¡³öÀ´·Åµ½request headerÖĞ   |
-| fecshop-uuid      | ±ØĞë        |   String     | ÓÃ»§µÄÎ¨Ò»±êÊ¾£¬VUEµÚÒ»´Î·ÃÎÊ·şÎñ¶Ë£¬·şÎñ¶Ë»á·µ»Øfecshop-uuid £¬VUE½«Æä±£´æµ½±¾µØ£¬ºóÃæµÄÃ¿Ò»´ÎÇëÇó¶¼ĞèÒª¼ÓÉÏfecshop-uuid    |
+| access-token      | é€‰å¡«        |   String     | ç”¨æˆ·ç™»å½•æˆåŠŸï¼ŒæœåŠ¡ç«¯è¿”å›access-tokenï¼ŒVUEä¿å­˜åˆ°localStorageä¸­ï¼Œåœ¨ä¸‹ä¸€æ¬¡è¯·æ±‚ä»localStorageå–å‡ºæ¥æ”¾åˆ°request headerä¸­   |
+| fecshop-uuid      | å¿…é¡»        |   String     | ç”¨æˆ·çš„å”¯ä¸€æ ‡ç¤ºï¼ŒVUEç¬¬ä¸€æ¬¡è®¿é—®æœåŠ¡ç«¯ï¼ŒæœåŠ¡ç«¯ä¼šè¿”å›fecshop-uuid ï¼ŒVUEå°†å…¶ä¿å­˜åˆ°æœ¬åœ°ï¼Œåé¢çš„æ¯ä¸€æ¬¡è¯·æ±‚éƒ½éœ€è¦åŠ ä¸Šfecshop-uuid    |
 
-#### 2.Reponse Body Form-Data£º
+#### 2.Reponse Body Form-Dataï¼š
 
-¸ñÊ½£º`json`
+æ ¼å¼ï¼š`json`
 
-| ²ÎÊıÃû³Æ        | ÊÇ·ñ±ØĞë    |  ÀàĞÍ       |  ÃèÊö        |
+| å‚æ•°åç§°        | æ˜¯å¦å¿…é¡»    |  ç±»å‹       |  æè¿°        |
 | ----------------| -----:      | :----:      |:----:        | 
-| code            | ±ØĞë        |   Number    | ·µ»Ø×´Ì¬Âë£¬200 ´ú±íÍê³É£¬ÍêÕûµÄ·µ»Ø×´Ì¬ÂëÏêÏ¸²Î¿´:[Api- ×´Ì¬Âë](fecshop-server-return-code.md) |
-| message         | ±ØĞë        |   String    | ·µ»Ø×´Ì¬×Ö·û´®ÃèÊö  |
-| data            | ±ØĞë        |   Array     | ·µ»ØÏêÏ¸Êı¾İ        |
+| code            | å¿…é¡»        |   Number    | è¿”å›çŠ¶æ€ç ï¼Œ200 ä»£è¡¨å®Œæˆï¼Œå®Œæ•´çš„è¿”å›çŠ¶æ€ç è¯¦ç»†å‚çœ‹:[Api- çŠ¶æ€ç ](fecshop-server-return-code.md) |
+| message         | å¿…é¡»        |   String    | è¿”å›çŠ¶æ€å­—ç¬¦ä¸²æè¿°  |
+| data            | å¿…é¡»        |   Array     | è¿”å›è¯¦ç»†æ•°æ®        |
 
-·µ»ØÊı¾İ¾ÙÀı£º
+#### 3.å‚æ•°codeæ‰€æœ‰è¿”å›çŠ¶æ€ç ï¼šï¼ˆå®Œæ•´çš„è¿”å›çŠ¶æ€ç è¯¦ç»†å‚çœ‹:[Api- çŠ¶æ€ç ](fecshop-server-return-code.md) ï¼‰
+
+| code Value      |        æè¿°                                        |
+| ----------------| --------------------------------------------------:| 
+| 200             | æˆåŠŸçŠ¶æ€ç                                          |  
+| 1500003         | Order: é€šè¿‡paypal expressæ–¹å¼æ”¯ä»˜ï¼Œè·å–tokenå¤±è´¥   | 
+| 1500017         | Order: ä¸‹è®¢å•ï¼Œè®¢å•å·²ç»è¢«æ”¯ä»˜è¿‡                    | 
+| 1500013         | Order: é€šè¿‡paypal expressæ–¹å¼æ”¯ä»˜ï¼Œé€šè¿‡apiæ”¯ä»˜å¤±è´¥ | 
+| 1500002         | Order: ä¸‹è®¢å•ï¼Œç”Ÿæˆè®¢å•å¤±è´¥ã€‚                      | 
+| 1500004         | Order: ä¸‹è®¢å•ï¼Œå¿…å¡«çš„è®¢å•å­—æ®µéªŒè¯å¤±è´¥ã€‚            | 
+
+
+#### 4.è¿”å›æ•°æ®ä¸¾ä¾‹ï¼š
 
 ```
 {
