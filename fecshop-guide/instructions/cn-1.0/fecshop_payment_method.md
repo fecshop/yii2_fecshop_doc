@@ -3,87 +3,13 @@ Fecshop 支付
 
 > 对支付平台的配置信息。
 
+### Payment支付配置文件
 
 Payment支付配置文件：`@common/config/fecshop_local_services/Payment.php`
 
-配置代码如下：
 
-```
-return [
-	'payment' => [
-		
-		'noRelasePaymentMethod' => 'check_money',  	# 不需要释放库存的支付方式。譬如货到付款，在系统中
-													# pending订单，如果一段时间未付款，会释放产品库存，但是货到付款类型的订单不会释放，
-													# 如果需要释放产品库存，客服在后台取消订单即可释放产品库存。
-		'paymentConfig' => [		# 支付方式配置
-			'standard' => [			# 标准支付类型：在购物车页面进入下单页面，填写支付信息，然后跳转到第三方支付网站的支付类型。
-				'check_money' => [	# 货到付款类型。
-					'label' 				=> 'Check / Money Order',
-					//'image' => ['images/mastercard.png','common'] ,# 支付页面显示的图片。
-					'supplement' 			=> 'Off-line Money Payments', # 补充信息
-					'style'					=> '<style></style>',  # 补充css，您可以在这里填写一些css
-					'start_url' 			=> '@homeUrl/payment/checkmoney/start',	# 点击按钮后，跳转的url，在这个url里面写支付跳转前的提交信息。
-					'success_redirect_url' 	=> '@homeUrl/payment/success',			# 在支付平台支付成功后，返回的页面
-				],
-				'paypal_standard' => [
-                    'start_url'            => '@homeUrl/payment/paypal/standard/start',
-                    'nvp_url'  => 'https://api-3t.sandbox.paypal.com/nvp',
-                    'api_url'  => 'https://www.sandbox.paypal.com/cgi-bin/webscr',
-                    'account'  => 'zqy234api1-facilitator_api1.126.com',
-                    'password' => 'HF4TNTTXUD6YQREH',
-                    'signature'=> 'An5ns1Kso7MWUdW4ErQKJJJ4qi4-ANB-xrkMmTHpTszFaUx2v4EHqknV',
-                    'label'=> 'PayPal Express Payments',
-                    // 跳转到paypal确认后，返回fecshop的url
-                    'return_url' => '@homeUrl/payment/paypal/standard/review',
-                    // 取消支付后，返回fecshop的url
-                    'cancel_url' => '@homeUrl/payment/paypal/standard/cancel',
-                    // 支付成功后，返回fecshop的url
-                    'success_redirect_url'    => '@homeUrl/payment/success',
-                    // IPN地址
-                    'ipn_url' => '@homeUrl/payment/paypal/standard/ipn',
-                ],
-			],
-			
-			'express' => [	# 在购物车页面直接跳转到支付平台，譬如paypal快捷支付方式。
-				'paypal_express' => [
-                    'nvp_url'  => 'https://api-3t.sandbox.paypal.com/nvp',
-                    'api_url'  => 'https://www.sandbox.paypal.com/cgi-bin/webscr',
-                    'account'  => 'zqy234api1-facilitator_api1.126.com',
-                    'password' => 'HF4TNTTXUD6YQREH',
-                    'signature'=> 'An5ns1Kso7MWUdW4ErQKJJJ4qi4-ANB-xrkMmTHpTszFaUx2v4EHqknV',
-                    'label'=> 'PayPal Express Payments',
-                    // 跳转到paypal确认后，返回fecshop的url
-                    'return_url' => '@homeUrl/payment/paypal/express/review',
-                    // 取消支付后，返回fecshop的url
-                    'cancel_url' => '@homeUrl/payment/paypal/express/cancel',
-                    // 支付成功后，返回fecshop的url
-                    'success_redirect_url'    => '@homeUrl/payment/success',
-                    // IPN地址
-                    'ipn_url' => '@homeUrl/payment/paypal/express/ipn',
-                ],
-			],
-			
-		],
-		'childService' => [
-			'paypal' => [
-				'express_payment_method' => 'paypal_express',
-				'version' => '109.0',
-				
-				# 是否使用证书的方式进行paypal api对接（https ssl）
-				# 如果配置为true，那么必须在crt_file中配置证书地址。
-				# 默认不使用证书验证
-				'use_local_certs' => false,	
-				'crt_file' 	=> [
-					'www.paypal.com' 	=>'@fecshop/services/payment/cert/paypal.crt',
-					'api-3t.paypal.com' =>'@fecshop/services/payment/cert/api-3tsandboxpaypalcom.crt',
-				
-				],
-			],
-		],
-		
-	]
-];
-```
+详细的代码可以参看：https://github.com/fecshop/yii2_fecshop_app_advanced/blob/master/common/config/fecshop_local_services/Payment.php
+
 
 ### 设置https方式
 
@@ -189,6 +115,10 @@ http://www.fecshop.com/topic/374
 
 当您想要开发一个新的支付方式的时候，您需要做一个跳转到第三方支付平台的准备页面（payment start url）
 和一个支付成功返回的页面url。
+
+下面是详细的步骤，我这里也有一个支付宝开发的详细步骤，供参考，地址为：http://www.fecshop.com/topic/143
+
+
 
 #### 1.1 支付跳转前的工作
 
