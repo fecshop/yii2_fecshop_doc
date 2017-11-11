@@ -1,12 +1,9 @@
-Fecshop 全手动安装
+Fecshop 安装
 ==================
 
 > 本文是在linux下面部署开发环境， 
 > 是纯净linux一步一步的配置fecshop的整个环境，
-> 整个过程比较繁琐，如果您想快速部署，可以使用vagrant进行快速部署，我已经打包好
-> vagrant box,您直接加载过来就可以.
->
-> 详细参看[Fecshop vagrant安装](fecshop-about-vagrantinstall.md)
+
 
 
 参考资料：
@@ -15,7 +12,6 @@ Fecshop 全手动安装
 
 2.[vagrant 下载部署linux环境(虚拟机)](http://www.fancyecommerce.com/2016/09/22/vagrant-%E4%B8%8B%E8%BD%BD%E9%83%A8%E7%BD%B2linux%E7%8E%AF%E5%A2%83/)
 
-3.[Fecshop vagrant安装](fecshop-about-vagrantinstall.md)。
 
 
 

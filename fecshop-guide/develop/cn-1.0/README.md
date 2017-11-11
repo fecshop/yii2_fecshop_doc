@@ -10,8 +10,7 @@ FecShop 开发说明
 ----------
 *  [Fecshop 介绍](fecshop-about-description.md)
 *  [Fecshop 架构特点](fecshop-about-framework.md)
-*  [Fecshop vagrant安装](fecshop-about-vagrantinstall.md)
-*  [Fecshop 全手动安装](fecshop-about-hand-install.md)
+*  [Fecshop 安装](fecshop-about-hand-install.md)
 *  [Fecshop 初始配置](fecshop-about-config.md)
 *  [Fecshop 如何升级](fecshop-about-update.md)
 
