@@ -10,8 +10,7 @@ FecShop 开发说明
 ----------
 *  [Fecshop 介绍](fecshop-about-description.md)
 *  [Fecshop 架构特点](fecshop-about-framework.md)
-*  [Fecshop vagrant安装](fecshop-about-vagrantinstall.md)
-*  [Fecshop 全手动安装](fecshop-about-hand-install.md)
+*  [Fecshop 安装](fecshop-about-hand-install.md)
 *  [Fecshop 初始配置](fecshop-about-config.md)
 *  [Fecshop 如何升级](fecshop-about-update.md)
 
@@ -29,12 +28,16 @@ Fecshop 服务（Service）
 
 Fecshop Api 入口
 ----------------------
-*  [Fecshop Api](fecshop-api.md)
+*  [Fecshop Api 介绍](fecshop-api.md)
+*  [Fecshop Api 产品](fecshop-api-product.md)
+*  [Fecshop Api 订单](fecshop-api-order.md)
+*  [Fecshop Api 定制开发](fecshop-api-custom.md)
+
 
 Fecshop Server 入口
 ----------------------
-*  [Fecshop 服务端说明](fecshop-server.md)
-*  [Fecshop 客户端说明（Vue）](fecshop-vue-config.md)
+*  [AppServer 服务端说明](fecshop-server.md)
+*  [Vue 客户端说明](fecshop-vue-config.md)
 *  [Api- 状态码](fecshop-server-return-code.md)
 *  [Api- Captcha验证码](fecshop-server-api-captcha.md)
 *  [Api- Home 得到首页信息](fecshop-server-api-home.md)

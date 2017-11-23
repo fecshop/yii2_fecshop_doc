@@ -81,6 +81,13 @@ composer update
 ./init
 ```
 
+在上面composer安装过程中，会出现填写github的token
+
+```
+Token (hidden):
+```
+
+需要去github获取token，具体步骤参考：[Fecshop 安装，获取github授权码](http://www.fecshop.com/topic/412)
 
 如果报错：jquery.inputmask包找不到，可以参看这里的解决：http://www.fecshop.com/topic/58
 

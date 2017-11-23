@@ -90,6 +90,13 @@ img5.fecshoptest.com 	指向 **fecshop**/appimage/appserver
 
 ```
 
+4.2.1、Nginx或apache要做去掉index.php的配置，具体参看文章：
+[nginx 去掉index.php](http://www.fecshop.com/topic/398) 和 [apache 去掉index.php](http://www.fecshop.com/topic/392)
+
+4.2.2、如果你没有配置过nginx，可以参考我的配置，百度网盘地址：
+https://pan.baidu.com/s/1kVwRD2Z ， 下载压缩包 `环境部署/环境配置文件.rar` ，解压后，
+nginx的配置文件在解压后文件夹的路径：`\usr\local\nginx\conf`
+
 5、配置语言（可以先使用默认）：
 
 
@@ -253,19 +260,19 @@ return [
 		'appbase'	=> [
 			'appfront' => [
 				'basedir' => '@appimage/appfront',
-				'basedomain' => 'http://img3.fecshoptest.com',
+				'basedomain' => '//img3.fecshoptest.com',
 			],
 			'apphtml5' => [
 				'basedir' => '@appimage/apphtml5',
-				'basedomain' => 'http://img2.fecshoptest.com',
+				'basedomain' => '//img2.fecshoptest.com',
 			],
 			'appadmin' => [
 				'basedir' => '@appimage/appadmin',
-				'basedomain' => 'http://img2.fecshoptest.com',
+				'basedomain' => '//img2.fecshoptest.com',
 			],
 			'common' => [
 				'basedir' => '@appimage/common',
-				'basedomain' => 'http://img.fecshoptest.com',
+				'basedomain' => '//img.fecshoptest.com',
 			],
 		],
 	],

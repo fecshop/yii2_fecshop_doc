@@ -28,7 +28,11 @@ Fecshop 服务（Service）
 
 Fecshop Api 入口
 ----------------------
-*  [Fecshop Api](fecshop-api.md)
+*  [Fecshop Api 介绍](fecshop-api.md)
+*  [Fecshop Api 产品](fecshop-api-product.md)
+*  [Fecshop Api 订单](fecshop-api-order.md)
+*  [Fecshop Api 定制开发](fecshop-api-custom.md)
+
 
 Fecshop Server 入口
 ----------------------
