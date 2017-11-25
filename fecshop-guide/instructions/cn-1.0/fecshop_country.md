@@ -149,7 +149,8 @@ AL 是Alabama这个省（州）的简码，Alabama是省的名字，
 ![22](images/d1.jpg)
 
 
-
+您可以重写 getCountryStateArr()方法，把您想要专做市场的国家对应的省
+填写进去。
 
 
 

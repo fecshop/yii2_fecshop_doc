@@ -28,10 +28,28 @@ Fecshop 服务（Service）
 
 Fecshop Api 入口
 ----------------------
-*  [Fecshop Api 介绍](fecshop-api.md)
-*  [Fecshop Api 产品](fecshop-api-product.md)
-*  [Fecshop Api 订单](fecshop-api-order.md)
-*  [Fecshop Api 定制开发](fecshop-api-custom.md)
+*  [Fecshop Api 介绍和配置](fecshop-api.md)
+*  [Fecshop Api 登录和验证](fecshop-api-login-and-verification.md)
+*  [Fecshop Api Page List](fecshop-api-article.md)
+*  [Fecshop Api Page FetchOne](fecshop-api-article-fetchone.md)
+*  [Fecshop Api Page AddOne](fecshop-api-article-addone.md)
+*  [Fecshop Api Page UpdateOne](fecshop-api-article-updatene.md)
+*  [Fecshop Api Page DeleteOne](fecshop-api-article-deleteone.md)
+*  [Fecshop Api 产品 List](fecshop-api-product.md)
+*  [Fecshop Api 产品 FetchOne](fecshop-api-product-fetchone.md)
+*  [Fecshop Api 产品 AddOne](fecshop-api-product-addone.md)
+*  [Fecshop Api 产品 UpdateOne](fecshop-api-product-updatene.md)
+*  [Fecshop Api 产品 DeleteOne](fecshop-api-product-deleteone.md)
+*  [Fecshop Api 分类 List](fecshop-api-category.md)
+*  [Fecshop Api 分类 FetchOne](fecshop-api-category-fetchone.md)
+*  [Fecshop Api 分类 AddOne](fecshop-api-category-addone.md)
+*  [Fecshop Api 分类 UpdateOne](fecshop-api-category-updatene.md)
+*  [Fecshop Api 分类 DeleteOne](fecshop-api-category-deleteone.md)
+*  [Fecshop Api 订单 List](fecshop-api-order.md)
+*  [Fecshop Api 订单 FetchOne](fecshop-api-order-fetchone.md)
+*  [Fecshop Api 订单 UpdatePaymentStatus](fecshop-api-order-update-payment-status.md)
+*  [Fecshop Api 产品评论 List](fecshop-api-product_review-list.md)
+*  [Fecshop Api 产品评论 AddOne](fecshop-api-product_review-add.md)
 
 
 Fecshop Server 入口

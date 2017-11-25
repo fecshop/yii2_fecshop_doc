@@ -10,12 +10,12 @@ FecShop 产品评论
 
 `@fecshop/config/services/Product.php` 文件中的配置：
 
-		
+```	
 'review' => [
 	'class' => 'fecshop\services\product\Review',
 	'filterByLang'	=> false,	# 是否通过语言进行评论过滤？
 ],
-
+```
 
 `filterByLang` 改成true，只会显示当前语言下的评论。
 
