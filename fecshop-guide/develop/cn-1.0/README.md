@@ -30,6 +30,7 @@ Fecshop Api 入口
 ----------------------
 *  [Fecshop Api 介绍和配置](fecshop-api.md)
 *  [Fecshop Api 登录和验证](fecshop-api-login-and-verification.md)
+*  [Fecshop Api 多语言属性](fecshop-api-mutil-lang.md)
 *  [Fecshop Api Page List](fecshop-api-article.md)
 *  [Fecshop Api Page FetchOne](fecshop-api-article-fetchone.md)
 *  [Fecshop Api Page AddOne](fecshop-api-article-addone.md)

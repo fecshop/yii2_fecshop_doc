@@ -129,11 +129,52 @@ Yii2多语言翻译的知识，可以参看地址 [Yii2多语言](http://www.yii
 通过以上四种方式的翻译，我们就完成了整个fecshop多语言翻译的闭环。
 
 **注意：** 如果您不添加翻译，则默认就会使用英语的翻译。
+
+关于邮件更详细的介绍，可以参看：[Fecshop 邮件](fecshop_email.php)
  
 
+三：各个入口的语言配置
+--------------
+
+> 当我们在上面的步骤中设置了语言，以及各个语言对应的翻译文件后，
+> 我们需要为各个入口设置对应的默认语言
 
 
+### 设置各个域名下面的默认语言
 
+打开 @app/config/fecshop_local_services/Store.php
+
+```
+<?php
+   return [
+   'store' => [
+        'class'  => 'fecshop\services\Store',
+        'stores' => [
+            // store key：域名去掉http部分，作为key，这个必须这样定义。
+            'fecshop.appfront.fancyecommerce.com' => [
+                'language'         => 'en_US',        // 语言简码需要在@common/config/fecshop_local_services/FecshopLang.php 中定义。
+                'languageName'     => 'English',    // 语言简码对应的文字名称，将会出现在语言切换列表中显示。
+                'localThemeDir'    => '@appfront/theme/terry/theme01', // 设置当前store对应的模板路径。关于多模板的方面的知识，您可以参看fecshop多模板的知识。
+                'thirdThemeDir'    => [],  // 第三方模板路径，数组，可以多个路径
+                'currency'         => 'USD', // 当前store的默认货币,这个货币简码，必须在货币配置中配置
+                /*
+                 * 当设备满足什么条件的时候，进行跳转。
+                 * 这种方式不怎么高效，最好的方式是在nginx中配置。
+                 */
+                ...
+```
+
+设置：
+
+`language` ：第一部分中， `@common/config/fecshop_local_services/FecshopLang.php` 中进行配置语言项，
+这里填写的值，必须该配置文件中出现。
+
+`languageName` 自定义语言label，这个会在前端显示出来具体的名字（因为简码，用户
+是看不明白的），譬如在appfront端的顶部左侧显示的多语言切换列表，apphtml5端
+首页底部显示的多语言切换列表
+
+然后就可以访问查看了，当把该入口的各个域名对应的默认语言设置好后，
+访问这个语言，就可以看到相应的语言了。
 
 
 

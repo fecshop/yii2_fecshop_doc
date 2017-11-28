@@ -61,6 +61,9 @@ fecshop的配置文件为：`@fecshop/config/services/Email.php`
 ```
 
 
+
+
+
 ### 公用配置
 
 对于邮件里面会出现一些store方面的公用配置,在配置文件中可以看到
@@ -87,7 +90,7 @@ fecshop的配置文件为：`@fecshop/config/services/Email.php`
 譬如您可以在 @appfront/config/fecshop_local_services/Email.php 下面
 添加配置，在系统初始化的时候，高优先级的配置会覆盖fecshop的配置。
 
-### 邮件模板：
+### 邮件模板配置介绍，以及邮件多语言原理
 
 在文件 `@fecshop/config/services/Email.php`中对
 子服务 customer 里面，有很多邮件模板的配置
@@ -197,11 +200,37 @@ fecshop的配置文件为：`@fecshop/config/services/Email.php`
 文件，那么，系统会使用默认语言的邮件，也就是subject_en.php
 和body_en.php
 
-如果您想重写邮件的内容，那么您在配置中重新指定`viewPath`和`widget`
-的值，在路径中重新写`subject`和`body`文件即可。
 
 
 
+### 邮件重写
+
+> 如果您想重写邮件的内容，那么您在配置中重新指定`viewPath`和`widget`
+> 的值，在路径中重新写`subject`和`body`文件即可。
+
+fecshop的配置文件为：`@fecshop/config/services/Email.php`
+
+```
+# 注册账户发送的邮件的模板配置
+'register' => [
+    'enable' => true,
+    # 邮件内容的动态数据提供部分
+    'widget'		=> 'fecshop\services\email\widgets\customer\account\register\Body',
+    # 邮件内容的view部分
+    'viewPath' 		=> '@fecshop/services/email/views/customer/account/register',
+    
+    'mailerConfig'  => 'default',
+],
+```
+
+譬如重写登录发送邮件的模板:
+
+您可以新建一个`widget` 继承`fecshop\services\email\widgets\customer\account\login\Body`,
+来实现`widget`的重写。
+
+对于view文件，可以新建一个`viewPath`，然后把
+`@fecshop/services/email/views/customer/account/login` 里面的所有文件复制
+到本地的`viewPath`中，然后重写即可。
 
 
 

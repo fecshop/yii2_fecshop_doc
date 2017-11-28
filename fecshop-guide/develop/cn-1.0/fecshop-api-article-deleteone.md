@@ -66,7 +66,7 @@ URL: `http://fecshop.appapi.fancyecommerce.com/v1/article/deleteone`
 ```
 {
     "code": 200,
-    "message": "add article success",
+    "message": "delete article by ids success",
     "data": []
 }
 
