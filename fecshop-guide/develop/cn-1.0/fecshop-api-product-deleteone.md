@@ -50,7 +50,6 @@ URL: `http://fecshop.appapi.fancyecommerce.com/v1/product/deleteone`
 | X-Rate-Limit-Reset          | 可选        |   String    | 在开启速度限制后才会存在，为了得到最大请求数所等待的秒数|
 
 
-
 **Response JSON Data(Body)：**
 
 格式：`json`
@@ -66,10 +65,9 @@ URL: `http://fecshop.appapi.fancyecommerce.com/v1/product/deleteone`
 ```
 {
     "code": 200,
-    "message": "remove Category by ids success",
+    "message": "remove product by ids success",
     "data": []
 }
-
 ```
 
 报错示例信息：
@@ -77,11 +75,12 @@ URL: `http://fecshop.appapi.fancyecommerce.com/v1/product/deleteone`
 ```
 {
     "code": 400,
-    "message": "remove Category by ids fail",
+    "message": "remove product by ids fail",
     "data": {
         "error": [
-            "Category Remove Errors:ID 5a17f5dbbfb7ae27876ed385 is not exist.",
-            "Category Remove Errors:ID 5a17f446bfb7ae261d64e95a is not exist."
+            "Product Remove Errors:ID:5a1c2da4bfb7ae0b615fee53 is not exist.",
+            "Product Remove Errors:ID:5a1c2d3fbfb7ae0b615fee4b is not exist.",
+            "Product Remove Errors:ID:5a1b678fbfb7ae44c26734f4 is not exist."
         ]
     }
 }

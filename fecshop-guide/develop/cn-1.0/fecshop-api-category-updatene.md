@@ -23,8 +23,8 @@ URL: `http://fecshop.appapi.fancyecommerce.com/v1/category/updateone`
 | 参数名称                      | 是否必须    |  类型       |  描述     |
 | ------------------------------| -----:      | :----:      |:----:     |
 | id                            | 必填        |   String    | 分类对应的id，该值是用来做update操作的唯一值 |
-| parent_id                     | 必填        |   String    | 分类的父类id，如果是一级分类，那么parent_id为字符串"0"|
-| name                          | 必填        |   String    | 【多语言属性】分类的名字         |
+| parent_id                     | 可选        |   String    | 分类的父类id，如果是一级分类，那么parent_id为字符串"0"|
+| name                          | 可选        |   String    | 【多语言属性】分类的名字         |
 | description                   | 可选        |   String    | 【多语言属性】分类的描述         |
 | menu_custom                   | 可选        |   String    | 【多语言属性】分类的一个自定义属性         |
 | filter_product_attr_selected  | 可选        |   String    | 用于在分类侧栏过滤的产品属性         |

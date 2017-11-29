@@ -49,8 +49,6 @@ Fecshop Api 入口
 *  [Fecshop Api 订单 List](fecshop-api-order.md)
 *  [Fecshop Api 订单 FetchOne](fecshop-api-order-fetchone.md)
 *  [Fecshop Api 订单 UpdatePaymentStatus](fecshop-api-order-update-payment-status.md)
-*  [Fecshop Api 产品评论 List](fecshop-api-product_review-list.md)
-*  [Fecshop Api 产品评论 AddOne](fecshop-api-product_review-add.md)
 
 
 Fecshop Server 入口

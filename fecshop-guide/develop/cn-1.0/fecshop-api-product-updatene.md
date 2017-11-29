@@ -20,87 +20,92 @@ URL: `http://fecshop.appapi.fancyecommerce.com/v1/product/updateone`
 
 **Request JSON Data(Body)：**
 
-| 参数名称                      | 是否必须    |  类型       |  描述     |
-| ------------------------------| -----:      | :----:      |:----:     |
-| id                            | 必填        |   String    | 分类对应的id，该值是用来做update操作的唯一值 |
-| parent_id                     | 必填        |   String    | 分类的父类id，如果是一级分类，那么parent_id为字符串"0"|
-| name                          | 必填        |   String    | 【多语言属性】分类的名字         |
-| description                   | 可选        |   String    | 【多语言属性】分类的描述         |
-| menu_custom                   | 可选        |   String    | 【多语言属性】分类的一个自定义属性         |
-| filter_product_attr_selected  | 可选        |   String    | 用于在分类侧栏过滤的产品属性         |
-| filter_product_attr_unselected| 可选        |   String    | 不用于在分类侧栏过滤的产品属性（可以从分类的全局设置中剔除）         |
-| thumbnail_image               | 可选        |   String    | 分类图片         |
-| image                         | 可选        |   String    | 分类图片         |
-| url_key                       | 可选        |   String    | 分类 对应的url key，如果自定义的url_key存在，系统会添加一块字符串来保证唯一，如果不填写，则使用name（默认语言）的值来生成|
-| menu_show                     | 可选        |   String    | 分类是否在菜单栏中显示|
-| title                         | 可选        |   String    | 【多语言属性】分类 的标题         |
-| meta_keywords                 | 可选        |   String    | 【多语言属性】分类 的meta keywords|
-| meta_description              | 可选        |   String    | 【多语言属性】分类 的meta keywords|
-| status                        | 可选        |   String    | 分类的状态，1代表激活，2代表关闭，如果填写其他非法值，系统将强制设置为1|
-
+| 参数名称          | 是否必须    |  类型       |  描述     |
+| ------------------| -----:      | :----:      |:----:     |
+| id                | 必须        |   Array     | 【多语言属性】产品的名字|
+| name              | 可选        |   Array     | 【多语言属性】产品的名字|
+| weight            | 可选        |   Float     | 产品的重量kg|
+| status            | 可选        |   Int       | 产品的状态，1代表激活，2代表关闭，如果不填写默认为激活|
+| qty               | 可选        |   Int       | 产品的库存，如果不填写，则代表为0|
+| is_in_stock       | 可选        |   Int       | 产品的上架状态，1代表上架，2代表下架，如果不填写，则默认为上架状态|
+| category          | 可选        |   Array     | 产品的分类id，该属性是数组属性|
+| price             | 可选        |   Float     | 产品的价格|
+| special_price     | 可选        |   Float     | 产品的特价|
+| special_from      | 可选        |   Date      | 产品的特价开始时间|
+| special_to        | 可选        |   Date      | 产品的特价结束时间|
+| cost_price        | 可选        |   Float     | 产品的成本价|
+| tier_price        | 可选        |   Array     | 产品的批发价，根据加入购物车的产品的数量，设置不同的价格|
+| new_product_from  | 可选        |   Date      | 作为新产品的开始时间|
+| new_product_to    | 可选        |   Date      | 作为新产品的结束时间|
+| short_description | 可选        |   Array     | 【多语言属性】产品的简短描述|
+| remark            | 可选        |   String    | 产品的备注，一般作为后台的一些备注，不用于前台显示的内容|
+| relation_sku      | 可选        |   Array     | 产品的相关产品，该属性是数组属性，数组的每一个item为sku|
+| buy_also_buy_sku  | 可选        |   Array     | 买了这个产品的人还买了那些产品，该属性是数组属性，数组的每一个item为sku|
+| see_also_see_sku  | 可选        |   Array     | 看了这个产品的人还看了那些产品，该属性是数组属性，数组的每一个item为sku|
+| title             | 可选        |   Array     | 【多语言属性】产品 的标题         |
+| meta_keywords     | 可选        |   Array     | 【多语言属性】产品 的meta keywords|
+| meta_description  | 可选        |   Array     | 【多语言属性】产品 的meta keywords|
+| description       | 可选        |   Array     | 【多语言属性】产品的描述|
 
 
 对于多语言属性的`数据结构`和`必填`的详细说明参看： [AppApi多语言属性说明](fecshop-api-mutil-lang.md)
+
+> 产品的数据更新，只能更新一些通用的编辑部分，也就是只有上面列表中展示的产品数据部分，
+> 如果您的产品更新非常的复杂，涉及到很多其他的改动，
+> 譬如custom option等，那么您可以使用删除api删除产品，然后
+> 在通过addone api插入新数据。
+
+**注意**：此接口为纯更新接口，填写了那个字段，就更新那个字段，其他的不做改动
 
 **Request JSON Data(Body Example)：**
 
 ```
 {
-    "parent_id": "0",
+    "id":"5a1c2b2abfb7ae0a293ee286",
     "name": {
-        "name_en": "Wedding666",
+        "name_en": "test computer  444444",
         "name_fr": "",
         "name_de": "",
         "name_es": "",
         "name_ru": "",
         "name_pt": "",
-        "name_zh": "婚礼"
+        "name_zh": "测试计算机"
     },
+    "weight": 0.3,
     "status": 1,
-    "menu_show": 1,
-    "url_key": "/wedding-31685117",
-    "thumbnail_image": null,
-    "image": null,
-    "filter_product_attr_selected": "style,dresses-length,pattern-type,sleeve-length,collar,color",
-    "filter_product_attr_unselected": "",
-    "description": {
-        "description_en": "",
-        "description_fr": "",
-        "description_de": "",
-        "description_es": "",
-        "description_ru": "",
-        "description_pt": "",
-        "description_zh": ""
-    },
-    "menu_custom": {
-        "menu_custom_en": "<a href=\"//fecshop.appfront.fancyecommerce.com/wedding\"><img alt=\"\" src=\"//img.fancyecommerce.com/custom/menu/what_a.jpg\" width=\"244\" /></a><a style=\"margin-left: 20px;\" href=\"//fecshop.appfront.fancyecommerce.com/wedding\"><img alt=\"\" src=\"//img.fancyecommerce.com/custom/menu/what_b.jpg\" width=\"244\" /></a>",
-        "menu_custom_fr": "<a href=\"//fecshop.appfront.fancyecommerce.com/fr/wedding\"><img alt=\"\" src=\"//img.fancyecommerce.com/custom/menu/what_a.jpg\" width=\"244\" /></a><a style=\"margin-left: 20px;\" href=\"//fecshop.appfront.fancyecommerce.com/fr/wedding\"><img alt=\"\" src=\"//img.fancyecommerce.com/custom/menu/what_b.jpg\" width=\"244\" /></a>",
-        "menu_custom_de": "",
-        "menu_custom_es": "",
-        "menu_custom_ru": "",
-        "menu_custom_pt": "",
-        "menu_custom_zh": ""
-    },
-    "title": {
-        "title_en": "Wedding",
-        "title_fr": "",
-        "title_de": "",
-        "title_es": "",
-        "title_ru": "",
-        "title_pt": "",
-        "title_zh": ""
-    },
-    "meta_description": {
-        "meta_description_en": "",
-        "meta_description_fr": "",
-        "meta_description_de": "",
-        "meta_description_es": "",
-        "meta_description_ru": "",
-        "meta_description_pt": "",
-        "meta_description_zh": ""
+    "qty": 334,
+    "is_in_stock": 1,
+    "category": [
+        "57beb586f656f275313bf57a"
+    ],
+    "price": 33,
+    "special_price": 32,
+    "special_from": "2017-09-09",
+    "special_to": "2018-09-09",
+    "cost_price": 10,
+    "tier_price": [
+        {
+            "qty": 2,
+            "price": 30
+        },
+        {
+            "qty": 4,
+            "price": 28
+        }
+    ],
+    "new_product_from": "2017-11-05",
+    "new_product_to": "2017-12-05",
+    "meta_title": {
+        "meta_title_en": "sex sex",
+        "meta_title_fr": "",
+        "meta_title_de": "",
+        "meta_title_es": "",
+        "meta_title_ru": "",
+        "meta_title_pt": "",
+        "meta_title_zh": ""
     },
     "meta_keywords": {
-        "meta_keywords_en": "",
+        "meta_keywords_en": "sex xx meta keywords",
         "meta_keywords_fr": "",
         "meta_keywords_de": "",
         "meta_keywords_es": "",
@@ -108,7 +113,37 @@ URL: `http://fecshop.appapi.fancyecommerce.com/v1/product/updateone`
         "meta_keywords_pt": "",
         "meta_keywords_zh": ""
     },
-    "id": "5a1b679cbfb7ae19ad68c753"
+    "meta_description": {
+        "meta_description_en": "sex xx meta keywords sex xx meta keywords sex xx meta keywords",
+        "meta_description_fr": "",
+        "meta_description_de": "",
+        "meta_description_es": "",
+        "meta_description_ru": "",
+        "meta_description_pt": "",
+        "meta_description_zh": ""
+    },
+    "description": {
+        "description_en": "3333",
+        "description_fr": "",
+        "description_de": "",
+        "description_es": "",
+        "description_ru": "",
+        "description_pt": "",
+        "description_zh": ""
+    },
+    "short_description": {
+        "short_description_en": "334343",
+        "short_description_fr": "",
+        "short_description_de": "",
+        "short_description_es": "",
+        "short_description_ru": "",
+        "short_description_pt": "",
+        "short_description_zh": ""
+    },
+    "remark": "4444",
+    "relation_sku": "",
+    "buy_also_buy_sku": "",
+    "see_also_see_sku": ""
 }
 
 ```
@@ -140,58 +175,57 @@ URL: `http://fecshop.appapi.fancyecommerce.com/v1/product/updateone`
 ```
 {
     "code": 200,
-    "message": "update category success",
+    "message": "update product success",
     "data": {
         "updateData": {
-            "_id": "5a1b679cbfb7ae19ad68c753",
-            "created_at": 1511745436,
+            "_id": "5a1c2b2abfb7ae0a293ee286",
+            "created_at": 1511795498,
             "created_user_id": 1,
-            "level": 1,
-            "updated_at": 1511747371,
-            "parent_id": "0",
+            "updated_at": 1511921009,
             "name": {
-                "name_en": "Wedding666",
+                "name_en": "test computer  444444",
                 "name_fr": "",
                 "name_de": "",
                 "name_es": "",
                 "name_ru": "",
                 "name_pt": "",
-                "name_zh": "婚礼"
+                "name_zh": "测试计算机"
             },
+            "spu": "computer001",
+            "sku": "computer001-xinghao1-cpu37",
+            "weight": 0.3,
+            "score": 0,
             "status": 1,
-            "menu_show": 1,
-            "url_key": "/wedding-31685117",
-            "filter_product_attr_selected": "style,dresses-length,pattern-type,sleeve-length,collar,color",
-            "filter_product_attr_unselected": "",
-            "description": {
-                "description_en": "",
-                "description_fr": "",
-                "description_de": "",
-                "description_es": "",
-                "description_ru": "",
-                "description_pt": "",
-                "description_zh": ""
-            },
-            "menu_custom": {
-                "menu_custom_en": "<a href=\"//fecshop.appfront.fancyecommerce.com/wedding\"><img alt=\"\" src=\"//img.fancyecommerce.com/custom/menu/what_a.jpg\" width=\"244\" /></a><a style=\"margin-left: 20px;\" href=\"//fecshop.appfront.fancyecommerce.com/wedding\"><img alt=\"\" src=\"//img.fancyecommerce.com/custom/menu/what_b.jpg\" width=\"244\" /></a>",
-                "menu_custom_fr": "<a href=\"//fecshop.appfront.fancyecommerce.com/fr/wedding\"><img alt=\"\" src=\"//img.fancyecommerce.com/custom/menu/what_a.jpg\" width=\"244\" /></a><a style=\"margin-left: 20px;\" href=\"//fecshop.appfront.fancyecommerce.com/fr/wedding\"><img alt=\"\" src=\"//img.fancyecommerce.com/custom/menu/what_b.jpg\" width=\"244\" /></a>",
-                "menu_custom_de": "",
-                "menu_custom_es": "",
-                "menu_custom_ru": "",
-                "menu_custom_pt": "",
-                "menu_custom_zh": ""
-            },
-            "title": {
-                "title_en": "Wedding",
-                "title_fr": "",
-                "title_de": "",
-                "title_es": "",
-                "title_ru": "",
-                "title_pt": "",
-                "title_zh": ""
+            "qty": 334,
+            "min_sales_qty": 0,
+            "is_in_stock": 1,
+            "category": [
+                "57beb586f656f275313bf57a"
+            ],
+            "price": 33,
+            "cost_price": 10,
+            "tier_price": [
+                {
+                    "qty": 2,
+                    "price": 30
+                },
+                {
+                    "qty": 4,
+                    "price": 28
+                }
+            ],
+            "final_price": 33,
+            "meta_keywords": {
+                "meta_keywords_en": "sex xx meta keywords",
+                "meta_keywords_fr": "",
+                "meta_keywords_de": "",
+                "meta_keywords_es": "",
+                "meta_keywords_ru": "",
+                "meta_keywords_pt": "",
+                "meta_keywords_zh": ""
             },
             "meta_description": {
-                "meta_description_en": "",
+                "meta_description_en": "sex xx meta keywords sex xx meta keywords sex xx meta keywords",
                 "meta_description_fr": "",
                 "meta_description_de": "",
                 "meta_description_es": "",
@@ -199,15 +233,233 @@ URL: `http://fecshop.appapi.fancyecommerce.com/v1/product/updateone`
                 "meta_description_pt": "",
                 "meta_description_zh": ""
             },
-            "meta_keywords": {
-                "meta_keywords_en": "",
-                "meta_keywords_fr": "",
-                "meta_keywords_de": "",
-                "meta_keywords_es": "",
-                "meta_keywords_ru": "",
-                "meta_keywords_pt": "",
-                "meta_keywords_zh": ""
-            }
+            "image": {
+                "main": {
+                    "image": "/1/11/111147807271192428.jpg",
+                    "label": "",
+                    "sort_order": "",
+                    "is_thumbnails": "1",
+                    "is_detail": "1"
+                },
+                "gallery": [
+                    {
+                        "image": "/2/01/20161024170457_13851.jpg",
+                        "label": "",
+                        "sort_order": ""
+                    },
+                    {
+                        "image": "/2/01/20161024170457_21098.jpg",
+                        "label": "",
+                        "sort_order": ""
+                    },
+                    {
+                        "image": "/2/01/20161101155240_26690.jpg",
+                        "label": "",
+                        "sort_order": ""
+                    },
+                    {
+                        "image": "/2/01/20161101155240_56328.jpg",
+                        "label": "",
+                        "sort_order": ""
+                    },
+                    {
+                        "image": "/2/01/20161101155240_94256.jpg",
+                        "label": "",
+                        "sort_order": ""
+                    }
+                ]
+            },
+            "description": {
+                "description_en": "3333",
+                "description_fr": "",
+                "description_de": "",
+                "description_es": "",
+                "description_ru": "",
+                "description_pt": "",
+                "description_zh": ""
+            },
+            "short_description": {
+                "short_description_en": "334343",
+                "short_description_fr": "",
+                "short_description_de": "",
+                "short_description_es": "",
+                "short_description_ru": "",
+                "short_description_pt": "",
+                "short_description_zh": ""
+            },
+            "custom_option": {
+                "red-s-s2-s3": {
+                    "my_color": "red",
+                    "my_size": "S",
+                    "my_size2": "S2",
+                    "my_size3": "S3",
+                    "sku": "red-s-s2-s3",
+                    "qty": 9999,
+                    "price": 0,
+                    "image": "/2/01/20161024170457_10036.jpg"
+                },
+                "red-m-s2-s3": {
+                    "my_color": "red",
+                    "my_size": "M",
+                    "my_size2": "S2",
+                    "my_size3": "S3",
+                    "sku": "red-m-s2-s3",
+                    "qty": 9999,
+                    "price": 0,
+                    "image": "/2/01/20161024170457_10036.jpg"
+                },
+                "red-m-m2-s3": {
+                    "my_color": "red",
+                    "my_size": "M",
+                    "my_size2": "M2",
+                    "my_size3": "S3",
+                    "sku": "red-m-m2-s3",
+                    "qty": 9999,
+                    "price": 0,
+                    "image": "/2/01/20161024170457_10036.jpg"
+                },
+                "red-m-m2-m3": {
+                    "my_color": "red",
+                    "my_size": "M",
+                    "my_size2": "M2",
+                    "my_size3": "M3",
+                    "sku": "red-m-m2-m3",
+                    "qty": 9999,
+                    "price": 0,
+                    "image": "/2/01/20161024170457_10036.jpg"
+                },
+                "red-m-m2-l3": {
+                    "my_color": "red",
+                    "my_size": "M",
+                    "my_size2": "M2",
+                    "my_size3": "L3",
+                    "sku": "red-m-m2-l3",
+                    "qty": 9999,
+                    "price": 0,
+                    "image": "/2/01/20161024170457_10036.jpg"
+                },
+                "red-m-l2-l3": {
+                    "my_color": "red",
+                    "my_size": "M",
+                    "my_size2": "L2",
+                    "my_size3": "L3",
+                    "sku": "red-m-l2-l3",
+                    "qty": 9999,
+                    "price": 0,
+                    "image": "/2/01/20161024170457_10036.jpg"
+                },
+                "red-m-l2-s3": {
+                    "my_color": "red",
+                    "my_size": "M",
+                    "my_size2": "L2",
+                    "my_size3": "S3",
+                    "sku": "red-m-l2-s3",
+                    "qty": 9999,
+                    "price": 0,
+                    "image": "/2/01/20161024170457_10036.jpg"
+                },
+                "red-m-l2-m3": {
+                    "my_color": "red",
+                    "my_size": "M",
+                    "my_size2": "L2",
+                    "my_size3": "M3",
+                    "sku": "red-m-l2-m3",
+                    "qty": 9999,
+                    "price": 0,
+                    "image": "/2/01/20161024170457_10036.jpg"
+                },
+                "red-l-l2-m3": {
+                    "my_color": "red",
+                    "my_size": "L",
+                    "my_size2": "L2",
+                    "my_size3": "M3",
+                    "sku": "red-l-l2-m3",
+                    "qty": 9999,
+                    "price": 0,
+                    "image": "/2/01/20161024170457_10036.jpg"
+                },
+                "red-l-m2-m3": {
+                    "my_color": "red",
+                    "my_size": "L",
+                    "my_size2": "M2",
+                    "my_size3": "M3",
+                    "sku": "red-l-m2-m3",
+                    "qty": 9999,
+                    "price": 0,
+                    "image": "/2/01/20161024170457_10036.jpg"
+                },
+                "red-l-m2-l3": {
+                    "my_color": "red",
+                    "my_size": "L",
+                    "my_size2": "M2",
+                    "my_size3": "L3",
+                    "sku": "red-l-m2-l3",
+                    "qty": 9999,
+                    "price": 0,
+                    "image": "/2/01/20161024170457_10036.jpg"
+                },
+                "black-s-s2-s3": {
+                    "my_color": "black",
+                    "my_size": "S",
+                    "my_size2": "S2",
+                    "my_size3": "S3",
+                    "sku": "black-s-s2-s3",
+                    "qty": 9999,
+                    "price": 0,
+                    "image": "/2/01/20161101155240_56328.jpg"
+                },
+                "black-s-l2-s3": {
+                    "my_color": "black",
+                    "my_size": "S",
+                    "my_size2": "L2",
+                    "my_size3": "S3",
+                    "sku": "black-s-l2-s3",
+                    "qty": 9999,
+                    "price": 0,
+                    "image": "/2/01/20161101155240_56328.jpg"
+                },
+                "black-s-xl2-s3": {
+                    "my_color": "black",
+                    "my_size": "S",
+                    "my_size2": "XL2",
+                    "my_size3": "S3",
+                    "sku": "black-s-xl2-s3",
+                    "qty": 9999,
+                    "price": 0,
+                    "image": "/2/01/20161101155240_56328.jpg"
+                },
+                "black-s-s2-l3": {
+                    "my_color": "black",
+                    "my_size": "S",
+                    "my_size2": "S2",
+                    "my_size3": "L3",
+                    "sku": "black-s-s2-l3",
+                    "qty": 9999,
+                    "price": 0,
+                    "image": "/2/01/20161101155240_56328.jpg"
+                },
+                "blue-s-s2-s3": {
+                    "my_color": "blue",
+                    "my_size": "S",
+                    "my_size2": "S2",
+                    "my_size3": "S3",
+                    "sku": "blue-s-s2-s3",
+                    "qty": 9999,
+                    "price": 5,
+                    "image": "/2/01/20161101155240_94256.jpg"
+                }
+            },
+            "attr_group": "test_group",
+            "relation_sku": "",
+            "buy_also_buy_sku": "",
+            "see_also_see_sku": "",
+            "url_key": "/test-computer-444444",
+            "special_price": 32,
+            "special_from": "2017-09-09",
+            "special_to": "2018-09-09",
+            "new_product_from": "2017-11-05",
+            "new_product_to": "2017-12-05",
+            "remark": "4444"
         }
     }
 }

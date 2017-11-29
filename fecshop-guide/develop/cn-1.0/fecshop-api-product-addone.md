@@ -51,7 +51,7 @@ URL: `http://fecshop.appapi.fancyecommerce.com/v1/product/addone`
 | meta_keywords     | 可选        |   Array     | 【多语言属性】产品 的meta keywords|
 | meta_description  | 可选        |   Array     | 【多语言属性】产品 的meta keywords|
 | description       | 可选        |   Array     | 【多语言属性】产品的描述|
-| image             | 可选        |   Array     | 产品图片，数组属性 |
+| image             | 可选        |   Array     | 产品图片，数组属性，您需要把首先，把图片通过ftp上传到 `@appimage/common/media/catalog/product/` 下面，图片里面填写的是在该路径下的相对路径 |
 
 
 
