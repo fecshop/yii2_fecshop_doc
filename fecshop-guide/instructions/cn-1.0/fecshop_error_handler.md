@@ -191,7 +191,11 @@ class AppfrontErrorHandler extends ErrorHandler
 }
 ```
 
+保存的error信息，可以在后台  `控制面板-->ErrorHanele` 中查看
 
+![errorHandle](images/a666.png)
+
+将 `error_no` 粘贴到`ID`处，即可进行查询相应的错误信息。
 
 ### 总结：
 
