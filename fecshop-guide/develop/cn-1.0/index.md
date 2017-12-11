@@ -26,15 +26,58 @@ Fecshop 服务（Service）
 *  [Fecshop 服务原理](fecshop-service-abc.md)
 *  [Fecshop 服务使用](fecshop-service-use.md)
 
-Fecshop Api 入口
+Fecshop Appadmin 入口
 ----------------------
-*  [Fecshop Api 介绍](fecshop-api.md)
-*  [Fecshop Api 产品](fecshop-api-product.md)
-*  [Fecshop Api 订单](fecshop-api-order.md)
-*  [Fecshop Api 定制开发](fecshop-api-custom.md)
+*  [Fecshop Admin 关于和介绍](fecshop-appadmin-about.md)
+*  [Fecshop Admin 文件结构](fecshop-appadmin-about.md)
+*  [Fecshop Admin 二次开发](fecshop-appadmin-about.md)
+*  [Fecshop Admin 刷新缓存](fecshop-appadmin-about.md)
+*  [Fecshop Admin 菜单和权限](fecshop-appadmin-about.md)
+*  [Fecshop Admin 后台配置](fecshop-appadmin-about.md)
+*  [Fecshop Admin ErrorHandle](fecshop-appadmin-about.md)
+*  [Fecshop Admin 产品分类](fecshop-appadmin-about.md)
+*  [Fecshop Admin Cms](fecshop-appadmin-about.md)
+*  [Fecshop Admin 订单优惠券](fecshop-appadmin-about.md)
+*  [Fecshop Admin 用户管理](fecshop-appadmin-about.md)
 
 
-Fecshop Server 入口
+Fecshop console 入口
+----------------------
+*  [Fecshop console 介绍和配置](fecshop-console-about.md)
+*  [product:计算最终价格的脚本](fecshop-console-product-final-price.md)
+*  [sitemap:生成的脚本](fecshop-console-sitemap.md)
+*  [url rewrite:生成脚本](fecshop-console-url-rewrite.md)
+*  [order:pending订单取消脚本](fecshop-console-pending-cancel.md)
+*  [search:删除xunsearch所有数据的脚本](fecshop-console-search-delete.md)
+*  [search:产品同步到搜索的脚本](fecshop-console-search-sync.md)
+
+
+Fecshop Appapi 入口
+----------------------
+*  [Fecshop Api 介绍和配置](fecshop-api.md)
+*  [Fecshop Api 登录和验证](fecshop-api-login-and-verification.md)
+*  [Fecshop Api 多语言属性](fecshop-api-mutil-lang.md)
+*  [Fecshop Api Page List](fecshop-api-article.md)
+*  [Fecshop Api Page FetchOne](fecshop-api-article-fetchone.md)
+*  [Fecshop Api Page AddOne](fecshop-api-article-addone.md)
+*  [Fecshop Api Page UpdateOne](fecshop-api-article-updatene.md)
+*  [Fecshop Api Page DeleteOne](fecshop-api-article-deleteone.md)
+*  [Fecshop Api 产品 List](fecshop-api-product.md)
+*  [Fecshop Api 产品 FetchOne](fecshop-api-product-fetchone.md)
+*  [Fecshop Api 产品 AddOne](fecshop-api-product-addone.md)
+*  [Fecshop Api 产品 UpdateOne](fecshop-api-product-updatene.md)
+*  [Fecshop Api 产品 DeleteOne](fecshop-api-product-deleteone.md)
+*  [Fecshop Api 分类 List](fecshop-api-category.md)
+*  [Fecshop Api 分类 FetchOne](fecshop-api-category-fetchone.md)
+*  [Fecshop Api 分类 AddOne](fecshop-api-category-addone.md)
+*  [Fecshop Api 分类 UpdateOne](fecshop-api-category-updatene.md)
+*  [Fecshop Api 分类 DeleteOne](fecshop-api-category-deleteone.md)
+*  [Fecshop Api 订单 List](fecshop-api-order.md)
+*  [Fecshop Api 订单 FetchOne](fecshop-api-order-fetchone.md)
+*  [Fecshop Api 订单 UpdatePaymentStatus](fecshop-api-order-update-payment-status.md)
+
+
+Fecshop Appserver 入口
 ----------------------
 *  [AppServer 服务端说明](fecshop-server.md)
 *  [Vue 客户端说明](fecshop-vue-config.md)

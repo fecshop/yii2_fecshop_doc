@@ -13,6 +13,10 @@ Fecshop 安装视频
 
 百度云盘地址： [1.vagrant搭建linux虚拟机.avi](http://pan.baidu.com/s/1skUvhU1#list/path=%2F%E8%A7%86%E9%A2%91%2F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA) 
 
+对于该视频中出现的文档， 在fecshop文档中已经做了更改，这个地址找不到了
+
+如果想查看文档，可以参看：
+[Fecshop vagrant安装](http://www.fecshop.com/doc/fecshop-guide/develop/cn-1.0/guide-fecshop-about-vagrantinstall.html)
 
 ### 2.在linux上面安装相应的软件
 

@@ -23,7 +23,6 @@ FecShop 使用说明
 *  [Fecshop 404页](fecshop_404.md)
 *  [Fecshop 小部件](fecshop_widget.md)
 *  [Fecshop 分类](fecshop_category.md)
-
 *  [Fecshop 产品](fecshop_product.md)
 *  [Fecshop 产品图片](fecshop_product_image.md)
 *  [Fecshop 库存](fecshop_stock.md)

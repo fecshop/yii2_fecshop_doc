@@ -26,6 +26,20 @@ Fecshop 服务（Service）
 *  [Fecshop 服务原理](fecshop-service-abc.md)
 *  [Fecshop 服务使用](fecshop-service-use.md)
 
+Fecshop Appfront和Apphtml5
+----------------------
+
+*  [Fecshop front 关于和介绍](fecshop-appfront-about.md)
+*  [Fecshop html5 关于和介绍](fecshop-apphtml5-about.md)
+
+Fecshop Appadmin 入口
+----------------------
+*  [Fecshop Admin 关于和介绍](fecshop-appadmin-about.md)
+*  [Fecshop Admin 文件结构](fecshop-appadmin-file.md)
+*  [Fecshop Admin 菜单和权限](fecshop-appadmin-menu-role.md)
+*  [Fecshop Admin 功能介绍](fecshop-appadmin-func.md)
+*  [Fecshop Admin 二次开发](fecshop-appadmin-developer.md)
+
 Fecshop console 入口
 ----------------------
 *  [Fecshop console 介绍和配置](fecshop-console-about.md)
@@ -37,7 +51,7 @@ Fecshop console 入口
 *  [search:产品同步到搜索的脚本](fecshop-console-search-sync.md)
 
 
-Fecshop Api 入口
+Fecshop Appapi 入口
 ----------------------
 *  [Fecshop Api 介绍和配置](fecshop-api.md)
 *  [Fecshop Api 登录和验证](fecshop-api-login-and-verification.md)
@@ -62,7 +76,7 @@ Fecshop Api 入口
 *  [Fecshop Api 订单 UpdatePaymentStatus](fecshop-api-order-update-payment-status.md)
 
 
-Fecshop Server 入口
+Fecshop Appserver 入口
 ----------------------
 *  [AppServer 服务端说明](fecshop-server.md)
 *  [Vue 客户端说明](fecshop-vue-config.md)
