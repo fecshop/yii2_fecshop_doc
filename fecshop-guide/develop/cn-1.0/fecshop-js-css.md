@@ -133,7 +133,10 @@ $cssOptions = [
 ```
 
 您可以按照Yii2的语法方式，在里面添加js和css文件。可以添加css和js
-加载的条件
+加载的条件.
+
+但是`vendor/`下的文件您是不能修改的，因此，您需要到
+`@app/config/fecshop_local_services/Page.php`中添加配置（文件不存在，可以创建之~）
 
 ### js和css 设置域名
 
@@ -152,12 +155,24 @@ $cssOptions = [
 	'jsVersion'		=> 1,
 	'cssVersion'	=> 1,
 	# js和css的域名，如果不设置，则使用网站的域名。
-	# 'jsCssDomain'   => '',
+	/**
+     * @var string the root directory string the published asset files.
+     * 设置: js和css的发布路径，默认在web路径下的assets文件夹下，您可以放到其他的文件路径，然后用独立的jscss域名做指向
+     * 譬如设置为：'@appimage/assets'，也可以将 @appimage 换成绝对路径
+     */
+    'basePath' => '@webroot/assets',
+    /**
+     * @var string the base URL through which the published asset files can be accessed.
+     * 设置: js和css的URL路径
+     * 可以将 @web 换成域名 ， 譬如  `http:://www/fecshop.com/assets`
+     * 这样就可以将js和css文件使用独立的域名了【把域名对应的地址对应到$basePath】。
+     */
+    'baseUrl' => '@web/assets',
 ],
 ```
 
-在 jsCssDomain 中 填写 js 和 css 域名即可。
-
+参看配置中的注释就会明白，如何使用独立域名，也就是设置
+`basePath` 和 `baseUrl`
 
 ### js和css 浏览器缓存和版本
 

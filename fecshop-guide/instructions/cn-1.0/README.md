@@ -65,9 +65,9 @@ Fecshop视频
 线上问题：
 ---------
 
-*  [上线前的配置](fecshop_online_config.md)
-*  [安全问题](fecshop_online_security.md)
-
+*  [上线前的配置问题](fecshop_online_config.md)
+*  [上线前的安全问题](fecshop_online_security.md)
+*  [上线前的性能优化](fecshop_online_speed.md)
 
 
 

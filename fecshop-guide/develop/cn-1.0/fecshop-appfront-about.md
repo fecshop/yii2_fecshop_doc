@@ -98,7 +98,7 @@ return [
 models， services，等都写到 @appfront/local 下面
 
 如果您想在本地开发一个全新的模块，可以参看：
-
+[Fecshop，本地Appfront入口新建modules](http://www.fecshop.com/topic/451)
 
 3.模板Theme：建议写到 @appfront/theme/terry/theme01 路径下, 在这里新建模板view
 文件，layouts文件  ，以及相应的assets文件（里面是js和css img等文件。）

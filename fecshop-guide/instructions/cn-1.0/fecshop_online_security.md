@@ -68,7 +68,9 @@ port代表开放的访问端口，bindIp这个是一个安全ip配置，允许�
 
 3.1 域名指向@app/web目录，这样可以防止暴露其他文件
 
-3.2 在生产环境关闭调试信息，打开 @app/web/index.php(@app代表  @appfront  @apphtml5 等入口)
+3.2 将develop（开发）模式改成product（生产）模式
+
+打开 @app/web/index.php(@app代表  @appfront  @apphtml5 等入口)
 
 将代码：
 
@@ -84,11 +86,26 @@ defined('YII_DEBUG') or define('YII_DEBUG', false);
 defined('YII_ENV') or define('YII_ENV', 'prod');
 ```
 
+打开后，线上环境的错误信息不回直接报出，只会给予一个错误编号，譬如：
+
+```
+{"code":500,"error_no":"5a3b0e4d3e00ca3c3f3aaf52"}
+```
+
+然后可以在后台查看具体的报错信息，详细参看：
+[Fecshop Error Handler ](fecshop_error_handler.md)
+
+这样，用户如果有错误，直接把错误编号发过来，开发人员就可以查到相应的错误，
+另外，开发人员可以自己去查看后台的ErrorHandle，处理没有发现的错误问题。
+
 3.3 安全加密访问(HTTPS) 
 
-对于安全https的安装和使用可以参看文章：
+现在firefox，chrome，都把http连接默认设置为不安全的连接，
+因为是明码传输，而对于https是加密传输，会更安全一些，
+https的安装和使用可以参看文章：
 
 [centos 下安装 Let’s Encrypt 永久免费 SSL 证书](http://www.fancyecommerce.com/2017/04/07/centos-%e4%b8%8b%e5%ae%89%e8%a3%85-lets-encrypt-%e6%b0%b8%e4%b9%85%e5%85%8d%e8%b4%b9-ssl-%e8%af%81%e4%b9%a6/)
+
 
 3.4 xss攻击
 
@@ -104,6 +121,15 @@ defined('YII_ENV') or define('YII_ENV', 'prod');
 4.2 其他密码
 
 对于mysql linux密码等要设置的比较长，防止安全破解。
+
+### 5.cron定时脚本
+
+对于console的脚本知识，你可以参看：[Fecshop console 介绍和配置](http://www.fecshop.com/doc/fecshop-guide/develop/cn-1.0/guide-fecshop-console-about.html)
+
+对于周期性在cron中执行的脚本，要输出log日志，这样可以在出问题的时候查看log。
+
+
+
 
 ### 5. 其他安全问题
 

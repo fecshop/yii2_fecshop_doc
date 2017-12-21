@@ -39,6 +39,8 @@ Fecshop Appadmin 入口
 *  [Fecshop Admin 菜单和权限](fecshop-appadmin-menu-role.md)
 *  [Fecshop Admin 功能介绍](fecshop-appadmin-func.md)
 *  [Fecshop Admin 二次开发](fecshop-appadmin-developer.md)
+*  [Fecshop Admin 模板Theme](fecshop-appadmin-theme.md)
+
 
 Fecshop console 入口
 ----------------------
@@ -152,6 +154,13 @@ Fecshop 二开扩展
 *  [Fecshop 模块开发](fecshop-develop-modules.md)
 *  [Fecshop 插件开发](fecshop-develop-plugin.md)
 
+
+Fecshop 数据库
+----------------
+
+*  [Fecshop 数据库介绍](fecshop-database.md)
+*  [Fecshop Mongodb数据库](fecshop-database-mongodb.md)
+*  [Fecshop Mysqldb数据库](fecshop-database-mysqldb.md)
 
 
 

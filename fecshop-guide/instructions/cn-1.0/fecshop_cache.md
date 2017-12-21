@@ -4,9 +4,51 @@ FecShop 缓存
 fecshop 有整页缓存和局部缓存
 
 
-### 整页缓存 - full page  cache
+### 缓存刷新
+
+进入appadmin后台,刷新缓存，具体如图：
+
+![appadmin](images/b111.png)
+
+因为各个入口的redisCache都是独立配置的database，因此，后台刷新缓存，需要加载redis cache的配置，
+因此，需要在配置中指定具体的配置文件
+
+打开: @appadmin/config/fecshop_local_services/Fecadmin.php 可以看到配置：
+
+```
+'fecadmin' => [
+        'params' => [
+            /**
+             * Fecshop缓存是基于redis，下面是各个入口redis配置所在的文件路径
+             * 1.`commonConfig`是公用部分
+             * 2.app开头的key，指的是各个入口的redis所在的配置文件
+             * 这个配置的作用，是为了在后台清空各个入口的全部缓存，因此需要加载相应的redis的配置
+             */
+            'cacheRedisConfigFile' => [
+                'commonConfig'      => '@common/config/main-local.php',
+                'appAdmin'           => '@appadmin/config/main-local.php',
+                'appApi'            => '@appapi/config/main-local.php',
+                'appFront'          => '@appfront/config/main-local.php',
+                'appHtml5'          => '@apphtml5/config/main-local.php',
+                'appServer'         => '@appserver/config/main-local.php',
+                
+            ],
+        ],
+    ],
+
+```
+
+
+`cacheRedisConfigFile`: 数组的作用是，指定各个入口的redisCache配置所在文件，其中，
+`commonConfig` 是公用redisCache配置。
+
+关于这个功能的具体实现，您可以参看文件：`@fecshop\app\appadmin\modules\Fecadmin\block\cache\Index.php`
+
+### Appfront  AppHtml5 入口使用缓存
 
 实现原理为yii2的full page cache
+
+
 
 配置：
 
@@ -73,7 +115,7 @@ return [
 通过整页缓存，页面的加载就会非常的快。
 
 
-### 局部缓存
+### Appfront  AppHtml5 入口使用局部缓存
 
 局部缓存，相当于一个区块，
 譬如fecshop pc端web的menu部分，头部header部分，尾部footer部分等，都可以
@@ -205,4 +247,9 @@ class Head implements BlockCache
 
 通过上面的配置可以看出，`head`， `header`， `footer`， `menu` 
 都是可以设置局部缓存的。
+
+### 关于Yii2 cache
+
+更多的参看：[Yii2 cache](http://www.yiichina.com/doc/guide/2.0/caching-overview)
+
 

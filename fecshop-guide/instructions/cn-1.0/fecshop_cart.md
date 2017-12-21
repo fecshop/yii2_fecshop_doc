@@ -54,11 +54,35 @@ return [
 购物车数据是放到mysql的，因为涉及到多表事务。
 
 
+### 购物车点击 Proceed to Pay 的设置
+
+游客和登录用户都可以把产品加入购物车，但是，如果用户想进一步下单，我想强制
+让用户先注册账户才能下单，也就是说，支持游客加入购物车，但是不允许游客下单，您可以
+在文件：
+`@fecshop/app/appfront(apphtml5 | appserver)/config/modules/Checkout.php`
 
 
+```
+return [
+    /**
+     * checkout 模块的配置，您可以在@apphtml5/config/fecshop_local_modules/Checkout.php 
+     * 中进行配置，二开，或者重写该模块（在上面路径中如果文件不存在，自行新建配置文件。）
+     */
+    'checkout' => [
+        'class' => '\fecshop\app\apphtml5\modules\Checkout\Module',
+        /**
+         * 模块内部的params配置。
+         */
+        'params'=> [
+            'guestOrder' => true, // 是否支持游客下单
+        ],
+    ],
+];
+```
 
+将`guestOrder` 设置成 `false`后，在购物车点击`proceed to Pay` ,就会跳转到账户登录页面
 
-
+这里的设置，在入口 `appfront` , `apphtml5`, `appserver` 都有效
 
 
 
