@@ -21,10 +21,6 @@ Fecshop 结构与初始化
 *  [Fecshop index.php初始化](fecshop-init-index.md)
 *  [Fecshop 功能初始化](fecshop-init-func.md)
 
-Fecshop 服务（Service）
-----------------------
-*  [Fecshop 服务原理](fecshop-service-abc.md)
-*  [Fecshop 服务使用](fecshop-service-use.md)
 
 Fecshop Appfront和Apphtml5
 ----------------------
@@ -39,6 +35,8 @@ Fecshop Appadmin 入口
 *  [Fecshop Admin 菜单和权限](fecshop-appadmin-menu-role.md)
 *  [Fecshop Admin 功能介绍](fecshop-appadmin-func.md)
 *  [Fecshop Admin 二次开发](fecshop-appadmin-developer.md)
+*  [Fecshop Admin Block Index](fecshop-appadmin-block-index.md)
+*  [Fecshop Admin Block Edit](fecshop-appadmin-block-edit.md)
 *  [Fecshop Admin 模板Theme](fecshop-appadmin-theme.md)
 
 
@@ -153,6 +151,11 @@ Fecshop 二开扩展
 *  [Fecshop 组件开发](fecshop-develop-component.md)
 *  [Fecshop 模块开发](fecshop-develop-modules.md)
 *  [Fecshop 插件开发](fecshop-develop-plugin.md)
+
+Fecshop 服务（Service）
+----------------------
+*  [Fecshop 关于服务](fecshop-service-abc.md)
+*  [Fecshop 使用服务](fecshop-service-use.md)
 
 
 Fecshop 数据库

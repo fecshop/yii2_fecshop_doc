@@ -1,4 +1,4 @@
-Fecshop 服务原理
+Fecshop 关于服务
 =================
 
 > fecshop服务是一个公用性的底层，为各个应用系统提供底层服务
@@ -28,9 +28,11 @@ Fecshop 服务原理
 3.1 实例化过程：
 
 当我们执行 `Yii::$service->cart`，就会访问fecshop cart service 服务
-当执行`Yii::$service->cart->coupon` 就会访问 cart的子服务coupon。
+，对应文件 `@fecshop/services/Cart.php`
+当执行`Yii::$service->cart->coupon` 就会访问 cart的子服务coupon
+，对应文件 `@fecshop/services/cart/Coupon.php`
 
-下面是实例化原理：
+下面是实现原理：
 
 在index.php入口文件中可以看到如下代码：
 
@@ -158,7 +160,10 @@ service类。
 
 所有的服务类，譬如上面说的cart服务，都必须继承
 `@fecshop\services\Service`。
-里面的方法都必须以action开头，和controller中类似，
+里面的方法都必须以action开头（如果不以action开头，而是实际的方法，那么
+将方法声明为public ，也是可以访问的，但是这种方式不会经过上面提到的魔术方法，
+因此，是无法记录该方法
+的开始和结束时间），和controller中类似，
 譬如执行  `Yii::$service->cart->addProductToCart($item)`，对应的是
 fecshop\services\Cart中的 `protected function actionAddProductToCart($item)`方法。
 
@@ -203,7 +208,42 @@ return [
 
 
 
+3.关闭Service
+---------
 
+对于您自己开发的`service`，您如果想去掉很轻松，把`service`对应的配置去掉,
+就无法访问这个`Service`了。
+
+对于fecshop开发的`Service`，您可以通过配置的方式关掉某个services
+，在配置中加入 `'enableService' => false`  就可以了
+
+
+譬如：搜索有mongodb和xunsearch搜索，mongodb对应外文搜索，
+而xunsearch对应的是中文搜索，如果我是做跨境电商的，我不需要中文搜索，
+那么，我就不需要安装xunsearch，后台产品编辑save的时候，也不需要把产品
+同步到xunSearch中，因此，我们可以通过加入（或修改） `'enableService' => false`
+就可以了
+
+打开文件： @common/config/fecshop_local_services/Search.php
+
+可以看到xunSearch的配置：
+
+```
+'xunSearch'  => [
+    'fuzzy'         => true,  // 是否开启模糊查询
+    'enableService' => true,
+    'synonyms'      => true, //是否开启同义词翻译
+    'searchLang'    => [
+        'zh' => 'chinese',
+    ],
+],
+```
+
+设置 `'enableService' => false` , 将关掉xunSearch Services
+，然后，我们关掉xunSearch（kill进程），然后后台保存产品，会发现保存成功，
+
+
+对于Service关闭的原理，可以参看文件 `@fecshop/services/Service.php` 文件
 
 
 
