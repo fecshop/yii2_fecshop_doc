@@ -1,4 +1,4 @@
-Fecshop Store
+﻿Fecshop Store
 =============
 
 > fecshop是支持多store的，store一般是用来构建多语言站点，
@@ -57,25 +57,78 @@ Fecshop Store
 
 `www.fecshop.com`（英文）,`fr.fecshop.com`（法文）  `de.fecshop.com`（德文）
 
-这种方式可以在index.php中设置 `ini_set('session.cookie_domain', '.fancyecommerce.com');`
+这种方式可以在@app/web/index.php中设置 `ini_set('session.cookie_domain', '.fancyecommerce.com');`
 来进行子域名之间session的共享。
 
 #### 2.url路径的方式构建多语言站点，譬如：
 
 `www.fecshop.com`（英文）,`www.fecshop.com/fr/`（法文）,`www.fecshop.com/de/`（德文）
+这种多语言方式因为都是同样的域名，只是后缀不同，因此，
+不需要像第1步那样做session共享
 
 #### 3.独立多域名方式:
 
 `www.fecshop.com`（英文）,`www.fecshop.fr`（法文）,`www.fancyecommerce.de`（德文）
 
-这种方式，session不能共享，因此购物车和登录信息在切换站点的时候，需要重新
+这种方式，session不能共享（当然，您可以做跨域session共享，但是是比较麻烦的，
+因此，建议使用第一种，子域的方式），因此购物车和登录信息在切换站点的时候，需要重新
 进行登录。
 
-### 3.store 组件 的初始化
+### 4.store原理
 
-在Yii2 bootstrap初始化的时候，都会执行store service的bootstrap方法，进行
-Fecshop Store 的初始化，Fecshop Store Services的文件路径为:
-`@fecshop/services/Store.php`
-, 在这个函数中进行当前store的语言，货币，模板等等各个参数的初始化，
-具体详细可以参看这个文件里面的代码。
+4.1 在入口文件 `@app/web/index.php` ，可以加载所有的配置文件，合并
+
+4.2 对于`appfront`  `appserver`  `apphtml5`这三个入口是需要`store`的，
+因此需要在Yii2 bootstrap初始化过程中就开始执行，下面以appfront入口为例子讲解
+
+`@fecshop/app/appfront/config/appfront.php` ， 可以看到配置：
+
+```
+'bootstrap' => ['store'],
+
+```
+
+也就是在初始化的时候执行store component，关于Yii2的bootstrap可以查看资料：
+[启动引导（Bootstrapping）](http://www.yiichina.com/doc/guide/2.0/runtime-bootstrapping)
+,
+[yii2 初始化的bootstrap过程 -引导](http://www.fancyecommerce.com/2016/05/18/yii2-%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84bootstrap%E8%BF%87%E7%A8%8B-%E5%BC%95%E5%AF%BC/)
+
+下面我们去找`store component`
+
+4.3 打开配置文件： `@fecshop/config/components/Store.php` 文件可以看到：
+
+```
+return [
+    'store' => [
+        'class' => 'fecshop\components\Store',
+    ],
+];
+```
+
+通过配置文件，我们找到`store component` , `@fecshop\components\Store.php`,
+代码如下：
+
+```
+class Store extends Component implements BootstrapInterface
+{
+    public function bootstrap($app)
+    {
+        Yii::$service->store->bootstrap($app);
+    }
+}
+```
+
+通过上面的代码，我们可以看到，就是执行store services 的`bootstrap`方法
+，通过配置文件：`@fecshop/config/services/Store.php`，我们可以看到
+
+```
+'store' => [
+        'class' => 'fecshop\services\Store',
+```
+
+我们打开 `@fecshop\services\Store.php` ,查看 `bootstrap()`方法，
+可以看到很多`store`的初始化代码，譬如语言，货币等，
+都是在这个函数里面进行的，您可以细看里面的代码，具体您可以查看这个文件，这里不做代码粘贴了。
+
+
 
