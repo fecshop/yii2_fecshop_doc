@@ -1,8 +1,25 @@
 Fecshop 安装
 ==================
 
-> 本文是在linux下面部署开发环境， 
-> 是纯净linux一步一步的配置fecshop的整个环境，
+> 注意：fecshop的安装，是不能从github clone下载安装的，必须使用composer在线安装，
+> 当然，您也可以使用百度网盘完整压缩包（不推荐）
+
+
+### windows 环境安装Fecshop
+
+> fecshop是基于php Yii2框架开发，对于windows下面安装，是可以的，
+> 但是Terry对windows下面部署不是很熟悉，
+> 因此只有linux安装fecshop的教程，不过，幸运的是，有热心fecshoper整理了在windows
+> 下面安装fecshop的帖子，您看参看帖子地址：（如果您要用window安装fecshop，您也需要查看下面Linux的步骤，只是某些软件和配置参考下面的帖子）
+> 
+> [windows - WAMP 下安装Fecshop](http://www.fecshop.com/topic/402)
+> 
+> [windows - PHPStudy下安装Fecshop](http://www.fecshop.com/topic/527)
+> 
+> 在安装过程中存在问题，您可以在帖子评论区留言咨询。
+
+
+### Linux 环境安装Fecshop【强烈推荐】
 
 
 
@@ -12,18 +29,16 @@ Fecshop 安装
 
 2.[vagrant 下载部署linux环境(虚拟机)](http://www.fancyecommerce.com/2016/09/22/vagrant-%E4%B8%8B%E8%BD%BD%E9%83%A8%E7%BD%B2linux%E7%8E%AF%E5%A2%83/)
 
-
-
-
-### 标准的安装方式
+> Linux 下面安装Fecshop，非常的详细，是完全从裸机Linux操作系统
+> 一步一步的搭建环境的过程，而且安装php mysql等都是采用的编译方式，在学习fecshop的同时，可以提升您的linux部署环境的能力，
+> 如果您对linux不熟悉，感觉障碍很大，可以参看**录制好的视频：**
+> [Fecshop 安装视频](http://www.fecshop.com/doc/fecshop-guide/instructions/cn-1.0/guide-fecshop_video_install.html)
+> ，里面讲解是的搭建Linux虚拟机，配置linux环境，已经安装配置fecshop等内容，
 
 
 ** 一定要按照下面的步骤按照，如果按照下面的步骤安装出现问题，请到[www.fecshop.com](http://www.fecshop.com)
 发帖，形成积累，方便更多的后来人。（帖子100%回复，QQ群的问题不回复） **
 
-如果您对linux不熟悉，感觉障碍很大，可以参看**录制好的视频：**
-[Fecshop 安装视频](http://www.fecshop.com/doc/fecshop-guide/instructions/cn-1.0/guide-fecshop_video_install.html)
-，里面讲解是的搭建Linux虚拟机，配置linux环境，已经安装配置fecshop等内容，
 
 如果有Yii2基础，安装起来还是比较容易，如果没有Yii2基础，会比较费劲一些，
 建议参看视频安装，视频和下面的文档
@@ -34,8 +49,15 @@ Fecshop 安装
 需要安装mongodb php mysq等等，详情参看文章：
 [Fecshop 环境部署 以及 安装步骤](http://www.fancyecommerce.com/2017/03/06/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/)
 
-**注意**：redis版本一定要高，2.2.7一下的版本是不行的，不支持php-redis，建议安装2.8+的版本。
+**注意**：
 
+1.redis版本一定要高，2.2.7一下的版本是不行的，不支持php-redis，建议安装2.8+的版本。
+
+2.mongodb建议3+
+
+3.php 5.4+
+
+4.mysql，建议5.6+
 
 ### 2、安装 
 

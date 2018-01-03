@@ -371,11 +371,12 @@ rm -rf ./*
 清空浏览器图片缓存，重新刷新页面即可。
 
 
-10.3产品搜索
+10.3产品搜索(您可以先不管这个部分，安装完了回头搞这个搜索)
 
 对于产品搜索，中文搜索需要安装xunSearch，英文用的是mongodb 的 full text search，
 [xunSearch安装教程](http://www.fancyecommerce.com/2016/09/24/xunsearch-安装，使用/)
 ,安装完成后，需要跑脚本同步到搜索工具中，命令行如下：
+
 
 ```
 cd vendor/fancyecommerce/fecshop/shell/search
@@ -384,9 +385,7 @@ sh fullSearchSync.sh
 
 [Fecshop搜索详细文档](http://www.fecshop.com/doc/fecshop-guide/instructions/cn-1.0/guide-fecshop_search.html#)
  
-
 11、开启nginx  mysql  mongodb  php，你就可以访问本地配置的fecshop了。
-
 
 12、后台的账户密码为： admin  admin123（如果不对，就是123456）
 
