@@ -5,21 +5,8 @@ Fecshop 安装
 > 当然，您也可以使用百度网盘完整压缩包（不推荐）
 
 
-### windows 环境安装Fecshop
 
-> fecshop是基于php Yii2框架开发，对于windows下面安装，是可以的，
-> 但是Terry对windows下面部署不是很熟悉，
-> 因此只有linux安装fecshop的教程，不过，幸运的是，有热心fecshoper整理了在windows
-> 下面安装fecshop的帖子，您看参看帖子地址：（如果您要用window安装fecshop，您也需要查看下面Linux的步骤，只是某些软件和配置参考下面的帖子）
-> 
-> [windows - WAMP 下安装Fecshop](http://www.fecshop.com/topic/402)
-> 
-> [windows - PHPStudy下安装Fecshop](http://www.fecshop.com/topic/527)
-> 
-> 在安装过程中存在问题，您可以在帖子评论区留言咨询。
-
-
-### Linux 环境安装Fecshop【强烈推荐】
+### Linux 环境安装Fecshop
 
 
 
@@ -97,7 +84,7 @@ composer 安装fecshop app advanced
 
 ```
 composer global require "fxp/composer-asset-plugin:^1.3.1"
-composer create-project fancyecommerce/fecshop-app-advanced  fecshop 1.2.2.4
+composer create-project fancyecommerce/fecshop-app-advanced  fecshop 1.2.2.5
 cd fecshop
 composer update    
 ./init
@@ -128,5 +115,20 @@ Token (hidden):
 执行完上面，就安装完成了。你可以点击这里进行下一步，
 [Fecshop 初始配置](fecshop-about-config.md)，
 ** 注意，配置过程一定要仔细的操作 **。
+
+
+
+### 其他 - 对于windows 环境安装Fecshop
+
+> fecshop是基于php Yii2框架开发，对于windows下面安装，是可以的，
+> 但是Terry对windows下面部署不是很熟悉，
+> 因此只有linux安装fecshop的教程，不过，幸运的是，有热心fecshoper整理了在windows
+> 下面安装fecshop的帖子，您看参看帖子地址：（如果您要用window安装fecshop，您也需要查看下面Linux的步骤，只是某些软件和配置参考下面的帖子）
+> 
+> [windows - WAMP 下安装Fecshop](http://www.fecshop.com/topic/402)
+> 
+> [windows - PHPStudy下安装Fecshop](http://www.fecshop.com/topic/527)
+> 
+> 在安装过程中存在问题，您可以在帖子评论区留言咨询。
 
 
