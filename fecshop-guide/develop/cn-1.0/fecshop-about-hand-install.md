@@ -16,6 +16,9 @@ Fecshop 安装
 
 2.[vagrant 下载部署linux环境(虚拟机)](http://www.fancyecommerce.com/2016/09/22/vagrant-%E4%B8%8B%E8%BD%BD%E9%83%A8%E7%BD%B2linux%E7%8E%AF%E5%A2%83/)
 
+3.[vagrant 设置文件映射，将windows文件夹映射到linux中](http://www.fancyecommerce.com/2017/06/06/vagrant-%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6%E6%98%A0%E5%B0%84%EF%BC%8C%E5%B0%86windows%E6%96%87%E4%BB%B6%E5%A4%B9%E6%98%A0%E5%B0%84%E5%88%B0linux%E4%B8%AD/)
+
+
 > Linux 下面安装Fecshop，非常的详细，是完全从裸机Linux操作系统
 > 一步一步的搭建环境的过程，而且安装php mysql等都是采用的编译方式，在学习fecshop的同时，可以提升您的linux部署环境的能力，
 > 如果您对linux不熟悉，感觉障碍很大，可以参看**录制好的视频：**
@@ -84,11 +87,13 @@ composer 安装fecshop app advanced
 
 ```
 composer global require "fxp/composer-asset-plugin:^1.3.1"
-composer create-project fancyecommerce/fecshop-app-advanced  fecshop 1.2.2.5
+composer create-project fancyecommerce/fecshop-app-advanced  fecshop 1.2.2.8
 cd fecshop
 composer update    
 ./init
 ```
+
+> **注意**: 对于mongodb 3.6的bug问题，yii2-mongodb官方已经修复，但是没有发布版本，你可以详细参看这里解决：http://www.fecshop.com/topic/557
 
 在上面composer安装过程中，会出现填写github的token
 
