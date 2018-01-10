@@ -174,10 +174,10 @@ Fecshop 二开扩展
 
 
 
-Fecshop Extension 扩展库包
+Fecshop Extension 插件扩展库包
 ----------------
 *  [Github  如何制作Composer包](fecshop-pkg-github-composer.md)
-*  [Fecshop 如何开发扩展](fecshop-pkg-do.md)
+*  [Fecshop 如何开发插件扩展](fecshop-pkg-do.md)
 *  [Fecshop 官方扩展列表](fecshop-pkg-list.md)
 
 

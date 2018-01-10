@@ -317,14 +317,28 @@ Generating autoload files
 
 ![](images/ex9.png)
 
-在保存前，可以先测试一下是否正确，通过下面的命令行，执行前，你需要更改里面的参数，`https://packagist.org/api/update-package?username=USERNAME&apiToken=API_TOKEN`
+在保存前，可以先测试一下是否正确，通过下面的命令行
 
 ```
 curl -XPOST -H'content-type:application/json' 'https://packagist.org/api/update-package?username=USERNAME&apiToken=API_TOKEN' -d'{"repository":{"url":"PACKAGIST_PACKAGE_URL"}}'
 ```
 
-如果返回success，说明正确，
-将上面的信息保存即可
+1.将`https://packagist.org/api/update-package?username=USERNAME&apiToken=API_TOKEN` 中的USERNAME换成您的
+https://packagist.org的账户，`API_TOKEN`替换成在上面获取的api token.
+
+2. 将`PACKAGIST_PACKAGE_URL` 替换成github的项目地址
+
+如果返回success，说明正确，譬如：
+
+```
+curl -XPOST -H'content-type:application/json' 'https://packagist.org/api/update-package?username=fancyecommerce&apiToken=_bBRVGiFlQXTENPK5gKq' -d'{"repository":{"url":"https://github.com/fecshop/yii2_fecshop_queue"}}'
+
+// 执行成功返回结果为：
+{"status":"success"}#
+```
+
+
+将上面的信息保存即可。
 
 
 测试自否自动：
