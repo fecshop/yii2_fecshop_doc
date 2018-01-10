@@ -245,11 +245,13 @@ Generating autoload files
 
 ![](images/ex7.png)
 
-然后就可以更新了：（注意更改 `zqy234/terrytest`）
 
 > **注意**：如果您上面刚在packagist.org添加包，那么需要等半个小时左右，
 > 才能通过下面的语句下载，新添加的包存在延迟，另外，如果您
 > 用的是中国composer镜像，那么可能需要等的时间更长一些。
+
+然后就可以更新了：（注意更改 `zqy234/terrytest`）
+
 
 ```
     [root@iZ942k2d5ezZ cc]# composer require --prefer-dist zqy234/terrytest  
@@ -300,22 +302,22 @@ Generating autoload files
 
 访问：https://packagist.org/profile/ ， 获取api token
 
-![](images/ex9.png)
+![](images/ex12.png)
 
 然后去github ，进行add webhook操作
 
 ![](images/ex8.png)
 
 `payload URL`: 填写https://packagist.org/api/bitbucket?username=USERNAME&apiToken=API_TOKEN
-,该url中的 `USERNAME` 替换成您的https://packagist.org的账户，
+,该url中的 `USERNAME` 替换成您的https://packagist.org
+的账户，
 `API_TOKEN`替换成在上面获取的api token.
 
 `Content type`: 选择`application/json`
 
 ![](images/ex9.png)
 
-在保存前，可以先测试一下是否正确，通过下面的命令行，您需要将 payload URL 更改下面
-的`https://packagist.org/api/update-package?username=USERNAME&apiToken=API_TOKEN`
+在保存前，可以先测试一下是否正确，通过下面的命令行，执行前，你需要更改里面的参数，`https://packagist.org/api/update-package?username=USERNAME&apiToken=API_TOKEN`
 
 ```
 curl -XPOST -H'content-type:application/json' 'https://packagist.org/api/update-package?username=USERNAME&apiToken=API_TOKEN' -d'{"repository":{"url":"PACKAGIST_PACKAGE_URL"}}'
