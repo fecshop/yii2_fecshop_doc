@@ -1,17 +1,17 @@
-Fecshop ¹Ù·½À©Õ¹ÁĞ±í
+Fecshop å®˜æ–¹æ‰©å±•åˆ—è¡¨
 ==================
 
 
-> Ä¿Ç°¿ª·¢µÄFecshop¿â°üÁĞ±í
+> ç›®å‰å¼€å‘çš„Fecshopåº“åŒ…åˆ—è¡¨
 
 
-1¡¢Redis Cart
+1ã€Redis Cart
 --------------
 
-> ¼ò½é£ºfecshopµÄcartÊı¾İ´æ´¢µ½MysqlÀïÃæ£¬¸ÃÀ©Õ¹½«
-> CartĞÅÏ¢´æ´¢µ½RedisÀïÃæ£¬ÈÃÄúµÄ¹ºÎï³µ¸ü¼ÓÇ¿½¡
+> ç®€ä»‹ï¼šfecshopçš„cartæ•°æ®å­˜å‚¨åˆ°Mysqlé‡Œé¢ï¼Œè¯¥æ‰©å±•å°†
+> Cartä¿¡æ¯å­˜å‚¨åˆ°Redisé‡Œé¢ï¼Œè®©æ‚¨çš„è´­ç‰©è½¦æ›´åŠ å¼ºå¥
 
-GithubµØÖ·£ºhttps://github.com/fecshop/yii2_fecshop_redis_cart
+Githubåœ°å€ï¼šhttps://github.com/fecshop/yii2_fecshop_redis_cart
 
 
 
