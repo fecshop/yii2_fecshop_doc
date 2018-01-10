@@ -144,16 +144,6 @@ Fecshop Appserver 入口
 
 
 
-Fecshop 二开扩展
-----------------
-*  [Fecshop 后台配置](fecshop-admin-config.md)
-*  [Fecshop 重写功能](fecshop-rewrite-func.md)
-*  [Fecshop js css img](fecshop-js-css.md)
-*  [Fecshop 模板开发](fecshop-theme.md)
-*  [Fecshop 服务开发](fecshop-develop-services.md)
-*  [Fecshop 组件开发](fecshop-develop-component.md)
-*  [Fecshop 模块开发](fecshop-develop-modules.md)
-*  [Fecshop 插件开发](fecshop-develop-plugin.md)
 
 Fecshop 服务（Service）
 ----------------------
@@ -171,9 +161,24 @@ Fecshop 数据库
 
 
 
+Fecshop 二开扩展
+----------------
+*  [Fecshop 后台配置](fecshop-admin-config.md)
+*  [Fecshop 重写功能](fecshop-rewrite-func.md)
+*  [Fecshop js css img](fecshop-js-css.md)
+*  [Fecshop 模板开发](fecshop-theme.md)
+*  [Fecshop 服务开发](fecshop-develop-services.md)
+*  [Fecshop 组件开发](fecshop-develop-component.md)
+*  [Fecshop 模块开发](fecshop-develop-modules.md)
+*  [Fecshop 插件开发](fecshop-develop-plugin.md)
 
 
 
+Fecshop Extension 扩展库包
+----------------
+*  [Github  如何制作Composer包](fecshop-pkg-github-composer.md)
+*  [Fecshop 如何开发扩展](fecshop-pkg-do.md)
+*  [Fecshop 官方扩展列表](fecshop-pkg-list.md)
 
 
 
