@@ -18,7 +18,7 @@ Fecshop 官方扩展列表
 2、ElasticSearch 分类，产品，搜索
 
 
-> **Github地址**: 未 
+> **Github地址**: https://github.com/fecshop/yii2_fecshop_elasticsearch
 > 
 > **状态**：排队开发中
 > 
@@ -28,10 +28,10 @@ Fecshop 官方扩展列表
 > 让你的网站更加迅速的相应。
 
 
-3、MQ
+3、MQ Queue
 
 
-> **Github地址**: 未
+> **Github地址**: https://github.com/fecshop/yii2_fecshop_queue
 > 
 > **状态**：排队开发中
 > 
