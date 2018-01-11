@@ -7,7 +7,7 @@ Fecshop 初始配置
 1、配置 [fecshop](http://www.fecshop.com) app advanced
 
 ```
-在common/config/main-local.php中配置mysql，mongodb，redis
+在common/config/main-local.php中配置mysql，mongodb，redis，cache，session
 
 ```
 
@@ -16,24 +16,56 @@ Fecshop 初始配置
 <?php
 return [
     'components' => [
-        'db' => [
+        // Mysql部分的配置
+        'db' => [ 
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=fecshop',  # Fecshop是mysql的数据库名字，您需要到mysql中建立一个数据库
-            'username' => 'root',  # mysql的账户
-            'password' => '123456', # mysql的密码
+            'dsn' => 'mysql:host=127.0.0.1;dbname=fecshop',
+            'username' => 'root',
+            'password' => 'xxxxxx',
             'charset' => 'utf8',
         ],
+        // Mongodb部分的配置
         'mongodb' => [
             'class' => 'yii\mongodb\Connection',
-            # 有账户的配置，username是用户名，password是密码，fecshop是数据库
-            //'dsn' => 'mongodb://username:password@localhost:27017/fecshop',
-            # 无账户的配置，fecshop是数据库
-            'dsn' => 'mongodb://127.0.0.1:27017/fecshop',
-            # 复制集 如果您的mongodb是复制集（大站），可以使用下面的复制集的配置方式。
-            //'dsn' => 'mongodb://10.10.10.252:10001/fecshop,mongodb://10.10.10.252:10002/fecshop,mongodb://10.10.10.252:10004/fecshop?replicaSet=terry&readPreference=primaryPreferred',
+			# 有账户的配置
+            //'dsn' => 'mongodb://username:password@localhost:27017/datebase',
+			# 无账户的配置
+			'dsn' => 'mongodb://127.0.0.1:27017/fecshop_test_2017_04_19',
+			# 复制集
+			//'dsn' => 'mongodb://10.10.10.252:10001/erp,mongodb://10.10.10.252:10002/erp,mongodb://10.10.10.252:10004/erp?replicaSet=terry&readPreference=primaryPreferred',
         ],
-
-
+		// Redis的配置
+		'redis' => [
+            'class' => 'yii\redis\Connection',
+            'hostname' => '127.0.0.1',    // redis的host
+            'port' => 6379,               // redis的端口     
+			//'password'  => 'xxxxx', // redis的密码
+            'database' => 0,    // redis的库，此处不要改动
+        ],
+        // Cache 组件的配置，您需要配置下面的redis
+        'cache' => [
+            'class'     => 'yii\redis\Cache',
+            // 缓存配置独立的redis，您可以和上面的redis配置一致
+            'redis' => [
+                'hostname' => '127.0.0.1',   // redis的host
+                'port' => 6379,              // redis的端口   
+                //'password'  => 'xxxxx', // redis的密码
+            ],
+        ],
+        // Session 组件的配置，您需要配置下面的redis
+        'session' => [
+            'class'   => 'yii\redis\Session',
+            // session过期时间，1天过期
+            'timeout' => 86400 * 1, 
+            // 缓存配置独立的redis，您可以和上面的redis配置一致
+            'redis' => [
+                'hostname' => '127.0.0.1', // redis的host
+                'port' => 6379,            // redis的端口   
+                //'password'  => 'xxxxx', // redis的密码
+            ],
+        ],
+    ]
+]
 ```
 
 mongodb默认是没有密码的，您可以将mongodb的端口在iptables添加信任和端口封闭即可

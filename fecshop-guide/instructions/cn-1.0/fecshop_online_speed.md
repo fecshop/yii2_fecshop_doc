@@ -19,6 +19,13 @@ Fecshop 性能问题
 
 开启`Opcache`，参考：[php 安装 zend opcache](http://www.fancyecommerce.com/2016/09/24/php-%E5%AE%89%E8%A3%85-zend-opcace/)
 
+使用php7，最近新出的php7.2引入的JIT，
+比php7.1提升了10%的性能，
+
+php7的优化：[让PHP7达到最高性能的几个Tips](http://www.laruence.com/2015/12/04/3086.html)
+
+等等
+
 2.Mysql配置优化
 
 `mysql` 的配置文件参数优化
@@ -147,5 +154,11 @@ fecshop的css放到html页面的头部，js放到页面的底部，这样可以�
 
 最后，如果您开发了新模块，可以参看一下[Yii2的性能优化建议](http://www.yiichina.com/doc/guide/2.0/tutorial-performance-tuning)
 
+### 采用fecshop官方插件提速
+
+[Fecshop 官方扩展列表](http://www.fecshop.com/doc/fecshop-guide/develop/cn-1.0/guide-fecshop-pkg-list.html)
+
+
+### 其他
 
 等等，如果你有新的优化建议，可以在fecshop.com发帖。
