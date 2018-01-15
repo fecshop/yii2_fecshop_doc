@@ -11,47 +11,104 @@ Fecshop 货运方式
 
 ```
 return [
-	'shipping' => [
-		# Shipping的运费，是表格的形式录入，shippingCsvDir是存放运费表格的文件路径。
-		'shippingCsvDir' => '@common/config/shipping', 
-		'shippingConfig'=>[
-			'free_shipping'=>[  # 免运费
-				'label'=>'Free shipping( 7-20 work days)',
-				'name' => 'HKBRAM',
-				'cost' => 0,
-			],
-			'fast_shipping'=>[
-				'label'=>'Fast Shipping( 5-10 work days)',
-				'name' => 'HKDHL',
-				'cost' => 'csv' # 请将文件名字的命名写入 fast_shipping.csv
-				
-			],
-		],
-		# 该值必须在上面的配置 $shippingConfig中存在，如果不存在，则返回为空。
-		'defaultShippingMethod' => [
-			'enable'	=> true, # 如果值为true，那么用户在cart生成的时候，就会填写上默认的货运方式。
-			'shipping' => 'fast_shipping',
-		],
-	]
+    'shipping' => [
+        // Shipping的运费，是表格的形式录入，shippingCsvDir是存放运费表格的文件路径。
+        'shippingCsvDir' => '@common/config/shipping',
+        'shippingConfig' => [
+            'free_shipping'=> [  // 免运费
+                'label'=> 'Free shipping( 7-20 work days)',
+                'name' => 'HKBRAM',
+                'formula' => '0',  // 这里填写公式，该值代表免邮。
+                // 国家限制，当国家限制不满足，则该物流不可用 （如果没有国家限制可以去掉）
+                'country' => [  // 这里填写(允许|不允许)使用的国家简码，如果您没有这方面的约束，请去掉，去掉后代表没有任何约束
+                    'type' => 'allow',  // allow代表只允许下面的国家使用该shipping，not_allow代表不允许下面国家使用该shipping
+                    'code' => [
+                        'CN',
+                        'US',
+                    ]
+                ],
+                // 重量限制，当重量超出这个范围，该物流将不可用 （如果没有重量限制可以去掉）
+                'weight' => [
+                    'min' => 0,
+                    'max' => 100,
+                ],
+            ],
+            'middle_shipping'=> [  // xxx shipping
+                'label'=> 'middle shipping( 6-15 work days)',
+                'name' => 'HKBRAM',
+                'formula' => '[weight] * 0.5',  // 这里填写公式
+                // 对于国家和重量限制，如果没有，则不用填写，如果有，参考上面的样式填写
+            ],
+            'fast_shipping'=> [
+                'label'=> 'Fast Shipping( 5-10 work days)',
+                'name' => 'HKDHL',
+                'formula' => 'csv', // 请将文件名字的命名写入，譬如： fast_shipping.csv
+                'csv_content' => '', // 这个由shipping动态从文件中获取内容
+                // 对于国家和重量限制，如果没有，则不用填写，如果有，参考上面的样式填写
+            ],
+        ],
+    ],
 ];
 ```
 
 ![aaa](images/a44.jpg)
 
-1. 配置运费
+1.配置运费
 
-这里的显示和上面的配置相关，其中cost如果等于0，代表是免运费，
-如果不免运费，请填写csv，填写csv后，运费的计算就依赖于csv表格的配置，
+> formula 代表运费计算数学公式。
+
+1.1 formula == 'csv'
+
+如果是该方式，
+请填写csv，填写csv后，运费的计算就依赖于csv表格的配置，
 `shippingCsvDir`配置了表格csv文件存放的路径`@common/config/shipping`。对于运费方式`fast_shipping`
 cost填写的是`csv`，那么他的文件路径为`@common/config/shipping/fast_shipping.csv`,
 也就是`fast_shipping`与`.csv`拼成文件名字.
 
-2.设置默认运费
+1.2 formula 为其他，则是数学公式
 
-设置默认运费后，在下单页面，默认选择相应的运费方式，需要配置
-`defaultShippingMethod`。
+根据字符串数学公式，计算出来运费
 
-3.关于csv运费配置文件的说明：
+2.对国家的限制
+
+譬如：
+
+```
+'country' => [  // 这里填写(允许|不允许)使用的国家简码，如果您没有这方面的约束，请去掉，去掉后代表没有任何约束
+    'type' => 'allow',  // allow代表只允许下面的国家使用该shipping，not_allow代表不允许下面国家使用该shipping
+    'code' => [
+        'CN',
+        'US',
+    ]
+],
+```
+
+`type` ： 类型，可以填写 `allow` 和 `not_allow` ，只能填写其中的一个值
+，详细参看上面的注释
+
+2.2 对于csv类型的shipping，有效的国家和省市，是表格里面配置的国家和省市，
+对于表格里面没有配置的国家和省市，该shipping method不可用，
+在csv表格中 `*`,代表所有，详细查看第四部分，
+因此，对于csv类型，除了上面的限制外，还可以在csv表格内部做限制，
+也就是在csv表格中，把 `*` `*`部分的去掉，只填写可用的国家和省市即可、
+
+
+3.重量限制
+
+```
+'weight' => [
+    'min' => 0,
+    'max' => 100,
+],
+```
+
+3.1满足上面的重量范围时，则该货运方式有效。
+
+3.2如果不加入这部分配置，则没有重量限制。
+
+
+
+4.关于csv运费配置文件的说明：
 
 `shippingCsvDir`: Shipping的运费，是表格的形式录入，`shippingCsvDir`是存放运费表格的文件路径。
 对于运费方式fast_shipping，打开表格`@common/config/shipping/fast_shipping.csv`，你会发现下面的数据
@@ -76,10 +133,12 @@ DE,*,*,2.0100,131.9000
 
 `*`：代表所有的意思，
 
-譬如国家（country）下面是*，代表所有的国家，第二个*代表国家
-下面所有的省市，第三个*代表所有的zip编号，通过* ，可以先做一个通用的配置，
+譬如国家（country）下面是*，代表所有的国家，第二个*代表该国家
+对应所有的省市，第三个*代表所有的zip编号，通过* ，可以先做一个通用的配置，
 然后对某些国家做独有的运费设置，如果不这样，世界上几百个国家设置运费列表，麻烦死了，
 只设置某些订单量比较大的国家即可。
+
+如果不设置 `*`,那么，只有相应的国家和省市有效，其他国家该shipping method不可用。
 
 第四列为重量，第五列为运费。
 
