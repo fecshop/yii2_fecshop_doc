@@ -1,11 +1,13 @@
 Fecshop 货运方式
 ===============
 
-> fecshop
+> fecshop shipping method 的配置以及详细的说明
+
+
+### Shipping Method 配置
 
 货运方式的配置文件在 
-
-@fecshop/common/config/fecshop_local_services/Shipping.php
+`@fecshop/common/config/fecshop_local_services/Shipping.php`
 
 内容如下：
 
@@ -51,27 +53,29 @@ return [
 ];
 ```
 
+前端显示：
+
 ![aaa](images/a44.jpg)
 
-1.配置运费
+### 1.配置运费
 
-> formula 代表运费计算数学公式。
+> 在上面配置中，formula 代表运费计算数学公式。
 
-1.1 formula == 'csv'
+1.1 `formula == 'csv'`
 
 如果是该方式，
-请填写csv，填写csv后，运费的计算就依赖于csv表格的配置，
+代表以`csv`文件的方式配置物流运费，运费的计算就依赖于csv表格的配置，
 `shippingCsvDir`配置了表格csv文件存放的路径`@common/config/shipping`。对于运费方式`fast_shipping`
 cost填写的是`csv`，那么他的文件路径为`@common/config/shipping/fast_shipping.csv`,
-也就是`fast_shipping`与`.csv`拼成文件名字.
+也就是`fast_shipping`与`.csv`拼成文件名字，对于csv方式的详细，参看下面第4部分
 
-1.2 formula 为其他，则是数学公式
+1.2 formula 值为其他的时候，则代表数学公式
 
 根据字符串数学公式，计算出来运费
 
-2.对国家的限制
+### 2.对国家的限制
 
-譬如：
+2.1通用限制，譬如：
 
 ```
 'country' => [  // 这里填写(允许|不允许)使用的国家简码，如果您没有这方面的约束，请去掉，去掉后代表没有任何约束
@@ -86,14 +90,17 @@ cost填写的是`csv`，那么他的文件路径为`@common/config/shipping/fast
 `type` ： 类型，可以填写 `allow` 和 `not_allow` ，只能填写其中的一个值
 ，详细参看上面的注释
 
-2.2 对于csv类型的shipping，有效的国家和省市，是表格里面配置的国家和省市，
-对于表格里面没有配置的国家和省市，该shipping method不可用，
+2.2csv类型独有限制
+
+对于csv类型的shipping，对于表格里面没有配置的国家和省市，
+该shipping method不可用，
 在csv表格中 `*`,代表所有，详细查看第四部分，
 因此，对于csv类型，除了上面的限制外，还可以在csv表格内部做限制，
-也就是在csv表格中，把 `*` `*`部分的去掉，只填写可用的国家和省市即可、
+也就是在csv表格中，把 `*` `*`部分的去掉，只填写可用的国家和省市，
+那么只有填写的这些国家省市有效，其他的国家将会导致该货运方式不可用
 
 
-3.重量限制
+### 3.重量限制
 
 ```
 'weight' => [
@@ -108,7 +115,7 @@ cost填写的是`csv`，那么他的文件路径为`@common/config/shipping/fast
 
 
 
-4.关于csv运费配置文件的说明：
+### 4.关于csv运费配置文件的说明：
 
 `shippingCsvDir`: Shipping的运费，是表格的形式录入，`shippingCsvDir`是存放运费表格的文件路径。
 对于运费方式fast_shipping，打开表格`@common/config/shipping/fast_shipping.csv`，你会发现下面的数据
