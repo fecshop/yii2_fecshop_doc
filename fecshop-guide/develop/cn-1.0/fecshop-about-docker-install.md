@@ -1,7 +1,9 @@
 Fecshop Docker安装
 =================
 
-> 通过docker镜像的方式快速部署fecshop
+> 通过docker镜像的方式快速部署fecshop，本部分是把docker当虚拟机用，也就是
+> 在linux上面搞一个docker，然后所有的东西都在这个docker里面。
+> 然后通过ssh直接连接docker虚拟机。
 
 ### 镜像信息
 
@@ -54,17 +56,11 @@ chkconfig docker on
 
 1.下载镜像，并载入
 
-在百度云盘中下载fecshop docker 镜像，载入docker仓库
+> 镜像在上传到阿里云，估计1.18号可以传完 ，这个镜像6.9G，里面已经把所有需要的
+> 东西都部署好了，因此文件比较大，得下载很长时间才行。
 
 ```
-docker	load	--input	fecshop_3.03.tar
-```
-
-其他：您也可以把仓库中的镜像保存成本地文件（这个不需要操作）
-
-```
-docker	save	-o	fecshop_3.03.tar	fecshop:3.03
-
+docker pull registry.cn-hangzhou.aliyuncs.com/fecshopsoft/fecshop:3.0.3.1
 ```
 
 
@@ -83,7 +79,7 @@ docker images
 创建启动容器
 
 ```
-docker run -d -p 2222:22 -p 80:80 fecshop:3.03 /www/start.sh
+docker run -d -p 2222:22 -p 80:80 registry.cn-hangzhou.aliyuncs.com/fecshopsoft/fecshop:3.0.3.1 /www/start.sh
 ```
 
 注意，创建启动容器命令使用一次后，不要重复使用，如果重复使用，将会创建多个容器
@@ -97,7 +93,7 @@ docker ps -a      // 查看所有容器
 ```
 
 
-4.进入第2步启动的容器
+4.通过宿主机，进入第2步启动的docker容器虚拟机
 
 通过 `docker ps -a` 查看容器的id，然后通过命令
 
@@ -109,6 +105,10 @@ docker exec -it 42d099e3fdca(这个替换成容器id) /bin/bash
 
 
 5.ssh 直接连接 docker容器虚拟机
+
+> 注意，宿主机的2222和80端口要开放,对于阿里云的端口开放，可以参看：[阿里云 ECS主机开启端口](http://www.fecshop.com/topic/594)
+
+使用xshell连接docker容器虚拟机
 
 ```
 IP：宿主机的ip
@@ -137,63 +137,55 @@ drdf32SDFDAsse33r33F2sfdsa3Y
 
 ```
 phpMyAdmin
-访问： my.fecshoptest.com
+访问： my.fecshop.com
 账户密码为上面mysql的账户密码
 ```
 
 
-```
-RockMongo
-访问：rock.fecshoptest.com
-admin
-fecshop123
-```
 
 7.设置，访问,以及文件架构
 
-7.1设置host映射
+7.1设置host映射（如果您有域名，并做接解析，那么这个步骤不需要做）
 打开C:\Windows\System32\drivers\etc\hosts，添加如下代码（将 127.0.0.1 替换成宿主主机的IP（注意这里不是docker容器虚拟机的IP）。）：
 
+```
+127.0.0.1       my.fecshop.com       # mysql的phpmyadmin的域名指向
+127.0.0.1       appadmin.fecshop.com # 后台域名指向
+127.0.0.1       appfront.fecshop.com # 前台pc端域名指向
+127.0.0.1       appfront.fecshop.es  # 前台pc端 es 语言的域名指向
+127.0.0.1       apphtml5.fecshop.com # 前台html端的域名指向
+127.0.0.1       apphtml5.fecshop.es # 前台html端的域名指向
+127.0.0.1       appapi.fecshop.com   # api端的域名指向
+127.0.0.1       appserver.fecshop.com # server端的域名指向
+127.0.0.1       img.fecshop.com        #appimage/common   图片的域名指向
+127.0.0.1       img2.fecshop.com    #appimage/appadmin 图片的域名指向
+127.0.0.1       img3.fecshop.com    #appimage/appfront 图片的域名指向
+127.0.0.1       img4.fecshop.com    #appimage/apphtml5 图片的域名指向
+127.0.0.1       img5.fecshop.com    #appimage/appserver图片的域名指向
+127.0.0.1       vue.fecshop.com     #VUE端的地址
+```
 
-127.0.0.1       my.fecshoptest.com       # mysql的phpmyadmin的域名指向
-127.0.0.1       appadmin.fecshoptest.com # 后台域名指向
-127.0.0.1       appfront.fecshoptest.com # 前台pc端域名指向
-127.0.0.1       appfront.fecshoptest.es  # 前台pc端 es 语言的域名指向
-127.0.0.1       apphtml5.fecshoptest.com # 前台html端的域名指向
-127.0.0.1       apphtml5.fecshoptest.es # 前台html端的域名指向
-127.0.0.1       appapi.fecshoptest.com   # api端的域名指向
-127.0.0.1       appserver.fecshoptest.com # server端的域名指向
-127.0.0.1       img.fecshoptest.com        #appimage/common   图片的域名指向
-127.0.0.1       img2.fecshoptest.com    #appimage/appadmin 图片的域名指向
-127.0.0.1       img3.fecshoptest.com    #appimage/appfront 图片的域名指向
-127.0.0.1       img4.fecshoptest.com    #appimage/apphtml5 图片的域名指向
-127.0.0.1       img5.fecshoptest.com    #appimage/appserver图片的域名指向
-127.0.0.1       vue.fecshoptest.com     #VUE端的地址
+7.3、fecshop的根目录为：`/www/web/online/fecshop-1.3.0.3`
 
+7.4、phpmyadmin的根目录：`/www/web/online/phpmyadmin`
 
-7.3fecshop的根目录为：`/www/web/online/fecshop-1.3.0.3`
+7.5、php的安装目录 `/usr/local/php` , 配置文件：`/etc/php.ini`
 
-7.4phpmyadmin的根目录：`/www/web/online/phpmyadmin`
+7.6、mysql的安装目录:`/usr/local/mysql`, 配置文件：`/usr/local/mysql/my.cnf`
 
-7.5php的安装目录 `/usr/local/php` , 配置文件：`/etc/php.ini`
+7.7、nginx的安装目录 /usr/local/nginx`, 配置文件为：`/usr/local/nginx/conf`
 
-7.6mysql的安装目录:`/usr/local/mysql`, 配置文件：`/usr/local/mysql/my.cnf`
-
-7.7nginx的安装目录 /usr/local/nginx`, 配置文件为：`/usr/local/nginx/conf`
-
-7.8mongodb是通过yum安装的方式，参看：[mongodb安装](http://www.fancyecommerce.com/2016/05/03/yii2-mongodb%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE-mongo/),
+7.8、mongodb是通过yum安装的方式，参看：[mongodb安装](http://www.fancyecommerce.com/2016/05/03/yii2-mongodb%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE-mongo/),
  配置文件：`/etc/mongod.conf`
 
-7.9vue部分的路径
+7.9、vue部分的路径
 
 vue的线上发布路径：`/www/web/online/vue_fecshop_appserver/dist` ,nginx域名指向的是该路径
 
-vue的开发文件路径为：`/www/web/online/vue_fecshop_appserver`
+vue的开发文件路径为：`/www/web/online/vue_fecshop_appserver/src`
 
 
 7.10访问即可,访问上面的域名
-
-
 
 
 8.自定义
@@ -209,62 +201,53 @@ vue的开发文件路径为：`/www/web/online/vue_fecshop_appserver`
 进入mysql修改密码，修改完成后，在 `@common/config/main-local.php` 处修改mysql的配置密码
 
 
-8.3更改rockmongo的密码【废弃，请使用robomongo连接】
+8.5、redis
 
-打开文件 /www/web/online/rockmongo/config.php
-，将`fecshop123` 更改成您自己的密码。（rockmongodb是一个类似于phpmyadmin的的web在线访问界面）
+> 【不需要更改设置】镜像中的redis是安全的，不需要进行设置，因为进行了ip绑定，只允许127.0.0.1访问，
 
-```
-$MONGO["servers"][$i]["control_users"]["admin"] = "fecshop123"
-```
+如果您进行其他的改动，请注意下面几点：
 
+8.5.1、设置默认绑定的ip，其他ip不允许访问redis，增强安全
 
-8.4redis
+8.5.2、端口是6379，这个端口不要开放（如果只有本机访问redis）
 
-> 镜像中的redis是安全的，因为进行了ip绑定，只允许127.0.0.1访问，如果您进行其他的改动
-> 请注意下面几点
-
-8.4.1设置默认绑定的ip，其他ip不予许访问redis，增强安全
-
-8.4.2端口是6379，这个端口不要开放（如果只有本机访问redis）
-
-8.4.3设置redis访问密码
+8.5.3、设置redis访问密码
 
 如果您进行了redis的修改，那么，您需要去`common/config/main-local.php`中进行配置
 更多redis的信息参看：[yii2 – redis 配置](http://www.fancyecommerce.com/2016/05/03/yii2-redis-%E9%85%8D%E7%BD%AE/)
 
 
-8.5mongodb
+8.5、mongodb
 
-镜像中mongodb默认也是安全的配置允许访问的ip为127.0.0.1，其他ip不允许,因此不需要改动
+> 【不需要更改设置】镜像中mongodb默认也是安全的配置，允许访问的ip为127.0.0.1，其他ip不允许,因此不需要改动
 
 你可以使用 `RoboMongo` GUI工具连接mongodb，[下载地址](https://robomongo.org/download)
 , 因为mongodb默认设置无密码，只允许127.0.0.1登录，
 因此，可以使用`RoboMongo`的ssh方式登录，填写您的主机的ssh信息即可登录。
 
 
-8.6更改域名
+8.6、更改域名
 
-您需要更改为您自己的域名，那么，您需要进行几处的更改：
+> 您需要更改为您自己的域名，那么，您需要进行几处的更改：
 
-8.6.1更改 appfront/config/fecshop_local_services/Store.php 更改域名，文档参考（第7部分）：
+8.6.1、更改 appfront/config/fecshop_local_services/Store.php 更改域名，文档参考（第7部分）：
 [配置文档](http://www.fecshop.com/doc/fecshop-guide/develop/cn-1.0/guide-fecshop-about-config.html)
 
-8.6.2更改 apphtml5/config/fecshop_local_services/Store.php 更改域名，文档参考（第7部分）：
+8.6.2、更改 apphtml5/config/fecshop_local_services/Store.php 更改域名，文档参考（第7部分）：
 [配置文档](http://www.fecshop.com/doc/fecshop-guide/develop/cn-1.0/guide-fecshop-about-config.html)
 
-8.6.3更改 appserver/config/fecshop_local_services/Store.php 更改域名，文档参考（第7部分）：
+8.6.3、更改 appserver/config/fecshop_local_services/Store.php 更改域名，文档参考（第7部分）：
 [配置文档](http://www.fecshop.com/doc/fecshop-guide/develop/cn-1.0/guide-fecshop-about-config.html)
 
 
-8.6.4更改 common/config/fecshop_local_services/Image.php 更改图片域名，文档参考（第8部分）：
+8.6.4、更改 common/config/fecshop_local_services/Image.php 更改图片域名，文档参考（第8部分）：
 [配置文档](http://www.fecshop.com/doc/fecshop-guide/develop/cn-1.0/guide-fecshop-about-config.html)
 
 
 
 8.6.5更改vue端，后端支持的api配置
 
-进入文件夹：/www/web/online/vue_fecshop_appserver/
+> 进入文件夹：/www/web/online/vue_fecshop_appserver/
 
 `config/dev.env.js`: 开发环境设置，将 API_ROOT 改成您的appserver端对应的域名，
 WEBSITE_ROOT 改成您的vue端访问的域名。
@@ -285,10 +268,67 @@ vue设置完成后，您需要重新编译一下：`npm run build`
 
 
 
+### 其他：（不需要操作）
+
+1.通过容器生成镜像
+docker commit -m "fecshop docker" -a "terry" e33e7292f603  alifechop:3.0.3.1
+
+2.将镜像 打包导出为 本地tar文件
+docker save -o fecshop_3.03.tar fecshop:3.03
+
+3.将本地tar文件 导入到docker仓库，成为一个镜像
+docker load --input fecshop_3.03.tar
+
+4.通过镜像生成容器
+docker run -d -p 2222:22 -p 80:80 alifechop:3.0.3.1 /usr/sbin/sshd -D
+
+5.停止启动容器
+docker stop  容器id 
+
+docker start 容器id
 
 
+### 阿里云docker
+
+阿里云docker地址：https://dev.aliyun.com/search.html登录阿里云docker registry:
+docker login --username=hi35488735@aliyun.com registry.cn-hangzhou.aliyuncs.com
+
+从registry中拉取镜像：
+docker pull registry.cn-hangzhou.aliyuncs.com/fecshopsoft/fecshop
+
+将镜像推送到registry：
+docker tag [ImageId] registry.cn-hangzhou.aliyuncs.com/fecshopsoft/fecshop:[镜像版本号]
+docker push  registry.cn-hangzhou.aliyuncs.com/fecshopsoft/fecshop
 
 
+### docker  hub
 
+docker login --username=xxxx
+
+在DockerHub上创建账号：https://hub.docker.com/
+这里我的账号是firewarm
+本地下载镜像（这里拿alpine做示例）,并为镜像打tag
+
+```
+[root@host-30 ~]# docker pull alpine:3.4
+[root@host-30 ~]# docker tag alpine:3.4 firewarm/alpine:3.4
+```
+
+登录到DockerHub上
+
+```
+[root@host-30 ~]# docker login
+# 输入用户名和密码 
+fecshop
+```
+
+push镜像到DockerHub上
+
+```
+[root@host-30 ~]# docker push firewarm/alpine:3.4
+The push refers to a repository [docker.io/firewarm/alpine]
+4fe15f8d0ae6: Pushed 
+3.4: digest: sha256:dc89ce8401da81f24f7ba3f0ab2914ed9013608bdba0b7e7e5d964817067dc06 size: 528
+```
 
 
