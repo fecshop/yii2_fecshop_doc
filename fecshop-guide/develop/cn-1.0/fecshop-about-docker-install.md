@@ -1,4 +1,4 @@
-Fecshop Docker安装
+Fecshop Docker(把docker当成虚拟机)安装
 =================
 
 > 通过docker镜像的方式快速部署fecshop，本部分是把docker当虚拟机用，也就是
@@ -56,8 +56,7 @@ chkconfig docker on
 
 1.下载镜像，并载入
 
-> 镜像在上传到阿里云，估计1.18号可以传完 ，这个镜像6.9G，里面已经把所有需要的
-> 东西都部署好了，因此文件比较大，得下载很长时间才行。
+> 镜像2G左右，阿里云地址：https://dev.aliyun.com/detail.html?spm=5176.1972343.2.2.usuXdL&repoId=110333
 
 ```
 docker pull registry.cn-hangzhou.aliyuncs.com/fecshopsoft/fecshop:3.0.3.1
@@ -79,7 +78,7 @@ docker images
 创建启动容器
 
 ```
-docker run -d -p 2222:22 -p 80:80 registry.cn-hangzhou.aliyuncs.com/fecshopsoft/fecshop:3.0.3.1 /www/start.sh
+docker run -d -p 2222:22 -p 80:80 registry.cn-hangzhou.aliyuncs.com/fecshopsoft/fecshop:3.0.3.1 /usr/sbin/sshd -D
 ```
 
 注意，创建启动容器命令使用一次后，不要重复使用，如果重复使用，将会创建多个容器
@@ -95,13 +94,15 @@ docker ps -a      // 查看所有容器
 
 4.通过宿主机，进入第2步启动的docker容器虚拟机
 
-通过 `docker ps -a` 查看容器的id，然后通过命令
+通过 `docker ps -a` 查看容器的id（CONTAINER ID），然后通过命令
 
 ```
 docker exec -it 42d099e3fdca(这个替换成容器id) /bin/bash
 ```
 
-执行后，就进入了docker容器里面的虚拟机。
+执行后，就进入了docker容器里面的虚拟机.
+
+`exit` 退出。
 
 
 5.ssh 直接连接 docker容器虚拟机
@@ -116,6 +117,13 @@ IP：宿主机的ip
 root
 fecshop123
 ```
+
+连接成功后，启动里面的nginx php  mysql 等等
+
+```
+/www/start.sh
+```
+
 
 您可以直接用notepad的远程加载文件功能，通过sftp连接，
 加载文件结构树，详细参看：
@@ -300,6 +308,7 @@ docker pull registry.cn-hangzhou.aliyuncs.com/fecshopsoft/fecshop
 docker tag [ImageId] registry.cn-hangzhou.aliyuncs.com/fecshopsoft/fecshop:[镜像版本号]
 docker push  registry.cn-hangzhou.aliyuncs.com/fecshopsoft/fecshop
 
+https://dev.aliyun.com/detail.html?spm=5176.1972343.2.2.usuXdL&repoId=110333
 
 ### docker  hub
 
@@ -331,4 +340,5 @@ The push refers to a repository [docker.io/firewarm/alpine]
 3.4: digest: sha256:dc89ce8401da81f24f7ba3f0ab2914ed9013608bdba0b7e7e5d964817067dc06 size: 528
 ```
 
+https://hub.docker.com/r/fecshop/fecshop/tags/
 
