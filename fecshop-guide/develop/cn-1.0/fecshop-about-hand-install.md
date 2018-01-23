@@ -5,6 +5,11 @@ Fecshop 安装
 > 当然，您也可以使用百度网盘完整压缩包（不推荐）
 
 
+### Docker Compose 安装
+
+熟悉docker的，可以使用docker compose安装，
+非常的简单快捷，地址为：
+https://github.com/fecshop/yii2_fecshop_docker
 
 ### Linux 环境安装Fecshop
 

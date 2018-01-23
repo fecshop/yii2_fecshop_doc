@@ -5,6 +5,13 @@ Fecshop Docker(把docker当成虚拟机)安装
 > 在linux上面搞一个docker，然后所有的东西都在这个docker里面。
 > 然后通过ssh直接连接docker虚拟机。
 
+### 不建议提示
+
+这种方式是不推荐的方式，违背了docker的哲学思想，**强烈建议**按照下面的文档安装：
+https://github.com/fecshop/yii2_fecshop_docker
+
+不过，下面这种方式，因为是虚拟机的方式，新手入手操作会比较简单一些。
+
 ### 镜像信息
 
 ```

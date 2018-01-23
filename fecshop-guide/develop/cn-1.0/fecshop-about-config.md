@@ -405,6 +405,12 @@ rm -rf ./*
 
 10.3产品搜索(您可以先不管这个部分，安装完了回头搞这个搜索)
 
+首先，先添加一下host `vim /etc/hosts`, 添加下面的host映射，`:wq` 保存退出即可
+
+```
+127.0.0.1    xunsearch
+```
+
 对于产品搜索，中文搜索需要安装xunSearch，英文用的是mongodb 的 full text search，
 [xunSearch安装教程](http://www.fancyecommerce.com/2016/09/24/xunsearch-安装，使用/)
 ,安装完成后，需要跑脚本同步到搜索工具中，命令行如下：
