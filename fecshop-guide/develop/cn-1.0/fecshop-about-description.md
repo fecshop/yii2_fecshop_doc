@@ -8,7 +8,7 @@
 
 Fecshop 全称为Fancy ECommerce Shop，是基于php Yii2框架之上开发的一款优秀的开源电商系统，
 遵循BSD-3-Clause开源协议，Fecshop支持多语言，多货币，架构上支持pc，手机web，手机app，和erp对接等入口，您可以免费快速的定制和部署属于您的电商系统。
-截止到2017-12-15，appfront（pc前端web），appadmin（后台），apphtml5（wap端web），
+截止到2017-10月，appfront（pc前端web），appadmin（后台），apphtml5（wap端web），
 appserver（VUE，手机app的api提供端），console（命令行），
 appapi（和第三方系统通信端）都已经完成，现在已经趋于稳定，
 Terry在2010年开始进入跨境电商领域， 用了不少开源电商系统，譬如magento，
@@ -20,7 +20,7 @@ service层和block层，数据库采用了nosql和mysql结合的方式，
 非关系型数据表（非关系型代表不会出现多表强事务类型操作） 放到mongodb中，
 缓存用redis，搜索目前用的是mongodb的FullTextSearch功能，
 支持一些主流语言的分词与搜索，对于中文搜索，使用的是xunsearch，
-后期会扩展ElasticSearch来进行搜索（ElasticSearch有中文插件，安装后支持中文分词）。
+您也可以使用 [Fecshop ElasticSearch扩展](https://github.com/fecshop/yii2_fecshop_elasticsearch)来使用Es作为搜索引擎
 总之，Fecshop目前的定位是为了让程序员们有一个方便学习，扩展，开发的电商框架系统，
 如果您发现有哪些代码结构可以优化，调整，或者您有更加合理的建议，可以发送到邮箱：
 2358269014@qq.com。

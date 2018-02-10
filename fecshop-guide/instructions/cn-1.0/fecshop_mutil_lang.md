@@ -177,5 +177,8 @@ Yii2多语言翻译的知识，可以参看地址 [Yii2多语言](http://www.yii
 访问这个语言，就可以看到相应的语言了。
 
 
+四：如何添加一门新语言
+---------------------
 
+参看文档：[http://www.fecshop.com/topic/616](http://www.fecshop.com/topic/616)
 

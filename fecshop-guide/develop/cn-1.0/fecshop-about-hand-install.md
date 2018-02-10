@@ -1,17 +1,27 @@
 Fecshop 安装
 ==================
 
-> 注意：fecshop的安装，是不能从github clone下载安装的，必须使用composer在线安装，
-> 当然，您也可以使用百度网盘完整压缩包（不推荐）
+> 注意：fecshop的安装，是不能从github clone下载安装的，需要按照下面的文档进行安装
+> ，下面有三种安装方式，推荐使用docker compose方式快速部署，如果您对Yii2部署比较熟悉，
+> 可以采用第3种标准部署方式安装fecshop，下面的操作过程中，请严格按照文档步骤操作
 
 
-### Docker Compose 安装
+### Docker Compose 方式安装Fecshop
 
 熟悉docker的，可以使用docker compose安装，
 非常的简单快捷，地址为：
 https://github.com/fecshop/yii2_fecshop_docker
+，推荐使用这种方式快速部署Fecshop。
 
-### Linux 环境安装Fecshop
+### Vagrant Box 方式安装Fecshop
+
+vagrant box的方式（不建议）：2017.6月做的box，以后**不再维护vagrant box**，
+推荐使用docker compose安装，如果您想使用vagrant box可以参看：
+[Fecshop vagrant安装](http://www.fecshop.com/doc/fecshop-guide/develop/cn-1.0/guide-fecshop-about-vagrantinstall.html)
+
+
+
+### 标准安装方式：Linux 环境安装Fecshop
 
 
 
@@ -50,7 +60,7 @@ https://github.com/fecshop/yii2_fecshop_docker
 
 2.mongodb建议3+
 
-3.php 5.4+
+3.php 7+ (因为有部分扩展不支持php5，因此，直接上php7了，您直接安装php7吧，性能比php5快一倍)
 
 4.mysql，建议5.6+
 
@@ -92,7 +102,7 @@ composer 安装fecshop app advanced
 
 ```
 composer global require "fxp/composer-asset-plugin:^1.3.1"
-composer create-project fancyecommerce/fecshop-app-advanced  fecshop 1.3.0.3
+composer create-project fancyecommerce/fecshop-app-advanced  fecshop 1.3.2.0
 cd fecshop
 composer update    
 ./init

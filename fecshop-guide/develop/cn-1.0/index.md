@@ -18,8 +18,11 @@ Fecshop 结构与初始化
 --------------------
 *  [Fecshop 架构简叙](fecshop-construct-framework.md)
 *  [Fecshop 配置结构](fecshop-init-config-construction.md)
-*  [Fecshop index.php初始化](fecshop-init-index.md)
-*  [Fecshop 功能初始化](fecshop-init-func.md)
+*  [Fecshop 初始化（全）](fecshop-init-func.md)
+*  [Fecshop 1.index.php初始化](fecshop-init-index.md)
+*  [Fecshop 2.Store初始化](fecshop-init-sotre.md)
+*  [Fecshop 3.Request Url初始化](fecshop-init-request-url.md)
+
 
 
 Fecshop Appfront和Apphtml5
@@ -141,21 +144,11 @@ Fecshop Appserver 入口
 
 
 
-Fecshop 二开扩展
-----------------
-*  [Fecshop 后台配置](fecshop-admin-config.md)
-*  [Fecshop 重写功能](fecshop-rewrite-func.md)
-*  [Fecshop js css img](fecshop-js-css.md)
-*  [Fecshop 模板开发](fecshop-theme.md)
-*  [Fecshop 服务开发](fecshop-develop-services.md)
-*  [Fecshop 组件开发](fecshop-develop-component.md)
-*  [Fecshop 模块开发](fecshop-develop-modules.md)
-*  [Fecshop 插件开发](fecshop-develop-plugin.md)
 
 Fecshop 服务（Service）
 ----------------------
-*  [Fecshop 服务原理](fecshop-service-abc.md)
-*  [Fecshop 服务使用](fecshop-service-use.md)
+*  [Fecshop 关于服务](fecshop-service-abc.md)
+*  [Fecshop 使用服务](fecshop-service-use.md)
 
 
 Fecshop 数据库
@@ -168,9 +161,24 @@ Fecshop 数据库
 
 
 
+Fecshop 二开扩展
+----------------
+*  [Fecshop 后台配置](fecshop-admin-config.md)
+*  [Fecshop 重写功能](fecshop-rewrite-func.md)
+*  [Fecshop js css img](fecshop-js-css.md)
+*  [Fecshop 模板开发](fecshop-theme.md)
+*  [Fecshop 服务开发](fecshop-develop-services.md)
+*  [Fecshop 组件开发](fecshop-develop-component.md)
+*  [Fecshop 模块开发](fecshop-develop-modules.md)
+*  [Fecshop 插件开发](fecshop-develop-plugin.md)
 
 
 
+Fecshop Extension 插件扩展库包
+----------------
+*  [Github  如何制作Composer包](fecshop-pkg-github-composer.md)
+*  [Fecshop 如何开发插件扩展](fecshop-pkg-do.md)
+*  [Fecshop 官方扩展列表](fecshop-pkg-list.md)
 
 
 
