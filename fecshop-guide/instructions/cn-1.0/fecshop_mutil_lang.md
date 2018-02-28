@@ -79,6 +79,36 @@ fecshop的每个store设置的不同语言，以及对应的产品搜索(mongodb
 网站内容语言的翻译，是依靠的翻译文件，在实现方面依赖的`Yii::t()`函数，关于
 Yii2多语言翻译的知识，可以参看地址 [Yii2多语言](http://www.yiichina.com/doc/guide/2.0/tutorial-i18n)
 
+对于fecshop的翻译，是基于yii2的`Yii::t()`函数实现，也就是page translate services类，
+使用方式如下：
+
+```
+Yii::$service->page->translate->__('Product Review');
+```
+
+详细的代码您可以去这个services参考详细代码，总体来说，该函数，在翻译文件（下一部分说的翻译文件）
+中查找`Product Review`字符串是否在相应语言中存在翻译，如果存在，则使用翻译后的字符串。
+
+对于存在变量的翻译,可以使用下面的方式：
+
+```
+$review_count = 5;
+Yii::$service->page->translate->__('based on {review_count} Customer Reviews',['review_count' => $review_count])
+```
+
+在翻译文件中添加翻译：
+
+```
+'based on {review_count} Customer Reviews' => '基于{review_count}条用户评论',
+```
+
+即可。
+
+另外，fecshop可能有一些地方存在翻译疏漏，您可以自己找到相应的字符串位置，
+修改一下，通过上面的函数返回，然后在翻译文件中添加相应的翻译即可。
+
+
+
 ### Fecshop的翻译文件路径为：（举例appfront入口）
 
 `@vendor/fancyecommerce/fecshop/app/appfront/languages/`，在这个文件夹下面可以看到

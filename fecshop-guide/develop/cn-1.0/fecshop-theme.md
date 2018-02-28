@@ -38,7 +38,7 @@ Fecshop 模板（theme）
 
 ### 开发fecshop的模板（view js css等）
 
-对于用户来说想要二开appfront的模板，需要修改才能满足自己的需求，
+`fecshop模板原理`：对于用户来说想要二开appfront的模板，需要修改才能满足自己的需求，
 但是对fecshop就比较难办，因为fecshop升级，难免也要修改view css js也要改动
 等文件，这些文件不同于php类文件的重写机制，无法通过继承重写函数
 的方式进行二开模板文件，
@@ -115,10 +115,17 @@ fecshop模板路径为：`@fecshop/app/appfront/theme/base/default`，
 
 
 
+### 实战模板
+
+上面说了很多，还是先撸起来在说，您可以参考下这个模板：
+
+https://github.com/fecshop/fecshop_theme_rosegal
+
+您可以参考这个，开发fecshop的模板，您可以将您的模板以composer包的形式发布
+，也可以直接用文件拷贝的方式放到一个根目录的文件夹的方式引入。
 
 
-
-
+如果您有迷惑，可以去论坛发帖求助。
 
 
 
