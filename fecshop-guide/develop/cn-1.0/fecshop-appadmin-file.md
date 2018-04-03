@@ -7,17 +7,43 @@ Fecshop Admin 文件结构
 ### Appadmin 介绍
 
 
-Appadmin端，是基于fecadmin这个库包，fecadmin github地址为：https://github.com/fecshop/yii2_fec_admin
-，fecadmin是Yii2+JUI（DWZ），封装的库包，用来快速的做后台的扩展。
+Appadmin端，是fecshop后台入口，主要涉及到一些数据库数据的编辑工作，该入口的文件是在
+`@fecshop/app/appadmin` 文件夹下面
 
+### fec_admin库包
+
+fec_admin github地址为：https://github.com/fecshop/yii2_fec_admin
+，fecadmin是Yii2+JUI（DWZ），封装的库包，用来快速的做后台的扩展。
 
 fecshop安装后，会以依赖的方式把fecamin安装在vendor/fancyecommerce/fec_admin文件夹下面
 
-fecshop根据自身的需要，进行了一些部分的修改。
+### Appadmin文件结构
 
+1.主文件夹文件结构
 
+Appadmin部分，基于fec_admin，在此基础上重新进行了封装，
+打开 `@fecshop/app/appadmin`，你会发现下面的文件（
+https://github.com/fecshop/yii2_fecshop/tree/master/app/appadmin）：
 
+`config`:  appadmin端的配置部分
 
+`languages`: appadmin端的多语言部分（后台目前还没有做多语言）
+
+`modules`: appadmin的模块部分
+
+`theme`: appadmin的模板部分
+
+2.模板路径配置
+
+fecshop appadmin 默认模板的配置：`@fecshop/app/appadmin/config/params.php` 配置参数 `appadminBaseTheme`
+
+fecshop appadmin 本地模板路径：`@appadmin/config/params.php` 配置参数 `localThemeDir`
+
+关于模板知识，更多：[fecshop模板开发](http://www.fecshop.com/doc/fecshop-guide/develop/cn-1.0/guide-fecshop-theme.html)
+
+3.modules介绍
+
+可以参看 [fecshop 文件架构](http://www.fecshop.com/doc/fecshop-guide/develop/cn-1.0/guide-fecshop-construct-framework.html)
 
 
 

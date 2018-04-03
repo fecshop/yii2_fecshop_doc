@@ -102,14 +102,12 @@ composer 安装fecshop app advanced
 
 ```
 composer global require "fxp/composer-asset-plugin:^1.3.1"
-composer create-project fancyecommerce/fecshop-app-advanced  fecshop 1.3.2.1
+composer create-project fancyecommerce/fecshop-app-advanced  fecshop 1.4.1.0
 cd fecshop
 composer update    
 ./init
 ```
 
-> **注意**: 对于mongodb 3.6的bug问题，yii2-mongodb官方已经修复，但是没有发布版本，你可以详细参看这里解决：http://www.fecshop.com/topic/557,
-> 执行完上面的操作，您需要按照这个文档更新一下 `yii2-mongodb:dev-master`
 
 在上面composer安装过程中，会出现填写github的token
 

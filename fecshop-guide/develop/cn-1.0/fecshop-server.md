@@ -27,52 +27,209 @@ fecshop实现了一个类似session的功能，提供给appserver使用，
 
 
 
-`@fecshop/config/services/Session.php` 中设置: 超时时间 ， 更新创建时间 ， 以及存储引擎的设置
-
-```
-// 【对phpsession 无效】设置session超时时间, 
-'timeout' => 3600,
-// 【对phpsession 无效】当过期时间+session创建时间 - 当前事件 < $updateTimeLimit ,则更新session创建时间
-'updateTimeLimit' => 600,
-// 【不可以设置phpsession】默认为php session，只有当 \Yii::$app->user->enableSession == false时，下面的设置才有效。
-// 存储引擎  mongodb mysqldb redis
-'storageEngine' => 'mysqldb',
-```
-
-
 ### 2.获取登录 access-token
 
-通过访问`/customer/login`来获取 `access-token` ，如果request headers 里面存在`access-token`，则会验证 `access-token` 的有效性，
-有效则返回该 `access-token`
+用户登录，访问的是` @fecshop/app/appserver/modules/Customer/controllers/LoginController.php`
+的 `actionAccount()` Action方法，查看这个方法里面的代码，你可以看到代码行
+：`$identity = Yii::$service->customer->loginByAccessToken(get_class($this));`
 
-如果没有，则会从 request post中获取 `email` 和 `password`，验证成功后，
-生成`access-token`返回json格式
+我们打开这个方法`@fecshop/services/Customer.php`文件的`loginByAccessToken`方法
+,代码如下：
+
+```
+protected function actionLoginAndGetAccessToken($email,$password){
+        $header = Yii::$app->request->getHeaders();
+        if(isset($header['access-token']) && $header['access-token']){
+            $accessToken = $header['access-token'];
+        }   
+        // 如果request header中有access-token，则查看这个 access-token 是否有效
+        if($accessToken){
+            $identity = Yii::$app->user->loginByAccessToken($accessToken);
+            if ($identity !== null) {
+                $access_token_created_at = $identity->access_token_created_at;
+                $timeout = Yii::$service->session->timeout;
+                if($access_token_created_at + $timeout > time()){
+                    return $accessToken;
+                } 
+            }
+        }
+        // 如果上面access-token不存在
+        $data = [
+            'email'     => $email,
+            'password'  => $password,
+        ];
+        
+        if(Yii::$service->customer->login($data)){
+            $identity = Yii::$app->user->identity;
+            $identity->generateAccessToken();
+            $identity->access_token_created_at = time();
+            $identity->save();
+            # 执行购物车合并等操作。
+            Yii::$service->cart->mergeCartAfterUserLogin();
+            $this->setHeaderAccessToken($identity->access_token);
+            return $identity->access_token;
+            
+        }
+    }
+```
+
+首先从 request header取`access-token`，如果取出来，则直接使用该`access-token`，如果有效，直接返回该`access-token`
+
+如果request header不存在`access-token`，或者`access-token`过期，则进行登录，登录成功后，你会看到代码
+`$this->setHeaderAccessToken($identity->access_token);`, 这个函数是将登录成功后
+生成的access-token这是到response header中，我们查看这个方法：
+
+```
+protected function actionSetHeaderAccessToken($accessToken){
+    if($accessToken){
+        Yii::$app->response->getHeaders()->set('access-token',$accessToken);
+        return true;
+    }
+}
+
+```
+
+将生成的access-token设置到response headers中。完成
+
+### 登录用户访问 access-token 验证
+
+如果用户登录后，每次访问都会在request headers中含有`access-token`（vue端的ajax需要
+在请求的header中带上`access-token`），appserver根据该值进行验证，
+验证合法性通过后，就会登录，实现原理如下：
+
+对于需要验证用户登录状态的api，都继承@fecshop/app/appserver/modules/AppserverTokenController.php，
+在`behaviors()` 里面可以看到：（关于Yii2的behaviors，参看[Yii2行为](http://www.yiichina.com/doc/guide/2.0/concept-behaviors)）
 
 
-另外，服务端还需要做一部分用户登录的其他事情，譬如购物车合并等操作。
+```
+use fecshop\yii\filters\auth\QueryParamAuth; 
 
-### 3.【登录用户】访问
+...
 
-用户在上面哪一步获取`access-token`成功后，每次请求都需要在request headers里面加上`access-token`，
-这个作为用户登录的`access-token`.
+        $behaviors['authenticator'] = [  
+            'class' => CompositeAuth::className(),  
+            'authMethods' => [  
+                # 下面是三种验证access_token方式  
+                //HttpBasicAuth::className(),  
+                //HttpBearerAuth::className(),  
+                # 这是GET参数验证的方式  
+                # http://10.10.10.252:600/user/index/index?access-token=xxxxxxxxxxxxxxxxxxxx  
+                QueryParamAuth::className(),  
+            ],  
+          
+        ];  
+```
 
-作为服务端appserver，需要用户登录验证的部分，
-controller都需要继承
-`@fecshop/app/appserver/modules/AppserverTokenController.php`
-，在这个controller的behaviors()中已经加入了用户登录的验证，如果用户
-没有登录，将会返回json报错信息
+上面的代码部分，是Yii2的行为原理，每次执行都会执行里面的代码，打开：`@fecshop\yii\filters\auth\QueryParamAuth.php`
+
+```
+    /**
+     * 重写该方法。该方法从request header中读取access-token。
+     */
+    public function authenticate($user, $request, $response)
+    {   
+        $identity = Yii::$service->customer->loginByAccessToken(get_class($this));
+        if($identity){
+            return $identity;
+        }else{
+            $fecshop_uuid = Yii::$service->session->fecshop_uuid;
+            $cors_allow_headers = [$fecshop_uuid,'fecshop-lang','fecshop-currency','access-token'];
+            
+            header('Access-Control-Allow-Origin: *');
+            header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, ".implode(', ',$cors_allow_headers));
+            header('Access-Control-Allow-Methods: GET, POST, PUT,DELETE');
+            $code = Yii::$service->helper->appserver->account_no_login_or_login_token_timeout;
+            $result = [ 'code' => $code,'message' => 'token is time out'];
+            Yii::$app->response->data = $result;
+            Yii::$app->response->send();
+            Yii::$app->end();
+            
+            
+        }
+    }
+    
+```
+
+从request header里面取出来access-token，登录的代码：`$identity = Yii::$service->customer->loginByAccessToken(get_class($this));`
+
+后面的就不一一叙述了，您自己看把。
 
 
-### 4.登录用户的 过期时间 和 速度控制
+
+### 4.登录用户的 速度控制 和 过期时间  
+
+4.1速度控制
 
 在 `@fecshop/app/appserver/config/appserver.php` 里面设置
 
 ```
-// access-token 过期时间。
-'accessTokenTimeout'    => 86400,
-// 速度控制[120,60] 代表  60秒内最大访问120次，
-'rateLimit'             => [120, 60],
+        'rateLimit'             => [
+            'enable'=> false,   # 是否开启？默认不开启速度控制。
+            'limit' => [120, 60],
+        ]
 ```
+
+> @fecshop 指的是 vendor/fancyecommerce/fecshop 文件夹, 关于 @符号，在安装配置fecshop文档部分已经介绍
+
+同样，你无权修改vendor下的文件，您可以在@appserver/config/params.php中添加如下配置，进行修改。
+
+```
+'params'  => [
+        // 速度控制[120,60] 代表  60秒内最大访问120次，
+        'rateLimit'             => [
+            'enable'=> false,   # 是否开启？默认不开启速度控制。
+            'limit' => [120, 60],
+        ]
+    ],
+```
+
+4.2过期时间
+
+打开文件`@fecshop/config/services/Session.php`
+
+```
+//  实现了一个类似session的功能，供appserver端使用
+// 【对phpsession 无效】设置session过期时间,
+//  对于 appfront  apphtml5部分的session的设置，您需要到 @app/config/main.php 中设置 session 组件 的timeout时间
+'timeout' => 3600,
+// 【对phpsession 无效】更新access_token_created_at值的阈值
+// 当满足条件：`access_token_created_at`（token创建时间）`timeout(过期时间)` <= `time`（当前时间） < updateTimeLimit (更新access_token_created_at值的阈值)
+// 则会将用户在数据库表中的  `access_token_created_at` 的值设置成当前时间，这样可以在access_token快要过期的时候，更新 `access_token_created_at`,
+// 同时避免了每次访问都更新 `access_token_created_at` 的开销。
+'updateTimeLimit' => 600,
+
+```
+
+对于设置超时时间的2个参数，上面的注释已经说清楚，
+您可以在 @appserver/config/fecshop_local_services/Session.php 里面添加配置（没有这个文件自行创建），内容如下：
+
+```
+return [
+    'session' => [
+        // 【下面的三个参数，在使用php session的时候无效】
+        //  只有 \Yii::$app->user->enableSession == false的时候才有效。
+        //  说的更明确点就是：这些参数的设置是给无状态api使用的。
+        //  实现了一个类似session的功能，供appserver端使用
+        // 【对phpsession 无效】设置session过期时间,
+        //  对于 appfront  apphtml5部分的session的设置，您需要到 @app/config/main.php 中设置 session 组件 的timeout时间
+        'timeout' => 3600,
+        // 【对phpsession 无效】更新access_token_created_at值的阈值
+        // 当满足条件：`access_token_created_at`（token创建时间）`timeout(过期时间)` <= `time`（当前时间） < updateTimeLimit (更新access_token_created_at值的阈值)
+        // 则会将用户在数据库表中的  `access_token_created_at` 的值设置成当前时间，这样可以在access_token快要过期的时候，更新 `access_token_created_at`,
+        // 同时避免了每次访问都更新 `access_token_created_at` 的开销。
+        'updateTimeLimit' => 600,
+    ],
+];
+
+```
+
+修改配置即可。
+
+对于Fecshop 的Session更详细的知识，可以参看文档 [Fecshop Session](http://www.fecshop.com/doc/fecshop-guide/instructions/cn-1.0/guide-fecshop_session.html)
+
+
+
+
 
 ### 5. 客户端存储
 

@@ -14,6 +14,8 @@ FecShop 使用说明
 关键概念：
 ---------
 *  [Fecshop 配置结构](fecshop_config_construction.md)
+*  [Fecshop 手机检测跳转](fecshop_mobile.md)
+*  [Fecshop Session](fecshop_session.md)
 *  [Fecshop 货币](fecshop_currency.md)
 *  [Fecshop Store](fecshop_store.md)
 *  [Fecshop 多语言](fecshop_mutil_lang.md)
@@ -23,7 +25,6 @@ FecShop 使用说明
 *  [Fecshop 404页](fecshop_404.md)
 *  [Fecshop 小部件](fecshop_widget.md)
 *  [Fecshop 分类](fecshop_category.md)
-
 *  [Fecshop 产品](fecshop_product.md)
 *  [Fecshop 产品图片](fecshop_product_image.md)
 *  [Fecshop 库存](fecshop_stock.md)
@@ -50,6 +51,7 @@ FecShop 使用说明
 *  [Fecshop Log日志](fecshop_log.md)
 *  [Fecshop 事务](fecshop_transaction.md)
 *  [Fecshop 消息MQ](fecshop_amqp.md)
+*  [Fecshop Assets](fecshop_assets.md)
 *  [Fecshop Error Handler](fecshop_error_handler.md)
 *  [Fecshop breadcrumbs](fecshop_breadcrumbs.md)
 
@@ -65,9 +67,9 @@ Fecshop视频
 线上问题：
 ---------
 
-*  [上线前的配置](fecshop_online_config.md)
-*  [安全问题](fecshop_online_security.md)
-
+*  [上线前的配置问题](fecshop_online_config.md)
+*  [上线前的安全问题](fecshop_online_security.md)
+*  [上线前的性能优化](fecshop_online_speed.md)
 
 
 

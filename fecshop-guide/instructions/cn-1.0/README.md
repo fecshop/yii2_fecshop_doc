@@ -15,6 +15,7 @@ FecShop 使用说明
 ---------
 *  [Fecshop 配置结构](fecshop_config_construction.md)
 *  [Fecshop 手机检测跳转](fecshop_mobile.md)
+*  [Fecshop Session](fecshop_session.md)
 *  [Fecshop 货币](fecshop_currency.md)
 *  [Fecshop Store](fecshop_store.md)
 *  [Fecshop 多语言](fecshop_mutil_lang.md)

@@ -1,10 +1,6 @@
 Fecshop Api 订单 UpdatePaymentStatus
 =========================
 
-> Api描述：开发中...
-
-Fecshop Api 分类 UpdateOne
-=========================
 
 > Api描述：根据传递的increment_id，更新订单的支付状态 order_status
 
@@ -12,7 +8,7 @@ Fecshop Api 分类 UpdateOne
 而不去做其他任何事情，因此，您如果需求很多，可以自行重写扩展。
 
 
-URL: `http://fecshop.appapi.fancyecommerce.com/v1/update/updateone`
+URL: `http://fecshop.appapi.fancyecommerce.com/v1/order/updateone`
 
 格式：`json`
 
