@@ -10,12 +10,14 @@ Fecshop Admin 文件结构
 Appadmin端，是fecshop后台入口，主要涉及到一些数据库数据的编辑工作，该入口的文件是在
 `@fecshop/app/appadmin` 文件夹下面
 
-### fec_admin库包
+### Fec_admin库包
 
 fec_admin github地址为：https://github.com/fecshop/yii2_fec_admin
 ，fecadmin是Yii2+JUI（DWZ），封装的库包，用来快速的做后台的扩展。
 
 fecshop安装后，会以依赖的方式把fecamin安装在vendor/fancyecommerce/fec_admin文件夹下面
+
+appadmin，依赖于fecadmin库包，在此基础上做的进一步的封装。
 
 ### Appadmin文件结构
 

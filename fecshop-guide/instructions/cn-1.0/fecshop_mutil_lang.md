@@ -210,5 +210,9 @@ Yii::$service->page->translate->__('based on {review_count} Customer Reviews',['
 四：如何添加一门新语言
 ---------------------
 
-参看文档：[http://www.fecshop.com/topic/616](http://www.fecshop.com/topic/616)
+参看文档：[fecshop 如何新增一门语言，并相应的添加一个store，将store设置成该语言](http://www.fecshop.com/topic/616)
+
+五：如何只保留中文语言，去掉其他的语言
+---------------------
+参看文档：[Fecshop 如何只保留中文语言，去掉其他的所有语言？](http://www.fecshop.com/topic/818)
 

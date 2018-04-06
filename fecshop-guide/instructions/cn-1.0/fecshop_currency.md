@@ -40,4 +40,28 @@ Fecshop 货币
 
 设置货币后，在前端的顶部的语言切换选项中，就能看到您添加或者修改的货币配置。
 
-另外在store中设置的货币，必须在此处存在，否则将会报错。
+
+
+
+Store设置默认货币
+---------------
+
+各个入口，每个入口可以设置多个`store`，每个store可以设置默认货币，您可以打开
+`@app/config/fecshop_local_services/Store.php` （只有appfront，apphtml5，appserver三个面向前端的入口有store）
+
+
+将store配置中的`currency`中的值进行更改，即可设置该store的`默认货币`
+
+另外在store中设置的货币，必须在`货币配置`中存在，否则将会出问题。
+
+设置默认货币后，您访问前端入口页面，会发现货币没有切换过来，原因和原理可以参看文档：
+[为什么我在后台store里面设置了默认货币currency，保存后，前台还是原来的货币，并没有切换？](http://www.fecshop.com/topic/819)
+
+
+
+
+
+
+
+
+
