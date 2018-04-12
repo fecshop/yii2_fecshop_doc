@@ -17,7 +17,7 @@ fecshop appapi的配置文件为：`@fecshop/app/appapi/config/appapi.php`
 >  速度控制，只对需要token验证的api有效。
 
 
-打开文件：`@appapi/config/fecshop_local.php`，
+1.1、打开文件：`@appapi/config/fecshop_local.php`，
 将下面的代码中的enable 的值改为`true`即可。
 
 ```
@@ -38,6 +38,25 @@ fecshop appapi的配置文件为：`@fecshop/app/appapi/config/appapi.php`
 
 调用fecshop api的第三方系统，可以根据这些信息，来控制好访问
 api的频率。
+
+1.2、将User组件的`identityClass`设置成相应的model
+
+@appapi/config/main.php
+
+找到user组件配置的部分,更改成如下：
+
+```
+'user' => [
+    // 【默认】不开启速度限制的 User Model
+    // 'identityClass' => 'fecshop\models\mysqldb\AdminUser',
+    // 开启速度限制的 User Model
+    'identityClass' => 'fecshop\models\mysqldb\adminUser\AdminUserAccessToken',
+    
+    //'enableAutoLogin' => true,
+],
+```
+
+更改完后，appapi端，api速度限制就开启了。
 
 **2.api response header 参数介绍**
 

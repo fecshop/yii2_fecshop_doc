@@ -28,7 +28,45 @@ php7的优化：[让PHP7达到最高性能的几个Tips](http://www.laruence.com
 
 2.Mysql配置优化
 
-`mysql` 的配置文件参数优化
+2.1、`mysql` 的配置文件参数优化
+
+2.2、有时候，程序员写代码在对象的生成调用，没有写类变量保存中间结果，造成
+每次调用方法都是去数据库查询，造成相同的sql执行多次的情况，
+对于这类的问题的排查，最好的方式是在本地机，访问某个前端页面，打印mysql执行
+的sql语句，查看sql语句是否存在问题，另外对于线上，可以把mysql的慢查询日志打印出来。
+
+打印sql语言的方法  [mysql 将执行的所有sql语句，输出到log日志（写入log日志）, 以及将慢查询sql输出到日志文件](http://www.fecshop.com/topic/835)
+
+2.3、对于mysql的操作，`增删改查`，对于`查询`，我们可以通过`慢查询日志`将其打印出来，
+但是对于`增删改`, 如果执行慢，一般都是锁的问题，也就是尽量的使用到行锁。
+
+因此，对于mysql，尽量用innodb，支持行锁，但是，innode使用行锁还是使用表锁，
+是有条件的，是基于索引的。
+
+譬如 update customer set age = 19 where name = 'terry'
+
+如果 customer表的name字段有索引，那么就会使用行锁，锁的行就是name = 'terry'，
+也就是 name = 'terry'的数据有多少行，就会锁多少行的数据，
+如果customer表的所有数据行的name的值都是terry，那么就会锁所有的行，
+因此，就相当于表锁了，因此，如果name字段没有加索引，那么就相当于锁住所有的行，
+那么就是表锁了，对于update操作，如果where条件存在多个字段的条件查询，不一定所有的所有的列都加
+索引，如果where条件是三个字段，而索引只有2个字段，那么就会锁住这两个字段命中的数据行，
+因此根据实际情况做好索引，除了可以优化查询，对于update更新同样重要，
+update 的where条件中的字段索引命中的数据行越少，锁的数据行就越少
+
+其他的关于表锁的，可以参看:http://www.fecshop.com/topic/283
+
+2.4另外，对于自己开发的功能，有的功能可以使用乐观锁：
+
+关于Yii2的乐观锁和悲观锁可以参看：http://www.digpage.com/lock.html
+
+2.5【闲谈】 有一些系统，可以被拆成多个子系统，通过api对接，
+各个api的方法要满足幂等性，譬如：http://www.fecshop.com/topic/534
+，通过程序的方式来控制回滚，上面的这个文章有一个大致的介绍，有兴趣的可以读读，
+由于这块我了解的也只限于理论层面（和java架构师聊的知识），没有具体操作过，
+因此，有兴趣您看看就好。
+
+
 
 3.Mongodb配置优化
 
@@ -158,7 +196,37 @@ fecshop的css放到html页面的头部，js放到页面的底部，这样可以�
 
 [Fecshop 官方扩展列表](http://www.fecshop.com/doc/fecshop-guide/develop/cn-1.0/guide-fecshop-pkg-list.html)
 
+10.对于appserver端，是给vue这类使用的，如果您的appserver域名和vue的域名不一样，
+使用的是跨域名的方式，就会涉及到跨域问题
+就会使用的cros来满足跨域，cros会在首次，以及访问过程中时不时的发送options
+请求来获取是否可以访问内容（cros不了解的可以自己查询），
+因此，对于options请求，在index.php部分直接返回，会更节省资源
+
+@appserver/web/index.php 将头部注释去掉即可
+
+```
+<?php
+/**
+ * 【Appserver端性能优化】：如果vue和appserver是不一样的域名，对于这种跨域的前端和后端交互，需要cros机制，具体您可以自己查阅
+ * 原理为：第一次发送options请求，如果请求成功，获取服务端允许的请求类型，然后再发起具体的数据请求
+ * 对于options请求，不涉及到数据，因此直接返回即可，因此下面加了下面的代码
+ * 对于下面的设置的允许的值，是fecshop目前允许的，如果您添加了其他的，请在下面自行修改
+ * 下面的cros的信息要和 @fecshop/app/appserver/modules/AppserverTokenController.php 这个文件里面的设置要一致。
+ * 默认，下面是注释掉，您可以根据自己的情况，取消掉下面的注释，让options请求在index.php文件执行的时候直接返回，节省资源。
+ */ 
+/*  !!!将这块代码的注释去掉，去掉前详细读完上面的注释
+if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+    $cors_allow_headers = ['fecshop-uuid','fecshop-lang','fecshop-currency','access-token'];       
+    header('Access-Control-Allow-Origin: *');
+    header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, ".implode(', ',$cors_allow_headers));
+    header('Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS');
+    exit;
+}
+*/
+```
+
+
 
 ### 其他
 
-等等，如果你有新的优化建议，可以在fecshop.com发帖。
+等等，如果你有新的优化建议，可以在fecshop.com发帖，一起成长。

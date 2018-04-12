@@ -160,7 +160,7 @@ use fecshop\yii\filters\auth\QueryParamAuth;
 
 4.1速度控制
 
-在 `@fecshop/app/appserver/config/appserver.php` 里面设置
+4.1.1、在 `@fecshop/app/appserver/config/appserver.php` 里面设置
 
 ```
         'rateLimit'             => [
@@ -182,6 +182,26 @@ use fecshop\yii\filters\auth\QueryParamAuth;
         ]
     ],
 ```
+
+4.1.2、将User组件的`identityClass`设置成相应的model
+
+@appserver/config/main.php
+
+找到user组件配置的部分,更改成如下：
+
+```
+'user' => [
+    // 'class'            => 'fecshop\yii\web\User',
+    // 【默认】不开启速度限制的 User Model
+    // 'identityClass'     => 'fecshop\models\mysqldb\Customer',
+    // 开启速度限制的 User Model
+    'identityClass'     => 'fecshop\models\mysqldb\customer\CustomerAccessToken',
+    
+],
+```
+
+更改完后，appserver端，api速度限制就开启了。
+
 
 4.2过期时间
 
