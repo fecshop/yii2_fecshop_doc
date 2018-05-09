@@ -33,6 +33,7 @@ FecShop 使用说明
 *  [Fecshop 优惠券](fecshop_coupon.md)
 *  [Fecshop 货运方式](fecshop_shipping_method.md)
 *  [Fecshop 游客](fecshop_guest.md)
+*  [Fecshop Newsletter](fecshop_newsletter.md)
 *  [Fecshop Fb Google登录](fecshop_fb_google_login.md)
 *  [Fecshop 国家](fecshop_country.md)
 *  [Fecshop 支付](fecshop_payment_method.md)

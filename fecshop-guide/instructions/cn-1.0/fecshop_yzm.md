@@ -65,6 +65,37 @@ return [
 您可以在appfront通过添加配置覆盖的方式，重新设置是否开启验证码。
 
 
+2.如果您想在自己的一些功能中加入验证码可以使用（appfront和apphtml5端）
+
+2.1显示验证码图片,以及填写验证码的input框，刷新验证码的图标等
+
+```
+<div class="field">
+    <label for="captcha" class="required"><em>*</em><?= Yii::$service->page->translate->__('Captcha'); ?></label>
+    <div class="input-box register-captcha">
+        <input type="text" name="editForm[captcha]" value="" size=10 class="login-captcha-input"> 
+        <img class="login-captcha-img"  title="click refresh" src="<?= Yii::$service->url->getUrl('site/helper/captcha'); ?>?<?php echo md5(time() . mt_rand(1,10000));?>" align="absbottom" onclick="this.src='<?= Yii::$service->url->getUrl('site/helper/captcha'); ?>?'+Math.random();"></img>
+        <i class="refresh-icon"></i>
+    </div>
+    <script>
+    <?php $this->beginBlock('register_captcha_onclick_refulsh') ?>  
+    $(document).ready(function(){
+        $(".refresh-icon").click(function(){
+            $(this).parent().find("img").click();
+        });
+    });
+    <?php $this->endBlock(); ?>  
+    </script>  
+    <?php $this->registerJs($this->blocks['register_captcha_onclick_refulsh'],\yii\web\View::POS_END);//将编写的js代码注册到页面底部 ?>
+</div>
+```
+
+2.2前端提交的验证码，服务端接收后，需要验证：
+
+```
+Yii::$service->helper->captcha->validateCaptcha($captcha)
+```
+
 
 
 
