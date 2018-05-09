@@ -4,6 +4,17 @@ Fecshop 安装视频
 > fecshop对技术初学者的安装有一定的难度，因此做了一下安装视频
 > ,fecshop安装视频都已经撸完，并已经全部上传完成，优酷视频质量差一些，高清视频可以去百度网盘下载。
 
+提示：
+
+1.如果您的主机是ubuntu，那么你可以看一下 fecshoper `@wubuyun` 录制的安装视频（youtube视频），**youtube需要翻墙**才能看
+
+2.帖子地址为：http://www.fecshop.com/topic/948
+
+3.安装视频地址： https://youtu.be/QpcnyroFm7Y   
+
+4.配置视频地址： https://youtu.be/BOaEYMkvsZk
+
+下面是在`centos`下面安装fecshop的视频，官方录制：
 
 ### 1. 虚拟Linux环境
 

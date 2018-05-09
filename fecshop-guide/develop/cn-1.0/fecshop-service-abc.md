@@ -176,31 +176,7 @@ fecshop\services\Cart中的 `protected function actionAddProductToCart($item)`�
 使用最频繁的services等，
 当然会耗费一定的时间，
 在线上可以关掉log记录时间的功能，也可以间断性的手动开启，进行线上调试。
-
-
-关于services log的开启：`@fecshop\config\services\Helper`中看到如下配置：
-
-```
-return [
-	'helper' => [
-		'class' => 'fecshop\services\Helper',
-		# 子服务
-		'childService' => [
-			'ar' => [
-				'class' => 'fecshop\services\helper\AR',
-			],
-			'log' => [
-				'class' => 'fecshop\services\helper\Log',
-				'log_config' => [
-					# service log config
-					'services' => [	
-						# if enable is false , all services will be close
-						'enable' => false,  # 这里可以开启services log功能。
-```
-
-通过配置helper log服务的enable设置为true，可以开启services的日志功能
-
-当然helper log服务还有其他的一些设置，具体请参看详细代码。
+详细参看：[Fecshop Service Log](fecshop-service-log.md)
 
 当然，您可以把服务中的类函数定义成`public` ，函数名不以`action`开头，
 这种方式定义的函数，开启services log，不会被记录，因为直接找到函数名，不会

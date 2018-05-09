@@ -149,7 +149,7 @@ Fecshop 服务（Service）
 ----------------------
 *  [Fecshop 关于服务](fecshop-service-abc.md)
 *  [Fecshop 使用服务](fecshop-service-use.md)
-
+*  [Fecshop Service Log](fecshop-service-log.md)
 
 Fecshop 数据库
 ----------------

@@ -68,8 +68,24 @@ https://github.com/fancyecommerce/yii2_fecshop/releases，
 在二开路径进行覆盖重写，如果您修改了vendor下面的内容，那么，下次升级的时候，
 将会把您改动的内容全部覆盖掉，您写的代码将全部清空。这个需要切记！
 
+#### 2.3 通过Migrate升级数据库部分
 
+如果您有重要数据，切记先备份数据库
 
+每次版本更新，虽然不一定有数据库的更新，但是您都需要执行一下下面的更新语句（在
+fecshop根目录下面执行）。
+
+mysql 升级：
+
+```
+./yii migrate --interactive=0 --migrationPath=@fecshop/migrations/mysqldb
+```
+
+mongodb 升级
+
+```
+./yii mongodb-migrate  --interactive=0 --migrationPath=@fecshop/migrations/mongodb
+```
 
 
 
