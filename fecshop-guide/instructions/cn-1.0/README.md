@@ -18,6 +18,8 @@ FecShop 使用说明
 *  [Fecshop Session](fecshop_session.md)
 *  [Fecshop 货币](fecshop_currency.md)
 *  [Fecshop Store](fecshop_store.md)
+*  [Fecshop 模板](fecshop_theme.md)
+*  [Fecshop 模板view嵌套](fecshop_theme_view.md)
 *  [Fecshop 多语言](fecshop_mutil_lang.md)
 *  [Fecshop 静态块](fecshop_static_block.md)
 *  [Fecshop page页（文章）](fecshop_page.md)

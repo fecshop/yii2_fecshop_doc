@@ -53,7 +53,9 @@ https://github.com/fancyecommerce/yii2_fecshop_app_advanced/commits/master
 },
 ```
 
-更改相应的版本号，然后在根目录下面执行`composer update` 即可。
+升级前建议，执行下composer更新: `composer selfupdate`
+
+2.2.1升级的原理
 
 譬如我想升级fecshop，我访问
 https://github.com/fancyecommerce/yii2_fecshop/releases，
@@ -62,11 +64,20 @@ https://github.com/fancyecommerce/yii2_fecshop/releases，
 改成最新的
 ，当然，yii2框架也是这个原理，修改下版本号。
 
+2.2.2升级的操作
+
+有时候，可能有一些升级的配置导致一些基本的配置进行更改，因此，如果您想升级到最新版本，
+建议您直接打开文件：https://github.com/fecshop/yii2_fecshop_app_advanced/blob/master/composer.json
+，将里面的内容覆盖您fecshop根目录的
+`composer.json`文件即可，因为除了一些版本号的更改，可能还有一些其他的配置的更改。
+
 然后在根目录下面执行`composer update`即可完成升级。
 
 **开发注意：** vendor下面的文件不要做改动，如果修改功能，需要按照文档的说明
 在二开路径进行覆盖重写，如果您修改了vendor下面的内容，那么，下次升级的时候，
 将会把您改动的内容全部覆盖掉，您写的代码将全部清空。这个需要切记！
+
+
 
 #### 2.3 通过Migrate升级数据库部分
 
