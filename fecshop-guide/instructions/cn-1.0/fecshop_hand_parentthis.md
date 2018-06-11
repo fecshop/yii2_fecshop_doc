@@ -1,4 +1,4 @@
-fecshop view模板中$parentThis变量是在哪里定义的，有什么用途？
+Fecshop view模板中$parentThis变量是在哪里定义的，有什么用途？
 =======================================
 
 
