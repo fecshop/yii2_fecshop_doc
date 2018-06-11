@@ -65,6 +65,14 @@ Fecshop视频
 *  [Fecshop 开发视频](fecshop_video_develop.md)
 *  [Fecshop 帮助视频](fecshop_video_helper.md)
 
+Fecshop手把手系列
+-----------
+*  [fecshop 关于手把手系列](fecshop_hand_about.md)
+*  [fecshop 如何更改首页，如何找到首页的文件？](fecshop_hand_home.md)
+*  [fecshop view模板中$parentThis变量是在哪里定义的，有什么用途？](fecshop_hand_parentthis.md)
+
+
+
 
 
 线上问题：
