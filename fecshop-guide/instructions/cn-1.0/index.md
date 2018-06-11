@@ -65,6 +65,36 @@ Fecshop视频
 *  [Fecshop 开发视频](fecshop_video_develop.md)
 *  [Fecshop 帮助视频](fecshop_video_helper.md)
 
+Fecshop手把手系列
+-----------
+*  [Fecshop 关于手把手系列](fecshop_hand_about.md)
+*  [Fecshop 如何更改首页，如何找到首页的文件？](fecshop_hand_home.md)
+*  [Fecshop view模板中$parentThis变量是在哪里定义的，有什么用途？](fecshop_hand_parentthis.md)
+*  [Fecshop 如何开发一个新支付](fecshop_hand_new_payment.md)
+*  [Fecshop 为什么用mongdob做产品存储](fecshop_hand_mongodb_product.md)
+*  [Fecshop 关于block和services](fecshop_hand_block_services.md)
+*  [Fecshop 按照产品评论数倒序分页取产品的详细代码](fecshop_hand_product_sort_desc_review.md)
+*  [Fecshop 设置了store的默认货币currency没有生效](fecshop_hand_set_currency.md)
+*  [Fecshop 如何只保留中文语言，去掉其他的所有语言？](fecshop_hand_only_chinese.md)
+*  [Fecshop Session为什么要自己封装](fecshop_hand_session.md)
+*  [Fecshop 如何批量导入产品](fecshop_hand_import_product.md)
+*  [Fecshop 重量计算是否加入体积重，如何计算的](fecshop_hand_product_weight.md)
+*  [Fecshop 购物车如何由mysql改成redis](fecshop_hand_mysql_redis.md)
+*  [Fecshop 如何新增一门语言，并相应的添加一个store](fecshop_hand_add_store_lang.md)
+*  [Fecshop 生产模式 product 更改成 开发模式 develop](fecshop_hand_develop_product.md)
+*  [Fecshop 如何设置时区 timeZone](fecshop_hand_timezone.md)
+*  [Fecshop 本地新建modules，开发新功能](fecshop_hand_local_module.md)
+*  [Fecshop appadmin 本地增加一个modules例子](fecshop_hand_appadmin_add_module.md)
+*  [Fecshop 后台添加菜单，设置权限，并访问](fecshop_hand_appadmin_menu_roles.md)
+*  [Fecshop 产品属性的实战讲解](fecshop_hand_product_info.md)
+
+
+
+
+
+
+
+
 
 
 线上问题：
