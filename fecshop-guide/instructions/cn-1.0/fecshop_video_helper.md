@@ -3,6 +3,9 @@ Fecshop 帮助视频
 
 > fecshop 帮助文档部分的视频，排队等待录制...
 
+**使用优酷观看视频，打开后切换`高清`或者`超清`模式，视频会更`清晰`一些**
+
+
 ### 1. fecshop帮助视频1
 
 优酷观看地址： [fecshop帮助视频1](http://v.youku.com/v_show/id_XMjg4MTYxOTQ2OA==.html?spm=a2h3j.8428770.3416059.1)  

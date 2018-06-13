@@ -64,6 +64,8 @@ Fecshop视频
 *  [Fecshop 安装视频](fecshop_video_install.md)
 *  [Fecshop 开发视频](fecshop_video_develop.md)
 *  [Fecshop 帮助视频](fecshop_video_helper.md)
+*  [Fecshop docker安装视频](fecshop_video_docker_install.md)
+
 
 Fecshop手把手系列
 -----------

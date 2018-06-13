@@ -13,6 +13,7 @@ FecShop 开发说明
 *  [Fecshop 安装](fecshop-about-hand-install.md)
 *  [Fecshop 初始配置](fecshop-about-config.md)
 *  [Fecshop 如何升级](fecshop-about-update.md)
+*  [Fecshop 安装vue部分](fecshop-about-install-vue.md)
 
 Fecshop 结构与初始化
 --------------------
@@ -149,7 +150,7 @@ Fecshop 服务（Service）
 ----------------------
 *  [Fecshop 关于服务](fecshop-service-abc.md)
 *  [Fecshop 使用服务](fecshop-service-use.md)
-
+*  [Fecshop Service Log](fecshop-service-log.md)
 
 Fecshop 数据库
 ----------------
@@ -178,8 +179,8 @@ Fecshop Extension 插件扩展库包
 ----------------
 *  [Github  如何制作Composer包](fecshop-pkg-github-composer.md)
 *  [Fecshop 如何开发插件扩展](fecshop-pkg-do.md)
-*  [Fecshop 官方扩展列表](fecshop-pkg-list.md)
-
+*  [Fecshop 官方插件扩展列表](fecshop-pkg-list.md)
+*  [Fecshop 官方模板列表](fecshop-pkg-theme-list.md)
 
 
 

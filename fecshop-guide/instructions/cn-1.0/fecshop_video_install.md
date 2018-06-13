@@ -16,6 +16,9 @@ Fecshop 安装视频
 
 下面是在`centos`下面安装fecshop的视频，官方录制：
 
+**使用优酷观看视频，打开后切换`高清`或者`超清`模式，视频会更`清晰`一些**
+
+
 ### 1. 虚拟Linux环境
 
 1.1 Vagrant + Virtual box 安装linux环境
