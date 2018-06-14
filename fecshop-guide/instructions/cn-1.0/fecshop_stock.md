@@ -136,5 +136,54 @@ protected  function  checkOrderVersion($increment_id){
 @fecshop/shell/order/returnPendingProductQtyStock.sh
 
 
+###  各个位置的库存说明
+
+1.后台产品列表，在列表页和点击edit弹出的详细页面，查询的都是mysql的库存
+
+2.由于产品表数据`mongodb`，产品库存表数据在`mysql`，无法`join`，无法做
+排序，范围查询等，
+因此，将`mysql`的产品`库存`数据同步到`mongodb`表中，
+这个脚本参看：[Fecshop Mysql产品库存同步到Mongo表的脚本](http://www.fecshop.com/doc/fecshop-guide/develop/cn-1.0/guide-fecshop-console-product-qty-sync.html)
+
+3.后台产品表，按照库存过滤和按照库存排序，都是使用的mongodb
+表的库存，对于范围查询和排序，不需要`100%`的严格精确。
+
+4.对于前台的按照库存的排序，也是使用的mongodb表的库存字段
+
+5.前面第2步骤的脚本，您可以按照自己的需要，每天或者隔几个小时跑一次同步。（
+这个看您个人的需要）
+
+[Fecshop Mysql产品库存同步到Mongo表的脚本](http://www.fecshop.com/doc/fecshop-guide/develop/cn-1.0/guide-fecshop-console-product-qty-sync.html)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

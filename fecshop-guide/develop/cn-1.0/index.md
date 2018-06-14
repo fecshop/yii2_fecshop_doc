@@ -1,4 +1,4 @@
-FecShop 开发说明
+=FecShop 开发说明
 ===============================
 
 版权所有。
@@ -47,12 +47,13 @@ Fecshop Appadmin 入口
 Fecshop console 入口
 ----------------------
 *  [Fecshop console 介绍和配置](fecshop-console-about.md)
-*  [product:计算最终价格的脚本](fecshop-console-product-final-price.md)
-*  [sitemap:生成的脚本](fecshop-console-sitemap.md)
-*  [url rewrite:生成脚本](fecshop-console-url-rewrite.md)
-*  [order:pending订单取消脚本](fecshop-console-pending-cancel.md)
-*  [search:删除xunsearch所有数据的脚本](fecshop-console-search-delete.md)
-*  [search:产品同步到搜索的脚本](fecshop-console-search-sync.md)
+*  [product: 计算最终价格的脚本](fecshop-console-product-final-price.md)
+*  [product: Mysql产品库存同步到Mongo表的脚本](fecshop-console-product-qty-sync.md)
+*  [sitemap: 生成的脚本](fecshop-console-sitemap.md)
+*  [url rewrite: 生成脚本](fecshop-console-url-rewrite.md)
+*  [order: pending订单取消脚本](fecshop-console-pending-cancel.md)
+*  [search: 删除xunsearch所有数据的脚本](fecshop-console-search-delete.md)
+*  [search: 产品同步到搜索的脚本](fecshop-console-search-sync.md)
 
 
 Fecshop Appapi 入口
