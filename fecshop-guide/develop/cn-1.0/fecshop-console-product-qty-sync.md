@@ -19,9 +19,8 @@ mongodb的`库存`只是用来一些范围查询搜索，而对于获取产品�
 
 ### 同步那些数据？
 
-1.将mysql表 `product_flat_qty` 的库存数据，同步到 mongodb `product_flat`表的qty字段
+将mysql表 `product_flat_qty` 的库存数据，同步到 mongodb `product_flat`表的qty字段
 
-2.对于淘宝模式的产品，将mysql 表`product_custom_option_qty`的各个自定义选项产品累加起来，作为总库存数，同步到 mongodb product_flat表的qty字段 和 mysql表 product_flat_qty 
 
 对于产品库存，更详细的参看帮助文档：
 [fecshop 产品库存](http://www.fecshop.com/doc/fecshop-guide/instructions/cn-1.0/guide-fecshop_stock.html)

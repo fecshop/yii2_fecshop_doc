@@ -42,7 +42,7 @@ https://www.vultr.com/ ，购买一个主机很便宜，国外主机，不需要
 
 3.安装vue部分
 
-优酷观看地址【高清】：[3.安装vue部分.avi]()
+优酷观看地址【高清】：[3.安装vue部分.avi](https://v.youku.com/v_show/id_XMzY2Mjk3MTE2MA==.html?spm=a2h3j.8428770.3416059.1)
 
 百度云盘地址【原件】：[3.安装vue部分.avi](https://pan.baidu.com/s/1skUvhU1#list/path=%2F%E8%A7%86%E9%A2%91%2Fdock%E5%AE%89%E8%A3%85fecshop%E8%A7%86%E9%A2%91) 
 

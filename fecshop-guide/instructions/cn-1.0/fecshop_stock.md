@@ -17,14 +17,19 @@
 
 #### 淘宝模式
 
-对应的是custom_option（自定义属性）部分的产品库存，在淘宝模式中，
-产品的库存值（指的是上面截图的库存选项）将会被忽略，下面图中设置的库存
-为有效库存。
+对应的是custom_option（自定义属性）部分的产品库存，在淘宝模式中
+
+产品的库存值（指的是上面截图的库存选项） = 所有 custom option 自定义选项的库存值的和
+
+下面图中设置的库存为当前自定义选项的库存。
 
 
 ![tb](images/a222.png)
 
-对于淘宝和京东模式，库存方面只能二选一。
+因此
+
+淘宝模式的主库存 = 所有自定义选项产品的库存之和
+
 
 ### 2.库存存储
 
@@ -47,56 +52,7 @@ mongodb里面也会存储一个qty字段，但是这个存储的值无效，在
 
 3.1 高并发库存超卖控制
 
-为了防止超卖的控制，代码如下：`@fecshop/service/product/Stock.php`
-
-```
-// 开始扣除库存。
-        if (is_array($items) && !empty($items)) {
-            foreach ($items as $k=>$item) {
-                $product_id         = $item['product_id'];
-                $sale_qty           = (int)$item['qty'];
-                $product_name       = Yii::$service->store->getStoreAttrVal($item['product_name'], 'name');
-                $custom_option_sku  = $item['custom_option_sku'];
-                if ($product_id && $sale_qty) {
-                    if(!$custom_option_sku){
-                        // 应对高并发库存超卖的控制，更新后在查询产品的库存，如果库存小于则回滚。
-                        $sql = 'update '.ProductFlatQty::tableName().' set qty = qty - :sale_qty where product_id = :product_id';
-                        $data = [
-                            'sale_qty'  => $sale_qty,
-                            'product_id'=> $product_id,
-                        ];
-                        $result = ProductFlatQty::getDb()->createCommand($sql,$data)->execute();
-                        $productFlatQty = ProductFlatQty::find()->where([
-                            'product_id' => $product_id
-                        ])->one();
-                        if($productFlatQty['qty'] < 0){
-                            Yii::$service->helper->errors->add('product: [ '.$product_name.' ] is stock out ');
-                            return false;
-                        }
-                    }else{
-                        // 对于custom option（淘宝模式）的库存扣除
-                        $sql = 'update '.ProductCustomOptionQty::tableName().' set qty = qty - :sale_qty where product_id = :product_id and custom_option_sku = :custom_option_sku';
-                        $data = [
-                            'sale_qty'  => $sale_qty,
-                            'product_id'=> $product_id,
-                            'custom_option_sku' => $custom_option_sku
-                        ];
-                        $result = ProductCustomOptionQty::getDb()->createCommand($sql,$data)->execute();
-                        $productCustomOptionQty = ProductCustomOptionQty::find()->where([
-                            'product_id' => $product_id,
-                            'custom_option_sku' => $custom_option_sku,
-                        ])->one();
-                        if($productCustomOptionQty['qty'] < 0){
-                            Yii::$service->helper->errors->add('product: [ '.$product_name.' ] is stock out ');
-                            return false;
-                        }
-                    }
-                }
-            }
-            return true;
-        }
-
-```
+为了防止超卖的控制，代码参看：`@fecshop/service/product/Stock.php`
 
 3.2 支付请求多次执行造成库存多次扣除的问题
 
@@ -107,29 +63,6 @@ mongodb里面也会存储一个qty字段，但是这个存储的值无效，在
 
 具体代码： `@fecshop/service/Order.php`
 
-```
-protected  function  checkOrderVersion($increment_id){
-    # 更新订单版本号，防止被多次执行。
-    $sql    = 'update '.MyOrder::tableName().' set version = version + 1  where increment_id = :increment_id';
-    $data   = [
-        'increment_id'  => $increment_id,
-    ];
-    $result     = MyOrder::getDb()->createCommand($sql,$data)->execute();
-    $MyOrder    = MyOrder::find()->where([
-        'increment_id'  => $increment_id,
-    ])->one();
-    # 如果版本号不等于1，则回滚
-    if($MyOrder['version'] > 1){
-        Yii::$service->helper->errors->add('Your order has been paid');
-        return false;
-    }else if($MyOrder['version'] < 1){
-        Yii::$service->helper->errors->add('Your order is error');
-        return false;
-    }else{
-        return true;
-    }
-}
-```
 
 3.3 未支付订单库存返还问题。
 
@@ -149,6 +82,7 @@ protected  function  checkOrderVersion($increment_id){
 表的库存，对于范围查询和排序，不需要`100%`的严格精确。
 
 4.对于前台的按照库存的排序，也是使用的mongodb表的库存字段
+
 
 5.前面第2步骤的脚本，您可以按照自己的需要，每天或者隔几个小时跑一次同步。（
 这个看您个人的需要）
