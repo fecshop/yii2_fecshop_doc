@@ -23,6 +23,42 @@ fecshop 首页
 也就是文件 `@fecshop\app\appfront\modules\Cms\controllers\HomeController.php`
 里面的actionIndex()方法，
 
+
+### 2.首页的大图和其他的静态块修改
+
+这个在后台修改
+
+cms-->静态块（static block）部分找到相应的部分修改即可
+
+### 3.修改首页的产品以及Meta Title等meta信息
+
+打开 @appfront/config/fecshop_local_modules/Cms.php 
+
+3.1上面的部分是修改Meta信息
+
+
+
+
+3.2修改2排产品
+
+```
+'homeBestSellerSku'        => [
+    'p10001-kahaki-xl', 'sk10003-001', 'sk10005', 'sk1000-khak', 'sk0003', 'men0003', 'men0002', 'men0001',
+],
+'homeFeaturedSku'        => [
+    'men0003', 'men0002', 'men0001', 'computer001-xinghao2-cpu3', '22221', 'sk10005', 'sk1000-khak', '222212',
+],
+```
+
+### 4.二开首页部分
+
+参看文档：http://www.fecshop.com/doc/fecshop-guide/instructions/cn-1.0/guide-fecshop_hand_home.html
+
+
+
+### 其他
+
+
 对于Yii2 controller的知识，可以参看：http://www.yiichina.com/doc/guide/2.0/structure-controllers
 
 对于Yii2模块，可以参看：http://www.yiichina.com/doc/guide/2.0/structure-modules
