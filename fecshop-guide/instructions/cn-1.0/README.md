@@ -10,8 +10,7 @@ FecShop 使用说明
 *  [Fecshop 介绍](fecshop-about-description.md)
 
 
-
-关键概念：
+关键概念介绍：
 ---------
 *  [Fecshop 配置结构](fecshop_config_construction.md)
 *  [Fecshop 手机检测跳转](fecshop_mobile.md)
@@ -89,6 +88,15 @@ Fecshop手把手系列
 *  [Fecshop appadmin 本地增加一个modules例子](fecshop_hand_appadmin_add_module.md)
 *  [Fecshop 后台添加菜单，设置权限，并访问](fecshop_hand_appadmin_menu_roles.md)
 *  [Fecshop 产品属性的实战讲解](fecshop_hand_product_info.md)
+*  [Fecshop 如何重写block和models](fecshop_block_models_rewrite.md)
+
+
+
+Fecshop后台功能介绍
+----------
+
+*  [fecshop后台-控制面板](fecshop_admin.md)
+*  [fecshop后台-主页和cms](fecshop_admin_cms_main.md)
 
 
 
@@ -96,18 +104,13 @@ Fecshop手把手系列
 
 
 
-
-
-
-线上问题：
+上线前的问题：
 ---------
 
 *  [上线前的配置问题](fecshop_online_config.md)
 *  [上线前的安全问题](fecshop_online_security.md)
 *  [上线前的性能优化](fecshop_online_speed.md)
-
-
-
+*  [Docker安装fecshop配置cron](fecshop_docker_config_cron.md)
 
 
 
