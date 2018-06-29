@@ -89,14 +89,15 @@ Fecshop手把手系列
 *  [Fecshop 后台添加菜单，设置权限，并访问](fecshop_hand_appadmin_menu_roles.md)
 *  [Fecshop 产品属性的实战讲解](fecshop_hand_product_info.md)
 *  [Fecshop 如何重写block和models](fecshop_block_models_rewrite.md)
-
-
+*  [Fecshop Facebook Login](fecshop_facebook_app_id_secret.md)
+*  [Fecshop Google Login](fecshop_google_app_id_secret.md)
+*  [Fecshop 订单货运物流追踪号](fecshop_order_tracking_number.md)
 
 Fecshop后台功能介绍
 ----------
 
-*  [fecshop后台-控制面板](fecshop_admin.md)
-*  [fecshop后台-主页和cms](fecshop_admin_cms_main.md)
+*  [Fecshop后台-控制面板](fecshop_admin.md)
+*  [Fecshop后台-主页和cms](fecshop_admin_cms_main.md)
 
 
 
