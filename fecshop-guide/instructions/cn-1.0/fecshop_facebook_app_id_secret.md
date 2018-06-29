@@ -18,7 +18,28 @@ Fecshop facebook login 申请 app_id 和 app_secret
 
 ![images](images/cc12.jpg)
 
-保存成功后，点击左侧的Dashborad，查看app id 和 app secret代码。
+上面图填写的网址为
+
+```
+http://fecshop.appfront.fancyecommerce.com/customer/facebook/loginv
+http://fecshop.apphtml5.fancyecommerce.com/customer/facebook/loginv
+```
+
+`http://fecshop.appfront.fancyecommerce.com`:pc端，appfront的域名
+
+`http://fecshop.apphtml5.fancyecommerce.com`:html5端，apphtml5的域名
+
+您将域名替换成您自己的域名即可，如果您还有其他域名都需要都添加，
+
+如果您使用vue端，那么需要将appserver部分添加上，譬如，您的
+appserver端的域名配置为：http://fecshop.appserver.fancyecommerce.com ， 那么
+需要加上
+
+```
+http://fecshop.appserver.fancyecommerce.com/customer/facebook/loginv
+```
+
+上面填写完成，保存，保存成功后，点击左侧的Dashborad，查看app id 和 app secret代码。
 
 ![images](images/cc13.jpg)
 
@@ -26,10 +47,11 @@ Fecshop facebook login 申请 app_id 和 app_secret
 
 
 
-由测试改成public。
+填写邮箱，保存
 
 ![images](images/cc14.jpg)
 
+由测试改成public。
 
 ![images](images/cc15.jpg)
 

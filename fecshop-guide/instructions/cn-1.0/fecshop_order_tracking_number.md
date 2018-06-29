@@ -10,6 +10,8 @@ Fecshop 订单货运物流追踪号
 通过erp对接fecshop对接，可以通过fecshop的appapi入口二次开发api
 
 
+下面是在后台手工填写订单的货运追踪号的方式：
+
 1.后台填写
 
 
@@ -25,7 +27,7 @@ Fecshop 订单货运物流追踪号
 ![images](images/cc34.png)
 
 
-
+单少可以这样搞，如果订单多，建议用erp通过api的方式更改订单状态。
 
 
 
