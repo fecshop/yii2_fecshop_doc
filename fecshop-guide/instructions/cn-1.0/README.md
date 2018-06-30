@@ -95,11 +95,14 @@ Fecshop手把手系列
 
 Fecshop后台功能介绍
 ----------
-
+*  [Fecshop后台-介绍](fecshop_admin_about.md)
 *  [Fecshop后台-控制面板](fecshop_admin.md)
 *  [Fecshop后台-主页和cms](fecshop_admin_cms_main.md)
-
-
+*  [Fecshop后台-产品](fecshop_admin_catalog.md)
+*  [Fecshop后台-分类](fecshop_admin_category.md)
+*  [Fecshop后台-评论收藏](fecshop_admin_review_favorite_category.md)
+*  [Fecshop后台-销售订单优惠券](fecshop_admin_sale_order_coupon.md)
+*  [Fecshop后台-用户管理](fecshop_admin_customer.md)
 
 
 

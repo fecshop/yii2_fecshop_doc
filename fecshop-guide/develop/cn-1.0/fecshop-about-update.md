@@ -58,7 +58,8 @@ https://github.com/fancyecommerce/yii2_fecshop_app_advanced/commits/master
 2.2.1升级的原理
 
 譬如我想升级fecshop，我访问
-https://github.com/fancyecommerce/yii2_fecshop/releases，
+https://github.com/fecshop/yii2_fecshop/releases/latest
+,
 查看最新的版本号，和当前文件的版本号是否一致，如果不一致，
 将`"fancyecommerce/fecshop": ">=1.1.2.9"` 这行中的`1.1.2.9`
 改成最新的
