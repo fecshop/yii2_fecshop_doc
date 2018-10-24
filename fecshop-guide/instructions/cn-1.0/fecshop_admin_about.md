@@ -26,3 +26,7 @@ Fecshop的后台，针对的是数据库的编辑部分，而对于fecshop配置
 答：appadmin，仅仅针对数据库数据的增删改查等操作，目前来说，也就这些数据
 需要后台操作。
 
+对于大量的参数配置，都是在配置文件里面，在[fecshop帮助文档](http://www.fecshop.com/doc/fecshop-guide/instructions/cn-1.0/guide-README.html)
+里面可以看到各个功能的配置项都是在相应的配置文件，而且配置的
+参数也很细致。
+
