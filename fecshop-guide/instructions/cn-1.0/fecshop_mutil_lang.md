@@ -9,6 +9,7 @@ Fecshop 多语言
 一：语言的配置
 --------------
 
+1.配置语言项：
 
 在fecshop FecshopLang 服务 中可以配置语言选项，你可以在
 `@common/config/fecshop_local_services/FecshopLang.php` 中进行配置语言项，譬如：
@@ -56,7 +57,40 @@ fecshop的每个store设置的不同语言，以及对应的产品搜索(mongodb
 
 [语言简码表](http://blog.csdn.net/wed110/article/details/50886195)
 
+2.配置各个入口的i18n组件（yii2的i18n组件的配置）
 
+打开@app/config/main.php(@app是各个入口的统称，可以以@appfront为例子)
+
+找到下面的配置
+
+```
+'i18n' => [
+            'translations' => [
+                'appfront' => [
+                    'basePaths' => [
+                        '@appfront/languages',
+                    ],
+                    // base language code
+                    'sourceLanguage' => 'en_US',
+                    /**
+                     * @var bool whether to force message translation when the source and target languages are the same.
+                     * Defaults to false, meaning translation is only performed when source and target languages are different.
+                     * see: @yii/i18n/MessageSource.php  @property $forceTranslation
+                     */
+                    'forceTranslation' => true,
+                ],
+            ],
+        ],
+```
+
+`basePaths`: 配置各个入口本地翻译文件所在的路径，默认为 '@appfront/languages'
+
+`sourceLanguage`： 当前入口的基础语言，默认语言
+
+`forceTranslation`：是否强制翻译，当入口store的`当前语言`== `sourceLanguage`（上面配置的选项），是否强制翻译,
+fecshop默认配置了`true`，譬如： 上面设置了 `en_US`, 如果store的当前语言也是 `en_US`， 那么，
+`forceTranslation`设置为`true`后， 会去 @appfront/languages/en_US/appfront.php 文件
+去找相应的翻译内容。
 
 
 二：翻译
