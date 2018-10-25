@@ -57,7 +57,13 @@ fecshop的每个store设置的不同语言，以及对应的产品搜索(mongodb
 
 [语言简码表](http://blog.csdn.net/wed110/article/details/50886195)
 
+通过上面，配置了fecshop商城里面可用的各个语言配置，各个store可以切换的语言就是从上面的配置数组中获取。
+
 2.配置各个入口的i18n组件（yii2的i18n组件的配置）
+
+> fecshop的翻译，是基于yii2的i18n组件(component)，因此，我们需要对其进行配置，
+下面的配置是在各个入口的配置文件中进行的，因此，您可以让你的各个入口的i18n组件进行不同的配置，
+一般都是相同的配置，下面是详细的说明
 
 打开@app/config/main.php(@app是各个入口的统称，可以以@appfront为例子)
 
@@ -92,14 +98,22 @@ fecshop默认配置了`true`，譬如： 上面设置了 `en_US`, 如果store的
 `forceTranslation`设置为`true`后， 会去 @appfront/languages/en_US/appfront.php 文件
 去找相应的翻译内容。
 
+上面使用默认配置就可以，如果你想做中文商城，你仍然可以让基础货币设置en_US，然后中文使用翻译的方式进行，
+在文档的末尾处有说明。
 
 二：翻译
 ---------
+
+> 对于内容部分的翻译，分为4部分：网页文字内容的多语言，数据库数据的多语言，邮件内容的多语言翻译，
+错误信息提示信息等内容的多语言翻译，下面是详细说明
 
 ### 数据库数据
 
 数据库中的数据，譬如产品表中的产品名字，产品描述等，分类表中的分类名字和分类描述，
 在数据库表中都是保存了多份语言数据
+
+> 下面图片中显示的各个语言的选项，就是上面第一部分`配置语言项`配置数组的各个语言，在
+`配置语言项`配置数组中添加其他语言后，下面就会显示添加的语言，您可以编辑保存该语言的内容
 
 ![Alt text](images/11.jpg)
 
@@ -143,34 +157,6 @@ Yii::$service->page->translate->__('based on {review_count} Customer Reviews',['
 
 
 
-### Fecshop的翻译文件路径为：（举例appfront入口）
-
-`@vendor/fancyecommerce/fecshop/app/appfront/languages/`，在这个文件夹下面可以看到
-各个语言的文件包，进入相应语言，就可以看到翻译文件，譬如中文的翻译文件路径为
-：`@vendor/fancyecommerce/fecshop/app/appfront/languages/zh_CN/appfront.php`
-，在这个文件里面就可以看到所有的中文翻译内容，如果您想重写或者添加新
-的翻译，可以到 `@appfront/languages/zh_CN/appfront.php` 中添加或者重写翻译
-数组，注意，这里使用的是php的数组，需要按照相应格式填写，否则会报错。
-
-在翻译文件中，您可能看到这样的带有**{}**的部分，譬如下面的 `{passwdMinLength}`,
-这是一个动态变量，这个请不要翻译和做其他的任何改动，直接复制上去即可，譬如下面的
-翻译，这个值是由php动态计算而来。
-
-```
- 'Password length must be greater than or equal to {passwdMinLength}'
-								=> '密码长度必须大于或等于{passwdMinLength}',
- 'Password length must be less than or equal to {passwdMaxLength}'	
-								=> '密码长度必须小于或等于{passwdMaxLength}',
- 'The passwords are inconsistent'	
-								=> '密码不一致',
-```
-
-### 提示报错信息的翻译
-
-在网站顶部，会出现一些提示信息和报错信息，譬如您注册邮箱的时候，会提示你的格式不正确等，
-这些数据也是用翻译文件的方式，方法上上面类似，都是在一个同一个文件中
-添加翻译内容,方法和方式同上。
-
 ### 邮件内容的翻译
 
 邮件内容的模板，是在theme中，譬如appfront的邮件模板，是在
@@ -195,7 +181,39 @@ Yii::$service->page->translate->__('based on {review_count} Customer Reviews',['
 **注意：** 如果您不添加翻译，则默认就会使用英语的翻译。
 
 关于邮件更详细的介绍，可以参看：[Fecshop 邮件](fecshop_email.php)
- 
+
+
+
+### 提示报错信息的翻译
+
+在网站顶部，会出现一些提示信息和报错信息，譬如您注册邮箱的时候，会提示你的格式不正确等，
+这些数据也是用翻译文件的方式，方法上上面类似，都是在一个同一个文件中
+添加翻译内容,方法和方式同上。
+
+
+
+### Fecshop的翻译文件路径为：（举例appfront入口）
+
+`@vendor/fancyecommerce/fecshop/app/appfront/languages/`，在这个文件夹下面可以看到
+各个语言的文件包，进入相应语言，就可以看到翻译文件，譬如中文的翻译文件路径为
+：`@vendor/fancyecommerce/fecshop/app/appfront/languages/zh_CN/appfront.php`
+，在这个文件里面就可以看到所有的中文翻译内容，如果您想重写或者添加新
+的翻译，可以到 `@appfront/languages/zh_CN/appfront.php` 中添加或者重写翻译
+数组，注意，这里使用的是php的数组，需要按照相应格式填写，否则会报错。
+
+在翻译文件中，您可能看到这样的带有**{}**的部分，譬如下面的 `{passwdMinLength}`,
+这是一个动态变量，这个请不要翻译和做其他的任何改动，直接复制上去即可，譬如下面的
+翻译，这个值是由php动态计算而来。
+
+```
+ 'Password length must be greater than or equal to {passwdMinLength}'
+								=> '密码长度必须大于或等于{passwdMinLength}',
+ 'Password length must be less than or equal to {passwdMaxLength}'
+								=> '密码长度必须小于或等于{passwdMaxLength}',
+ 'The passwords are inconsistent'
+								=> '密码不一致',
+```
+
 
 三：各个入口的语言配置
 --------------
@@ -250,3 +268,7 @@ Yii::$service->page->translate->__('based on {review_count} Customer Reviews',['
 ---------------------
 参看文档：[Fecshop 如何只保留中文语言，去掉其他的所有语言？](http://www.fecshop.com/topic/818)
 
+六：其他参考
+---------
+
+http://www.fecshop.com/topic/1431
