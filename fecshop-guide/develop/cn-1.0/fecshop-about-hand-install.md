@@ -8,6 +8,10 @@ Fecshop 安装
 
 ### Docker Compose 方式安装Fecshop
 
+> 由于fecshop安装，需要的软件比较多，
+强烈建议新手时候docker部署fecshop，
+简单快捷，多学习新知识，这些都是日后调薪换工作的资本。
+
 熟悉docker的，可以使用docker compose安装，
 非常的简单快捷，地址为：
 https://github.com/fecshop/yii2_fecshop_docker
@@ -23,7 +27,10 @@ vagrant box的方式（不建议）：2017.6月做的box，以后**不再维护v
 
 ### 标准安装方式：Linux 环境安装Fecshop
 
-
+> 建议使用docker的方式快速安装部署，
+标准安装是从裸机centos一步一步的搭建起来的，
+过程繁琐，建议新手用docker搭建，docker安装fecshop的
+文档非常的详细。
 
 参考资料：
 
