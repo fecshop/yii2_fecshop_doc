@@ -12,7 +12,12 @@ Fecshop 安装
 强烈建议新手时候docker部署fecshop，
 简单快捷，多学习新知识，这些都是日后调薪换工作的资本。
 
-熟悉docker的，可以使用docker compose安装，
+**强烈建议使用docker部署fecshop，方便快捷！**
+
+**强烈建议使用docker部署fecshop，方便快捷！**
+
+
+新手安装fecshop，建议使用docker安装，
 非常的简单快捷，地址为：
 https://github.com/fecshop/yii2_fecshop_docker
 ，推荐使用这种方式快速部署Fecshop。
