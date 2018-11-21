@@ -91,7 +91,7 @@ mongodb里面也会存储一个qty字段，但是这个存储的值无效，在
 
 
 
-
+论坛相关帖子：http://www.fecshop.com/topic/1460
 
 
 
