@@ -28,6 +28,7 @@ FecShop 使用说明
 *  [Fecshop 分类](fecshop_category.md)
 *  [Fecshop 产品](fecshop_product.md)
 *  [Fecshop 产品图片](fecshop_product_image.md)
+*  [Fecshop 产品价格](fecshop_product_price.md)
 *  [Fecshop 库存](fecshop_stock.md)
 *  [Fecshop 评论](fecshop_product_review.md)
 *  [Fecshop 购物车](fecshop_cart.md)
@@ -48,6 +49,7 @@ FecShop 使用说明
 *  [Fecshop 缓存](fecshop_cache.md)
 *  [Fecshop 搜索](fecshop_search.md)
 *  [Fecshop 后台编辑器](fecshop_admin_edit.md)
+*  [Fecshop 后台菜单RBAC](fecshop_admin_rbac.md)
 *  [Fecshop 事件Event](fecshop_event.md)
 *  [Fecshop 配置加速](fecshop_config_speed.md)
 *  [Fecshop Log日志](fecshop_log.md)
@@ -70,6 +72,7 @@ Fecshop手把手系列
 -----------
 *  [Fecshop 关于手把手系列](fecshop_hand_about.md)
 *  [Fecshop 如何更改首页，如何找到首页的文件？](fecshop_hand_home.md)
+*  [Fecshop 如何重写fecadmin库包layout文件](fecshop_fecadmin_rewrite_layout.md)
 *  [Fecshop view模板中$parentThis变量是在哪里定义的，有什么用途？](fecshop_hand_parentthis.md)
 *  [Fecshop 如何开发一个新支付](fecshop_hand_new_payment.md)
 *  [Fecshop 为什么用mongdob做产品存储](fecshop_hand_mongodb_product.md)
@@ -84,7 +87,7 @@ Fecshop手把手系列
 *  [Fecshop 如何新增一门语言，并相应的添加一个store](fecshop_hand_add_store_lang.md)
 *  [Fecshop 生产模式 product 更改成 开发模式 develop](fecshop_hand_develop_product.md)
 *  [Fecshop 如何设置时区 timeZone](fecshop_hand_timezone.md)
-*  [Fecshop 如何重写fecadmin库包layout文件](fecshop_fecadmin_rewrite_layout.md)
+
 *  [Fecshop 立即购买功能开发](fecshop_quick_buy_develop.md)
 *  [Fecshop 基于modules上面开发新controller](fecshop_new_controller_in_current_modules.md)
 *  [Fecshop 本地新建modules，开发新功能](fecshop_hand_local_module.md)
@@ -95,7 +98,7 @@ Fecshop手把手系列
 *  [Fecshop Facebook Login](fecshop_facebook_app_id_secret.md)
 *  [Fecshop Google Login](fecshop_google_app_id_secret.md)
 *  [Fecshop 订单货运物流追踪号](fecshop_order_tracking_number.md)
-
+*  [Fecshop 添加新的订单状态](fecshop_order_add_new.md)
 Fecshop后台功能介绍
 ----------
 *  [Fecshop后台-介绍](fecshop_admin_about.md)
