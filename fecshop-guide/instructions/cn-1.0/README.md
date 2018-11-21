@@ -72,6 +72,7 @@ Fecshop手把手系列
 -----------
 *  [Fecshop 关于手把手系列](fecshop_hand_about.md)
 *  [Fecshop 如何更改首页，如何找到首页的文件？](fecshop_hand_home.md)
+*  [Fecshop 生产模式 prod 更改成 开发模式 dev](fecshop_change_prod_to_dev.md)
 *  [Fecshop 如何重写fecadmin库包layout文件](fecshop_fecadmin_rewrite_layout.md)
 *  [Fecshop view模板中$parentThis变量是在哪里定义的，有什么用途？](fecshop_hand_parentthis.md)
 *  [Fecshop 如何开发一个新支付](fecshop_hand_new_payment.md)
@@ -87,7 +88,6 @@ Fecshop手把手系列
 *  [Fecshop 如何新增一门语言，并相应的添加一个store](fecshop_hand_add_store_lang.md)
 *  [Fecshop 生产模式 product 更改成 开发模式 develop](fecshop_hand_develop_product.md)
 *  [Fecshop 如何设置时区 timeZone](fecshop_hand_timezone.md)
-
 *  [Fecshop 立即购买功能开发](fecshop_quick_buy_develop.md)
 *  [Fecshop 基于modules上面开发新controller](fecshop_new_controller_in_current_modules.md)
 *  [Fecshop 本地新建modules，开发新功能](fecshop_hand_local_module.md)
@@ -95,10 +95,15 @@ Fecshop手把手系列
 *  [Fecshop 后台添加菜单，设置权限，并访问](fecshop_hand_appadmin_menu_roles.md)
 *  [Fecshop 产品属性的实战讲解](fecshop_hand_product_info.md)
 *  [Fecshop 如何重写block和models](fecshop_block_models_rewrite.md)
+*  [Fecshop xunsearch自定义search.ini](fecshop_xunsearch_search_ini.md)
 *  [Fecshop Facebook Login](fecshop_facebook_app_id_secret.md)
 *  [Fecshop Google Login](fecshop_google_app_id_secret.md)
 *  [Fecshop 订单货运物流追踪号](fecshop_order_tracking_number.md)
 *  [Fecshop 添加新的订单状态](fecshop_order_add_new.md)
+*  [Fecshop 为什么要引入redis mongodb](fecshop_mongodb_redis.md)
+
+
+
 Fecshop后台功能介绍
 ----------
 *  [Fecshop后台-介绍](fecshop_admin_about.md)
@@ -122,4 +127,10 @@ Fecshop后台功能介绍
 *  [上线前的性能优化](fecshop_online_speed.md)
 *  [Docker安装fecshop配置cron](fecshop_docker_config_cron.md)
 *  [Docker用Let's Encrypt部署HTTPS](fecshop_docker_https_lets_encrypt.md)
+*  [Docker Fecshop项目迁移新服务器](fecshop_docker_migrate_new_services.md)
+*  [Docker 修改yml文件后，重新创建docker container](fecshop_docker_rebuild_yml.md)
+*  [Fecshop分布式部署](fecshop_fenbushi.md)
+
+
+
 
