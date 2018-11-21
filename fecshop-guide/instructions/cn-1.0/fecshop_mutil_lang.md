@@ -12,7 +12,7 @@ Fecshop 多语言
 1.配置语言项：
 
 在fecshop FecshopLang 服务 中可以配置语言选项，你可以在
-`@common/config/fecshop_local_services/FecshopLang.php` 中进行配置语言项，譬如：
+`@app/config/fecshop_local_services/FecshopLang.php` （@app是入口，代指@appfront，@apphtml5等） 中进行配置语言项，譬如：
 
 ```
 'fecshoplang' => [
@@ -96,9 +96,10 @@ fecshop的每个store设置的不同语言，以及对应的产品搜索(mongodb
 `forceTranslation`：是否强制翻译，当入口store的`当前语言`== `sourceLanguage`（上面配置的选项），是否强制翻译,
 fecshop默认配置了`true`，譬如： 上面设置了 `en_US`, 如果store的当前语言也是 `en_US`， 那么，
 `forceTranslation`设置为`true`后， 会去 @appfront/languages/en_US/appfront.php 文件
-去找相应的翻译内容。
+去找相应的翻译内容，因此对于fecshop的默认英文语句，如果你想更改，
+可以通过翻译的访问（开启forceTranslation）
 
-上面使用默认配置就可以，如果你想做中文商城，你仍然可以让基础货币设置en_US，然后中文使用翻译的方式进行，
+如果你想做中文商城，你仍然可以让基础语言设置en_US，然后中文使用翻译的方式进行，
 在文档的末尾处有说明。
 
 二：翻译
