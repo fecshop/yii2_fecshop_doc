@@ -36,11 +36,9 @@ Fecshop 产品
 访问这款衣服的每一个SKU，都会把其他的sku列出来，点击后，就进去其他sku的页面，您会发现url是变化的，这个是类似于京东的方式。
 注意：	
 
-1.3.1 因为组合的复杂性，`spu attr`最多设置2个属性，不能超过2个(如果超过会出问题。spu属性会都不显示)，超过两个请使用customer_option的方式。也就是类似于淘宝的方式。
+1.3.1 这里的属性需要严格按照下面的格式进行配置，如果您想配置自己的spu属性，那么
 
-1.3.2 这里的属性需要严格按照下面的格式进行配置，如果您想配置自己的spu属性，那么
-
-1.3.3 通过链接：https://fecshop.appfront.fancyecommerce.com/raglan-sleeves-letter-printed-crew-neck-sweatshirt-41214715
+1.3.2 通过链接：https://fecshop.appfront.fancyecommerce.com/raglan-sleeves-letter-printed-crew-neck-sweatshirt-41214715
 您可以看到，color属性是用图片来显示的，
 在spu_attr中，第一个属性默认用图片显示，譬如：
 
