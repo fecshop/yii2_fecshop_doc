@@ -129,3 +129,6 @@ class Header extends \fecadmin\views\layouts\Header{
 
 
 使用classMap进行重写，参考资料：http://www.fecshop.com/doc/fecshop-guide/develop/cn-1.0/guide-fecshop-rewrite-func.html#7yii2classclassmapfecshop
+
+
+其他参考阅读：http://www.fecshop.com/topic/1424
