@@ -1,6 +1,10 @@
 Fecshop 安全问题
 ===============
 
+
+Fecshop已经在安全方面做了很多的工作，对于sql注入，xss，csrf等都进行了防御，
+关于csrf的文章可以参看：http://www.fecshop.com/topic/1545
+
 ### 1.查看端口开放：
 
 ```

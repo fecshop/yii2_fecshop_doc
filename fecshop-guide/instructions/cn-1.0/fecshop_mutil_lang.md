@@ -269,7 +269,13 @@ Yii::$service->page->translate->__('based on {review_count} Customer Reviews',['
 ---------------------
 参看文档：[Fecshop 如何只保留中文语言，去掉其他的所有语言？](http://www.fecshop.com/topic/818)
 
-六：其他参考
+六：后台如何添加多语言
+---------
+
+后台如何添加多语言：http://www.fecshop.com/topic/1586
+
+七：其他参考
 ---------
 
 http://www.fecshop.com/topic/1431
+

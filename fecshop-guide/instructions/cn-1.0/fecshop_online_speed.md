@@ -230,3 +230,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 ### 其他
 
 等等，如果你有新的优化建议，可以在fecshop.com发帖，一起成长。
+
+Terry对fecsop，开启opcache和fecshop缓存过程中的速度测试，参看：
+[Fecshop 性能速度测试（测速）](http://www.fecshop.com/topic/1573)

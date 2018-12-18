@@ -130,6 +130,7 @@ Fecshop后台功能介绍
 *  [Docker Fecshop项目迁移新服务器](fecshop_docker_migrate_new_services.md)
 *  [Docker 修改yml文件后，重新创建docker container](fecshop_docker_rebuild_yml.md)
 *  [Fecshop分布式部署](fecshop_fenbushi.md)
+*  [Fecshop git线上发版](fecshop_git_update_version.md)
 
 
 
