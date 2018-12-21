@@ -1,7 +1,7 @@
 Fecshop 后台菜单RBAC
 ==============
 
-> fecshop的后台，在版本1.5.1.1之后，
+> fecshop的后台，在版本1.6.0.0之后，
 将基于菜单的权限控制改成了RBAC
 
 
@@ -18,45 +18,164 @@ action操作
 
 1.添加菜单
 
-@fecshop/config/services/Page.php 可以看到  adminMenu  page services的配置
+@fecshop/config/services/Admin.php 可以看到  menu  admin services的配置
 
 ```
-'adminMenu' => [
-                'class'        => 'fecshop\services\page\AdminMenu',
+'menu' => [
+                'class'        => 'fecshop\services\admin\Menu',
                 'menuConfig' => [
                     // 一级大类
                     'catalog' => [
-                        'label' => '产品分类',
+                        'label' => 'Category & Prodcut',
                         'child' => [
                             // 二级类
                             'product_manager' => [
-                                'label' => '产品管理',
+                                'label' => 'Manager Product',
                                 'child' => [
                                     // 三级类
                                     'product_info_manager' => [
-                                        'label' => '产品信息管理',
+                                        'label' => 'Product Info',
                                         'url_key' => '/catalog/productinfo/index',
                                     ],
                                     // 三级类
                                     'product_review_manager' => [
-                                        'label' => '产品评论管理',
+                                        'label' => 'Product Reveiew',
                                         'url_key' => '/catalog/productreview/index',
                                     ],
-									
-									...
-									
+                                    // 三级类
+                                    'product_search_manager' => [
+                                        'label' => 'Product Search',
+                                        'url_key' => '/catalog/productsearch/index',
+                                    ],
+
+                                    'product_favorite_manager' => [
+                                        'label' => 'Product Favorite',
+                                        'url_key' => '/catalog/productfavorite/index',
+                                    ],
+                                ]
+                            ],
+                            'category_manager' => [
+                                'label' => 'Manager Category',
+                                'url_key' => '/catalog/category/index',
+                            ],
+                            'urlrewrite_manager' => [
+                                'label' => 'URL Rewrite',
+                                'url_key' => '/catalog/urlrewrite/index',
+                            ],
+                        ]
+                    ],
+                    'sales' => [
+                        'label' => 'Sales',
+                        'child' => [
+                            'order' => [
+                                'label' => 'Order',
+                                'child' => [
+                                    'order_manager' => [
+                                        'label' => 'Manager Order',
+                                        'url_key' => '/sales/orderinfo/manager',
+                                    ],
+                                ],
+                            ],
+                            'coupon' => [
+                                'label' => 'Coupon',
+                                'url_key' => '/sales/coupon/manager',
+                            ],
+                        ],
+                    ],
+                    'customer' => [
+                        'label' => 'Manager User',
+                        'child' => [
+                            'account' => [
+                                'label' => 'Manager Account',
+                                'url_key' => '/customer/account/index',
+                            ],
+                            'newsletter' => [
+                                'label' => 'NewsLetter',
+                                'url_key' => '/customer/newsletter/index',
+                            ],
+
+                        ],
+                    ],
+                    'cms' => [
+                        'label' => 'CMS',
+                        'child' => [
+                            'page' => [
+                                'label' => 'Manager Page',
+                                'url_key' => '/cms/article/index',
+                            ],
+                            'staticblock' => [
+                                'label' => 'Static Block',
+                                'url_key' => '/cms/staticblock/index',
+                            ],
+                        ],
+                    ],
+                    'dashboard' => [
+                        'label' => 'Dashboard',
+                        'child' => [
+                            'adminuser' => [
+                                'label' => 'Admin User',
+                                'child' => [
+                                    'myaccount' => [
+                                        'label' => 'My Account',
+                                        'url_key' => '/fecadmin/myaccount/index',
+                                    ],
+                                    'account_manager' => [
+                                        'label' => 'Manager Account',
+                                        'url_key' => '/fecadmin/account/manager',
+                                    ],
+                                    'role_manager' => [
+                                        'label' => 'Manager Role',
+                                        'url_key' => '/fecadmin/role/manager',
+                                    ],
+                                    'resource_manager' => [
+                                        'label' => 'Manager Resource',
+                                        'url_key' => '/fecadmin/resource/manager',
+                                    ],
+                                ],
+                            ],
+                            //'menu' => [
+                            //    'label' => '菜单管理',
+                            //    'url_key' => '/fecadmin/menu/manager',
+                            //],
+                            'log' => [
+                                'label' => 'Log Info',
+                                'url_key' => '/fecadmin/log/index',
+                            ],
+                            'logtj' => [
+                                'label' => 'Log Statistics',
+                                'url_key' => '/fecadmin/logtj/index',
+                            ],
+                            'cache' => [
+                                'label' => 'Manager Cache',
+                                'url_key' => '/fecadmin/cache/index',
+                            ],
+                            'config' => [
+                                'label' => 'Admin Config',
+                                'url_key' => '/fecadmin/config/manager',
+                            ],
+                            'error_handler' => [
+                                'label' => 'Error Handler',
+                                'url_key' => '/system/error/index',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
 									
 ```
 
-在类属性`menuConfig`处配置，您可以在本地配置文件：`@appadmin/config/fecshop_local_services/Page.php`中添加后台配置
+在类属性`menuConfig`处配置，
+您可以在本地配置文件：`@appadmin/config/fecshop_local_services/Admin.php`中添加
+后台配置(没有这个文件自行创建)
 
-添加后，您添加的后台菜单将会显示出来。
+添加后，由于没有添加资源，因此在后台刷新页面后，菜单还是不能完整的显示出来，我们需要到后台添加资源，
+设置权限
 
 
-2.添加资源
+2.url资源
 
-上面的菜单添加后，访问会发现没有权限，您需要添加资源，然后为您的账户role中添加这个资源
-（另外，菜单中的很多url以资源的方式加入，然后在权限组中添加资源，然后才有权限访问）
+上面的菜单，是fecshop的菜单，需要添加资源，在您的当前账户对应的权限组中添加资源
+（菜单中的很多url以资源的方式加入，然后在权限组中添加资源，然后才有权限访问）
 
 后台添加资源（resources，将url_key作为资源在后台录入系统）
 
@@ -123,6 +242,8 @@ tag的作用仅仅是上图，为role添加resources的时候进行归类，这�
 
 更改后，必须刷新缓存后才能生效
 
+
+**Fecshop添加自定义菜单的完整例子**：http://www.fecshop.com/topic/1620
 
 ### 内容权限
 
