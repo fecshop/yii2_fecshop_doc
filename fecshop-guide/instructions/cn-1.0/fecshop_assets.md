@@ -9,9 +9,7 @@ Fecshop Assets
 
 ### 设置
 
-对于后台`appadmin`，因为不会涉及到jscss的重构等，因此使用的是Yii2原声的asset。
-
-而`apphtml5`  `appfront`涉及到多模板机制，因此fecshop进行了封装，
+`appadmin` , `apphtml5`  `appfront`涉及到多模板机制，因此fecshop进行了封装，
 使用的是`page asset services`，打开文件
 
 @appfront/config/fecshop_local_services/Page.php
@@ -21,7 +19,8 @@ Fecshop Assets
 ```
 'asset' => [
     'class' => 'fecshop\services\page\Asset',
-    // 在js后面加一个v参数，修改js后，更改v参数，否则，浏览器会使用缓存。
+    // 对于线上，在js后面加一个v参数，修改js后，更改v参数，进而js连接地址字符串发生变化，这样浏览器不会
+    // 使用缓存，否则，浏览器会使用缓存的js 和 css 文件
     // /assets/dbdba3fa/js/js.js?v=2
     'jsVersion'        => 1,
     'cssVersion'       => 1,

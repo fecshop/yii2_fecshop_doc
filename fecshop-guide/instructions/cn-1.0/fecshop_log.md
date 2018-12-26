@@ -1,6 +1,7 @@
 Fecshop Log日志
 ==============
 
+> fecshop的log实现，使用的是Yii2的log机制来实现的
 
 1.日志配置 `@app/config/main.php` 打开后，可以看到log组件的配置如下：
 

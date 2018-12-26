@@ -8,11 +8,14 @@ fecshop 配置加速
 
 ### 1.开启方法
 
-1.1合并生成单配置文件
+1.1生成`单配置文件`
 
 在web（@app/web/）目录下会发现文件index-merge-config.php ，
 访问执行：www.domain.com/index-merge-config.php ，就会
 把所有的配置合并并写入 @app/merge_config.php中
+
+> 注意，线上系统，就将这个文件的访问进行限制，通过nginx设置密码访问，或者特定ip访问，
+等等，让该地址只能自己人访问，生成配置文件。
 
 1.2开启使用单配置文件
 
