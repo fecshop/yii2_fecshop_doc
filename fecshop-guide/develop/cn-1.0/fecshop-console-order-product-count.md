@@ -15,6 +15,8 @@ order: 计算产品销量的脚本
 
 设置订单的范围，也就是计算xx月之内的订单
 
+您可以在 @common/config/fecshop_local_services/Order.php 在order config中添加下面的配置
+
 ```
 /**
          * 计算销量的订单时间范围（将最近几个月内的订单中的产品销售个数累加，作为产品的销量值,譬如3代表计算最近3个月的订单产品）
