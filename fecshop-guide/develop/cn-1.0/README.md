@@ -52,6 +52,7 @@ Fecshop console 入口
 *  [sitemap: 生成的脚本](fecshop-console-sitemap.md)
 *  [url rewrite: 生成脚本](fecshop-console-url-rewrite.md)
 *  [order: pending订单取消脚本](fecshop-console-pending-cancel.md)
+*  [order: 计算产品销量的脚本](fecshop-console-order-product-count.md)
 *  [search: 删除xunsearch所有数据的脚本](fecshop-console-search-delete.md)
 *  [search: 产品同步到搜索的脚本](fecshop-console-search-sync.md)
 
