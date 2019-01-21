@@ -256,7 +256,7 @@ store在配置文件：`@app\config\fecshop_local_services\Store.php`
 
 各个代码的具体含义，在注释中已经说明。
 
-第三方登录：facebook和google登录，（** 初始配置，可以先不管这个，后面在说**）如何获取
+第三方登录：facebook和google登录，（** 初始配置，可以先不管这个，后面再说**）如何获取
 CLIENT_ID，CLIENT_SECRET可以参看我的博文：
 [ facebook login 申请 app_id 和 app_secret](http://blog.csdn.net/terry_water/article/details/55095721) ，
 [ google login api 申请 CLIENT_SECRET 和 CLIENT_SECRET](http://blog.csdn.net/terry_water/article/details/55095209)
