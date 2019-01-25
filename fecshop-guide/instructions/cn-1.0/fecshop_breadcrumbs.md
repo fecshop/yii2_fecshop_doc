@@ -73,17 +73,24 @@ Yii::$service->page->breadcrumbs->getItems();
 
 ![](images/711.png)
 
-2.产品页面没有实现，您可以在
-`fecshop\app\appfront\modules\Catalog\block\product\Index.php`
-中自己实现，或者，过段时间我写一下这个。
+2.产品页面
+
+如果在appfront 入口，您想打开分类页面部分的breadcrumbs
+，您可以在
+`@appfront/config/fecshop_local_modules/Catalog.php` 设置
+
+`'product_breadcrumbs' => true,`
+
+3.search 页面
+
+`@appfront/config/fecshop_local_modules/Catalogsearch.php` 设置
+
+`'search_breadcrumbs' => true,`
 
 
-面包屑导航对seo有 一定效果，不过也会弄的页面比较丑，
+面包屑导航对seo有 一定效果，可以根据自己的需要进行开启和关闭
 另外，手机web端，面包屑导航已经不要了，取而代之的就是一个回退箭头。
 
-
-
-看自己取舍了。
 
 
 
