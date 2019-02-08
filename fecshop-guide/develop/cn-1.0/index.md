@@ -21,7 +21,7 @@ Fecshop 结构与初始化
 *  [Fecshop 配置结构](fecshop-init-config-construction.md)
 *  [Fecshop 初始化（全）](fecshop-init-func.md)
 *  [Fecshop 1.index.php初始化](fecshop-init-index.md)
-*  [Fecshop 2.Store初始化](fecshop-init-sotre.md)
+*  [Fecshop 2.Store初始化](fecshop-init-store.md)
 *  [Fecshop 3.Request Url初始化](fecshop-init-request-url.md)
 
 
