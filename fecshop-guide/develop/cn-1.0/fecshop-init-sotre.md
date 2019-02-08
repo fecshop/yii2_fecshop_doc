@@ -50,7 +50,7 @@ class Store extends Component implements BootstrapInterface
 
 ```
 1.是否是api类型入口，如果是，则 `Yii::$app->user->enableSession = false;`
-2.通过htmlUlr，获取当前的store key（在安装配置store的时候，各个store key就是去掉`http://`的域名）
+2.通过homeUrl，获取当前的 store key（在安装配置store的时候，各个store key就是去掉`http://`的域名）
 3.通过配置获取stores，循环stores匹配当前的store key，匹配成功，则取出来相应的配置信息进行
 初始化
 3.1 设备检测，如果是手机web访问的pc网址，则跳转到html5页面
@@ -59,7 +59,6 @@ class Store extends Component implements BootstrapInterface
 3.4 初始化当前模板
 3.5 初始化货币
 3.6 appserver入口的一些特殊的初始化的处理
-
 ```
 
 
