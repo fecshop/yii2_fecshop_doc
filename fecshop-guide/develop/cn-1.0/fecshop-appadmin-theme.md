@@ -26,7 +26,7 @@ Fecshop Admin 模板Theme
 和
 `@appadmin/theme/local/theme01/assets/js/my.js`
 
-然后在配置文件中添加js和css的配置，我们可以打开配置文件 `@appadmin/fecshop_local_services/Page.php`
+然后在配置文件中添加js和css的配置，我们可以打开配置文件 `@appadmin/config/fecshop_local_services/Page.php`
 
 ```
 'asset' => [
