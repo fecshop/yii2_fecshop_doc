@@ -23,6 +23,62 @@ Fecshop breadcrumbs
 上首页的链接
 
 
+### 开启 （仅限于appfront入口）
+
+> 1.7.1.0 添加了面包屑导航通过配置的方式选择开启和关闭
+
+Fecshop默认的配置文件地址如下，您可以在@appfront/config/fecshop_local_modules/下面
+的模块配置中进行重写：
+
+@fecshop/app/appfront/config/modules/Catalog.php
+
+`'category_breadcrumbs' => true`: 分类页面面包屑配置，true代表开启
+
+`'product_breadcrumbs' => true`: 产品页面面包屑配置，true代表开启
+            
+@fecshop/app/appfront/config/modules/Catalogsearch.php
+
+`'search_breadcrumbs'        => true`: 搜索页面面包屑配置，true代表开启
+
+@fecshop/app/appfront/config/modules/Checkout.php
+
+
+`'checkout_cart_breadcrumbs' => false`: 购物车页面面包屑配置，true代表开启
+
+`'checkout_onepage_breadcrumbs' => false`: 下单页面面包屑配置，true代表开启
+
+
+@fecshop/app/appfront/config/modules/Customer.php
+
+
+`'login_breadcrumbs' => true`: 账户中心-登陆页面面包屑配置，true代表开启
+
+`'register_breadcrumbs' => true`: 账户中心-注册页面面包屑配置，true代表开启
+
+`'forgot_password_breadcrumbs' => true`: 账户中心-忘记密码页面面包屑配置，true代表开启
+
+`'forgot_reset_password_breadcrumbs' => true`: 下单页面面包屑配置，true代表开启
+
+`'forgot_reset_password_success_breadcrumbs' => true`: 账户中心-重置密码成功页面面包屑配置，true代表开启
+
+`'forgot_reset_password_submit_breadcrumbs' => true`: 账户中心-重置密码提交页面面包屑配置，true代表开启
+
+`'account_center_breadcrumbs' => true`: 账户中心-账户中心页面面包屑配置，true代表开启
+
+`'account_information_breadcrumbs' => true`: 账户中心-账户信息页面面包屑配置，true代表开启
+
+`'customer_address_breadcrumbs' => true`: 账户中心-用户地址页面面包屑配置，true代表开启
+
+`'customer_address_edit_breadcrumbs' => true`: 账户中心-用户地址编辑页面面包屑配置，true代表开启
+
+`'customer_order_breadcrumbs' => true`: 账户中心-订单列表页面面包屑配置，true代表开启
+
+`'customer_order_info_breadcrumbs' => true`: 账户中心-订单详细页面面包屑配置，true代表开启
+
+`'customer_product_review_breadcrumbs' => true`: 账户中心-产品评论页面面包屑配置，true代表开启
+
+`'customer_product_favorite_breadcrumbs' => true`: 账户中心-产品收藏页面面包屑配置，true代表开启
+            
 
 ### 使用
 
