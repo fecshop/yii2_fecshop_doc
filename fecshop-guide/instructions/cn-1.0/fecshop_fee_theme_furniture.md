@@ -26,6 +26,7 @@ Fecshop 模板- Furnilife
 1.首先需要安装Fecshop成功后，再安装模板，
 fecshop的安装参看文档：[Fecshop商城安装](http://www.fecshop.com/doc/fecshop-guide/develop/cn-1.0/guide-fecshop-about-hand-install.html)
 
+> Fecshop版本>= 1.7.1.0
 
 2.付费购买模板后，将模板解压到Fecshop根目录，解压后的文件
 

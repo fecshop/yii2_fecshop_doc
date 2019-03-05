@@ -118,8 +118,8 @@ Fecshop后台功能介绍
 Fecshop付费功能介绍
 ----------
 *  [Fecshop 模板- Furniture](fecshop_fee_theme_furniture.md)
-
-
+*  [Fecshop 模板- Melani](fecshop_fee_theme_melani.md)
+*  [Fecshop 模板- Melani Blue](fecshop_fee_theme_melaniblue.md)
 
 
 上线前的问题：
