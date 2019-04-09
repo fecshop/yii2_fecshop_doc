@@ -390,16 +390,59 @@ return [
 
 
 
+### 10. 在已有模块（module）下新增controller 和 block
 
+> 有时候，我们想基于原有的module进行扩展，增加新的controller 和block ，theme等
 
+10.1新增controller
 
+可以参考上面的第9部分，通过`controllerMap`新增controller
 
+10.2新增block
 
+在controller中获取block是通过getBlock()方法实现的
 
+```
+public $blockNamespace;
 
+    /**
+     * @param $blockName | String
+     * get current block
+     * 这个函数的controller中得到block文件，譬如：
+     * cms模块的ArticleController的actinIndex()方法中使用$this->getBlock()->getLastData()方法，
+     * 对应的是cms/block/article/Index.php里面的getLastData()，
+     * 也就是说，这个block文件路径和controller的路径有一定的对应关系
+     * 这个思想来自于magento的block。
+     */
+    public function getBlock($blockName = '')
+    {
+        if (!$blockName) {
+            $blockName = $this->action->id;
+        }
+        if (!$this->blockNamespace) {
+            $this->blockNamespace = Yii::$app->controller->module->blockNamespace;
+        }
+        if (!$this->blockNamespace) {
+            throw new \yii\web\HttpException(406, 'blockNamespace is empty , you should config it in module->blockNamespace or controller blockNamespace ');
+        }
+        $viewId = $this->id;
+        $viewId = str_replace('/', '\\', $viewId);
+        $relativeFile = '\\'.$this->blockNamespace;
+        $relativeFile .= '\\'.$viewId.'\\'.ucfirst($blockName);
+        //查找是否在rewriteMap中存在重写
+        $relativeFile = Yii::mapGetName($relativeFile);
+        
+        return new $relativeFile();
+    }
+```
 
+可以看到类变量`blockNamespace`，这个就是用来设置查找block文件的，如果不填写，那么默认使用的是当前modules的文件路径，您可以设置这个类变量的值。
 
+因此可以在controller中设置类变量，譬如：
 
+```
+public $blockNamespace = 'fbbcbase\\app\\appadmin\\modules\\Sales\\block';
+```
 
-
+然后再上面对应的路径中新建block文件就可以了。
 

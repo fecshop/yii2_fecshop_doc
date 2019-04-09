@@ -115,7 +115,7 @@ Fecshop后台功能介绍
 *  [Fecshop后台-销售订单优惠券](fecshop_admin_sale_order_coupon.md)
 *  [Fecshop后台-用户管理](fecshop_admin_customer.md)
 
-Fecshop付费功能介绍
+Fecshop付费模板
 ----------
 *  [Fecshop 模板- Furniture](fecshop_fee_theme_furniture.md)
 *  [Fecshop 模板- Melani](fecshop_fee_theme_melani.md)
