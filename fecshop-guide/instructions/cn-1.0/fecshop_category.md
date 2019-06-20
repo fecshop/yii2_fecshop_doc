@@ -3,6 +3,48 @@ Fecshop 分类
 
 > 这里说的分类，就是在前台菜单导航栏里面的内容，包含home，产品分类，自定义分类等。
 
+
+
+### 分类产品显示
+
+对于spu相同，但是sku不同的产品，默认只显示一个sku产品（score最高的那个），
+譬如一款裙子，有多个颜色尺码，那么只会显示一个sku，但是，其他的sku可以通过分类侧栏
+的属性过滤，查看到
+
+如果您想要，spu相同sku不同的产品，在分类页面都显示出来，那么可以更改配置
+
+`@common/config/fecshop_local_services/Product.php`
+
+```
+<?php
+/**
+ * FecShop file.
+ *
+ * @link http://www.fecshop.com/
+ *
+ * @copyright Copyright (c) 2016 FecShop Software LLC
+ * @license http://www.fecshop.com/license/
+ */
+return [
+    'product' => [
+        /**
+         * 分类页面的最大的产品总数
+         * aggregate 的分页，是把全部产品查出来，然后php进去切分，类似于Es。
+         * 因此对总数进行了限制。
+         */
+        'categoryAggregateMaxCount' => 6000,
+        /**
+          * 分类页面的产品，如果一个spu下面由多个sku同时在这个分类，
+          * 那么，是否只显示一个sku（score最高），而不是全部sku
+          * true： 代表只显示一个sku
+          * false: 代表产品全部显示
+          */
+        'productSpuShowOnlyOneSku' => true,
+```  
+        
+更改配置`productSpuShowOnlyOneSku`为`false` 即可（如果不存在这个配置项，自行添加配置，进行配置覆盖即可）
+        
+
 ### 产品分类，自定义分类等
 
 

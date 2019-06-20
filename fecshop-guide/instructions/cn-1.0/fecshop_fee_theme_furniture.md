@@ -36,19 +36,19 @@ fecshop的安装参看文档：[Fecshop商城安装](http://www.fecshop.com/doc/
 
 模板的图片文件路径：`./appimage/appfront/media/fect/furnilife`
 
-3.将`./feepackage/fect/furnilife_theme/appfront/config/YiiRewriteMap.php`,里面的内容复制到
+3.将`./feepackage/fect/furnilife_theme/app/appfront/config/YiiRewriteMap.php`,里面的内容复制到
 @appfront/config/YiiRewriteMap.php中，添加文件重写配置。
 
 4.配置store，设置模板为该模板，store添加模板配置
 
 在@appfront/config/fecshop_local_services/Store.php 文件中的 thirdThemeDir 添加模板路径
 
-'@fectfurnilife/appfront/theme/furnilife',
+'@fectfurnilife/app/appfront/theme/furnilife',
 
 添加完成的样子为：
 
 'thirdThemeDir'    => [
-    '@fectfurnilife/appfront/theme/furnilife',
+    '@fectfurnilife/app/appfront/theme/furnilife',
 ],
 
 如果appfront下面所有的store都想使用该模板，
@@ -73,7 +73,7 @@ fecshop的安装参看文档：[Fecshop商城安装](http://www.fecshop.com/doc/
 ![xxx](images/fee/ap_11.jpg)
 
 
-文件位置：`./feepackage/fect/furnilife_theme/appfront/theme/furnilife/widgets/header.php` 
+文件位置：`./feepackage/fect/furnilife_theme/app/appfront/theme/furnilife/widgets/header.php` 
 
 24行和134行处
 
@@ -81,13 +81,13 @@ fecshop的安装参看文档：[Fecshop商城安装](http://www.fecshop.com/doc/
 
 ![xxx](images/fee/ap_22.jpg)
 
-文件位置：`./feepackage/fect/furnilife_theme/appfront/theme/furnilife/widgets/menu.php` 88行处
+文件位置：`./feepackage/fect/furnilife_theme/app/appfront/theme/furnilife/widgets/menu.php` 88行处
 
 ### 3.首页大图和三个小图的配置
 
 ![xxx](images/fee/ap_33.jpg)
 
-文件位置：`./feepackage/fect/furnilife_theme/appfront/theme/furnilife/cms/home/index.php` 33行处
+文件位置：`./feepackage/fect/furnilife_theme/app/appfront/theme/furnilife/cms/home/index.php` 33行处
 
 ### 4.首页顶部的产品配置
 
@@ -139,19 +139,19 @@ home_floor_three
 
 ![xxx](images/fee/ap_66.jpg)
 
-文件位置：`./feepackage/fect/furnilife_theme/appfront/theme/furnilife/cms/home/index.php` 326行左右配置
+文件位置：`./feepackage/fect/furnilife_theme/app/appfront/theme/furnilife/cms/home/index.php` 326行左右配置
 
 ### 7.页面底部配置
 
 ![xxx](images/fee/ap_77.jpg)
 
-文件位置：`./feepackage/fect/furnilife_theme/appfront/theme/furnilife/widgets/footer.php` 33行处
+文件位置：`./feepackage/fect/furnilife_theme/app/appfront/theme/furnilife/widgets/footer.php` 33行处
 
 ### 8.产品详细页面
 
 ![xxx](images/fee/ap_88.jpg)
 
-文件位置：`./feepackage/fect/furnilife_theme/appfront/theme/furnilife/catalog/product/index/payment.php` 326行左右配置
+文件位置：`./feepackage/fect/furnilife_theme/app/appfront/theme/furnilife/catalog/product/index/payment.php` 326行左右配置
 
 
 ### 9.cms page页

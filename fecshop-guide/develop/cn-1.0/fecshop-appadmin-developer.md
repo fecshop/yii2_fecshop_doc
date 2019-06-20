@@ -712,11 +712,12 @@ class Module extends \fec\AdminModule
         $this->controllerNamespace = __NAMESPACE__ . '\\controllers';
         $this->_currentDir = __DIR__;
         $this->_currentNameSpace = __NAMESPACE__;
-
+        $this->blockNamespace = __NAMESPACE__ . '\\block';
         // 指定默认的man文件
         $this->layout = '/main_ajax.php';
         parent::init();
     }
+    
 }
 
 ```

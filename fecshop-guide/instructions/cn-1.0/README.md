@@ -39,6 +39,7 @@ FecShop 使用说明
 *  [Fecshop Fb Google登录](fecshop_fb_google_login.md)
 *  [Fecshop 国家](fecshop_country.md)
 *  [Fecshop 支付](fecshop_payment_method.md)
+*  [Fecshop 微信支付](fecshop_payment_wx_method.md)
 *  [Fecshop 订单](fecshop_order.md)
 *  [Fecshop SiteMap](fecshop_sitemap.md)
 *  [Fecshop Robots](fecshop_robots.md)

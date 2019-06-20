@@ -34,19 +34,19 @@ fecshop的安装参看文档：[Fecshop商城安装](http://www.fecshop.com/doc/
 
 模板的图片文件路径：`./appimage/appfront/media/fect/melani`
 
-3.将`./feepackage/fect/melani_theme/appfront/config/YiiRewriteMap.php`,里面的内容复制到
+3.将`./feepackage/fect/melani_theme/app/appfront/config/YiiRewriteMap.php`,里面的内容复制到
 @appfront/config/YiiRewriteMap.php中，添加文件重写配置。
 
 4.配置store，设置模板为该模板，store添加模板配置
 
 在@appfront/config/fecshop_local_services/Store.php 文件中的 thirdThemeDir 添加模板路径
 
-'@fectmelani/appfront/theme/melani',
+'@fectmelani/app/appfront/theme/melani',
 
 添加完成的样子为：
 
 'thirdThemeDir'    => [
-    '@fectmelani/appfront/theme/melani',
+    '@fectmelani/app/appfront/theme/melani',
 ],
 
 如果appfront下面所有的store都想使用该模板，
@@ -70,12 +70,12 @@ fecshop的安装参看文档：[Fecshop商城安装](http://www.fecshop.com/doc/
 
 ![xxx](images/fee/melani_1.jpg)
 
-`./feepackage/fect/melani_theme/appfront/theme/melani/cms/home/index.php`
+`./feepackage/fect/melani_theme/app/appfront/theme/melani/cms/home/index.php`
 12行代码处。
 
 ![xxx](images/fee/melani_2.jpg)
 
-`./feepackage/fect/melani_theme/appfront/theme/melani/cms/home/index.php`
+`./feepackage/fect/melani_theme/app/appfront/theme/melani/cms/home/index.php`
 45行代码处。
 
 ![xxx](images/fee/melani_3.jpg)
@@ -91,7 +91,7 @@ fecshop的安装参看文档：[Fecshop商城安装](http://www.fecshop.com/doc/
 
 ![xxx](images/fee/melani_4.jpg)
 
-`./feepackage/fect/melani_theme/appfront/theme/melani/cms/home/index.php`
+`./feepackage/fect/melani_theme/app/appfront/theme/melani/cms/home/index.php`
 105行代码处。
 
 ![xxx](images/fee/melani_5.jpg)
@@ -111,18 +111,18 @@ bestseller： 对应的配置参数 homeBestSellerSku
 
 ![xxx](images/fee/melani_6.jpg)
 
-`./feepackage/fect/melani_theme/appfront/theme/melani/cms/home/index.php`
+`./feepackage/fect/melani_theme/app/appfront/theme/melani/cms/home/index.php`
 220行代码处。
 
 
 ![xxx](images/fee/melani_7.jpg)
 
-`./feepackage/fect/melani_theme/appfront/theme/melani/widgets/footer.php`
+`./feepackage/fect/melani_theme/app/appfront/theme/melani/widgets/footer.php`
 
 
 ![xxx](images/fee/melani_8.jpg)
 
-`./feepackage/fect/melani_theme/appfront/theme/melani/catalog/product/index/payment.php`
+`./feepackage/fect/melani_theme/app/appfront/theme/melani/catalog/product/index/payment.php`
 
 ###  回馈
 

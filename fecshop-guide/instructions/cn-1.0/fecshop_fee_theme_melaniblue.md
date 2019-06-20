@@ -41,12 +41,12 @@ fecshop的安装参看文档：[Fecshop商城安装](http://www.fecshop.com/doc/
 
 在@appfront/config/fecshop_local_services/Store.php 文件中的 thirdThemeDir 添加模板路径
 
-'@fectmelaniblue/appfront/theme/melani',
+'@fectmelaniblue/app/appfront/theme/melani',
 
 添加完成的样子为：
 
 'thirdThemeDir'    => [
-    '@fectmelaniblue/appfront/theme/melani',
+    '@fectmelaniblue/app/appfront/theme/melani',
 ],
 
 如果appfront下面所有的store都想使用该模板，
@@ -68,13 +68,13 @@ fecshop的安装参看文档：[Fecshop商城安装](http://www.fecshop.com/doc/
 
 ![xxx](images/fee/melaniblue_1.png)
 
-`./feepackage/fect/melaniblue_theme/appfront/theme/melaniblue/cms/home/index.php`
+`./feepackage/fect/melaniblue_theme/app/appfront/theme/melaniblue/cms/home/index.php`
 12行代码处。
 
 
 ![xxx](images/fee/melaniblue_2.png)
 
-`./feepackage/fect/melaniblue_theme/appfront/theme/melaniblue/cms/home/index.php`
+`./feepackage/fect/melaniblue_theme/app/appfront/theme/melaniblue/cms/home/index.php`
 35行代码处。
 
 ![xxx](images/fee/melaniblue_3.png)
@@ -90,7 +90,7 @@ fecshop的安装参看文档：[Fecshop商城安装](http://www.fecshop.com/doc/
 ![xxx](images/fee/melaniblue_4.png)
 
 
-`./feepackage/fect/melaniblue_theme/appfront/theme/melaniblue/cms/home/index.php`
+`./feepackage/fect/melaniblue_theme/app/appfront/theme/melaniblue/cms/home/index.php`
 89行代码处。
 
 ![xxx](images/fee/melaniblue_5.png)
@@ -113,18 +113,18 @@ bestseller： 对应的配置参数 homeBestSellerSku
 
 ![xxx](images/fee/melaniblue_6.png)
 
-`./feepackage/fect/melaniblue_theme/appfront/theme/melaniblue/cms/home/index.php`
+`./feepackage/fect/melaniblue_theme/app/appfront/theme/melaniblue/cms/home/index.php`
 190行代码处。
 
 
 ![xxx](images/fee/melaniblue_7.png)
 
-`./feepackage/fect/melaniblue_theme/appfront/theme/melaniblue/widgets/footer.php`
+`./feepackage/fect/melaniblue_theme/app/appfront/theme/melaniblue/widgets/footer.php`
 
 
 ![xxx](images/fee/melaniblue_8.png)
 
-`./feepackage/fect/melaniblue_theme/appfront/theme/melaniblue/catalog/product/index/payment.php`
+`./feepackage/fect/melaniblue_theme/app/appfront/theme/melaniblue/catalog/product/index/payment.php`
 
 
 ###  回馈
