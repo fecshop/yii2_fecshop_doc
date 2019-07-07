@@ -14,6 +14,7 @@ FecShop 开发说明
 *  [Fecshop 初始配置](fecshop-about-config.md)
 *  [Fecshop 如何升级](fecshop-about-update.md)
 *  [Fecshop 安装vue部分](fecshop-about-install-vue.md)
+*  [Fecshop 安装微信小程序部分](fecshop-about-install-wx-xiaochengxu.md)
 
 Fecshop 结构与初始化
 --------------------
