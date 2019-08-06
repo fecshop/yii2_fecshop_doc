@@ -283,7 +283,19 @@ return [
 
 
 
+### 7. 接口跨域问题
 
+1.在`1.7.0.0`版本之后，appserver端的跨域做了一些完善，跨域相关设置需要手动配置，在 `@appserver/config/servies/Helper.php`中配置 `appserver` 子服务中的 `appserver_cors` 属性，来设置相关跨域信息。 如：
+``` php
+     'appserver' => [
+                'class' => '\common\local\local_services\helper\Appserver',
+                'appserver_cors' => [
+                    'Origin' => ['*'],
+                    'Access-Control-Request-Method' => ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
+                    'Access-Control-Max-Age' => 86400,
+                ]
+      ]
+```
 
 
 
