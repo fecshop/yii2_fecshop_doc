@@ -81,7 +81,7 @@ https://github.com/fancyecommerce/yii2-fec
 此文件夹下面的各个文件夹都是一个模块,下面是详细说明
 
 ```
-@fecshop/app/appfront/config`							#模块的配置文件夹
+@fecshop/app/appfront/config							#模块的配置文件夹
 @fecshop/app/appfront/modules/AppfrontController.php	#是各个模块中controller的基类。
 @fecshop/app/appfront/modules/AppfrontModule.php		#是各个模块的Module.php的基类。
 ```

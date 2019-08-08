@@ -256,7 +256,7 @@ store在配置文件：`@app\config\fecshop_local_services\Store.php`
 
 各个代码的具体含义，在注释中已经说明。
 
-第三方登录：facebook和google登录，（** 初始配置，可以先不管这个，后面在说**）如何获取
+第三方登录：facebook和google登录，（** 初始配置，可以先不管这个，后面再说**）如何获取
 CLIENT_ID，CLIENT_SECRET可以参看我的博文：
 [ facebook login 申请 app_id 和 app_secret](http://blog.csdn.net/terry_water/article/details/55095721) ，
 [ google login api 申请 CLIENT_SECRET 和 CLIENT_SECRET](http://blog.csdn.net/terry_water/article/details/55095209)
@@ -397,7 +397,7 @@ pwd
 rm -rf ./*
 ```
 
-上面使用了**rm -rf命令，一定要谨慎**，pwd看看是否进入了相关文件夹，看好文件路径是否正确，在执行删除，以免造成删除
+上面使用了**rm -rf命令，一定要谨慎**，pwd看看是否进入了相关文件夹，看好文件路径是否正确，再执行删除，以免造成删除
 了其他文件。
 
 清空浏览器图片缓存，重新刷新页面即可。

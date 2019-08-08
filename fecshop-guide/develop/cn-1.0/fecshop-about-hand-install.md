@@ -63,7 +63,7 @@ vagrant box的方式（不建议）：2017.6月做的box，以后**不再维护v
 
 ### 1、Linux环境配置：
 
-需要安装mongodb php mysq等等，详情参看文章：
+需要安装mongodb php mysql 等等，详情参看文章：
 [Fecshop 环境部署 以及 安装步骤](http://www.fancyecommerce.com/2017/03/06/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/)
 
 **注意**：
