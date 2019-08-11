@@ -1,14 +1,14 @@
-Fecshop-使用Mongodb
+Fecmall-使用Mongodb
 ============
 
 
-### Fecshop-使用Mongodb
+### Fecmall-使用Mongodb
 
 1.安装Mongodb
 
 2.安装php扩展 `php-mongodb`,   ！！！！注意，不是`php-mongo`，一定要看清楚
 
-3.Fecshop配置mongodb
+3.Fecmall配置mongodb
 
 打开文件：`@common/config/main-local.php`
 

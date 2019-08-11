@@ -1,7 +1,7 @@
-Fecshop-基础配置
+Fecmall-基础配置
 ===========
 
-> Fecshop 基础配置
+> Fecmall 基础配置
 
 
 ### 后台配置

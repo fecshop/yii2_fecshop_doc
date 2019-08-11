@@ -6,6 +6,21 @@
 > 目前中文部分用的是xunsearch，对于中小网站都没啥问题，
 > 后面会扩展用elasticSearch(目前还没有做)来做搜索工作。
 
+
+Fecshop-2.x更新说明
+-------------
+
+2版本更新后台配置
+
+
+![xx](images/af5.png)
+
+![xx](images/af6.png)
+
+Fecshop-1.x
+-------------
+
+
 ### 安装xunsearch
 
 http://www.fancyecommerce.com/2016/09/24/xunsearch-%e5%ae%89%e8%a3%85%ef%bc%8c%e4%bd%bf%e7%94%a8/

@@ -1,12 +1,13 @@
-Fecshop-2.x 安装
+Fecmall-2.x 安装
 ==============
 
-> 由于Fecshop在1版本上面的改动比较大，因此建议重新安装Fecshop-2.x，不建议从fecshop-1版本升级。
+> 由于Fecmall在1版本上面的改动比较大，因此建议重新安装Fecmall-2.x，不建议从Fecmall-1版本升级。
 
 
-### 下载
+下载 Fecmall-2.x 
+----------------
 
-1.Fecshop源文件下载
+### 1.Fecmall源文件下载
 
 1.1通过`composer`安装（**建议下载方式，方便升级**）
 
@@ -18,24 +19,28 @@ mv composer.phar /usr/local/bin/composer
 composer self-update
 ```
 
-1.2安装fecshop
+1.2安装Fecmall
+
+> Fecmall-2安装不需要安装：fxp/composer-asset-plugin, 所以 `composer global require "fxp/composer-asset-plugin:^1.4.4"` 不需要执行了
 
 ```
-composer global require "fxp/composer-asset-plugin:^1.4.4"
-composer create-project fancyecommerce/fecshop-app-advanced  fecshop 2.0.1
+composer create-project fancyecommerce/fecshop-app-advanced  fecshop 2.1.2
 cd fecshop
 ```
 
-2.通过百度网盘下载完整包（不推荐，无法通过composer进行升级）
+### 2.通过百度网盘下载完整包
+
+>不推荐，无法通过composer进行升级
 
 下载地址，https://pan.baidu.com/s/1hs1iC2C ， 下载`fecshop-2.x.x.zip` （请下载最高的版本）
 
 
-### 准备域名，以及nginx配置
+准备域名，以及nginx配置
+------------------
 
-1.域名准备
+### 1.域名准备
 
-> 如果是windows本地，可以在host文件中做域名指向127.0.0.1即可（打开文件：C:\Windows\System32\drivers\etc\hosts ，不熟悉的参看：http://www.fecshop.com/topic/1037）
+> 如果是windows本地，可以在host文件中做域名指向127.0.0.1即可（打开文件：C:\Windows\System32\drivers\etc\hosts ，不熟悉的参看：http://www.fecshop.com/topic/1037 ）
 
 
 Pc端：`appfront.fecshoptest.com`
@@ -52,7 +57,7 @@ H5端: `apphtml5.fecshoptest.com`
 
 
 
-2.nginx做路径指向
+### 2.nginx做路径指向
 
 >下面的`$root`代表fecshop的安装路径，将其缓存您安装的相应的路径即可
 
@@ -75,19 +80,20 @@ nginx需要做去掉`index.php`的配置，详细参考帖子：http://www.fecsh
 
 配置完成后，重启nginx
 
-### 安装
+安装 Fecmall-2.x 
+--------
 
-1.init 
+### 1.init 命令行初始化
 
 > window：运行`init.bat`，linux:运行 `./init`
 
-在fecshop根目录执行  `./init`,  然后命令提示符，填写 0 （develop开发模式）， yes 即可完成初始化
+在fecshop根目录执行  `./init`,  然后命令提示符，填写 `0` （develop开发模式）， `yes` 即可完成初始化
 
 log日志可以参看：http://www.fecshop.com/topic/2003
 
-2.初始化数据库
+### 2.初始化数据库
 
-2.1创建数据库`fecshop`
+2.1创建数据库`Fecmall`
 
 2.2配置填写：
 
@@ -96,7 +102,7 @@ log日志可以参看：http://www.fecshop.com/topic/2003
 ```
  'db' => [ 
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=127.0.0.1;dbname=fecshop',
+    'dsn' => 'mysql:host=127.0.0.1;dbname=fecmall',
     'username' => 'root',
     'password' => 'xxxxxx',
     'charset' => 'utf8',
@@ -116,15 +122,23 @@ log日志可以参看：http://www.fecshop.com/topic/2003
 
 2.4.1将`appimage`文件夹复制到`fecshop根目录`
 
-2.4.2将`fecshop.sql`导入到数据库`fecshop`中
+2.4.2将`fecshop.sql`导入到数据库`fecmall`中
 
 
 
-3.访问后台，也就是上面配置的域名：`appadmin.fecshoptest.com`
+### 3.访问后台
+
+也就是上面配置的域名：`appadmin.fecshoptest.com`
 
 初始账户密码：  `admin`  `admin123`
 
 右上角切换成`中文语言`。
+
+**首先配置图片域名** 
+
+网站配置-->基础配置-->基础配置  找到图片域名，填写您的图片域名，譬如：`//img.fancyecommerce.com`
+(前面不要加`http:`,这种方式http和https都可以调用图片url)
+
 
 3.1后台添加`appfront`(PC)配置，添加`store`
 
@@ -158,7 +172,7 @@ log日志可以参看：http://www.fecshop.com/topic/2003
 
 然后就可以访问：`appserver.fecshoptest.com` ，查看H5端了
 
-4.其他的配置
+### 4.其他的配置
 
 > 配置完`appserver.fecshoptest.com`，您可以安装vue和微信小程序等客户端
 

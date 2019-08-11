@@ -3,6 +3,19 @@ Fecshop 微信支付
 
 > 对支付平台的配置信息。
 
+Fecshop-2.x更新说明
+-------------
+
+2版本更新后台配置
+
+
+![xx](images/as12.png)
+
+![xx](images/as13.png)
+
+Fecshop-1.x
+-------------
+
 
 ### Fecshop 微信支付测试地址
 

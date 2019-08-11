@@ -4,6 +4,20 @@
 > fecshop是支持多store的，store一般是用来构建多语言站点，
 > 可以为每一个store指定不同的语言和url结构，设置不同的语言，默认货币,模板等。
 
+
+Fecshop-2.x更新说明
+-------------
+
+2版本更新为后台配置
+
+![xx](images/as4.png)
+
+
+
+Fecshop-1.x
+-------------
+
+
 ### 1.Store的配置：
 
 您可以在`@appfront/config/fecshop_local_services/Store.php`中配置Store

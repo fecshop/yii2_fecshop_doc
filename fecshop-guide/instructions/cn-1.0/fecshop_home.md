@@ -3,6 +3,20 @@ fecshop 首页
 
 > fecshop 首页，也就是home页，属于进入网站的主页面
 
+
+Fecshop-2.x更新说明
+-------------
+
+2版本更新为后台配置
+
+![xx](images/as6.png)
+
+
+
+Fecshop-1.x
+-------------
+
+
 ### 1.配置
 
 打开配置文件 `@fecshop/app/appfront/config/appfront.php`

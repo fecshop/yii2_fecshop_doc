@@ -1,7 +1,20 @@
 FecShop 缓存
 ===========
 
-fecshop 有整页缓存和局部缓存
+> fecshop 有整页缓存和局部缓存
+
+Fecshop-2.x更新说明
+-------------
+
+2版本更新后台配置
+
+
+![xx](images/af3.png)
+
+![xx](images/af4.png)
+
+Fecshop-1.x
+-------------
 
 
 ### 缓存刷新

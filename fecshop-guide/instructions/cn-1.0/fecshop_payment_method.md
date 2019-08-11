@@ -3,6 +3,23 @@ Fecshop 支付
 
 > 对支付平台的配置信息。
 
+
+Fecshop-2.x更新说明
+-------------
+
+2版本更新为后台配置
+
+
+![xx](images/as11.png)
+
+![xx](images/as12.png)
+
+![xx](images/as13.png)
+
+Fecshop-1.x
+-------------
+
+
 ### Payment支付配置文件
 
 Payment支付配置文件：`@common/config/fecshop_local_services/Payment.php`

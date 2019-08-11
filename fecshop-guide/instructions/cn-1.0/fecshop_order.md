@@ -3,6 +3,21 @@ Fecshop 订单
 
 > fecshop 订单指的是在fecshop下单后的订单信息。
 
+
+Fecshop-2.x更新说明
+-------------
+
+2版本更新后台配置
+
+
+![xx](images/af1.png)
+
+
+Fecshop-1.x
+-------------
+
+
+
 ### 订单配置
 
 #### 配置文件

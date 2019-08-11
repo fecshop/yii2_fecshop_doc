@@ -4,8 +4,21 @@ Fecshop 货币
 > fecsop 支持多货币
 
 
-货币配置
-----------
+Fecshop-2.x更新说明
+-------------
+
+2版本更新为后台配置
+
+![xx](images/as3.png)
+
+![xx](images/as2.png)
+
+
+Fecshop-1.x
+-------------
+
+### 货币配置
+
 
 您可以在@common/config/fecshop_local_services/Page.php中进行配置货币。
 

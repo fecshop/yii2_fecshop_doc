@@ -3,6 +3,19 @@ Fecshop 产品图片
 
 >  fecshop 产品图片的实现思路，有很多参考了magento的图片生成的思路
 
+
+Fecshop-2.x更新说明
+-------------
+
+2版本更新为后台配置
+
+
+![xx](images/as8.png)
+
+Fecshop-1.x
+-------------
+
+
 ### 1. 产品图片的存放路径
 
 在配置文件 @fecshop/config/services/Product.php 中可以看到如下代码：

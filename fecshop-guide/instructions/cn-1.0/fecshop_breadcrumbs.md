@@ -5,6 +5,18 @@ Fecshop breadcrumbs
 > 产品页面的菜单栏下面，显示当前的路径，譬如：
 > Home > women dress > summer lady beautiful red dress
 
+
+Fecshop-2.x更新说明
+-------------
+
+2版本更新后台配置
+
+产品，分类，购物车，下单页面的面包屑导航，可以在后台进行配置
+
+Fecshop-1.x
+-------------
+
+
 ### 配置：
 
 配置文件是：

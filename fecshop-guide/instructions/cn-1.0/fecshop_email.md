@@ -4,6 +4,20 @@ Fecshop 邮件
 > 当用户注册邮箱，下单，忘记密码等，都会给用户发送一封邮件，邮件部分
 > 支持多语言。
 
+Fecshop-2.x更新说明
+-------------
+
+2版本更新后台配置
+
+
+![xx](images/af2.png)
+
+
+Fecshop-1.x
+-------------
+
+
+
 ### SMTP配置文件为：
 
 `@common/config/fecshop_local_services/Email.php`

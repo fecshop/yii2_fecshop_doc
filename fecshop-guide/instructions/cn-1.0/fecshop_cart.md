@@ -6,6 +6,19 @@ Fecshop 购物车
 > 然后重新登录 
 > 账号后，购物车信息还是存在的。
 
+
+Fecshop-2.x更新说明
+-------------
+
+2版本更新为后台配置
+
+
+![xx](images/as10.png)
+
+Fecshop-1.x
+-------------
+
+
 购物车的配置信息：
 
 @fecshop/config/services/Cart.php

@@ -1,7 +1,7 @@
-Fecshop-使用redis
+Fecmall-使用redis
 ============
 
-> Fecshop默认是不需要redis的，您可以通过配置，使用redis
+> Fecmall默认是不需要redis的，您可以通过配置，使用redis
 
 ### 使用redis
 

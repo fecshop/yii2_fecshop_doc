@@ -4,6 +4,20 @@ Fecshop 手机检测跳转
 > 当手机访问pc端(appfront)url，可以通过设置自动跳转到手机html5（apphtml5）端 
 或者 vue端。
 
+Fecshop-2.x更新说明
+-------------
+
+2版本更新为后台配置
+
+菜单：网站配置-->Appfront(App)-> store配置
+
+
+![xx](images/as1.png)
+
+
+Fecshop-1.x
+-------------
+
 ### 配置设置
 
 `手机端`：html5 和 vue端 2个，我们可以通过配置的方式，来决定跳转到那个手机端

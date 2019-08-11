@@ -1,10 +1,10 @@
-Fecshop-添加Store
+Fecmall-添加Store
 ============
 
 ### 添加Store
 
 
-Fecshop-2.x的安装教程，默认只配置了一个store
+Fecmall-2.x的安装教程，默认只配置了一个store
 ，您可以配置多个store
 
 后台： 网站配置--> Appfront配置  --> Store配置

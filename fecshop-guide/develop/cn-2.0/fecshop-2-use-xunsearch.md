@@ -1,7 +1,7 @@
-Fecshop-使用Xunsearch
+Fecmall-使用Xunsearch
 ==============
 
-### Fecshop-使用Xunsearch
+### Fecmall-使用Xunsearch
 
 1.安装xunsearch
 
