@@ -8,7 +8,18 @@ Fecmall-使用Mongodb
 
 2.安装php扩展 `php-mongodb`,   ！！！！注意，不是`php-mongo`，一定要看清楚
 
-3.Fecmall配置mongodb
+3.安装Yii2 Mongodb扩展包: https://github.com/yiisoft/yii2-mongodb
+
+打开composer.json 添加：
+
+```
+"yiisoft/yii2-mongodb": "~2.1.7",
+```
+
+然后执行 `composer update`
+
+
+4.Fecmall配置mongodb
 
 打开文件：`@common/config/main-local.php`
 
@@ -28,7 +39,7 @@ Fecmall-使用Mongodb
 
 配置即可。
 
-4.如果使用mongodb搜索
+5.如果使用mongodb搜索
 
 需要同步数据到mongodb的搜索引擎
 

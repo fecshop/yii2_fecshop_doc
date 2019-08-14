@@ -10,6 +10,7 @@ FecMall2.0 开发说明
 ----------
 *  [Fecmall-2.x 介绍](fecshop-2-about-description.md)
 *  [Fecmall-2.x 安装](fecshop-2-about-hand-install.md)
+*  [Fecmall-2.x WAMP环境安装](fecshop-2-about-wamp-install.md)
 *  [Fecmall-2.x 升级](fecshop-2-about-update.md)
 *  [Fecmall-2.x 安装VUE](fecshop-2-vue-install.md)
 *  [Fecmall-2.x 安装微信小程序](fecshop-2-weixin-install.md)

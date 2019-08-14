@@ -21,16 +21,17 @@ composer self-update
 
 1.2安装Fecmall
 
-> Fecmall-2安装不需要安装：fxp/composer-asset-plugin, 所以 `composer global require "fxp/composer-asset-plugin:^1.4.4"` 不需要执行了
+如果是国外的服务器直接安装即可
+，如果是国内的服务器，建议切换阿里云的composer源，参看：http://www.fecmall.com/topic/2037
 
 ```
-composer create-project fancyecommerce/fecshop-app-advanced  fecshop 2.1.2
+composer create-project fancyecommerce/fecshop-app-advanced  fecshop 2.1.4
 cd fecshop
 ```
 
-### 2.通过百度网盘下载完整包
+### 2.通过百度网盘下载完整包（QQ群文件也可以下载）
 
->不推荐，无法通过composer进行升级
+>不推荐，无法通过composer进行升级, 建议composer下载失败的使用。
 
 下载地址，https://pan.baidu.com/s/1hs1iC2C ， 下载`fecshop-2.x.x.zip` （请下载最高的版本）
 
@@ -117,7 +118,7 @@ log日志可以参看：http://www.fecshop.com/topic/2003
 
 2.4添加测试数据
 
-产品测试数据图片百度网盘下载地址：https://pan.baidu.com/s/1hs1iC2C ，下载：fecshop-2.x测试数据.zip ，
+产品测试数据图片百度网盘下载地址：https://pan.baidu.com/s/1hs1iC2C ，下载：fecshop-2.x测试数据.zip （QQ群文件也可以下载）
 解压后，里面有`appimage`(测试产品图片) 和 `fecshop.sql`（测试sql文件） 
 
 2.4.1将`appimage`文件夹复制到`fecshop根目录`
@@ -139,6 +140,8 @@ log日志可以参看：http://www.fecshop.com/topic/2003
 网站配置-->基础配置-->基础配置  找到图片域名，填写您的图片域名，譬如：`//img.fancyecommerce.com`
 (前面不要加`http:`,这种方式http和https都可以调用图片url)
 
+![](images/ff1.png)
+
 
 3.1后台添加`appfront`(PC)配置，添加`store`
 
@@ -149,6 +152,9 @@ log日志可以参看：http://www.fecshop.com/topic/2003
 可以看到`store`列表，点击`id为1`的数据（激活状态），进行编辑，将域名更改成 `appfront.fecshoptest.com`，保存
 
 然后就可以访问：appfront.fecshoptest.com ，查看pc端了
+
+![](images/ff2.png)
+
 
 3.2配置Apphtml5
 
@@ -161,6 +167,9 @@ log日志可以参看：http://www.fecshop.com/topic/2003
 
 然后就可以访问：apphtml5.fecshoptest.com ，查看H5端了
 
+![](images/ff3.png)
+
+
 3.3配置Appserver
 
 
@@ -170,7 +179,10 @@ log日志可以参看：http://www.fecshop.com/topic/2003
 
 将 `Store Key` 更改成 `appserver.fecshoptest.com` 即可。
 
-然后就可以访问：`appserver.fecshoptest.com` ，查看H5端了
+
+![](images/ff5.png)
+
+Appserver 就可以为vue和微信小程序提供api了。
 
 ### 4.其他的配置
 
