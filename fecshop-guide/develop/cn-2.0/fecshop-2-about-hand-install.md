@@ -4,6 +4,15 @@ Fecmall-2.x 安装
 > 由于Fecmall在1版本上面的改动比较大，因此建议重新安装Fecmall-2.x，不建议从Fecmall-1版本升级。
 
 
+关于Fecmall-2.x 安装
+--------------------
+
+1.如果是windows安装，建议使用WAMP来安装，教程参看：[Fecmall-2.x WAMP环境安装 - 手把手系列](http://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecshop-2-about-wamp-install.html)
+
+2.如果使用docker安装，参看文档：[Fecmall Docker 安装](https://github.com/fecshop/yii2_fecshop_docker)
+
+3.如果想在linux上面直接安装，可以参看本章下面的教程
+
 下载 Fecmall-2.x 
 ----------------
 
@@ -24,8 +33,10 @@ composer self-update
 如果是国外的服务器直接安装即可
 ，如果是国内的服务器，建议切换阿里云的composer源，参看：http://www.fecmall.com/topic/2037
 
+> 请将2.1.6 改成最近的fecmall版本，这里查看最新的版本号： https://github.com/fecshop/yii2_fecshop/releases
+
 ```
-composer create-project fancyecommerce/fecshop-app-advanced  fecshop 2.1.4
+composer create-project fancyecommerce/fecshop-app-advanced  fecshop 2.1.6
 cd fecshop
 ```
 

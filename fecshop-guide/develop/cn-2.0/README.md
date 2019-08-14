@@ -20,7 +20,7 @@ Fecmall 帮助
 *  [Fecmall-基础配置](fecshop-2-base-config.md)
 *  [Fecmall-Service数据库配置](fecshop-2-service-database.md)
 *  [Fecmall-搜索引擎配置](fecshop-2-search-engine.md)
-*  [Fecmall-添加Store](fecshop-2-add-store.md)
+*  [Fecmall-添加多语言Store](fecshop-2-add-store.md)
 *  [Fecmall-使用redis](fecshop-2-use-redis.md)
 *  [Fecmall-使用Mongodb](fecshop-2-use-mongo.md)
 *  [Fecmall-使用Xunsearch](fecshop-2-use-xunsearch.md)
