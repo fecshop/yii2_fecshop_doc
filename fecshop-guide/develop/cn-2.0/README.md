@@ -40,9 +40,11 @@ Fecmall开发者
 *  [Fecmall-开发者中心](fecmall-addons-developer-center.md)
 *  [Fecmall-应用安装和加载原理](fecmall-addons-developer.md)
 *  [Fecmall-应用Config文件](fecmall-addons-developer-config-example.md)
-*  [Fecmall-Furnilife应用实例讲解](fecmall-addons-developer-furnilife-example.md)
-*  [Fecmall-开发应用以及发布](fecmall-addons-developer-add.md)
 *  [Fecmall-应用初始化工具](fecmall-addons-developer-init-tools.md)
+*  [Fecmall-开发应用以及发布](fecmall-addons-developer-add.md)
+*  [Fecmall-Furnilife应用实例讲解](fecmall-addons-developer-furnilife-example.md)
+*  [Fecmall-开发应用赚取RMB](fecmall-addons-developer-earn-rmb.md)
+
 
 
 

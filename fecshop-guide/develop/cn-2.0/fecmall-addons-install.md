@@ -16,9 +16,13 @@ FecMall应用市场
 ![](images/t1.png)
 
 
-5.用户安装FecMall电商系统，登陆admin后台，即可看到我的应用列表
+5.用户安装FecMall电商系统，登陆fecmall admin后台，点击应用市场，登陆用户（注意：是fecmall应用市场的注册账户）
 
-![](images/z14.png)
+![](images/zz91.png)
+
+登陆成功后，即可看到我的应用列表：
+
+![](images/zz92.png)
 
 6.用户点击安装，即可安装应用
 
