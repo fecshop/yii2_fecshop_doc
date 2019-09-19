@@ -33,10 +33,14 @@ composer self-update
 如果是国外的服务器直接安装即可
 ，如果是国内的服务器，建议切换阿里云的composer源，参看：http://www.fecmall.com/topic/2037
 
+**请将2.1.6 改成最近的fecmall版本 **
+
+**请将2.1.6 改成最近的fecmall版本 **
+
 > 请将2.1.6 改成最近的fecmall版本，这里查看最新的版本号： https://github.com/fecshop/yii2_fecshop/releases
 
 ```
-composer create-project fancyecommerce/fecshop-app-advanced  fecshop 2.2.1
+composer create-project fancyecommerce/fecshop-app-advanced  fecshop 2.1.6
 cd fecshop
 ```
 
