@@ -6,7 +6,7 @@ Fecmall-2.x 安装
 [Fecmall-2.x 安装](fecshop-2-about-hand-install.md)
  和 [Fecmall-2.x WAMP环境安装](fecshop-2-about-wamp-install.md)
 
-多种针对性安装方式
+多种针对性安装方式（具体环境）
 -------
  
 1.对于熟悉docker的，想要使用docker安装fecmall安装，参看：https://github.com/fecshop/yii2_fecshop_docker
@@ -15,12 +15,18 @@ Fecmall-2.x 安装
 [Fecmall WAMP环境安装](fecshop-2-3-about-wamp-install.md)
 ,该教程为手把手系列
 
-3.如果是**宝塔用户**，可以参看教程：http://www.fecmall.com/topic/2156
+3.宝塔用户，如果使用apache，请参看手把手安装教程 [FecMall 宝塔Apache安装](http://www.fecmall.com/doc/fecshop-guide/instructions/cn-2.0/guide-fecmall-bt-apache-install.html)
 
-4.下面是标准通用安装教程。
+4.宝塔用户，如果使用nginx，请参看手把手安装教程 [FecMall 宝塔Nginx安装](http://www.fecmall.com/doc/fecshop-guide/instructions/cn-2.0/guide-fecmall-bt-nginx-install.html)
+
+5.如果是Phpstudy用户，可以参看`@cg0134`分享的[phpstudy本地安装fecmall](http://www.fecmall.com/topic/2157)
+
+6.下面是标准通用安装教程。
  
+ 标准安装方式
+ ----------------
  
- **下面是通用教程（标准）：**
+下面是通用教程（标准）
 
 下载Fecmall
 -----------------

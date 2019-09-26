@@ -12,7 +12,6 @@ FecMall 使用说明
 *  [FecMall 宝塔Nginx安装](fecmall-bt-nginx-install.md)
 
 
-
 关键概念介绍：
 ---------
 *  [Fecmall 配置结构](fecmall_config_construction.md)
