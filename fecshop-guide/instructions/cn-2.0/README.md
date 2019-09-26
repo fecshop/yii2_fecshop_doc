@@ -5,9 +5,12 @@ FecMall 使用说明
 
 2016 (c) FecMall Software LLC。
 
-简介：
+简介和帮助：
 ---------
 *  [FecMall 介绍](fecmall-about-description.md)
+*  [FecMall 宝塔Apache安装](fecmall-bt-apache-install.md)
+*  [FecMall 宝塔Nginx安装](fecmall-bt-nginx-install.md)
+
 
 
 关键概念介绍：
