@@ -235,16 +235,21 @@ Yii2本身是有多语言翻译功能，但是缺少重写机制，我进行了�
 我整理的一篇关于classMap的原理文章：
 [通过配置的方式重写某个Yii2 文件 或第三方扩展文件](http://www.fancyecommerce.com/2016/10/13/%e9%80%9a%e8%bf%87%e9%85%8d%e7%bd%ae%e7%9a%84%e6%96%b9%e5%bc%8f%e9%87%8d%e5%86%99%e6%9f%90%e4%b8%aayii2-%e6%96%87%e4%bb%b6-%e6%88%96%e7%ac%ac%e4%b8%89%e6%96%b9%e6%89%a9%e5%b1%95%e6%96%87%e4%bb%b6/)
 
+Fecmall对Yii2 classMap的配置是在配置文件：`@app/config/fecshop_local.php`（@app代指各个入口，其中@common是公用入口）
+
 看完了上面的文章，您应该就会明白`classMap`是个啥玩意，下面
 说一下fecmall中的使用。还是以appfront举例：
 
-`@appfront/config/YiiClassMap.php`文件：
+`@appfront/config/fecshop_local.php`文件：
 
 ```
-<?php
-return [
-	//'fecshop\app\appfront\helper\test\My' => '@appfront/helper/My.php',   
-	
+/**
+ * Yii框架的class rewrite重写，这个一般不用，您可以通过这个重写基本上任何的class，但是这种方式是替换，重写的class无法继承原来的class，因此是替换的方式重写
+ * Yii framework class rewrite: 文档：http://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-rewrite-func.html#7yii2classclassmapfecmall
+ */
+$yiiClassMap = [
+    // 下面是一个重写的格式例子
+    'fecshop\app\apphtml5\helper\test\My' => '@apphtml5/helper/My.php'
 ];
 ```
 
@@ -272,19 +277,28 @@ use的类就变成了 `@appfront/helper/My.php`，而不是`@fecshop/app/appfron
 > ,进行重新指向，这是一种推荐的重写方式，比classMap要好很多，
 > 重写后的class是可以继承被重写的class的，这样对于升级会好很多。
 
+Fecmall对RewriteMap的配置是在配置文件：`@app/config/fecshop_local.php`（@app代指各个入口，其中@common是公用入口）
 
-打开 @common/config/YiiRewriteMap.php ，您可以通过配置
+
+例子：打开 `@appfront/config/fecshop_local.php` ，您可以通过配置
 
 ```
-return [
+/**
+ * Fecmall model 和 block 重写，可以在RewriteMap中配置
+ * 文档地址：http://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-rewrite-func.html#8rewritemapblock-model
+ */
+$fecRewriteMap = [
+    // 下面是一个重写block的格式例子
+    '\fecshop\app\appfront\modules\Cms\block\home\Index'  => '\fectfurnilife\appfront\modules\Cms\block\home\Index',
     /**
+     * 下面是一个重写model的例子
      * \fecshop\models\mongodb\Category 为原来的类
      * \appfront\local\local_models\mongodb\Category 为重写后的类
      * 重写后的类可以继承原来的类。
      */
-    //'\fecshop\models\mongodb\Category'  => '\appfront\local\local_models\mongodb\Category',
+    '\fecshop\models\mongodb\Category'  => '\appfront\local\local_models\mongodb\Category',
 ];
-```
+
 
 `\fecshop\models\mongodb\Category` : fecshop 核心包的类文件
 
