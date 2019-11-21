@@ -248,7 +248,7 @@ Fecmall对Yii2 classMap的配置是在配置文件：`@app/config/fecshop_local.
  * Yii framework class rewrite: 文档：http://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-rewrite-func.html#7yii2classclassmapfecmall
  */
 $yiiClassMap = [
-    // 下面是一个重写的格式例子
+    // 下面是一个重写的格式例子，`fecshop\app\apphtml5\helper\test\My`是fecshop的源文件，`@apphtml5/helper/My.php`替换的本地二开文件。
     'fecshop\app\apphtml5\helper\test\My' => '@apphtml5/helper/My.php'
 ];
 ```
@@ -288,7 +288,7 @@ Fecmall对RewriteMap的配置是在配置文件：`@app/config/fecshop_local.php
  * 文档地址：http://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-rewrite-func.html#8rewritemapblock-model
  */
 $fecRewriteMap = [
-    // 下面是一个重写block的格式例子
+    // 下面是一个重写block的格式例子，`\fecshop\app\appfront\modules\Cms\block\home\Index`是fecshop的源文件，`\fectfurnilife\appfront\modules\Cms\block\home\Index`替换的本地二开文件。
     '\fecshop\app\appfront\modules\Cms\block\home\Index'  => '\fectfurnilife\appfront\modules\Cms\block\home\Index',
     /**
      * 下面是一个重写model的例子
