@@ -97,7 +97,7 @@ Fecmall手把手系列
 *  [Fecmall 订单货运物流追踪号](fecmall_order_tracking_number.md)
 *  [Fecmall 添加新的订单状态](fecmall_order_add_new.md)
 *  [Fecmall 为什么要引入redis mongodb](fecmall_mongodb_redis.md)
-
+*  [Fecmall 如何添加规格属性(自定义属性)](fecmall_add_attr_custom_option.md)
 
 
 Fecmall后台功能介绍

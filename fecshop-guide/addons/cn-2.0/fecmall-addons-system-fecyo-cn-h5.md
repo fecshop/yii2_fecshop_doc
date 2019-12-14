@@ -12,7 +12,7 @@ Fecmall-FecYo-中文国内电商商城系统
 
 Pc Demo地址：http://fecyo.fecshop.com/cn
 
-H5 Demo地址：正在开发中
+H5 Demo地址：http://fecyoh5.fecshop.com/cn
 
 下载地址：http://addons.fecmall.com/27944278
 
@@ -208,7 +208,7 @@ New Product Skus：`testest,p10001-kahaki-xxl-t4,222212,22221,p10001-kahaki-xxl,
 2.3
 
 
-标识符：pc-home-big-img
+标识符：pc-home-hot-top
 
 标题：PC：首页潮流上装
 
@@ -731,7 +731,15 @@ New Product Skus：`testest,p10001-kahaki-xxl-t4,222212,22221,p10001-kahaki-xxl,
 
 设置：`Priority`,`Fecyo`的优先级需要高于`fectb`
 
+4.Store设置
 
+4.1网站配置 --> Appfront配置  -->  Store配置
+
+编辑，弹出框，第三方模板路径： @fecyo/app/appfront/theme/fecyo
+
+4.2网站配置 --> Apphtml5配置  -->  Store配置
+
+编辑，弹出框，第三方模板路径： @fecyo/app/apphtml5/theme/fecyo
 
 保存完成后，这里就配置好了
 
