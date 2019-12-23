@@ -10,15 +10,18 @@ FecMall 多商户系统
 
 经销商操作手册
 ----------
-
+*  [经销商产品管理](fecmall-bbc-bdmin-product.md)
 *  [经销商设置物流](fecmall-bbc-bdmin-shipping.md)
-
 
 
 平台商操作手册
 ----------
 
-*  [FecMall多商户平台后台](fecmall-bbc-admin-base.md)
+*  [Fecmall属性和属性组](fecmall-bbc-admin-attribute.md)
+*  [FecMall供应商管理](fecmall-bbc-admin-bdmin-manager.md)
+
+
+
 
 订单处理流程：
 ----------

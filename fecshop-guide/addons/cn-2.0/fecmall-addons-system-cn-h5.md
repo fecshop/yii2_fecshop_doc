@@ -19,7 +19,24 @@ Pc Demo地址：http://fectb.fecshop.com/cn
 
 ### 后台配置
 
+1.快递鸟，新人专享优惠券设置
+
+
+
 ![](images/a51.png)
+
+2.store模板路径设置
+
+
+2.1Appfront设置: 第三方模板路径填写：`@fectb/app/appfront/theme/fectb`
+
+![](images/yy12.png)
+
+
+2.2Apphtml5设置: 第三方模板路径填写：`@fectb/app/apphtml5/theme/fectb`
+
+![](images/yy13.png)
+
 
 ### 系统功能简介
 

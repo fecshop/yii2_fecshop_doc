@@ -31,6 +31,7 @@ FecMall 使用说明
 *  [Fecmall 产品](fecmall_product.md)
 *  [Fecmall 产品图片](fecmall_product_image.md)
 *  [Fecmall 产品价格](fecmall_product_price.md)
+*  [Fecmall 产品分类批量上传](fecmall_category_product_mutil_upload.md)
 *  [Fecmall 库存](fecmall_stock.md)
 *  [Fecmall 评论](fecmall_product_review.md)
 *  [Fecmall 购物车](fecmall_cart.md)
