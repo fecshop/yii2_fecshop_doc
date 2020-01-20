@@ -89,13 +89,13 @@ Fecmall-阿里云OSS存储产品图片
 ### 补充
 
 
-如果遇到报错：阿里云oss，上传图片报错：ErrorCode: AccessDenied ErrorMessage: You have no right to access this object because of bucket acl.
+1.如果遇到报错：阿里云oss，上传图片报错：ErrorCode: AccessDenied ErrorMessage: You have no right to access this object because of bucket acl.
 
 参看：http://www.fecmall.com/topic/2297
 
 
 
-
+2.如果设置后不生效，可以刷新一下缓存（如果page cache 开启了）
 
 
 

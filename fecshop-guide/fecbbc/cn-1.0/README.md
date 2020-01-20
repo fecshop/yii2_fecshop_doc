@@ -21,6 +21,10 @@ FecMall 多商户系统
 *  [FecMall供应商管理](fecmall-bbc-admin-bdmin-manager.md)
 
 
+平台产品
+----------
+
+*  [fecbbc 淘宝模式和JD模式产品](fecmall-bbc-jd-taobao-product.md)
 
 
 订单处理流程：

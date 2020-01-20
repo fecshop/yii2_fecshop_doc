@@ -595,14 +595,31 @@ fecmall安装教程：[Fecmall-2.x安装教程](http://www.fecmall.com/doc/fecsh
 添加经销商账户，成功后，就可以去经销商后台登陆了
 
 
-3.2为产品设置经销商
+
+3.2淘宝模式产品数据初始化
+
+fecmall安装后，默认是fecmall的产品测试数据，由于fecbbc多商户添加了淘宝模式产品，需要对这些历史数据进行初始化数据处理，
+因此您需要执行一下初始化脚本
+
+> 如果您不想处理这些数据，您可以进入数据库，将`product_flat`表的产品数据清掉,`product_flat_qty`产品库存表数据清掉，
+产品分类关系表`category_product`清掉，然后后台新建淘宝模式产品即可
+
+
+```
+cd addons/fecmall/fecbbc/shell
+sh initTbProduct.sh
+```
+
+执行完后，可以在后台，产品管理部分，看到产品数据
+ 
+
+ 3.3为产品设置经销商,
 
 
 您可以在平台后台，产品管理部分，编辑产品，为产品设置经销商
 
 
 如果产品没有设置经销商，用户将不能将产品加入购物车。
-
 
 
 4.其他设置
@@ -612,6 +629,7 @@ fecmall安装教程：[Fecmall-2.x安装教程](http://www.fecmall.com/doc/fecsh
 平台后台：网站配置--> Appfront配置  --> 分类产品配置
 
 设置  `产品页面-显示面包屑导航`：`yes`
+
 
 
 

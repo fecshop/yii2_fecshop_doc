@@ -26,7 +26,7 @@ $application->run();
 2.1 Fecmall - Yii2 BootStrap（Yii2框架初始化）
 
 这个部分，主要是store的初始化，详细参看：
-[Fecmall Store初始化](Fecmall-init-sotre.md)
+[Fecmall Store初始化](fecmall-init-store.md)
 
 3.Fecmall - Request Url初始化
 ------------------

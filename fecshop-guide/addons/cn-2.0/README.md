@@ -37,14 +37,18 @@ Fecmall 应用系统
 *  [Fecmall-应用系统简介](fecmall-addons-system-about.md)
 *  [Fecmall系统-FecTb-中文国内电商商城系统](fecmall-addons-system-cn-h5.md)
 *  [Fecmall系统-FecYo-中文国内电商商城系统](fecmall-addons-system-fecyo-cn-h5.md)
+
+
+Fecmall 应用扩展
+--------------------
+
 *  [Fecmall扩展-Braintree支付方式](fecmall-addons-system-braintree-payment.md)
+*  [Fecmall扩展-Stripe支付方式](fecmall-addons-system-stripe-payment.md)
 *  [Fecmall扩展-阿里云OSS存储产品图片](fecmall-addons-alioss-product-image.md)
+*  [Fecmall扩展-七牛云OSS存储产品图片](fecmall-addons-qiniuoss-product-image.md)
 *  [Fecmall扩展-CDN-阿里云](fecmall-addons-cdn-alicdn.md)
-
-
-
-
-
-
+*  [Fecmall扩展-用户组折扣扩展](fecmall-addons-customer-group.md)
+*  [Fecmall扩展-Blog Cms博客扩展](fecmall-addons-cms-blog.md)
+*  [Fecmall扩展-淘宝模式产品扩展](fecmall-addons-taobao-product.md)
 
 

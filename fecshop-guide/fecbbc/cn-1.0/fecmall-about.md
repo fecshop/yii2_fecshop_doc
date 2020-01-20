@@ -60,7 +60,7 @@ H5商城入口：http://fecbbch5.fecshop.com/cn/
 ### 关于文档
 
 
-因为FecMall是在fecmall基础上进行的二次开发，因此，fecmall 部分参看 fecmall 的文档描述
+因为Fecbbc多商户系统，是在fecmall基础上进行的二次开发，独立扩展包（文件结构上相当于大插件扩展），因此，fecmall 部分参看 fecmall 的文档描述
 
 下面的文档内容是FecMall多商户系统的内容
 

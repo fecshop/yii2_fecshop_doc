@@ -1,6 +1,9 @@
 Fecmall 性能问题
 ===============
 
+
+Fecmall性能Ab压测：http://www.fecmall.com/topic/1573
+
 ### 硬件配置
 
 硬件配置当然是越快越好，内存越大越好，这个没得说哈，内存一定要够用。
@@ -72,6 +75,7 @@ update 的where条件中的字段索引命中的数据行越少，锁的数据�
 
 资料：[关于php mongodb的最大连接数](http://www.fecshop.com/topic/445)
 
+将mysql service改为mongodb servies，使用高并发的mongodb替代mysql，增强并发。
 
 注：上面的配置参数的优化，首先要了解相应的配置参数的含义，
 然后根据具体情况做优化配置，譬如，机器内存36G，那么可以把

@@ -12,6 +12,11 @@ Fecmall-CDN-阿里云
 
 可以将fecmall的web目录的`asset`文件夹下的静态，使用第三方Cdn, 通过独立的CDN域名进行访问加载静态资源，加快网站的加载速度
 
+### fecmall 通过CDN可以加速哪些资源？
+
+1.js，css，背景图，字体等css范畴类的静态资源
+
+2.产品图片
 
 
 
@@ -126,6 +131,8 @@ server {
 
 设置后，到这里就完成，对于apphtml5入口：http://fectbcdnh5.fecshop.com/assets ， 
 原理和appfront一致，参看步骤即可
+
+
 
 
 ### 测试

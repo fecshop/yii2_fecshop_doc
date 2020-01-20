@@ -48,6 +48,7 @@ appfront开启braintree支付
 
 ![](images/braintree2.png)
 
+apphtml5也需要开启braintree支付
 
 配置完成后，就可以去前端商城进行下单支付测试了
 
