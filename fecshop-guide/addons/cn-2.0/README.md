@@ -50,5 +50,25 @@ Fecmall 应用扩展
 *  [Fecmall扩展-用户组折扣扩展](fecmall-addons-customer-group.md)
 *  [Fecmall扩展-Blog Cms博客扩展](fecmall-addons-cms-blog.md)
 *  [Fecmall扩展-淘宝模式产品扩展](fecmall-addons-taobao-product.md)
+*  [Fecmall扩展-微信登陆,微信分享,手机帐号](fecmall-addons-phone-account.md)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

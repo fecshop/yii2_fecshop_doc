@@ -42,6 +42,48 @@ fecmall安装教程：[Fecmall-2.x安装教程](http://www.fecmall.com/doc/fecsh
 点击在线安装`fecbdc 多商户电商系统`
 
 
+4.1 Appfront设置store，为store添加模板路径
+
+后台Appfront store：`网站配置`--> `appfront配置` --> `store配置`
+
+> 注意：激活的store都需要设置，点击编辑，在编辑框 `第三方模板路径`中填写下面的内容
+
+```
+@fecbdc/app/appfront/theme/fecbdc,@fecbbc/app/appfront/theme/fecbbc
+```
+
+
+
+4.1 Apphtml设置store，为store添加模板路径
+
+后台Apphtml5 store：`网站配置`--> `apphtml5配置` --> `store配置`
+
+> 注意：激活的store都需要设置，点击编辑，在编辑框 `第三方模板路径`中填写下面的内容
+
+```
+@fecbdc/app/apphtml5/theme/fecbdc,@fecbbc/app/apphtml5/theme/fecbbc
+```
+
+
+
+
+
+5.设置应用优先级`priority`
+
+登陆平台后台：`应用中心` --> `应用管理` --> `已安装应用`
+
+fecbbc: `priority`  设置为 `1`
+
+fecbdc: `priority` 设置为 `2`
+
+
+
+
+
+
+
+
+
 
 
 

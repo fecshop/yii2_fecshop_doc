@@ -15,13 +15,20 @@ Fecmall-2.x 安装
 [Fecmall WAMP环境安装](fecshop-2-3-about-wamp-install.md)
 ,该教程为手把手系列
 
-3.宝塔用户，如果使用apache，请参看手把手安装教程 [FecMall 宝塔Apache安装](http://www.fecmall.com/doc/fecshop-guide/instructions/cn-2.0/guide-fecmall-bt-apache-install.html)
+3.对于**纯小白用户**线上linux安装，fecmall以宝塔插件的方式做了一键部署：
 
-4.宝塔用户，如果使用nginx，请参看手把手安装教程 [FecMall 宝塔Nginx安装](http://www.fecmall.com/doc/fecshop-guide/instructions/cn-2.0/guide-fecmall-bt-nginx-install.html)
+【fecmall宝塔控制面板安装文档：**一键部署，最新**】：[Fecmall-2.x 宝塔一键部署安装](fecshop-2-graphical-bt-install.md)
 
-5.如果是Phpstudy用户，可以参看`@cg0134`分享的[phpstudy本地安装fecmall](http://www.fecmall.com/topic/2157)
 
-6.下面是标准通用安装教程。
+【历史文档：手工部署，**废弃**】宝塔用户，如果使用apache，请参看手把手安装教程 [FecMall 宝塔Apache安装](http://www.fecmall.com/doc/fecshop-guide/instructions/cn-2.0/guide-fecmall-bt-apache-install.html)
+
+【历史文档：手工部署，**废弃**】宝塔用户，如果使用nginx，请参看手把手安装教程 [FecMall 宝塔Nginx安装](http://www.fecmall.com/doc/fecshop-guide/instructions/cn-2.0/guide-fecmall-bt-nginx-install.html)
+
+
+
+4.如果是Phpstudy用户，可以参看`@cg0134`分享的[phpstudy本地安装fecmall](http://www.fecmall.com/topic/2157)
+
+5.下面是标准通用安装教程。
  
  标准安装方式
  ----------------
@@ -48,20 +55,23 @@ composer self-update
 
 
 
-> 请将2.3.0 改成最近的fecmall版本，这里查看最新的版本号： https://github.com/fecshop/yii2_fecshop/releases
+> 请将2.4.5 改成最近的fecmall版本，这里查看最新的版本号： https://github.com/fecshop/yii2_fecshop/releases
 
-**请将2.3.0 改成最近的fecmall版本 **
+**请将2.4.5 改成最近的fecmall版本 **
 
 ```
-composer create-project fancyecommerce/fecshop-app-advanced  fecmall 2.3.0
+composer create-project fancyecommerce/fecshop-app-advanced  fecmall 2.4.5
 cd fecshop
 ```
 
-2.通过百度网盘下载完整包（QQ群文件也可以下载）
+2.直接下载完整包
 
-> 不推荐，无法通过composer进行升级, 建议composer下载失败的使用。
+> 不建议直接下载完整包，如果您网络不好，那么可以下载zip完整包，但是升级还是需要使用composer
 
-下载地址，https://pan.baidu.com/s/1hs1iC2C ， 下载`fecshop-2.x.x.zip` （请下载最高的版本）
+
+阿里OSS下载地址：https://fecmall-download.oss-cn-shenzhen.aliyuncs.com/download/fecmall-2.4.5.zip
+
+
 
 
 Nginx/Apache 域名配置
