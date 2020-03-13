@@ -622,9 +622,14 @@ sh initTbProduct.sh
 如果产品没有设置经销商，用户将不能将产品加入购物车。
 
 
-4.其他设置
+4.设置阿里云短信，微信登陆，微信H5页面分享等
 
-4.1产品详情开启面包屑导航
+
+此部分是集成的fecphone扩展，详细设置参看：http://www.fecmall.com/doc/fecshop-guide/addons/cn-2.0/guide-fecmall-addons-phone-account.html
+
+5.其他设置
+
+5.1产品详情开启面包屑导航
 
 平台后台：网站配置--> Appfront配置  --> 分类产品配置
 

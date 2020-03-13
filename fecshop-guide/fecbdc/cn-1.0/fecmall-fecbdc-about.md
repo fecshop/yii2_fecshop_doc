@@ -17,7 +17,7 @@ Fecbdc分销系统，是在fecbbc多商户系统进行的扩展，加入分销�
 pc demo：http://fecbdc.fecshop.com/cn 
 
 
-H5商城入口：http://fecbdch5.fecshop.com/cn/ （正在开发）
+H5商城入口：http://fecbdch5.fecshop.com/cn/
 
 经销商后台入口：暂不开放
 
