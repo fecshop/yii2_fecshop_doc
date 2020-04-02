@@ -18,10 +18,11 @@ Console脚本介绍
 *  [分销商未审核订单自动取消](fecmall-fecbdct-script-distribute-unaudit-order-cancel.md)
 
 
+需求接续
+---------------
 
 
-
-
+*  [fecmall-超市](fecmall-chaoshi.md)
 
 
 

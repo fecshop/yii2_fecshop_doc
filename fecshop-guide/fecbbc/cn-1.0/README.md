@@ -6,7 +6,7 @@ FecMall 多商户系统
 
 *  [关于FecMall](fecmall-about.md)
 *  [FecMall多商户安装](fecmall-install.md)
-
+*  [Fecmall微信登陆,微信分享,手机帐号](fecmall-addons-phone-account.md)
 
 经销商操作手册
 ----------
@@ -81,8 +81,10 @@ AppApi
 *  [供应商订单发货](fbbcbase-api-order-dispatch.md)
 
 
+Fecbbc优惠券
+---------
 
-
+*  [Fecbbc多商户优惠券](fecmall-fecbbc-coupon.md)
 
 
 

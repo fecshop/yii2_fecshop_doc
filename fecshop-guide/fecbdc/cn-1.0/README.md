@@ -14,6 +14,13 @@ FecMall Fecbdc多商户分销系统
 *  [FecMall Fecbdc 分销流程](fecmall-fecbdc-lc.md)
 *  [FecMall Fecbdc 分销价格公式计算](fecmall-fecbdc-price-compute.md)
 
+优惠券
+---------
+
+*  [FecMall Fecbdc 优惠券](fecmall-fecbdc-coupon.md)
+
+
+
 
 平台商操作手册
 ---------

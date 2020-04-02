@@ -63,7 +63,7 @@ FecMall 使用说明
 *  [Fecmall Assets](fecmall_assets.md)
 *  [Fecmall Error Handler](fecmall_error_handler.md)
 *  [Fecmall breadcrumbs](fecmall_breadcrumbs.md)
-
+*  [Fecmall 错误处理](fecmall_errors_process.md)
 
 Fecmall手把手系列
 -----------
@@ -100,7 +100,7 @@ Fecmall手把手系列
 *  [Fecmall 为什么要引入redis mongodb](fecmall_mongodb_redis.md)
 *  [Fecmall 如何添加规格属性(自定义属性)](fecmall_add_attr_custom_option.md)
 *  [Fecmall 本地开发添加js和css文件](fecmall_local_add_js_and_css.md)
-
+*  [Fecmall 如何使用postman测试Api](fecmall_api_postman.md)
 
 Fecmall后台功能介绍
 ----------

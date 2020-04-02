@@ -16,6 +16,12 @@ github地址： https://github.com/fecshop/vue_fecshop_appserver
 
 Fecmall-2版本弃用`fecshop-uuid`
 
+### 1.测试api的工具 postman
+
+推荐使用google开发的postman工具，来进行api的测试，详细参看帮助文档：[Fecmall 如何使用postman测试Api](http://www.fecmall.com/doc/fecshop-guide/instructions/cn-2.0/guide-fecmall_api_postman.html)
+
+
+
 ### 2.获取登录 access-token
 
 用户登录，访问的是` @fecshop/app/appserver/modules/Customer/controllers/LoginController.php`

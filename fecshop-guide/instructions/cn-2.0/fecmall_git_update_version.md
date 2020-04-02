@@ -45,8 +45,100 @@
 
 
 
+### 关于fecmall的`gitignore`文件说明
 
 
+fecmall再开发过程中，为了让某些文件不上传到github上面，加入了一些`.gitignore`文件，下面进行说明
+
+`.gitignore`是`git`在文件提交，进行某些文件的忽略的设置，关于`gitignore`的语法自行搜索
+
+##### 您需要进行修改的`.gitignore`列表（根据自身情况，自行修改）
+
+```
+.gitignore  // 根目录
+./addons/.gitignore  // 应用扩展文件夹
+
+./appadmin/.gitignore  
+./appadmin/config/.gitignore
+./appadmin/web/.gitignore
+
+./appapi/.gitignore
+./appapi/config/.gitignore
+./appapi/web/.gitignore
+
+./appbdmin/.gitignore
+./appbdmin/config/.gitignore
+./appbdmin/web/.gitignore
+
+./appfront/.gitignore
+./appfront/config/.gitignore
+./appfront/web/.gitignore
+./appfront/web/语言文件夹/.gitignore   // 具体语言,如果没有，则忽略
+./appfront/web/.gitignore
+
+./apphtml5/.gitignore
+./apphtml5/config/.gitignore
+./apphtml5/web/.gitignore
+
+./appserver/.gitignore
+./appserver/config/.gitignore
+./appserver/web/.gitignore
+
+./common/config/.gitignore
+./console/config/.gitignore
+```
+
+
+##### 详细说明
+
+1.根目录的`.gitignore`文件
+
+这里将`vendor`文件加入进去了，如果您想把`vendor`文件加入`git`，那么可以去掉`vendor`
+
+2.应用扩展目录：`./addons/.gitignore`
+
+```
+*
+!.gitignore
+```
+
+应用市场安装的扩展都在`./addons` 文件夹下，默认不提交到git里面，如果您想提交该文件夹下的文件到`git`,自行修改
+
+3.各个入口的`.gitignore`文件，下面以`appfront`为例子说明，其他的入口（apphtml5，appadmin，appserver，appapi等）和这个类型
+
+```
+./appfront/config/.gitignore
+`./appfront/web/.gitignore`
+`./appfront/web/fr/.gitignore`   // 具体语言
+./appfront/.gitignore
+```
+
+
+3.1appfront入口的配置部分: `./appfront/config/.gitignore`
+
+```
+main-local.php
+params-local.php
+```
+
+这两个文件是入口的本地配置部分，关于这两个配置文件，可以将其添加到git，也可以去除，根据自己情况
+
+3.1.1对于文件`./appfront/config/main-local.php`的配置部分`'cookieValidationKey' => 'FoOwzm-xxxxxxxxxxxxxxx',`，这个是在fecmall安装的时候生成的key，为了提高cookie的安全性，因此最好是本地和线上用不同的值（看自身情况决定）
+
+3.1.2对于文件`./appfront/config/params-local.php`，这个目前没有什么配置，您可以将其放入到git里面
+
+3.2appfront入口的web目录部分：`./appfront/web/.gitignore`
+
+里面是web路径下的`gitignore`配置，根据自身情况，自行决定
+
+另外，对于多语言部分，如果您需要用到，譬如`fr`语言`./appfront/web/fr/.gitignore`，那么您也需要配置一下，让其别忽略一些文件
+
+3.3./appfront/.gitignore，可以将里面的内容去掉。
+
+
+4.其他的入口，和appfront类型，这里不做说明
+
+fecmall的数据库配置文件是在 `./common/config/main-local.php`文件里面，对应`./common/config/.gitignore`,这个文件是不应该提交到git里面的（线上和本地的数据库配置不同）
 
 
 

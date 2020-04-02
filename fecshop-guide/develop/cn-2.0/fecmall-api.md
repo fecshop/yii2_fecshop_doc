@@ -6,11 +6,19 @@ Fecshop Api 介绍和配置
 > 等等
 
 
+### 测试api的工具 postman
+
+推荐使用google开发的postman工具，来进行api的测试，详细参看帮助文档：[Fecmall 如何使用postman测试Api](http://www.fecmall.com/doc/fecshop-guide/instructions/cn-2.0/guide-fecmall_api_postman.html)
+
+
+
+
 ### 配置：
 
 fecshop appapi的配置文件为：`@fecshop/app/appapi/config/appapi.php`
 
 本地appapi的配置文件路径为：`@appapi/config/fecshop_local.php`
+
 
 **1.速度控制**
 
