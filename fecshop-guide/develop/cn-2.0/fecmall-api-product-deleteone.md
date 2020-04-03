@@ -1,4 +1,4 @@
-Fecshop Api 产品 DeleteOne
+Fecmall Api 产品 DeleteOne
 =========================
 
 > Api描述：根据传递的id，删除一行product数据

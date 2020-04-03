@@ -77,6 +77,7 @@ Fecmall Appapi 入口
 *  [Fecmall Api 产品 AddOne](fecmall-api-product-addone.md)
 *  [Fecmall Api 产品 UpdateOne](fecmall-api-product-updatene.md)
 *  [Fecmall Api 产品 DeleteOne](fecmall-api-product-deleteone.md)
+*  [Fecmall Api 产品 更新库存](fecmall-api-product-update-qty.md)
 *  [Fecmall Api 分类 List](fecmall-api-category.md)
 *  [Fecmall Api 分类 FetchOne](fecmall-api-category-fetchone.md)
 *  [Fecmall Api 分类 AddOne](fecmall-api-category-addone.md)

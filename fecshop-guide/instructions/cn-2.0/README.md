@@ -101,6 +101,9 @@ Fecmall手把手系列
 *  [Fecmall 如何添加规格属性(自定义属性)](fecmall_add_attr_custom_option.md)
 *  [Fecmall 本地开发添加js和css文件](fecmall_local_add_js_and_css.md)
 *  [Fecmall 如何使用postman测试Api](fecmall_api_postman.md)
+*  [Fecmall 如何隐藏后台（appadmin）的菜单](fecmall_appadmin_menu_display.md)
+
+
 
 Fecmall后台功能介绍
 ----------

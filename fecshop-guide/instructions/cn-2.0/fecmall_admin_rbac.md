@@ -286,4 +286,10 @@ https://github.com/fecshop/yii2_fecshop/blob/master/app/appadmin/modules/Catalog
 因此，对于内容权限的控制，是有代码侵入性的，对于url_key这种url的资源的权限控制，是没有代码侵入性的。
 
 
+### fecmall原有的后台菜单的隐藏
+
+
+在菜单配置加入 `'active' => false,`，即可隐藏掉，详细参看：[Fecmall 如何隐藏后台（appadmin）的菜单](fecmall_appadmin_menu_display.md)
+
+
 
