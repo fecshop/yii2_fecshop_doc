@@ -452,10 +452,10 @@ New Product Skus：`testest,p10001-kahaki-xxl-t4,222212,22221,p10001-kahaki-xxl,
 			<div class="about-us">                    
 				<div class="left-flag">                                                          
 					<a href="" target="_blank" rel="nofollow">
-                        <img class="lazyload" src="{{imgBaseUrl}}/images/lazyload.gif" data-src="{{imgBaseUrl}}/addons/fecyo/credit-flag3.png" alt="" />
+                        <img  src="{{imgBaseUrl}}/addons/fecyo/credit-flag3.png" alt="" />
                     </a>
                     <a href="" target="_blank" rel="nofollow">
-                        <img class="lazyload" src="{{imgBaseUrl}}/images/lazyload.gif" data-src="{{imgBaseUrl}}/addons/fecyo/isc2.png" alt="" />
+                        <img  src="{{imgBaseUrl}}/addons/fecyo/isc2.png" alt="" />
                     </a>                    
 				</div>                    
 				<p class="links">                        

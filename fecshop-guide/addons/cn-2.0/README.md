@@ -53,7 +53,7 @@ Fecmall 应用扩展
 *  [Fecmall扩展-微信登陆,微信分享,手机帐号](fecmall-addons-phone-account.md)
 *  [Fecmall扩展-ElasticSearch搜索扩展](fecmall-addons-elasticsearch.md)
 *  [Fecmall扩展-分类产品翻译扩展](fecmall-addons-translate-product-and-category.md)
-
+*  [Fecyo扩展-站内余额和站内积分](fecyo-addons-wallet-and-point.md)
 
 
 

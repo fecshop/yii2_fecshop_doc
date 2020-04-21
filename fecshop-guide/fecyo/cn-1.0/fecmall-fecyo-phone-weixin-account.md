@@ -51,13 +51,6 @@ appfront，pc入口，在手机账户登陆的基础商，加入了`微信扫码
 4.3产品分享：可以在后台自定义微信分享的  描述，图片使用产品的主图，title使用产品的name
 
 
-### 安装扩展
-
-1.应用市场扩展购买地址：http://addons.fecmall.com/61267738
-
-2.购买后，在后台应用中心在线安装即可，关于应用市场的使用，可以参看：[Fecmall 应用市场文档](http://www.fecmall.com/doc/fecshop-guide/addons/cn-2.0/guide-README.html)
-
-
 
 ### 手机账户 - 申请阿里云通信服务
 
