@@ -57,7 +57,11 @@ Console脚本
 *  [Fecyo 用户订单自动收货](fecmall-fecyo-customer-order-auto-received.md)
 
 
-
+微信小程序
+----------
+*  [Fecyo微信小程序介绍](fecmall-fecyo-micro-program-about.md)
+*  [Fecyo微信小程序初始安装配置](fecmall-fecyo-micro-program-config.md)
+*  [Fecyo微信小程序截图展示](fecmall-fecyo-micro-program-demo.md)
 
 
 

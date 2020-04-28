@@ -7,6 +7,14 @@ FecMall Fecyo 首页Banner以及静态块配置
 ### Fecyo 首页Banner以及静态块配置
 
 
+首先，fecyo pc入口的产品页面，需要开启面包屑导航才能版面正常
+
+后台：`网站配置` --> `Appfront配置`  --> `分类产品配置 ` 
+
+将 `产品页面-显示面包屑导航` 设置成 `Yes`即可
+
+
+![](images/aaa.png)
 
 1.参数配置
 
