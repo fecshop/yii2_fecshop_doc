@@ -14,7 +14,8 @@ Fecyo在pc + h5入口的基础上，加入了微信小程序入口，提供api�
 
 微信小程序Github地址：https://github.com/fecshop/fecyo_wx_micro_program
 
+Fecyo微信小程序线上演示：（微信扫码即可查看）
 
-
+![](images/gh_cbfe7e8cdbe1_344.jpg)
 
 

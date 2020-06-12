@@ -15,11 +15,6 @@ FecMall Fecyo 中文单商户B2C商城
 详细参看`fecyo开源协议`：http://www.fecmall.com/license
 
 
-![](images/free.png)
-
-
-
-
 
 ### Fecyo 中文单商户B2C商城演示
 
@@ -40,7 +35,9 @@ H5 Demo地址：http://fecyoh5.fecshop.com/cn
 
 `微信H5前端商城入口`：H5浏览器访问入口，支持手机浏览器访问，手机号登陆，以及微信H5静默登陆，微信分享等等，适合做公众号商城
 
-`微信小程序入口`：暂无，后期开发完善。
+`微信小程序入口`：Fecyo微信小程序线上演示：（微信扫码即可查看）
+
+![](images/gh_cbfe7e8cdbe1_344.jpg)
 
 `后台入口`：管理人员管理的后台入口，可以在里面进行产品发布，用户管理，订单管理等等操作
 

@@ -31,14 +31,6 @@ Fecmall开发者中心
 
 
 
-Fecmall 应用系统
---------------------
-
-*  [Fecmall-应用系统简介](fecmall-addons-system-about.md)
-*  [Fecmall系统-FecTb-中文国内电商商城系统](fecmall-addons-system-cn-h5.md)
-*  [Fecmall系统-FecYo-中文国内电商商城系统](fecmall-addons-system-fecyo-cn-h5.md)
-
-
 Fecmall 应用扩展
 --------------------
 
@@ -54,7 +46,7 @@ Fecmall 应用扩展
 *  [Fecmall扩展-ElasticSearch搜索扩展](fecmall-addons-elasticsearch.md)
 *  [Fecmall扩展-分类产品翻译扩展](fecmall-addons-translate-product-and-category.md)
 *  [Fecyo扩展-站内余额和站内积分](fecyo-addons-wallet-and-point.md)
-
+*  [Cashback - Amazon导购返现独立站](fecyo-addons-amazon-cashback.md)
 
 
 

@@ -287,122 +287,12 @@ flush privileges;
 
 
 
+### Fecmall界面安装
 
-Fecmall界面安装
-----------------
 
-1.在上面的步骤中，配置了apache, 您配置好域名后，appfront对应域名配置为：`appfront.fecshoptest.com`   >  `$root/appfront/web/`
+准备好这些后，就可以通过web浏览器界面安装fecmall了，http://bt.appfront.fecshop.com/install` （换成您自己的域名）
 
-安装入口文件为：`$root/appfront/web/install.php`
-, 打开安装地址： http://appfront.fecshoptest.com/install.php （替换成您自己的域名）
-
-
-![](images/da1.png)
-
-
-
-2.填写mysql的配置，点击提交
-
-![](images/da2.png)
-
-提交后，如图：
-
-![](images/da11.png)
-
-mysql的配置写入了配置文件：`@common/config/main-local.php`
-
-点击按钮： `进行数据表初始化`，需要一段时间执行（请耐心等待），执行完成后的界面如下：
-
-
-![](images/da12.png)
-
-
-
-点击`测试产品数据安装`，完成后界面（如果不想安装测试数据，可以点击`跳过`按钮）
-
-![](images/da13.png)
-
-
-
-点击`下一步`按钮，进入完成安装界面
-
-![](images/da15.png)
-
-
-您可以进入mysql查看一下数据表是否已经创建，然后查看一下`product_flat`表里面是否有数据，进行数据库初始化以及
-测试数据安装成功确认。
-
-
-
-3.您还需要进行如下的步骤：
-
-3.1需要设置`安全权限`（根目录执行，win不需要执行）：`chmod 644 common/config/main-local.php`
-
-3.2删除安装文件 install.php（**为了安全，一定要删除掉**）(文件路径为：`appfront/web/install.php`),
-
-
-Fecmall访问后台，进行后台配置
------------------------
-
-也就是上面配置的域名：`appadmin.fecshoptest.com`
-
-初始账户密码：  `admin`  `admin123`
-
-右上角切换成`中文语言`。
-
-**首先配置图片域名** 
-
-`网站配置`-->`基础配置`-->`基础配置`  找到`图片域名`，填写您的图片域名，譬如：`//img.fecshoptest.com`
-(前面不要加`http:`,这种方式http和https都可以调用图片url,将该域名替换成您自己的域名)
-
-![](images/ff1.png)
-
-3.1后台添加`appfront`(PC)配置，添加`store`
-
-
-`网站配置`-->`Appfront配置`-->`Store配置`
-
-可以看到`store`列表，点击`id为1`的数据（激活状态），进行编辑，将域名更改成 `appfront.fecshoptest.com`(替换成您自己的域名)，保存
-
-然后就可以访问：appfront.fecshoptest.com ，查看pc端了
-
-![](images/ff2.png)
-
-
-3.2配置Apphtml5
-
-`网站配置`-->`Apphtml5配置`-->`Store配置`
-
-可以看到store列表，点击`id为8`的数据（激活状态），进行编辑，将域名更改成 `apphtml5.fecshoptest.com`(替换成您自己的域名)，保存
-
-然后就可以访问：apphtml5.fecshoptest.com ，查看H5端了
-
-![](images/ff3.png)
-
-
-3.3配置Appserver
-
-
-> 这里是对`Appserver`端的配置，对应的域名为：`appserver.fecshoptest.com`(替换成您自己的域名) ,是对微信小程序，vue等客户端提供api的入口
-
-`网站配置`-->`Appappserver配置`-->`Store配置`
-
-将 `Store Key` 更改成 `appserver.fecshoptest.com` (替换成您自己的域名)即可。
-
-![](images/ff5.png)
-
-Appserver 就可以为vue和微信小程序提供api了。
-
-其他的配置
-----------------
-
-> 配置完`appserver.fecshoptest.com`，您可以安装vue和微信小程序等客户端
-
-`vue`: https://github.com/fecshop/vue_fecshop_appserver
-
-`微信小程序`：https://github.com/fecshop/wx_micro_program
-
-
+界面安装配置详细参看：[Fecmall-2.x 界面安装](fecshop-2-graphical-web-install.md)
 
  
  

@@ -139,8 +139,7 @@ JD模式：类似于京东的产品，选择每一个选项后，页面会跳转
 2.1京东模式：这种模式，需要引入sku和spu的概念，关于这个概念在上面已经说明。
 譬如页面（演示demo）：http://fecshop.appfront.fancyecommerce.com/index.php/raglan-sleeves-letter-printed-crew-neck-sweatshirt-53386451-77774122
 
-2.1.1配置：首先需要设置一个属性组，上面的内容已经说明，在配置文件中添加，
-需要注意的spu属性不能超过两个（spu属性组合的复杂性）。
+2.1.1配置：首先需要设置一个属性组，上面的内容已经说明，在配置文件中添加。
 
 2.1.2新建产品，选择对应的属性组,如图
 

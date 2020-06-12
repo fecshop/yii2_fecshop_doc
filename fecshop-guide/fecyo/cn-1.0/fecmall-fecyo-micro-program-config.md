@@ -1,107 +1,64 @@
 Fecyo微信小程序初始安装配置
 ================
 
-> 初始化安装fecyo微信小程序，进行的安装配置介绍
+> fecyo微信小程序配置
 
 
-### Fecyo微信小程序开源版本
+### Fecyo微信小程序后台配置
 
-1.下载地址：https://github.com/fecshop/fecyo_wx_micro_program/releases
+> 当微信小程序安装完成后，我们可以在后台设置微信小程序的启动页和首页的内容
 
+进入fecmall后台 appserver配置部分，如图:
 
+![](images/qq2.jpg)
 
-### 微信小程序申请和工具
+1.参数`start page`配置部分，对应的是微信小程序`启动页`(入口进入微信小程序的启动页)的内容，分别是标题，备注，和图片
 
-1.微信小程序部分，需要申请才能使用，需要企业或者个体户才能申请，年费：300
+![](images/qq3.jpg)
 
-2.微信小程序的官方文档地址：https://developers.weixin.qq.com/miniprogram/dev/framework/
+您可以在广告里面填写您的活动宣传图
 
-微信小程序的申请和介绍，这里不一一陈述
+2.首页走马灯大图
 
+启动页经过5秒关闭后，就进入首页，可以在后台配置走马灯的大图以及链接
 
-微信的配置详细，参看文档：[Fecmall 微信小程序配置](http://www.fecmall.com/doc/fecshop-guide/instructions/cn-2.0/guide-fecmall_wx_micro.html)
+![](images/qq4.jpg)
 
-因为微信小程序的支付，使用了微信商户平台，因此需要开通微信支付。
+`Home Big Link Url 1` ：走马灯大图图1，点击后跳转的微信小程序链接
 
-3.微信小程序开发工具
-
-3.1微信开发者工具下载：https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html
-
-3.2微信开发者工具文档介绍：https://developers.weixin.qq.com/miniprogram/dev/devtools/devtools.html
-
-具体的使用，这里不一一阐述
+`Home Big Img 1`：走马灯大图图片1，您可以上传自己的图片，参考尺寸：`640 * 854`
 
 
-4.安装微信小程序，启动，选择小程序，导入现有项目（文件路径选择github下载下来的微信小程序）
+`Home Big Link Url 1 `：走马灯大图图2，点击后跳转的微信小程序链接
 
-在启动的时候需要填写appid，这个就是微信小程序的appID
+`Home Big Img 1`：走马灯大图图片2，您可以上传自己的图片，参考尺寸：`640 * 854`
 
-
-### Fecyo微信小程序和Fecyo系统的数据对接
-
-
-1.您需要安装fecyo，关于fecyo的文档参看：[FecMall Fecyo 中文单商户B2C商城](http://www.fecmall.com/doc/fecmall-guide/fecyo/cn-1.0/guide-fecmall-fecyo-about.html)
-
-自行安装，配置好pc和h5入口即可代表配置完成
+3.banner图片部分
 
 
+![](images/qq5.jpg)
 
-2.fecyo后台配置appserver入口
-
-2.1appserver store配置
-
-![](images/s1.png)
-
-`Store Key`: 填写您的域名
-
-其他的选项参看上图即可
+`Home Banner Link Url`：banner点击后对应的微信小程序链接
 
 
-2.2设置语言，中文只保留中文就可以了
+`Home Banner Img`：banner图片
 
-![](images/s2.png)
+4.首页sku列表：
 
-2.3访问appserver的域名，验证是否配置好，api是否返回json数据，譬如访问：http://fecyoserver.fecshop.com/
+`Home Product Skus`: 多个sku用逗号隔开（同一个spu下的不同sku，只会显示一个）
 
-![](images/s4.png)
-
-代表appserver api入口配置成功
+![](images/qq6.jpg)
 
 
-3.微信小程序设置
-
-3.1配置微信小程序对应的fecyo appserver的域名地址
 
 
-打开`config.js` 配置`url`
-
-```
- 'url': 'https://fecshop.appserver.fancyecommerce.com',
-```
-
-改成您自己的域名即可
 
 
-3.2微信开发者工具关掉https
-
-如果是线上环境必须用https，微信小程序不支持http的后端数据api
-
-如果是开发测试环境，可以在微信开发者工具中关掉https验证，如图：
-
-![](images/s3.png)
 
 
-3.3打开`./project.config.json`文件，查看appId，是否是你的appid（如果线上测试）
-
-3.4重启微信开发者工具编辑器，查看是否出来微信小程序
 
 
-![](images/s5.png)
 
-这就说明配置微信小程序成功了。
-
-
-4.关于fecmall https免费证书安装，可以参看文档：[阿里云 安装免费https证书](http://www.fecmall.com/topic/4085)
 
 
 

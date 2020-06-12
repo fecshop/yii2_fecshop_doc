@@ -60,7 +60,10 @@ Console脚本
 微信小程序
 ----------
 *  [Fecyo微信小程序介绍](fecmall-fecyo-micro-program-about.md)
-*  [Fecyo微信小程序初始安装配置](fecmall-fecyo-micro-program-config.md)
+*  [Fecyo微信小程序初始安装](fecmall-fecyo-micro-program-install.md)
+*  [Fecyo微信小程序初始配置](fecmall-fecyo-micro-program-config.md)
+*  [Fecyo微信小程序分享和产品海报](fecmall-fecyo-micro-program-share.md)
+*  [Fecyo微信小程序直播](fecmall-fecyo-micro-program-live-player.md)
 *  [Fecyo微信小程序截图展示](fecmall-fecyo-micro-program-demo.md)
 
 
