@@ -19,6 +19,7 @@ Fecmall-2.x 安装
 
 【fecmall宝塔控制面板安装文档：**一键部署，最新**】：[Fecmall-2.x 宝塔一键部署安装](fecshop-2-graphical-bt-install.md)
 
+[Fecmall宝塔面板部署视频](http://www.fecmall.com/topic/4262)
 
 4.下面是标准通用安装教程 - 标准通用。
  
@@ -48,7 +49,7 @@ composer self-update
 **请将2.7.1 改成最近的fecmall版本 **
 
 ```
-composer create-project fancyecommerce/fecshop-app-advanced  fecmall 2.7.1
+composer create-project fancyecommerce/fecshop-app-advanced  fecmall 2.8.0
 cd fecshop
 ```
 

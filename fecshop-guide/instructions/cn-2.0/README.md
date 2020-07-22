@@ -28,6 +28,7 @@ FecMall 使用说明
 *  [Fecmall 404页](fecmall_404.md)
 *  [Fecmall 小部件](fecmall_widget.md)
 *  [Fecmall 分类](fecmall_category.md)
+*  [Fecmall 分类侧栏属性过滤](fecmall_category_attr_filter.md)
 *  [Fecmall 产品](fecmall_product.md)
 *  [Fecmall 产品图片](fecmall_product_image.md)
 *  [Fecmall 产品价格](fecmall_product_price.md)

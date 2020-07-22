@@ -4,6 +4,12 @@ Fecmall-2.x 宝塔安装
 > 通过宝塔控制面板一键安装Fecmall
 
 
+### 宝塔安装视频
+
+您可以在优酷查看fecmall的视频：[Fecmall宝塔面板部署视频](http://www.fecmall.com/topic/4262)
+
+
+
 ### 购买服务器，安装宝塔，部署LNMP环境
 
 1.宝塔的安装教程：https://www.bt.cn/bbs/thread-19376-1-1.html

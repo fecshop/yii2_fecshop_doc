@@ -172,7 +172,7 @@ appfront，pc入口，在手机账户登陆的基础商，加入了`微信扫码
 
 ![](images/fecphone26.png)
 
-获取微信服务号的`appId`和`appsecret`
+获取微信服务号的`appId`和`appsecret`，这里先记录一下，后面操作需要在fecmall后台配置
 
 
 
@@ -196,6 +196,13 @@ appfront，pc入口，在手机账户登陆的基础商，加入了`微信扫码
 ![](images/fecphone41.png)
 
 
+**注意**：如果您使用了高版本，会发现看不到`微信公众号-AppId` 和  `微信公众号-AppSecret`  配置，因为高版本对配置位置进行了调整，
+请到后台菜单： 
+
+`网站配置` -->  `支付参数配置` --> `微信支付配置` , 填写到 `微信服务号AppId`  和  `微信服务号AppSecret`, 保存即可
+
+
+
 填写这几个值，都是上面操作获取的，进行保存，fecmall后台配置保存成功后，然后去微信服务号管理后台保存 `服务器配置`（就是上面等待保存的部分）
 
 
@@ -215,13 +222,18 @@ appfront，pc入口，在手机账户登陆的基础商，加入了`微信扫码
 
 ![](images/fecphone25.png)
 
+2.1配置`JS接口安全域名`
 
 配置JS接口安全域名时，注意是 域名 不需要填写`http/https`，如果填写的话，
 在代码执行wx.config()时，会报 `config:fail,Error: invalid url domain` 错误，正确示例：`fecshop.apphtml5.fancyecommerce.com`
 
 这里需要吧pc的域名和h5的域名都填写进去，将验证文件上传到 `@appfront/web`,  `@apphtml5/web`
 
+2.2配置`网页授权域名`
 
+需要将pc的域名和h5的域名都填写进去，2.1步骤已经将验证文件上传，这个步骤不需要重新上传 `MP_verify_TetB4xxxxxxx.txt`
+
+譬如将 `www.wesavxxxxc.cn` 和 `m.wesavxxxxc.cn` 填写上去保存即可。
 
 
 3.设置ip白名单

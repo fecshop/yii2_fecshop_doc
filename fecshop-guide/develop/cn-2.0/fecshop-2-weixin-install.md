@@ -6,6 +6,12 @@ Fecmall-2.x 安装微信小程序
 > 安装微信小程序部分的教程
 
 
+### 建议
+
+fecmall对应的微信小程序是偏框架的，功能也比较基础，做国内的微信小程序，建议使用
+fecyo扩展对应的微信小程序，[Fecyo微信小程序](http://www.fecmall.com/doc/fecmall-guide/fecyo/cn-1.0/guide-fecmall-fecyo-micro-program-about.html)
+，您可以安装fecyo扩展，然后安装对应的小程序，参看上面的文档即可。
+
 ### 介绍
 
 1.微信小程序Demo查看，可以微信小程序搜索`fecmall`，或者扫描下面的小程序码进入：
