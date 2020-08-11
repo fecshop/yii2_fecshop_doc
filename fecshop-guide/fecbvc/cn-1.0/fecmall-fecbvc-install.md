@@ -21,8 +21,23 @@ Fecbvc PDF电子书籍商城安装
 1.3fecbvc: http://addons.fecmall.com/84991566
 
 
-2.后台应用中心在线安装这三个扩展，需要注意的是，先安装fecyo和fecmyorder，最后
+2.后台应用中心在线安装这三个扩展，
+
+2.1需要注意的是，先安装`fecyo`和`fecmyorder`，最后
 安装fecbvc，否则将会报错
+
+2.2安装完成后，后台设置应用的优先级
+
+`应用中心` --> `应用管理`  --> `已安装应用`
+
+优先级：`fecmyorder` >  `fecbvc` > `fecyo` , 可以设置下面的值，譬如：
+
+
+`fecyo`:`1`
+
+`fecbvc`:`2`
+
+`fecmyorder`:`3`
 
 
 ### Fecbvc PDF电子书籍商城配置
@@ -85,7 +100,7 @@ apphtml5 store 第三方模板：`@fecbvc/app/apphtml5/theme,@fecyo/app/apphtml5
         ],
     ],
 ],
- ```           
+```           
 
 ### 商城参数配置
 

@@ -8,6 +8,13 @@ FecMall 多商户系统
 *  [FecMall多商户安装](fecmall-install.md)
 *  [Fecmall微信登陆,微信分享,手机帐号](fecmall-addons-phone-account.md)
 
+微信小程序
+---------
+
+*  [Fecbbc微信小程序安装](fecmall-micro-install.md)
+*  [微信小程序介绍](fecmall-micro-about.md)
+
+
 经销商操作手册
 ----------
 *  [经销商产品管理](fecmall-bbc-bdmin-product.md)
@@ -19,6 +26,8 @@ FecMall 多商户系统
 
 *  [Fecmall属性和属性组](fecmall-bbc-admin-attribute.md)
 *  [FecMall供应商管理](fecmall-bbc-admin-bdmin-manager.md)
+
+
 
 
 平台产品
