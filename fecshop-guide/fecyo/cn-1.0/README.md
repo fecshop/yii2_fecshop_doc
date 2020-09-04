@@ -76,13 +76,17 @@ Walletyo扩展
 *  [Walletyo-分销系统-微信小程序](fecmall-fecyo-walletyo-distribute-micro.md)
 *  [Walletyo-秒杀](fecmall-fecyo-walletyo-seckill.md)
 
+产品规格属性
+----------
+
+*  [产品规格属性](fecmall-fecyo-custom-option.md)
 
 
+上线配置
+----------
 
-
-
-
-
+*  [Fecyo 首页配置](fecmall-fecyo-home-config.md)
+*  [Fecyo 通用配置](fecmall-fecyo-detail-config.md)
 
 
 

@@ -1,4 +1,4 @@
-Api- 得到分类产品
+Api- Customer 忘记密码发送验证码
 ================
 
 > 忘记密码，提交后，将验证码发送到用户邮箱的api
@@ -7,7 +7,7 @@ URL: `/customer/forgot/sendcode`
 
 格式：`json`
 
-方式：`get`
+方式：`post`
 
 
 一：请求部分

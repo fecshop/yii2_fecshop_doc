@@ -17,7 +17,7 @@ console 是fecmall其中的一个入口，作为脚本执行端，
 
 说明：
 
-`05 * * * *` : cron 设置周期的部分，具体详细自行搜索
+`05 * * * *` : cron 设置周期的部分，关于cron表达式日期周期说明，可以参看文档：http://www.fecmall.com/topic/4444
 
 `/bin/bash` : 跑shell脚本执行的命令
 
@@ -26,6 +26,15 @@ console 是fecmall其中的一个入口，作为脚本执行端，
 `>> /www/web_logs/fecshop/urlRewrite.log 2>&1` ：  脚本的输出，写入到log文件中，此文件要设置可写权限，可以设置成777  （chmod 777 /www/web_logs/fecshop/urlRewrite.log）
 
 设置完后，就可以周期性的执行脚本了
+
+
+1.2关于linux cron如何设置
+
+执行命令行：`crontab -e`, 将执行脚本粘贴上去，譬如：`05 * * * * /bin/bash /www/web/fecshop/vendor/fancyecommerce/fecshop/shell/urlRewrite.sh  >> /www/web_logs/fecshop/urlRewrite.log 2>&1`,
+
+需要注意：时间周期是否填写正确，shell文件路径是否正确，shell文件是否可执行（755），日志文件是否存在，并且可写。
+
+
 
 2.手动执行的脚本，也就是只有在用到的时候才会手动执行，并不需要
 在计划任务中设置。

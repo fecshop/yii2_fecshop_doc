@@ -5,6 +5,26 @@ Cashback - Amazon导购返现独立站
 > 参考：cashbackbase.com ， 通过导购站 将用户引流到amazon，用户购买产品后，进行返现给用户的独立站，
 通过此种方式，提高产品订单量，进而刺激amazon的排名
 
+### 简介
+
+参考：`cashbackbase.com`，amazon商家搭建自己的平台，引导用户进入独立站注册 用户，amazon下单，用户支付订单后，
+在独立站填写amazon订单id，进行返现的操作，有如下优势：
+
+1.直接给amazon店铺在facebook打广告，会带来很多垃圾流量，amazon算法会判定垃圾，排名权重受影响，
+通过独立站过滤没有意向的垃圾流量，提升优质流量，进而提升amazon排名
+
+2.用户下单后，可以在独立站填写amazon订单，进行返现，这样可以刺激和留存用户，提升排名，由于返现是脱离amazon平台的，因此，会比amazon的优惠券
+好很多（amazon排名）
+
+3.当独立站沉淀了很多用户，推新产品就会容易得多。
+
+### Demo
+
+pc: http://fecamazon.fecshop.com/
+
+h5: http://fecamazonh5.fecshop.com/
+
+联系Terry：http://www.fecmall.com/contacts
 
 ### 安装
 

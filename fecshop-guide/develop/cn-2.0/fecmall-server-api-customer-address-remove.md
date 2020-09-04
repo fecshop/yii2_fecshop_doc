@@ -7,7 +7,7 @@ URL: `/customer/address/remove`
 
 格式：`json`
 
-方式：`post`
+方式：`get`
 
 
 一：请求部分
