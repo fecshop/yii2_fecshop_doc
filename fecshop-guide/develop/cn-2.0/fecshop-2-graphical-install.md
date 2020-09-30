@@ -44,12 +44,12 @@ composer self-update
 
 
 
-> 请将2.7.1 改成最近的fecmall版本，这里查看最新的版本号： https://github.com/fecshop/yii2_fecshop/releases
+> 请将2.8.1 改成最近的fecmall版本，这里查看最新的版本号： https://github.com/fecshop/yii2_fecshop/releases
 
-**请将2.7.1 改成最近的fecmall版本 **
+**请将2.8.1 改成最近的fecmall版本 **
 
 ```
-composer create-project fancyecommerce/fecshop-app-advanced  fecmall 2.8.0
+composer create-project fancyecommerce/fecshop-app-advanced  fecmall 2.8.1
 cd fecshop
 ```
 

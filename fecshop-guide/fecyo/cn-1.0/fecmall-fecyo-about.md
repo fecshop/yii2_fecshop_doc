@@ -18,7 +18,7 @@ FecMall Fecyo 中文单商户B2C商城
 
 ### Fecyo 中文单商户B2C商城演示
 
-> 下面的pc和h5演示，进入`电子书籍`菜单，查看`pdf电子书籍`部分
+> 下面的pc和h5演示
 
 Pc Demo地址：http://fecyo.fecshop.com
 

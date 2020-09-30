@@ -66,15 +66,8 @@ Console脚本
 *  [Fecyo微信小程序直播](fecmall-fecyo-micro-program-live-player.md)
 *  [Fecyo微信小程序截图展示](fecmall-fecyo-micro-program-demo.md)
 
-Walletyo扩展
-----------
-*  [Walletyo扩展-关于和介绍](fecmall-fecyo-walletyo-about.md)
-*  [Walletyo-站内余额和积分-说明](fecmall-fecyo-walletyo-wallet-and-point.md)
-*  [Walletyo-站内余额和积分-Console脚本](fecmall-fecyo-walletyo-wallet-and-point-shell.md)
-*  [Walletyo-分销系统-配置说明](fecmall-fecyo-walletyo-distribute-about.md)
-*  [Walletyo-分销系统-Console脚本](fecmall-fecyo-walletyo-distribute-shell.md)
-*  [Walletyo-分销系统-微信小程序](fecmall-fecyo-walletyo-distribute-micro.md)
-*  [Walletyo-秒杀](fecmall-fecyo-walletyo-seckill.md)
+
+
 
 产品规格属性
 ----------
@@ -89,6 +82,28 @@ Walletyo扩展
 *  [Fecyo 通用配置](fecmall-fecyo-detail-config.md)
 
 
+Walletyo扩展
+----------
+*  [Walletyo扩展-关于和介绍](fecmall-fecyo-walletyo-about.md)
+*  [Walletyo-站内余额和积分-说明](fecmall-fecyo-walletyo-wallet-and-point.md)
+*  [Walletyo-站内余额和积分-Console脚本](fecmall-fecyo-walletyo-wallet-and-point-shell.md)
+*  [Walletyo-分销系统-配置说明](fecmall-fecyo-walletyo-distribute-about.md)
+*  [Walletyo-分销系统-Console脚本](fecmall-fecyo-walletyo-distribute-shell.md)
+*  [Walletyo-分销系统-微信小程序](fecmall-fecyo-walletyo-distribute-micro.md)
+*  [Walletyo-秒杀](fecmall-fecyo-walletyo-seckill.md)
+
+News扩展
+----------
+
+*  [News扩展-安装和介绍](fecmall-fecyo-news-install.md)
+*  [News扩展-使用说明](fecmall-fecyo-news-about.md)
+
+
+Fecbo扩展
+----------
+
+*  [Fecbo扩展-简介](fecmall-fecbo-about.md)
+*  [Fecbo扩展-安装和配置](fecmall-fecbo-install.md)
 
 
 

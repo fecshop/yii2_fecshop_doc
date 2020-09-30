@@ -31,22 +31,37 @@ FecMall Fecyo 中文单商户B2C商城安装和配置
 Fecyo配置
 -----------
 
-1.Store设置（配置第三方模板路径）
+1.测试产品数据初始化
 
-1.1网站配置 --> Appfront配置  -->  Store配置
+Fecyo-1.9.0版本以后，已经默认集成了淘宝产品插件，因此，默认的fecmall的测试产品，需要初始化一下（ [关于淘宝模式产品](http://www.fecmall.com/doc/fecshop-guide/addons/cn-2.0/guide-fecmall-addons-taobao-product.html) ）
+
+```
+cd addons/fecmall/fecyo/shell
+sh initTbProduct.sh
+```
+
+如果您不想初始化，也可以自己到后台添加新的产品数据
+
+
+2.Store设置（配置第三方模板路径）
+
+2.1网站配置 --> Appfront配置  -->  Store配置
 
 编辑，弹出框，第三方模板路径： `@fecyo/app/appfront/theme/fecyo`
 
-1.2网站配置 --> Apphtml5配置  -->  Store配置
+2.2网站配置 --> Apphtml5配置  -->  Store配置
 
 编辑，弹出框，第三方模板路径： `@fecyo/app/apphtml5/theme/fecyo`
 
 
-2.首页Banner以及底部静态块配置
+
+
+3.首页Banner以及底部静态块配置
 
 详细参看：[FecMall Fecyo 首页Banner以及静态块配置](fecmall-fecyo-banner-config.md)
 
-3.手机帐号登陆，阿里短信服务，微信PC扫码关注公众号登陆，微信H5静默登陆，微信分享等
+
+4.手机帐号登陆，阿里短信服务，微信PC扫码关注公众号登陆，微信H5静默登陆，微信分享等
 
 需要对阿里大鱼短信（阿里大鱼改名阿里云短信服务），微信等进行配置
 

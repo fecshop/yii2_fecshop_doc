@@ -133,7 +133,7 @@ Fecmall后台功能介绍
 *  [Docker 修改yml文件后，重新创建docker container](fecmall_docker_rebuild_yml.md)
 *  [Fecmall分布式部署](fecmall_fenbushi.md)
 *  [Fecmall git线上发版](fecmall_git_update_version.md)
-
-
+*  [Fecmall项目迁移服务器](fecmall_host_change.md)
+*  [Fecmall开发环境切换成生产环境](fecmall_env_change.md)
 
 
