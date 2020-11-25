@@ -8,7 +8,7 @@ Fecyo简介和配置：
 *  [Fecyo 安装](fecmall-fecyo-install.md)
 *  [FecMall Fecyo 首页Banner以及静态块配置](fecmall-fecyo-banner-config.md)
 *  [Fecmall Fecyo 微信登陆,微信分享,手机帐号](fecmall-fecyo-phone-weixin-account.md)
-
+*  [Fecmall Fecyo 微信支付配置](fecmall-fecyo-phone-weixin-payment.md)
 
 
 

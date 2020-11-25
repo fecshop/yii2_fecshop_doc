@@ -5,7 +5,7 @@
 进而开发了Fecro跨境企业版本，强化跨境电商方便的不足
 
 
-### Fecyo 开源协议
+### Fecro 开源协议
 
 **系统`100%开源`，`商用免费授权`**
 
@@ -18,11 +18,13 @@
 
 Demo演示：
 
-Pc Demo：无  (开发中)
+Pc Demo：http://fecro.fecshop.com/ 
 
-H5 Demo: http://fecroh5.fecshop.com/ （已开发）
+H5 Demo: http://fecroh5.fecshop.com/ 
 
 后台Demo地址：暂不开放
+
+Fecro已经正式发版，可以在生产项目方式放心使用
 
 
 ### Fecro商城入口介绍

@@ -1,25 +1,7 @@
 Fecmall 微信支付
 ==============
 
-> 对支付平台的配置信息。
-
-### fecmall后台设置微信支付
-
-微信分为：
-
-`pc扫码支付`： 用于pc浏览器进行扫码支付的方式
-
-`jsApi支付`：用于手机微信内部打开网址，进行支付的访问
-
-`手机浏览器html5支付`：用于手机web浏览器打开网址，进行支付的访问
-
-
-![xx](images/as12.png)
-
-![xx](images/as13.png)
-
-Fecshop-1.x
--------------
+> 对微信支付平台的配置信息。
 
 
 ### Fecshop 微信支付测试地址
@@ -117,11 +99,10 @@ vue 测试产品： http://demo.fancyecommerce.com/#/catalog/product/5d085e05bfb
 
 ![](images/wx5.png)
 
-需要注意的是，您需要下载文件：MP_verify_OK8WAZPCCI5iPIfw.txt， 然后将文件上传到到您的web根目录
+需要注意的是，您需要下载文件：MP_verify_OK8WAZPCCI5iPIfw.txt， 然后将文件上传到到您的web根目录,
+`@apphtml5/web` 和 `appfront/web`下面
 
-譬如上面填写的是html5和vue的两个域名， fecshop.apphtml5.fancyecommerce.com对应的是@apphtml5/web/下面
-
-demo.fancyecommerce.com是vue部分，那么我将文件传到vue对应的`dist`目录即可
+如果是vue入口（譬如：demo.fancyecommerce.com就是vue），那么我将文件传到vue对应的`dist`目录即可
 
 上传完成后，进行保存，如果文件不上传无法保存成功。
 
@@ -135,21 +116,33 @@ demo.fancyecommerce.com是vue部分，那么我将文件传到vue对应的`dist`
 ![](images/wx6.png)
 
 
-譬如点击`JSAPI支付`, 点击产品设置
+2.1`JSAPI支付`产品设置
 
 ![](images/wx7.png)
 
-添加支付授权目录：
+添加`支付授权`目录：
 
-![](images/wx8.png)
+![](images/fecxxx_1.png)
 
-3.H5支付配置
+您需要将pc和h5的都添加上去，按照格式：`http://m.xxxx.cn/payment/wxpayjsapi/`和`http://www.xxxx.cn/payment/wxpayjsapi/`
+
+保存即可
+
+2.2.H5支付配置
 
 商户支付平台-->产品中心-->开发配置，添加`H5支付域名`
 
 ![](images/mx22.png)
 
-需要注意：
+将h5的域名填写上去即可。
+
+2.3`Native支付`
+
+在微信支付产品中心，找到`Native支付`，开通即可,该支付主要用于pc端微信支付
+
+
+
+`小结`：填写上面的内容需要`注意`：
 
 1.对于vue端，支付的目录为`http://demo.fancyecommerce.com/#/payment/wxpayjsapi/` 
 ,但是，需要填写域名，并以`/`结尾，不可以填写`#`后面的内容，
@@ -163,47 +156,24 @@ demo.fancyecommerce.com是vue部分，那么我将文件传到vue对应的`dist`
 ，这里一定要设置好，否则无法使用支付。
 
 
-到这里，基本就设置好了微信支付
+到这里，基本就设置开通微信支付，下面我们需要进行参数配置
 
 
 
 
-### Fecshop配置微信支付
+### Fecmall配置微信支付
 
 1.参数配置
 
-因为微信库包sdk的配置是const常量，因此比较纠结，最后
-把配置文件放到了 `@common/config/payment/wxpay/lib/WxPay.Config.php`文件中
-,更改里面的配置即可。
+您需要到后台配置
 
 
-```
-const APPID = 'wxb508f3849c440445';
-const MCHID = '1537420921';
-const KEY = '8934e7d15453e97507ef794cf7b0519e';
-const APPSECRET = 'fd896d9750faf1efb58194eec4789761';
-```
-
-1.1APPID和MCHID（商户号）：
-
-![](images/wx9.png)
-
-![](images/wx10.png)
+![](images/fecxxx_2.png)
 
 
+1.1`微信服务号AppId`和`微信服务号AppSecret`
 
-
-1.2KEY:  打开网址：https://pay.weixin.qq.com/core/cert/api_cert
-
-![](images/wx11.png)
-
-您可以将fecmall默认的KEY，修改一下参数（KEY的位数不要变），然后进行设置保存即可，您可以将API密钥，apiv3密钥都用一样
-的，方便开发设置
-
-
-
-
-1.3APPSECRET
+这个需要到微信服务号中获取
 
 登陆您的服务号，
 
@@ -211,12 +181,33 @@ const APPSECRET = 'fd896d9750faf1efb58194eec4789761';
 
 ![](images/wx12.png)
 
-这里设置APPSECRET
+可以获取`微信服务号AppId`和`微信服务号AppSecret`
 
 
-您需要配置这4个变量
 
-2.上传证书
+1.2获取`微信商户平台MCHID`
+
+通过下面步骤获取`微信商户平台MCHID`也就是下图的`商户号`
+
+
+
+![](images/wx9.png)
+
+![](images/wx10.png)
+
+`商户号`就是上面配置的`微信商户平台MCHID`
+
+
+1.3获取`微信商户平台KEY`
+
+
+打开网址：https://pay.weixin.qq.com/core/cert/api_cert
+
+
+![](images/wx11.png)
+
+1.3.1设置`Api证书`
+
 
 登陆商户支付平台，打开网址：https://pay.weixin.qq.com/core/cert/api_cert
 
@@ -226,6 +217,23 @@ const APPSECRET = 'fd896d9750faf1efb58194eec4789761';
 
 打开`@common/config/payment/wxpay/cert/`文件夹可以看到两个证书文件，
 `apiclient_cert.pem` 和 `apiclient_key.pem`, 您需要将下载微信的证书，进行覆盖即可
+
+
+1.3.2设置`API密钥`
+
+您可以将`8931e2d15453e91602ef794cf7b0579e`，修改一下参数（KEY的位数不要变），作为`API密钥`，
+然后进行设置保存即可，您可以将API密钥，apiv3密钥都用一样
+的，方便开发设置
+
+
+到此，4个参数设置完成，都已经获取
+
+您在后台保存即可：
+
+![](images/fecxxx_2.png)
+
+
+
 
 
 通过上面的设置，基本就设置完成了，如果您还存在问题，您可以来：http://www.fecshop.com/topic 发帖咨询。

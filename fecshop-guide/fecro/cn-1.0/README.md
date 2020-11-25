@@ -7,7 +7,7 @@ Fecro简介和配置：
 *  [关于Fecro](fecmall-fecro-about.md)
 *  [Fecro 安装](fecmall-fecro-install.md)
 *  [FecMall Fecro 首页Banner以及静态块配置](fecmall-fecro-banner-config.md)
-
+*  [FecMall Fecro 静态块sql快速配置](fecmall-fecro-config-sql.md)
 
 Fecro功能介绍：
 ---------
@@ -57,13 +57,11 @@ Console脚本
 *  [产品规格属性](fecmall-fecro-custom-option.md)
 
 
-上线配置
+Fecro升级Log日志
 ----------
 
-*  [Fecro 首页配置](fecmall-fecro-home-config.md)
-*  [Fecro 通用配置](fecmall-fecro-detail-config.md)
-
-
+*  [Fecro升级Log日志说明](fecmall-fecro-upgrade-log.md)
+*  [Fecro-1.3.0 升级日志](fecmall-fecro-upgrade-130.md)
 
 
 
