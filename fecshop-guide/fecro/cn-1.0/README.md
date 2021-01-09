@@ -62,9 +62,15 @@ Fecro升级Log日志
 
 *  [Fecro升级Log日志说明](fecmall-fecro-upgrade-log.md)
 *  [Fecro-1.3.0 升级日志](fecmall-fecro-upgrade-130.md)
+*  [Fecro-1.3.1 升级日志](fecmall-fecro-upgrade-131.md)
 
 
+Fecrot扩展（三级分销，积分，秒杀，批发）
+----------
 
+*  [Fecrot扩展-安装和介绍](fecmall-fecrot-about.md)
+*  [Fecrot扩展-介绍: 积分，秒杀，批发](fecmall-fecrot-func-info.md)
+*  [Fecrot扩展-介绍: 三级分销](fecmall-fecrot-func-distributor.md)
 
 
 

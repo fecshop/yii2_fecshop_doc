@@ -75,6 +75,15 @@ Console脚本
 *  [产品规格属性](fecmall-fecyo-custom-option.md)
 
 
+Fecro升级Log日志
+----------
+
+*  [Fecyo升级Log日志说明](fecmall-fecyo-upgrade-log.md)
+*  [Fecyo-1.9.3 升级日志](fecmall-fecyo-upgrade-193.md)
+
+
+
+
 上线配置
 ----------
 
@@ -106,9 +115,12 @@ Fecbo扩展
 *  [Fecbo扩展-安装和配置](fecmall-fecbo-install.md)
 
 
+Fecpresale预售扩展
+----------
 
-
-
+*  [Fecpresale预售扩展-简介](fecmall-fecpresale-about.md)
+*  [Fecpresale扩展-安装和配置](fecmall-fecpresale-install.md)
+*  [Fecpresale预售详细操作说明](fecmall-fecpresale-detail.md)
 
 
 

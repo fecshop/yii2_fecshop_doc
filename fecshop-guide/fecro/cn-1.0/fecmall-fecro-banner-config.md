@@ -56,13 +56,13 @@ Title: `Pc：首页大图`
 
 ```
 <div class="item carousel-item top-carousel-item-js active">     
-	<a href="" class="carousel-item-img-container d-block">         <img class="d-block" src="{{imgBaseUrl}}/addons/fecro/20200930041957_212.jpg" alt="Fecmall" />    </a> 
+	<a href="" class="carousel-item-img-container d-block">         <img class="d-block lazyload " src="{{imgBaseUrl}}/images/lazyload.gif" data-src="{{imgBaseUrl}}/addons/fecro/20200930041957_212.jpg" alt="Fecmall" />    </a> 
 </div> 
 <div class="item carousel-item top-carousel-item-js">     
-	<a href="" class="carousel-item-img-container d-block">         <img class="d-block" src="{{imgBaseUrl}}/addons/fecro/20201005211143_374.jpg" alt="Fecmall" />    </a> 
+	<a href="" class="carousel-item-img-container d-block">         <img class="d-block lazyload" src="{{imgBaseUrl}}/images/lazyload.gif" data-src="{{imgBaseUrl}}/addons/fecro/20201005211143_374.jpg" alt="Fecmall" />    </a> 
 </div> 
 <div class="item carousel-item top-carousel-item-js">     
-	<a href="" class="carousel-item-img-container d-block">         <img class="d-block" src="{{imgBaseUrl}}/addons/fecro/20200929011450_834.jpg" alt="Fecmall" />     </a> 
+	<a href="" class="carousel-item-img-container d-block">         <img class="d-block lazyload" src="{{imgBaseUrl}}/images/lazyload.gif" data-src="{{imgBaseUrl}}/addons/fecro/20200929011450_834.jpg" alt="Fecmall" />     </a> 
 </div> 
 ```
 
@@ -83,7 +83,7 @@ Title: `Pc：首页大图下面的长条banner图`
 内容：
 
 ```
-<a href="" style="width:100%;" class="d-block index-banner NC-obscuration">    <img class="d-block" src="{{imgBaseUrl}}/addons/fecro/20201003034451_323.jpg" alt="Fecmall" /></a> 
+<a href="" style="width:100%;" class="d-block index-banner NC-obscuration">    <img class="d-block lazyload" src="{{imgBaseUrl}}/images/lazyload.gif" data-src="{{imgBaseUrl}}/addons/fecro/20201003034451_323.jpg" alt="Fecmall" /></a> 
 ```
 
 该部分对应pc首页顶部文字，如图：
@@ -106,19 +106,19 @@ Title: `Pc：首页New Arrival部分`
 
 ```
 <div class="lg-20per px-lg-15">     
-	<a href="" class="d-block index-banner NC-obscuration">        <img class="d-block lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/addons/fecro/20200830215841_852.jpg" />    </a> 
+	<a href="" class="d-block index-banner NC-obscuration">        <img class="d-block lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/images/lazyload.gif" data-src="{{imgBaseUrl}}/addons/fecro/20200830215841_852.jpg" />    </a> 
 </div> 
 <div class="lg-20per px-lg-15">     
-	<a href="" class="d-block index-banner NC-obscuration">         <img class="d-block lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/addons/fecro/20200830215904_559.jpg" />     </a> 
+	<a href="" class="d-block index-banner NC-obscuration">         <img class="d-block lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/images/lazyload.gif" data-src="{{imgBaseUrl}}/addons/fecro/20200830215904_559.jpg" />     </a> 
 </div> 
 <div class="lg-20per px-lg-15">     
-	<a href="" class="d-block index-banner NC-obscuration">         <img class="d-block lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/addons/fecro/20200830215919_243.jpg" />    </a> 
+	<a href="" class="d-block index-banner NC-obscuration">         <img class="d-block lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/images/lazyload.gif" data-src="{{imgBaseUrl}}/addons/fecro/20200830215919_243.jpg" />    </a> 
 </div> 
 <div class="lg-20per px-lg-15">     
-	<a href="" class="d-block index-banner NC-obscuration">         <img class="d-block lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/addons/fecro/20200830215935_699.jpg" />     </a> 
+	<a href="" class="d-block index-banner NC-obscuration">         <img class="d-block lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/images/lazyload.gif" data-src="{{imgBaseUrl}}/addons/fecro/20200830215935_699.jpg" />     </a> 
 </div> 
 <div class="lg-20per px-lg-15">     
-	<a href="" class="d-block index-banner NC-obscuration">         <img class="d-block lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/addons/fecro/20200830215953_840.jpg" />    </a> 
+	<a href="" class="d-block index-banner NC-obscuration">         <img class="d-block lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/images/lazyload.gif" data-src="{{imgBaseUrl}}/addons/fecro/20200830215953_840.jpg" />    </a> 
 </div> 
 ```
 
@@ -142,17 +142,17 @@ Title: `Pc：首页第二个Banner图`
 
 ```
 <div class="flex my-lg-30">     
-	<a href="" style="width:100%;" class="d-block index-banner NC-obscuration">         <img class="d-block lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/addons/fecro/20200830220035_324.jpg" />    </a> 
+	<a href="" style="width:100%;" class="d-block index-banner NC-obscuration">         <img class="d-block lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/images/lazyload.gif" data-src="{{imgBaseUrl}}/addons/fecro/20200830220035_324.jpg" />    </a> 
 </div> 
 <div class="flex mx-lg-n15 my-lg-30">     
 	<div class="lg-8 px-lg-15">         
-		<a href="" class="d-block index-banner NC-obscuration">            <img class="d-block lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/addons/fecro/20200830220101_154.jpg" />        </a>     
+		<a href="" class="d-block index-banner NC-obscuration">            <img class="d-block lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/images/lazyload.gif" data-src="{{imgBaseUrl}}/addons/fecro/20200830220101_154.jpg" />        </a>     
 	</div>     
 	<div class="lg-8 px-lg-15">         
-		<a href="" class="d-block index-banner NC-obscuration">            <img class="d-block lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/addons/fecro/20200830220129_700.jpg" />        </a>     
+		<a href="" class="d-block index-banner NC-obscuration">            <img class="d-block lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/images/lazyload.gif" data-src="{{imgBaseUrl}}/addons/fecro/20200830220129_700.jpg" />        </a>     
 	</div>     
 	<div class="lg-8 px-lg-15" data-banner-id="51937">         
-		<a href="" class="d-block index-banner NC-obscuration">            <img class="d-block lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/addons/fecro/20200830220146_794.jpg" />         </a>     
+		<a href="" class="d-block index-banner NC-obscuration">            <img class="d-block lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/images/lazyload.gif" data-src="{{imgBaseUrl}}/addons/fecro/20200830220146_794.jpg" />         </a>     
 	</div> 
 </div> 
 ```
@@ -330,7 +330,7 @@ Title: `Pc：首页Footer底部部分`
 				</div>            
 			</div>            
 			<div class="flex justify-content-start align-items-center">                
-				<a class="d-inline-block footer-app__qr">                    <img class="lazyload footer-app__qr-code lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/addons/fecro/qrcode_fecmall.jpg" />                </a>                
+				<a class="d-inline-block footer-app__qr">                    <img class="lazyload footer-app__qr-code lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/images/lazyload.gif" data-src="{{imgBaseUrl}}/addons/fecro/qrcode_fecmall.jpg" />                </a>                
 				<div class="lg px-lg-20 font-bold font-normal footer-download-tip-js">
 					                    Get a free gift and use                     <span style="color:#E30057;">20% OFF</span>                     coupon now                
 				</div>            
@@ -340,25 +340,25 @@ Title: `Pc：首页Footer底部部分`
 	<div class="mt-lg-50">        
 		<div class="flex justify-content-center align-items-center">            
 			<div class="my-lg-10 mx-lg-5 footer-authitem__img footer-paypal-img">                
-				<img class="lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/addons/fecro/paypal.png" />            
+				<img class="lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/images/lazyload.gif" data-src="{{imgBaseUrl}}/addons/fecro/paypal.png" />            
 			</div>            
 			<div class="my-lg-10 mx-lg-5 footer-authitem__img footer-visa-img">                
-				<img class="lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/addons/fecro/visa.png" />            
+				<img class="lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/images/lazyload.gif" data-src="{{imgBaseUrl}}/addons/fecro/visa.png" />            
 			</div>            
 			<div class="my-lg-10 mx-lg-5 footer-authitem__img footer-mastercard-img">                
-				<img class="lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/addons/fecro/mastercard.png" />            
+				<img class="lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/images/lazyload.gif" data-src="{{imgBaseUrl}}/addons/fecro/mastercard.png" />            
 			</div>            
 			<div class="my-lg-10 mx-lg-5 footer-authitem__img footer-mada-img">                
-				<img class="lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/addons/fecro/mada.png" />            
+				<img class="lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/images/lazyload.gif" data-src="{{imgBaseUrl}}/addons/fecro/mada.png" />            
 			</div>            
 			<div class="my-lg-10 mx-lg-5 footer-authitem__img footer-oxxo-img">                
-				<img class="lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/addons/fecro/oxxo.png" />            
+				<img class="lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/images/lazyload.gif" data-src="{{imgBaseUrl}}/addons/fecro/oxxo.png" />            
 			</div>            
 			<div class="my-lg-10 mx-lg-5 footer-authitem__img footer-sofort-img">                
-				<img class="lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/addons/fecro/sofort.png" />            
+				<img class="lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/images/lazyload.gif" data-src="{{imgBaseUrl}}/addons/fecro/sofort.png" />            
 			</div>            
 			<div class="my-lg-10 mx-lg-5 footer-authitem__img footer-ideal-img">                
-				<img class="lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/addons/fecro/ideal.png" />            
+				<img class="lazyload lazy-loaded show" alt="Fecmall" src="{{imgBaseUrl}}/images/lazyload.gif" data-src="{{imgBaseUrl}}/addons/fecro/ideal.png" />            
 			</div>                    
 		</div>        
 		<div class="font-small text-grey pt-lg-10 pb-lg-30 text-center">
