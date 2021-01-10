@@ -57,6 +57,7 @@ FecMall 使用说明
 *  [Fecmall 后台编辑器](fecmall_admin_edit.md)
 *  [Fecmall 后台菜单RBAC](fecmall_admin_rbac.md)
 *  [Fecmall 事件Event](fecmall_event.md)
+*  [Fecmall Trace Js追踪](fecmall_trace_js.md)
 *  [Fecmall 配置加速](fecmall_config_speed.md)
 *  [Fecmall Log日志](fecmall_log.md)
 *  [Fecmall 事务](fecmall_transaction.md)

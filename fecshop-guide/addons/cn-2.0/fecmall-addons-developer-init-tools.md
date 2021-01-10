@@ -12,23 +12,37 @@ Fecmall-应用Gii初始化工具
 在后台可以看到：
 
 
-![](images/z91.png)
+![](images/66656.jpg)
+
+`应用包名`: 开发者的`package包名`, 命名`插件包名`，譬如您命名了   `terry`，那么将会创建  `./addons/terry`文件夹，作为您的包名
 
 
-1.进行配置，如上图
+`Extension Namespace`: 应用插件的`namespace`，同时也作为插件的`文件夹名`，插件的名字，譬如：您填写了`teblog`，那么将会创建
+`./addons/terry/teblog`文件夹作为插件的根目录， `@teblog` 指向 `./addons/terry/teblog`， 插件的名字为`teblog`.
 
-2.创建成功后，有如下该百年
+`应用作者`: 应用的作者，仅仅是一个描述，使用默认值即可
 
-2.1创建应用初始化文件
 
-根据上面填写的内容，具体的文件夹为
-`@addons/fecmall/blog`
+Gii初始化生成插件初始文件
 
-![](images/z92.png)
+1.进行配置，如上图，填写`Extension Namespace`（下面的截图以该值填写teblog为例子），点击`生成`按钮
+
+2.创建成功后
+
+2.1创建应用初始化文件，具体的文件夹为`@addons/fecmall/teblog`
+
+![](images/67777.jpg)
 
 2.2extentions表会自动增加配置
 
-![](images/z03.png)
+![](images/9888.jpg)
+
+
+2.3在fecmall后台`已安装应用`，可以看到您创建的`应用扩展`
+
+![](images/9788.jpg)
+
+您可以关闭和激活，您本地创建的扩展
 
 
 
