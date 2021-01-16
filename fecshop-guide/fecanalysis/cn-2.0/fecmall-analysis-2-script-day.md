@@ -26,12 +26,12 @@ Linux下执行：`crontab -e`
 
 ```
 
-1 1 1 * * * /bin/bash /www/web/fecshop/addons/fecmall/fecfa/shell/dailyStatistics.sh  >> /www/web_logs/fecshop/dailyStatistics.log 2>&1
+1 1 1 * * /bin/bash /www/web/fecshop/addons/fecmall/fecfa/shell/dailyStatistics.sh  >> /www/web_logs/fecshop/dailyStatistics.log 2>&1
 
 
 ```
 
-`1 1 1 * * *`: 每天的 01:01:01，执行该统计脚本
+`1 1 1 * *`: 每天的 01:01:01，执行该统计脚本
 
 
 `/www/web/fecshop/addons/fecmall/fecfa/shell/dailyStatistics.sh`: 文件路径，请替换成您自己的文件路径
