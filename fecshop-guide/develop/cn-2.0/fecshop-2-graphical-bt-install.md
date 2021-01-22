@@ -9,6 +9,7 @@ Fecmall-2.x 宝塔安装
 您可以在优酷查看fecmall的视频：[Fecmall宝塔面板部署视频](http://www.fecmall.com/topic/4262)
 
 
+**注意：通过宝塔安装fecmall，fecmall的下载源是阿里云oss，默认是fecmall的最新版本**（您在宝塔里面看到的版本号请忽略，那是宝塔插件的版本号，不是fecmall版本号）
 
 ### 购买服务器，安装宝塔，部署LNMP环境
 

@@ -82,7 +82,16 @@ Fecmall-阿里云OSS存储产品图片
 `water_transparency`：【图片水印】水印图片透明度，数值越大，透明度越低（水印图片越清晰），数值越小，透明度越高（水印图片越模糊）
 
 
+### 图片上传到阿里云oss
 
+1.配置完成后，当产品保存，将会自动上传到阿里云oss
+
+2.对于历史产品图片，您可以手动执行脚本，进行上传
+
+```
+cd ./addons/fecmall/fecalioos/shell
+sh syncProductImageToAlioss.sh
+```
 
 
 
