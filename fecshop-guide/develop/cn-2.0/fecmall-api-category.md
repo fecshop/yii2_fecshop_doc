@@ -22,7 +22,7 @@ URL: `http://fecshop.appapi.fancyecommerce.com/v1/category/list`
 | 参数名称        | 是否必须    |  类型       |  描述     |
 | ----------------| -----:      | :----:      |:----:     |
 | page            | 可选        |   Int       | 设置获取数据的当前页，如果为空，则代表为第一页|
-
+| numPerPage            | 可选        |   Int       | 设置获取数据每页的个数，如果为空，则会使用fecmall的默认值|
 
 **Response Header 参数:**
 

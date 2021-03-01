@@ -3,15 +3,16 @@ Fecmall-应用安装和加载原理
 
 > 当您申请成功开发者后就可以开发应用了
 ,此文档讲解的是fecmall实现应用在线安装的原理，也就是如何将应用市场的插件，在线
-安装到fecmall中的，理解了这个原理，更有助于您开发fecmall引用
+安装到fecmall中的，理解了这个原理，更有助于您开发fecmall应用
 
 ### Fecmall应用的安装原理
 
 1.后台应用列表
 
-在后台，应用中心，可以看到我的应用列表（如果没有，自行去fecmall应用市场添加应用）
+在后台，应用中心，登陆您的应用市场账户后，可以看到我的应用列表（这里显示的是您在应用市场，进行下单建立对应关系的应用，
+如果您没有下单绑定，则不会在这里显示，您可以自行去fecmall应用市场添加应用）
 
-对应的文件为：@fecshop/app/appadmin/modules/System/controllers/ExtensionmarketController.php
+应用列表部分，对应的文件为：@fecshop/app/appadmin/modules/System/controllers/ExtensionmarketController.php
 
 可以看到，应用的信息是通过`$info = Yii::$service->extension->remoteService->getMyAddonsInfo();`
 ,远程加载的应用市场系统的api，获取数据展示的

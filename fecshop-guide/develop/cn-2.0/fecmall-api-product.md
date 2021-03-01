@@ -22,6 +22,9 @@ URL: `http://fecshop.appapi.fancyecommerce.com/v1/product/list`
 | 参数名称        | 是否必须    |  类型       |  描述     |
 | ----------------| -----:      | :----:      |:----:     |
 | page            | 可选        |   Int       | 设置获取数据的当前页，如果为空，则代表为第一页|
+| third_refer_code            | 可选        |   string       | 【查询条件】第三方采集平台的`外部编码`, 可用于采集查询    |
+| third_product_code            | 可选        |   string       |  【查询条件】第三方采集平台的`货号`, 可用于采集查询 |
+| spu            | 可选        |   string       | 【查询条件】fecmall商城内部的spu编码|
 
 
 **Response Header 参数:**

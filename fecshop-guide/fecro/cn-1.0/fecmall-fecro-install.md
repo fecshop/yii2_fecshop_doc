@@ -43,7 +43,17 @@ Fecro配置
 编辑，弹出框，第三方模板路径： `@fecro/app/apphtml5/theme/fecro`
 
 
-2.首页Banner以及底部静态块配置
+2.测试产品数据初始化
+
+fecro已经默认集成了淘宝产品插件，因此，默认的fecmall的测试产品，需要初始化一下（ 关于淘宝模式产品 ）
+
+```
+cd addons/fecmall/fecro/shell
+sh initTbProduct.sh
+```
+
+
+3.首页Banner以及底部静态块配置
 
 详细参看：[FecMall Fecro 首页Banner以及静态块配置](fecmall-fecro-banner-config.md)
 

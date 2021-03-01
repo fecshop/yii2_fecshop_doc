@@ -23,7 +23,7 @@ http://addons.fecmall.com/41928926
 
 `furnilife_theme`: 这个是该应用的应用文件夹名
 
-![](images/x2.png)
+![](images/addons_4_2.png)
 
 
 ### Fecmall-Furnilife模板应用配置文件

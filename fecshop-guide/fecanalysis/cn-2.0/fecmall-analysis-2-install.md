@@ -30,27 +30,28 @@ FA和fecmall共享同一个后台
 
 **上述Fecmall-使用Mongodb文档，您只需要执行1-4步骤即可**
 
+2.安装geoip2库包
+
+详细参看：http://www.fecmall.com/topic/4785
 
 
-
-
-2.安装FA扩展
+3.安装FA扩展
 
 FA应用市场地址：http://addons.fecmall.com/16262115
 
 如何安装应用，您可以参看：http://www.fecmall.com/doc/fecshop-guide/addons/cn-2.0/guide-fecmall-addons-install.html
 
 
-3.安装完成后，刷新缓存，就可以看到FA的后台菜单了。
+4.安装完成后，刷新缓存，就可以看到FA的后台菜单了。
 
 
-4.配置FA域名
+5.配置FA域名
 
 您需要nginx配置一个子域名，解析到 `appfa/web/` 目录，这个域名就是FA入口域名
 
 fecmall加载的js，接收js发送数据的api，以及接收fecmall发送数据的api，都是通过这个域名。
 
-5.拷贝Ip库文件
+6.拷贝Ip库文件
 
 Ip库用的GeoLite2-City，这个在官网可以下载，您可以去官网下载，官网地址：https://www.maxmind.com/
 
@@ -64,7 +65,7 @@ Q群文件下载`GeoLite2-City_20201215.tar.gz`  （QQ群：782387676，入群�
 下载完成后，文件路径 `./common/lib/GeoLite2-City/GeoLite2-City.mmdb` （需要您自己上传）
 
 
-6.设置FA  fec_trace.js 发送数据接收的FA域名
+7.设置FA  fec_trace.js 发送数据接收的FA域名
 
 在安装FA的fecmall跟目录，打开`appfa/web/fec_trace.js`（注意，是安装FA系统的根目录），在文件内容的最底部，可以看到
 
