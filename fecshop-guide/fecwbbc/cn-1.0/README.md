@@ -24,7 +24,7 @@ FecWbbc 跨境多商户系统
 *  [FecWbbc经销商商管理](fecwbbc-admin-bdmin-manager.md)
 *  [FecWbbc设置语言和货币](fecwbbc-admin-language-currency.md)
 *  [FecWbbc支付设置](fecwbbc-admin-bdmin-payment.md)
-
+*  [FecWbbc分类Banner设置](fecwbbc-admin-category-image.md)
 
 订单处理流程：
 ----------

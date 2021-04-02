@@ -18,7 +18,7 @@ fecmall安装教程：[Fecmall-2.x安装教程](http://www.fecmall.com/doc/fecsh
 
 2.应用市场注册账户，购买FecWbbc 跨境多商户系统
 
-购买地址：http://addons.fecmall.com/28763787
+Fecwbbc跨境多商户-应用市场地址：http://addons.fecmall.com/28763787 (请不要在线购买，购买请[联系Terry](http://www.fecmall.com/contacts))
 
 [Fecmall应用市场-如何安装应用？](http://www.fecmall.com/doc/fecshop-guide/addons/cn-2.0/guide-fecmall-addons-install.html)
 
@@ -28,7 +28,7 @@ fecmall安装教程：[Fecmall-2.x安装教程](http://www.fecmall.com/doc/fecsh
 
 4.安装完成后，需要nginx 添加一下经销商后台的访问域名
 
-也将域名对应文件路径`@appbdmin/web`（@appadmin/web是平台后台地址）
+需要将经销商后台的域名对应文件路径`@appbdmin/web`（@appadmin/web是平台后台地址）
 
 `nginx`或`apache`的配置，和`appadmin`入口类似的配置，这里不做阐述
 
@@ -91,7 +91,7 @@ fecmall安装教程：[Fecmall-2.x安装教程](http://www.fecmall.com/doc/fecsh
 参看：[FecWbbc 首页Banner以及静态块配置](fecwbbc-banner-config.md)
 
 
-3.产品配置（测试产品）
+3.经销商和产品初始化
 
 3.1 添加经销商账户
 
@@ -103,7 +103,7 @@ fecmall安装教程：[Fecmall-2.x安装教程](http://www.fecmall.com/doc/fecsh
 
 
 
-3.2淘宝模式产品数据初始化
+3.2产品数据初始化
 
 fecmall安装后，默认是fecmall的产品测试数据，由于fecwbbc多商户添加了淘宝模式产品，需要对这些历史数据进行初始化数据处理，
 因此您需要执行一下初始化脚本
@@ -112,21 +112,34 @@ fecmall安装后，默认是fecmall的产品测试数据，由于fecwbbc多商�
 产品分类关系表`category_product`清掉，然后后台新建产品即可
 
 
+如果您想要这些测试数据，那么需要进行下面的操作
+
+3.2.1产品初始化脚本。
+
 ```
 cd addons/fecmall/fecwbbc/shell
 sh initTbProduct.sh
 ```
 
-执行完后，可以在后台，产品管理部分，看到产品数据
- 
-
- 3.3为产品设置经销商,
 
 
-您可以在平台后台，产品管理部分，编辑产品，上下架商品。
+ 3.2.2为产品设置经销商,
+
+因为测试产品是fecmall的，而fecmall的产品数据没有经销商信息，如果产品没有设置经销商，用户将不能将产品加入购物车。
+因此需要设置一下, 先找到经销商的id，如图:
+
+![](images/wbbc_94.png)
+
+下面我们将所有的测试产品数据，绑定到id为4的经销商，mysql执行sql
+
+```
+update `product_flat`set bdmin_user_id = 4
+```
 
 
-如果产品没有设置经销商，用户将不能将产品加入购物车。
+
+
+
 
 
 到这里基本就配置完成了。
