@@ -1,168 +1,80 @@
-Fecmall 如何只保留中文语言，去掉其他的所有语言？
+Fecmall 如何只保留中文语言，去掉其他的所有语言？只保留CNY货币
 ==========================================
 
 > 对于Fecmall是多语言的站点，默认的基础语言为英文，对于某些开发者，想要做中文网站，
 因此只要中文的语言，其他的统统去掉，也就是单纯的中文站点
 
-下面说一下具体的配置，仅仅以`appfront`入口为例，其他的入口设置参考这个
 
-1.设置语言，将中文外的语言全部去掉，设置默认语言为中文
-
-
-1.1打开文件`@common/config/fecshop_local_services/FecshopLang.php`,去掉其他语言，设置基础语言为中文,修改完成后的配置文件如下：
-
-```
-<?php
-/**
- * FecShop file.
- *
- * @link http://www.fecshop.com/
- *
- * @copyright Copyright (c) 2016 FecShop Software LLC
- * @license http://www.fecshop.com/license/
- */
-return [
-    'fecshoplang' => [
-        //'class' => 'fecshop\services\FecshopLang',
-        //  mongoSearchLangName 在各个语言下字段参考资料如下：（不支持中文）
-        //  https://docs.mongodb.com/manual/reference/text-search-languages/#text-search-languages
-        'allLangCode' => [
-            // 'en_US' 是标准语言简码  code对应的值en取 “标准语言简码”的前两位字符，
-            // 该值设置后，进行了产品分类数据的添加后，不能修改，否则会出现部分翻译语言丢失。
-            
-            'zh_CN' => [
-                'code'                    => 'zh',
-            ],
-        ],
-        // 默认语言。
-        'defaultLangCode' => 'zh',
-
-    ],
-];
-```
-
-1.2因为上面设置的`common`部分的配置，根据配置优先级覆盖原则，appfront的`FecshopLang`里面的配置会覆盖common的配置，因此我们需要打开文件 `@appfront/config/fecshop_local_services/FecshopLang.php`
-，将默认语言修改为中文，修改完的文件内容如下：
-
-```
-<?php
-/**
- * FecShop file.
- *
- * @link http://www.fecshop.com/
- *
- * @copyright Copyright (c) 2016 FecShop Software LLC
- * @license http://www.fecshop.com/license/
- */
-return [
-    // 在@common/config/fecshop_local_services中已经进行了全局配置
-    // 当然，您可以将上面里面的配置清空，在每一个app里面单独配置。
-    'fecshoplang' => [
-        'defaultLangCode' => 'zh',
-    ],
-];
-```
-
-1.3打开配置文件：`@appfront/config/fecshop_local_services/FecshopLang.php`。没有改动的配置文件内容是下面的，如果您没有改动，则不需要改动，我的配置文件内容如下：
-
-```
-<?php
-/**
- * FecShop file.
- *
- * @link http://www.fecshop.com/
- *
- * @copyright Copyright (c) 2016 FecShop Software LLC
- * @license http://www.fecshop.com/license/
- */
-return [
-    'fecshoplang' => [
-        //'class' => 'fecshop\services\FecshopLang',
-        /*
-        'allLangCode' => [
-            'en_US' => 'en',
-            'fr_FR' => 'fr',
-            'de_DE' => 'de',
-            'es_ES' => 'es',
-            'ru_RU' => 'ru',
-            'pt_PT' => 'pt',
-            'zh_CN' => 'zh',
-        ],
-        'defaultLangCode' => 'en',
-        */
-    ],
-];
-```
-
-2.设置store的默认语言，打开`@appfront/config/fecshop_local_services/Store.php`
-
-我的域名是：`fecshop.appfront.fancyecommerce.com`，其他的语言统统不要，只要中文的，我的配置如下：
-
-```
-<?php
-   return [
-   'store' => [
-        'class'  => 'fecshop\services\Store',
-        'stores' => [
-            // store key：域名去掉http部分，作为key，这个必须这样定义。
-            'fecshop.appfront.fancyecommerce.com' => [
-                'language'         => 'zh_CN',        // 语言简码需要在@common/config/fecshop_local_services/FecshopLang.php 中定义。
-                'languageName'     => '中文',    // 语言简码对应的文字名称，将会出现在语言切换列表中显示。
-                'localThemeDir'    => '@appfront/theme/terry/theme01', // 设置当前store对应的模板路径。关于多模板的方面的知识，您可以参看fecshop多模板的知识。
-                'thirdThemeDir'    => [ // 第三方模板路径，数组，可以多个路径
-                    
-                ],  
-                'currency'         => 'USD', // 当前store的默认货币,这个货币简码，必须在货币配置中配置
-                /*
-                 * 当设备满足什么条件的时候，进行跳转。
-                 * 这种方式不怎么高效，最好的方式是在nginx中配置。
-                 */
-                'mobile'        => [
-                    'enable'            => false,
-                    'condition'         => ['phone', 'tablet'], // phone 代表手机，tablet代表平板，当都填写，代表手机和平板都会进行跳转
-                    'redirectDomain'    => 'fecshop.apphtml5.fancyecommerce.com',    // 如果是移动设备访问进行域名跳转，这里填写的值为store key
-                    'https'             => false,  // 手机端url是否支持https,如果支持，设置https为true，如果不支持，设置为false
-                ],
-                // 第三方账号登录配置
-                'thirdLogin' => [
-                    // facebook账号登录
-                    'facebook' => [       //fb api配置 ，fb可以一个app设置pc和手机web两个域名
-                        'facebook_app_id'     => '108618299786621',
-                        'facebook_app_secret' => '420b56da4f4664a4d1065a1d31e5ec73',
-                    ],
-                    // google账号登录
-                    'google' => [       //谷歌api visit https://code.google.com/apis/console to generate your google api
-                        'CLIENT_ID'      => '380372364773-qdj1seag9bh2n0pgrhcv2r5uoc58ltp3.apps.googleusercontent.com',
-                        'CLIENT_SECRET'  => 'ei8RaoCDoAlIeh1nHYm0rrwO',
-                    ],
-                ],
-                // 用于sitemap生成中域名。
-                'https'            => true,
-                // sitemap的路径。
-                'sitemapDir' => '@appfront/web/sitemap.xml',
-            ],
-            
-        ],
-
-    ],
-
-];
-```
-
-上面的修改大致做了3件事情， 把其他的语言的store去掉，然后修改参数 `language` 和 `languageName`的值对应中文的参数 即可。
-
-3.我们开始测试添加产品
-
-打开后台，添加产品
-
-![](https://i.loli.net/2018/04/06/5ac6ce7762075.png)
-
-![](https://i.loli.net/2018/04/06/5ac6ce845ab51.png)
+1.在`安装fecmall`的步骤，您可以选择`国内电商`模式，默认配置只有`中文`和`CNY`人民币。
 
 
-保存成功后，访问产品，我测试的产品：http://fecshop.appfront.fancyecommerce.com/cn/23777565
+2.如果您在安装fecmall的步骤，选择的是`跨境电商`模式，那么默认语言是`en-US`，如果您想更改语言和货币，可以参看下面的文档：
 
-因为我测试完后，把多语言还原回来了，因此这个产品的url的中文是有一个后缀`/cn`的.
+下面是只保留`中文`以及`CNY`币种的操作，如果您进行其他语言和币种的操作，照葫芦画瓢即可。
+
+### 只保留中文语言，只保留CNY货币
+
+1.查看语言配置：进入fecmall后台 ， `网站配置` -->  `基础配置` --> `多语言配置` 查看中文是否存在，如果不存在，则添加语言
+，添加语言的格式，必须严格遵循格式`zh-CN`，中间是`连接符`，而不是`下划线`
 
 
+2.查看货币配置：进入fecmall后台 ， `网站配置` -->  `基础配置` --> `货币配置` ，查看 `CNY`币种是否存在，如果
+不存在则自行添加
+
+
+3.更改各个入口的默认语言和默认货币
+
+注意：请选用www对应的store，也就是`key`没有任何后缀的行，譬如：	
+`fecshop.appfront.fancyecommerce.com`，而不是 	
+`fecshop.appfront.fancyecommerce.com/cn`，这样您访问`fecshop.appfront.fancyecommerce.com`就会是中文。
+
+3.1appfront： `网站配置` --> `appfront配置` --> `store配置`
+
+激活状态的store进行编辑，点击右侧的编辑按钮，打开编辑框，设置 `语言`：`zh-CN`，`币种`：`CNY`，`语言全称`：`中文`,
+保存即可
+
+然后将其他的store，进行状态关闭，或者删除即可
+
+3.2apphtml5： `网站配置` --> `apphtml5配置` --> `store配置`
+
+激活状态的store进行编辑，点击右侧的编辑按钮，打开编辑框，设置 `语言`：`zh-CN`，`币种`：`CNY`，`语言全称`：`中文`,
+保存即可
+
+然后将其他的store，进行状态关闭，或者删除即可
+
+3.3appserver：如果您做微信小程序，vue等，需要进行配置
+
+ `网站配置` --> `appserver配置` --> `store配置`
+ 
+ 设置：`Default Language`   `Default Language Name`  `默认货币`
+
+ 
+  `网站配置` --> `appserver配置` --> `store语言配置`
+  
+  只保留中文即可
+  
+
+4.设置基础语言和基础货币，进入fecmall后台 ， `网站配置` -->  `基础配置` -->  `基础配置` ，
+将基础语言设置成`zh-CN`，将`基础货币`，`默认货币`设置成`CNY`，保存。
+
+
+5.去除掉其他的语言， `网站配置` -->  `基础配置` --> `多语言配置`，点击语言后面的删除按钮，将
+其他的语言删除，只保留`zh-CN`，保存即可
+
+6.去除掉其他的货币， `网站配置` -->  `基础配置` --> `货币配置` ，，点击货币后面的删除按钮，将
+其他的货币删除，只保留`CNY`，保存即可
+
+
+**注意**: 需要`CNY`更改汇率，因为 CNY和自身的换算为1，因此 CNY的`汇率`更改为`1`，更改后保存。
+
+
+
+  
+  到这里就全部完成了
+
+  
+  
+  
+  
+  
 

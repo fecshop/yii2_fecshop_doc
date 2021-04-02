@@ -14,10 +14,10 @@ Fecbdc分销系统，是在`fecbbc多商户系统`进行的扩展，加入分销
 
 ### Fecbdc多商户系统演示
 
-pc demo：http://fecbdc.fecshop.com/cn 
+pc demo：http://fecbdc.fecshop.com
 
 
-H5商城入口：http://fecbdch5.fecshop.com/cn/
+H5商城入口：http://fecbdch5.fecshop.com
 
 经销商后台入口：暂不开放
 

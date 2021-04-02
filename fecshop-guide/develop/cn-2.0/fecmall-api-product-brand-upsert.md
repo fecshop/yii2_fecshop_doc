@@ -24,7 +24,7 @@ URL: `http://fecshop.appapi.fancyecommerce.com/v1/productbrand/upsertone`
 
 | 参数名称        | 是否必须    |  类型       |  描述     |
 | ----------------| -----:      | :----:      |:----:     |
-| id           | 必须        |   String or int    | brand数据表的id值，该字段作为upsert的key值       |
+| id           | 可选        |   String or int    | brand数据表的id值，该字段作为upsert的key值 ，当id为空则为新增数据，新增数据行的id为数据库生成，当id有值而且在数据表中存在该id则更新，当id有值而且在数据表中不存在该id则插入数据，插入数据行的id为当前参数指定的id      |
 | name           | 必须        |   Json Array    | 品牌名称，多语言格式，譬如：{ "name_en": "大华","name_zh": ""}       |
 | brand_category_id   | 必须        |   Int    | 品牌分类id|
 | logo | 选填        |   String    | logo文件路径字符串 |

@@ -544,9 +544,19 @@ Title: `Html5 Home Top`
 
 
 
-1.首页产品配置`You May Also Like`
+1.首页产品配置
 
-`网站配置` --> `apphtml5配置`  --> `首页配置`
+1.1appfront首页产品Recommend For You
+
+`网站配置` --> `appfront配置`  --> `首页配置` ，  编辑项：`热销产品sku`
+
+您可以填写测试数据：`p10001-kahaki-xl,sk10003-001,sk10005,sk1000-khak,sk0003,men0003,men0002,men0001`
+
+1.2apphtml5首页产品：`You May Also Like`
+
+`网站配置` --> `apphtml5配置`  --> `首页配置` ， 编辑项：`特色产品sku`
+
+您可以填写测试数据：`p10001-kahaki-xl,32332,432432,sk2001-blue-zo,sk0008,sk0004,sk0003,sk0002,sk1000-black`
 
 2.热门搜索关键词列表：
 

@@ -104,7 +104,7 @@ Fecmall手把手系列
 *  [Fecmall 本地开发添加js和css文件](fecmall_local_add_js_and_css.md)
 *  [Fecmall 如何使用postman测试Api](fecmall_api_postman.md)
 *  [Fecmall 如何隐藏后台（appadmin）的菜单](fecmall_appadmin_menu_display.md)
-
+*  [Fecmall Google Analysis和GTM设置](fecmall_ga_gtm.md)
 
 
 Fecmall后台功能介绍

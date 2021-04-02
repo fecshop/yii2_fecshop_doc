@@ -26,9 +26,12 @@ URL: `http://fecshop.appapi.fancyecommerce.com/v1/product/shopfwaddone`
 | ------------------| -----:      | :----:      |:----:     |
 | name              | 必须        |   Array     | 【多语言属性】产品的名字|
 | weight            | 必须        |   Float     | 产品的重量kg|
+| spu            | 可选        |   String     | spu编号，如果不填写，则由程序生成|
+| sku            | 可选        |   String     | sku编号，如果不填写，则由程序生成|
 | status            | 可选        |   Int       | 产品的状态，1代表激活，2代表关闭，如果不填写默认为激活|
 | qty               | 可选        |   Int       | 产品的库存，如果不填写，则代表为0|
 | is_in_stock       | 可选        |   Int       | 产品的上架状态，1代表上架，2代表下架，如果不填写，则默认为上架状态|
+| brand_id             | 可选        |   int     | 产品品牌的id |
 | category          | 可选        |   Array     | 产品的分类id，该属性是数组属性|
 | price             | 必须        |   Float     | 产品的价格|
 | special_price     | 可选        |   Float     | 产品的特价|
@@ -50,7 +53,8 @@ URL: `http://fecshop.appapi.fancyecommerce.com/v1/product/shopfwaddone`
 | third_refer_url       | 必须        |   string     | 对应的第三方平台的url，一般采集的产品数据对应的外部来源url |
 | third_refer_code       |    必须     |   string     | 对应的第三方平台的产品外部编码 |
 | third_product_code       | 可选        |   string     | 货号（采集的第三方平台的货号） |
-
+| attr_group_normal       | 可选        |   Array     | 属性组对应的普通属性 |
+| attr_group_custom       | 可选        |   Array     | 属性组对应的规格属性 |
 
 对于多语言属性的`数据结构`和`必填`的详细说明参看： [AppApi多语言属性说明](fecshop-api-mutil-lang.md)
 
@@ -73,10 +77,13 @@ URL: `http://fecshop.appapi.fancyecommerce.com/v1/product/shopfwaddone`
             "name_pt": "",
             "name_zh": "测试计算机"
         },
+        "spu":"dddddddddddddddddddd",
+        "sku":"dddddddddddddddd1",
         "weight": 0.3,
         "status": 1,
         "qty": 334,
         "is_in_stock": 1,
+        "brand_id":114,
         "category": [
             1,2,3
         ],
@@ -170,19 +177,24 @@ URL: `http://fecshop.appapi.fancyecommerce.com/v1/product/shopfwaddone`
         "third_refer_url": "http://www.taobao.com/xxxxx",
         "third_refer_code": "xxxxxxxxxx1",
         "third_product_code": "yyyyyyyyy1",
-        "remark": "4444",
         "attr_group": "clothes_group",
-        "memory_capacity": {
-            "memory_capacity_en": "",
-            "memory_capacity_fr": "",
-            "memory_capacity_de": "",
-            "memory_capacity_es": "",
-            "memory_capacity_ru": "",
-            "memory_capacity_pt": "",
-            "memory_capacity_zh": ""
+        "attr_group_normal":{
+            "remark": "4444",
+            "memory_capacity": {
+                "memory_capacity_en": "",
+                "memory_capacity_fr": "",
+                "memory_capacity_de": "",
+                "memory_capacity_es": "",
+                "memory_capacity_ru": "",
+                "memory_capacity_pt": "",
+                "memory_capacity_zh": ""
+            }
         },
-        "color": "Red",
-        "size": "L"
+        "attr_group_custom":{
+            "color": "Red",
+            "size": "L"
+        }
+        
     },
     {
         "name": {
@@ -194,10 +206,14 @@ URL: `http://fecshop.appapi.fancyecommerce.com/v1/product/shopfwaddone`
             "name_pt": "",
             "name_zh": "测试计算机"
         },
+        
+        "spu":"dddddddddddddddddddd",
+        "sku":"dddddddddddddddd2",
         "weight": 0.3,
         "status": 1,
         "qty": 34,
         "is_in_stock": 1,
+        "brand_id":114,
         "category": [
             1,2,3
         ],
@@ -291,19 +307,23 @@ URL: `http://fecshop.appapi.fancyecommerce.com/v1/product/shopfwaddone`
         "third_refer_url": "http://www.taobao.com/xxxxx",
         "third_refer_code": "xxxxxxxxxx1",
         "third_product_code": "yyyyyyyyy1",
-        "remark": "4444",
         "attr_group": "clothes_group",
-        "memory_capacity": {
-            "memory_capacity_en": "",
-            "memory_capacity_fr": "",
-            "memory_capacity_de": "",
-            "memory_capacity_es": "",
-            "memory_capacity_ru": "",
-            "memory_capacity_pt": "",
-            "memory_capacity_zh": ""
+        "attr_group_normal":{
+            "remark": "4444",
+            "memory_capacity": {
+                "memory_capacity_en": "",
+                "memory_capacity_fr": "",
+                "memory_capacity_de": "",
+                "memory_capacity_es": "",
+                "memory_capacity_ru": "",
+                "memory_capacity_pt": "",
+                "memory_capacity_zh": ""
+            }
         },
-        "color": "Blue",
-        "size": "L"
+        "attr_group_custom":{
+            "color": "Blue",
+            "size": "L"
+        }
     },
     {
         "name": {
@@ -315,10 +335,14 @@ URL: `http://fecshop.appapi.fancyecommerce.com/v1/product/shopfwaddone`
             "name_pt": "",
             "name_zh": "测试计算机"
         },
+        
+        "spu":"dddddddddddddddddddd",
+        "sku":"dddddddddddddddd3",
         "weight": 0.3,
         "status": 1,
         "qty": 334,
         "is_in_stock": 1,
+        "brand_id":114,
         "category": [
             1,2,3
         ],
@@ -412,19 +436,23 @@ URL: `http://fecshop.appapi.fancyecommerce.com/v1/product/shopfwaddone`
         "third_refer_url": "http://www.taobao.com/xxxxx",
         "third_refer_code": "xxxxxxxxxx1",
         "third_product_code": "yyyyyyyyy1",
-        "remark": "4444",
         "attr_group": "clothes_group",
-        "memory_capacity": {
-            "memory_capacity_en": "",
-            "memory_capacity_fr": "",
-            "memory_capacity_de": "",
-            "memory_capacity_es": "",
-            "memory_capacity_ru": "",
-            "memory_capacity_pt": "",
-            "memory_capacity_zh": ""
+        "attr_group_normal":{
+            "remark": "4444",
+            "memory_capacity": {
+                "memory_capacity_en": "",
+                "memory_capacity_fr": "",
+                "memory_capacity_de": "",
+                "memory_capacity_es": "",
+                "memory_capacity_ru": "",
+                "memory_capacity_pt": "",
+                "memory_capacity_zh": ""
+            }
         },
-        "color": "Red",
-        "size": "M"
+        "attr_group_custom":{
+            "color": "Red",
+            "size": "M"
+        }
     }
 ]}
 ```

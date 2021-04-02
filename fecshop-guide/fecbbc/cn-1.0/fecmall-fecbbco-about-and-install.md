@@ -1,7 +1,29 @@
 Fecbbco 跨境多商户介绍和安装
 ==================
 
-> Fecbbco是基于fecbbc的基础上开发的扩展，用于跨境多商户
+> 跨境多商户不再使用Fecbbco作为解决方案，请使用最新的跨境电商多商户解决方案FecWbbc
+
+
+### FecWbbc 跨境多商户介绍（最新）
+
+针对跨境多商户的最新解决方案FecWbbc：
+
+**1.FecWbbc Demo演示地址**:
+
+**Pc**: http://fecwbbc.fecshop.com/
+
+**html5**: http://fecwbbch5.fecshop.com/
+
+**2.FecWbbc文档地址**：http://www.fecmall.com/doc/fecmall-guide/fecwbbc/cn-1.0/guide-README.html
+
+**3.FecWbbc应用市场地址**：http://addons.fecmall.com/28763787
+
+**4.FecWbbc联系我们**：http://www.fecmall.com/contacts
+
+
+
+**文档以下部分废弃，跨境多商户不再使用Fecbbco作为解决方案，请使用最新的跨境电商多商户解决方案FecWbbc**
+
 
 ### Fecbbco 跨境多商户介绍
 

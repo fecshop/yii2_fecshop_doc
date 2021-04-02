@@ -17,6 +17,7 @@ FecMall 多商户系统
 
 经销商操作手册
 ----------
+*  [经销商申请资质](fecmall-bbc-bdmin-audit.md)
 *  [经销商产品管理](fecmall-bbc-bdmin-product.md)
 *  [经销商设置物流](fecmall-bbc-bdmin-shipping.md)
 

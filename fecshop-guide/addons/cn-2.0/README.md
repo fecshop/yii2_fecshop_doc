@@ -22,14 +22,30 @@ Fecmall开发者中心
 *  [Fecmall-开发者简介](fecmall-addons-developer-about.md)
 *  [Fecmall-开发者中心-创建发布升级应用](fecmall-addons-developer-center.md)
 *  [Fecmall-应用安装和加载原理](fecmall-addons-developer.md)
-*  [Fecmall-应用开发说明](fecmall-addons-developer-config-example.md)
+*  [Fecmall-应用配置文件Config.php配置详解](fecmall-addons-developer-config-example.md)
 *  [Fecmall-应用初始化Gii工具](fecmall-addons-developer-init-tools.md)
 *  [Fecmall-后台菜单Admin Url Key Gii工具](fecmall-addons-developer-admin-url-key-tools.md)
 *  [Fecmall-开发应用赚取RMB](fecmall-addons-developer-earn-rmb.md)
 
 
+Fecmall开发扩展插件实战解析
+----------------
+*  [Fecmall-开发扩展插件简介](fecmall-addons-developer-sz-about.md)
+*  [Fecmall-administer插件安装部分](fecmall-addons-developer-sz-administer.md)
+*  [Fecmall扩展开发-module模块部分](fecmall-addons-developer-sz-module.md)
+*  [Fecmall扩展开发-component组件部分](fecmall-addons-developer-sz-component.md)
+*  [Fecmall扩展开发-services服务部分](fecmall-addons-developer-sz-services.md)
+*  [Fecmall扩展开发-theme模板部分](fecmall-addons-developer-sz-theme.md)
+*  [Fecmall扩展开发-translate翻译部分](fecmall-addons-developer-sz-translate.md)
+*  [Fecmall扩展开发-model部分](fecmall-addons-developer-sz-model.md)
+*  [Fecmall扩展开发-其他的部分](fecmall-addons-developer-sz-other.md)
 
-Fecmall 应用扩展
+
+
+
+
+
+Fecmall 应用扩展文档
 --------------------
 
 *  [Fecmall扩展-Braintree支付方式](fecmall-addons-system-braintree-payment.md)

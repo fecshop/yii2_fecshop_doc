@@ -1,4 +1,4 @@
-Fecmall-应用开发说明
+Fecmall-应用配置文件Config.php配置详解
 ==============
 
 

@@ -24,7 +24,7 @@ URL: `http://fecshop.appapi.fancyecommerce.com/v1/productbrandcategory/upsertone
 
 | 参数名称        | 是否必须    |  类型       |  描述     |
 | ----------------| -----:      | :----:      |:----:     |
-| id           | 必须        |   String or int    | brand category数据表的id值，该字段作为upsert的key值       |
+| id           | 可选        |   String or int    | brand category数据表的id值，该字段作为upsert的key值 ，当id为空则为新增数据，新增数据行的id为数据库生成，当id有值而且在数据表中存在该id则更新，当id有值而且在数据表中不存在该id则插入数据，插入数据行的id为当前参数指定的id     |
 | name           | 必须        |   Json Array    | 品牌名称，多语言格式，譬如：{ "name_en": "大华","name_zh": ""}       |
 | status   | 必须        |   Int    | 选择值[`1`,`2`]，属性状态，1代表激活，2代表关闭|
 | sort_order   | 选填        |   Int    | 排序  |

@@ -213,11 +213,6 @@ Fecmall 本地二开扩展
 
 
 
-
-
-
-
-
 Fecmall 帮助
 --------------------
 *  [Fecmall-基础配置](fecshop-2-base-config.md)
@@ -227,7 +222,7 @@ Fecmall 帮助
 *  [Fecmall-使用redis](fecshop-2-use-redis.md)
 *  [Fecmall-使用Mongodb](fecshop-2-use-mongo.md)
 *  [Fecmall-使用Xunsearch](fecshop-2-use-xunsearch.md)
-
+*  [Fecmall-Shopfw数据采集助理](fecshop-shopfw-cj-product-data.md)
 
 
 
