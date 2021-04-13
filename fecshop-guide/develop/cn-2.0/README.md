@@ -12,6 +12,7 @@ FecMall2.0 开发说明
 *  [Fecmall-2.x 安装](fecshop-2-graphical-install.md)
 *  [Fecmall-2.x 宝塔安装](fecshop-2-graphical-bt-install.md)
 *  [Fecmall-2.x 界面安装](fecshop-2-graphical-web-install.md)
+*  [Fecmall-2.x SSL证书 - HTTPS](fecshop-2-graphical-ssl-https.md)
 *  [Fecmall-2.x 升级](fecshop-2-about-update.md)
 *  [Fecmall-2.x 安装VUE](fecshop-2-vue-install.md)
 *  [Fecmall-2.x 安装微信小程序](fecshop-2-weixin-install.md)

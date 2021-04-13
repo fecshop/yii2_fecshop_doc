@@ -43,7 +43,7 @@ Fecmall 支付
 
 设置完成后，就可以接收IPN消息了。
 
-为什么要设置接收IPN呢？可以参看一下这个文章：http://www.fecshop.com/topic/457
+为什么要设置接收IPN呢？可以参看一下这个文章：http://www.fecmall.com/topic/457
 
 ### 设置微信支付
 
@@ -60,7 +60,7 @@ Fecmall 支付
 当您想要开发一个新的支付方式的时候，您需要做一个跳转到第三方支付平台的准备页面（payment start url）
 和一个支付成功返回的页面url。
 
-下面是详细的步骤，我这里也有一个支付宝开发的详细步骤，供参考，地址为：http://www.fecshop.com/topic/143
+下面是详细的步骤，我这里也有一个支付宝开发的详细步骤，供参考，地址为：http://www.fecmall.com/topic/143
 
 
 
@@ -176,7 +176,7 @@ paypal 填写货运地址在点击支付的流程。
     
    
 如果您想开发一个新支付，可以参考下支付宝支付的整个步骤：
-[Fecmall 支付宝支付开发思路 和 详细的文件结构](http://www.fecshop.com/topic/143)   
+[Fecmall 支付宝支付开发思路 和 详细的文件结构](http://www.fecmall.com/topic/143)   
 ，这个文章写得比较详细，可以了解整个流程。  
 
 

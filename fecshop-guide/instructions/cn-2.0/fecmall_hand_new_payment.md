@@ -7,7 +7,7 @@ Fecmall 如何开发一个新支付
 
 fecmall开发一个新的支付，是完全可以开发成独立扩展的方式
 
-您需要先了解一下，帮助文件，[Fecmall 支付](http://www.fecshop.com/doc/fecshop-guide/instructions/cn-1.0/guide-fecshop_payment_method.html)
+您需要先了解一下，帮助文件，[Fecmall 支付](fecmall_payment_method.md)
 
 这个文档是对现有的一些支付方式的配置讲解
 

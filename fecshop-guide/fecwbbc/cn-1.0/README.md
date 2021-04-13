@@ -25,6 +25,16 @@ FecWbbc 跨境多商户系统
 *  [FecWbbc设置语言和货币](fecwbbc-admin-language-currency.md)
 *  [FecWbbc支付设置](fecwbbc-admin-bdmin-payment.md)
 *  [FecWbbc分类Banner设置](fecwbbc-admin-category-image.md)
+*  [FecWbbc基础配置设置](fecwbbc-admin-base-config.md)
+*  [FecWbbc邮件设置](fecwbbc-admin-email-config.md)
+*  [FecWbbc静态块和Page页设置](fecwbbc-admin-cms.md)
+
+批发和秒杀
+----------
+
+*  [FecWbbc产品批发](fecwbbc-admin-product-wholesale.md)
+*  [FecWbbc产品秒杀](fecwbbc-admin-product-seckill.md)
+
 
 订单处理流程：
 ----------

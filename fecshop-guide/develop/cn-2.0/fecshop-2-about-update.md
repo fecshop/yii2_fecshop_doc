@@ -78,6 +78,7 @@ https://github.com/fecshop/yii2_fecshop/releases/latest
 在二开路径进行覆盖重写，如果您修改了vendor下面的内容，那么，下次升级的时候，
 将会把您改动的内容全部覆盖掉，您写的代码将全部清空。这个需要切记！
 
+如果你使用的是宝塔集成环境，执行`composer update`前，需要进行环境更改，参看：[宝塔中使用composer 需要进行的操作 - 去除 禁用函数 proc_open 和 putenv](http://www.fecmall.com/topic/4951)
 
 
 #### 2.3 通过Migrate升级数据库部分

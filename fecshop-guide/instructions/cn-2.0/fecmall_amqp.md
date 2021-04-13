@@ -98,9 +98,9 @@ execute($queue)方法中
 /**
  * FecShop file.
  *
- * @link http://www.fecshop.com/
+ * @link http://www.fecmall.com/
  * @copyright Copyright (c) 2016 FecShop Software LLC
- * @license http://www.fecshop.com/license/
+ * @license http://www.fecmall.com/license/
  */
 
 namespace fecshop\app\console\modules\Amqp\controllers;
@@ -232,9 +232,9 @@ MQ传递的是一个序列化，或者json格式的数据，那么，上面的�
 /**
  * FecShop file.
  *
- * @link http://www.fecshop.com/
+ * @link http://www.fecmall.com/
  * @copyright Copyright (c) 2016 FecShop Software LLC
- * @license http://www.fecshop.com/license/
+ * @license http://www.fecmall.com/license/
  */
 
 namespace fecshop\app\console\modules\Amqp\controllers;
@@ -342,9 +342,9 @@ class Queue extends \zhuravljov\yii\queue\amqp\Queue
 /**
  * FecShop file.
  *
- * @link http://www.fecshop.com/
+ * @link http://www.fecmall.com/
  * @copyright Copyright (c) 2016 FecShop Software LLC
- * @license http://www.fecshop.com/license/
+ * @license http://www.fecmall.com/license/
  */
 
 namespace fecshop\app\console\modules\Amqp\controllers;

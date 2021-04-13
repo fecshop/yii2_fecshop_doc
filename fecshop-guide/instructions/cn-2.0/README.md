@@ -16,6 +16,7 @@ FecMall 使用说明
 ---------
 *  [Fecmall 配置结构](fecmall_config_construction.md)
 *  [Fecmall 手机检测跳转](fecmall_mobile.md)
+*  [Fecmall Https SSL证书](fecmall_https_ssl.md)
 *  [Fecmall Session](fecmall_session.md)
 *  [Fecmall 货币](fecmall_currency.md)
 *  [Fecmall Store](fecmall_store.md)

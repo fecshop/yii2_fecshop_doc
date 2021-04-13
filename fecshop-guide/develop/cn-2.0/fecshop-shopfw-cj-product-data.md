@@ -5,18 +5,10 @@ Fecmall-Shopfw数据采集助理
 
 
 
-### Fecmall数据采集助理
 
-该工具是`shopfw`公司开发的数据采集工具，该软件的`开发`，`销售`由`shopfw`完成，`fecmall`只负责提供`api`进行集成。
+### 数据采集助手功能说明
 
-因此，Fecmall助理完全100%第三方公司shopfw开发的采集软件。
-
-Fecmall助理，详细参看：https://www.shopfw.com/soft/fecmall.html
-
-具体的费用详细，请咨询shopfw官方。(Fecmall不参与销售)
-
-
-### 数据采集详细说明
+![](images/a111.png)
 
 1.数据采集工具功能说明：https://www.shopfw.com/soft/fecmall.html
 
@@ -34,6 +26,18 @@ Fecmall助理，详细参看：https://www.shopfw.com/soft/fecmall.html
 shopfw自身支持多语言翻译，翻译后的数据可以直接导入fecmall
 
 
+
+### Fecmall数据采集助理
+
+该工具是`shopfw`公司开发的数据采集工具，该软件的`开发`，`销售`由`shopfw`完成，`fecmall`只负责提供`api`进行集成。
+
+因此，Fecmall助理完全100%第三方公司shopfw开发的采集软件。
+
+
+
+Fecmall助理，详细参看：https://www.shopfw.com/soft/fecmall.html
+
+具体的费用详细，请咨询shopfw官方。(Fecmall不参与销售)
 
 
 

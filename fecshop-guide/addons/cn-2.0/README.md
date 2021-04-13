@@ -14,8 +14,9 @@ Fecmall 应用安装，升级，卸载。
 --------------------
 
 *  [Fecmall-安装应用](fecmall-addons-install.md)
+*  [Fecmall-安装应用-超时问题](fecmall-addons-install-timeout.md)
 *  [Fecmall-升级卸载应用](fecmall-addons-upgrade-uninstall.md)
-
+*  [Fecmall-安装问题汇总](fecmall-addons-qa.md)
 
 Fecmall开发者中心
 ----------------
