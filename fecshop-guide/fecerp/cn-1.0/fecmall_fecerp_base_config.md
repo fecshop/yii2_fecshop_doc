@@ -38,14 +38,11 @@ ERP基础配置
 
 
 
-1.添加fecmall商城网站
-
-您可以在这里添加商城网站
-
-![](images/erp_5.jpg)
+5.添加fecmall商城网站
 
 
-您需要在您的fecmall商城后台，添加一个后台用户，作为api用户，并且配置fecmall appapi入口，譬如
+
+5.1您需要在您的fecmall商城后台，添加一个后台用户，作为api用户，并且配置fecmall appapi入口，譬如
 
 Api Domain：`http://fecshop.appapi.fancyecommerce.com`
 
@@ -53,8 +50,11 @@ Api User：`apiuser`
 
 Api Password：`xxxx`
 
+5.2您可以erp后台，在这里添加商城网站
 
+![](images/erp_5.jpg)
 
+点击编辑按钮，在编辑框中填写配置数据：`Api Domain`,  `Api User`,  `Api Password`
 
 
 

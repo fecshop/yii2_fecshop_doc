@@ -12,6 +12,8 @@ Fecmall 多语言
 > 可以为每一个store指定不同的语言和url结构，设置不同的语言，默认货币,模板等。
 
 
+本文档是从原理角度讲述fecmall多语言，如果您想配置多语言（fecmall-2.13.0+版本），可以参看：[Fecmall 添加多语言](fecmall_add_lang.md)
+
 ## 后台配置多语言
 
 ![xx](images/as5.png)

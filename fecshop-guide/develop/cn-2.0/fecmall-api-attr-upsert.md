@@ -24,7 +24,7 @@ URL: `http://fecshop.appapi.fancyecommerce.com/v1/productattr/upsertone`
 
 | 参数名称        | 是否必须    |  类型       |  描述     |
 | ----------------| -----:      | :----:      |:----:     |
-| remote_id           | 必须        |   String or int    | 远程数据库，attr数据表的id值，该字段作为upsert的key值       |
+| remote_id           | 必须        |   String or int    | 远程数据库，attr数据表的id值，该字段作为upsert的key值，该字段必须有值，不能为空       |
 | attr_type         | 必须        |   String    | 选择值[`spu_attr`, `general_attr`], 属性类型，`spu_attr`代表规格属性，譬如颜色尺码，`general_attr`代表普通属性 |
 | name           | 必须        |   String    | 产品属性名称，由`字符_- `组成，不要用中文。       |
 | status   | 必须        |   Int    | 选择值[`1`,`2`]，属性状态，1代表激活，2代表关闭|
@@ -33,7 +33,14 @@ URL: `http://fecshop.appapi.fancyecommerce.com/v1/productattr/upsertone`
 | display_data          | 可选        |   数组或者空字符串    | 当`display_type`的值为select和editSelect的时候，才需要填写该值|
 | is_require   | 必须        |   Int    | 选择值[`1`,`2`]，产品编辑的时候，是否必填？1代表必填，1代表选填|
 
-补充1：`display_type`的选择子项值说明
+
+**补充1**：对于参数`remote_id`是远程数据表的id，譬如erp进行数据同步，需要将`erp`.`product_attribute`表的数据行`id`，传递过来
+，作为`remote_id`的值，在`upsert api`中，会先查询`remote_id`对应的`数据行`是否存在，如果存在则`更新`此数据行，
+如果没有`remote_id`对应的数据行，则会进行`插入`数据。下次再此调用该api同步数据，就会通过`remote_id`查询到
+此数据行，然后进行`更新`。
+
+
+**补充2**：`display_type`的选择子项值说明
 
 
 `inputString`：当属性为字符串的时候选择该值，譬如产品的sku，spu等属性
@@ -50,7 +57,7 @@ URL: `http://fecshop.appapi.fancyecommerce.com/v1/productattr/upsertone`
 当成一个input文本框填写新内容，譬如颜色属性，当属性中没有某些颜色子项，可以直接填写新值
 
 
-补充2：`display_data`的说明
+**补充3**：`display_data`的说明
 
 只有当display_type的值为select或者editSelect的时候，才会填写该值，该值的格式为：
 

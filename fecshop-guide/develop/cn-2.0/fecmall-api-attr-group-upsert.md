@@ -31,7 +31,14 @@ URL: `http://fecshop.appapi.fancyecommerce.com/v1/productattrgroup/upsertone`
 | status   | 必须        |   Int    | 选择值[`1`,`2`]，属性状态，1代表激活，2代表关闭|
 | attr_ids          | 必须         |   数组或者空字符串    | 属性数组|
 
-补充1：`attr_ids`的说明
+
+**补充1**：对于参数`remote_id`是远程数据表的id，譬如erp进行数据同步，需要将`erp`.`product_attribute_group`表的数据行`id`，传递过来
+，作为`remote_id`的值，在`upsert api`中，会先查询`remote_id`对应的`数据行`是否存在，如果存在则`更新`此数据行，
+如果没有`remote_id`对应的数据行，则会进行`插入`数据。下次再此调用该api同步数据，就会通过`remote_id`查询到
+此数据行，然后进行`更新`。
+
+
+**补充2**：`attr_ids`的说明
 
 示例数据：
 
@@ -51,6 +58,10 @@ URL: `http://fecshop.appapi.fancyecommerce.com/v1/productattrgroup/upsertone`
 ```
 
 `attr_id`：属性id，`string` or `int`类型 (当用mongodb存储产品数据的时候，该值为字符串)
+
+该值为远程数据表`erp.product_attribute_group`（譬如erp）里面`attr_ids`字段的值，取出来直接赋值即可
+，fecmall接收到数据，将会进入`fecmall.product_attribute`里面查询`remote_id`字段，找到在fecmall中对应
+的`attr_id`。
 
 `sort_order`：属性排序，`int`类型
 

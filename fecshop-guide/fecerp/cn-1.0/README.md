@@ -10,6 +10,11 @@ FecERP工具说明文档
 *  [关于FecERP工具](fecmall_fecerp_about.md)
 *  [FecERP 安装](fecmall_fecerp_install.md)
 
+Api数据同步说明：
+---------
+*  [Fecmall商城同步数据](fecmall_fecerp_fecmall_sync.md)
+*  [ERP同步远程Api](fecmall_fecerp_fecmall_sync_api.md)
+
 功能详细说明：
 ---------
 *  [ERP基础配置](fecmall_fecerp_base_config.md)
