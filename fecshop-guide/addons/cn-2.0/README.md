@@ -61,7 +61,7 @@ Fecmall 应用扩展文档
 *  [Fecmall扩展-ElasticSearch搜索扩展](fecmall-addons-elasticsearch.md)
 *  [Fecmall扩展-分类产品翻译扩展](fecmall-addons-translate-product-and-category.md)
 *  [Cashback - Amazon导购返现独立站](fecyo-addons-amazon-cashback.md)
-
+*  [Fecmall扩展-聚水潭Erp对接](fecmall-addons-jst-erp.md)
 
 
 

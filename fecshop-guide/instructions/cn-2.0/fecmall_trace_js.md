@@ -1,4 +1,4 @@
-Fecmall Trace Js追踪
+Fecmall Trace Js用户行为追踪统计
 =============
 
 > 通过FA，百度追踪js，google analysis js，facebook js等，将js代码片段加入到fecmall中，进而追踪和统计fecmall商城用户访问数据
@@ -52,17 +52,28 @@ FA系统需要自己搭建，用户数据完全保存到自己的数据库中，
 
 
 
+### 代码解析
+
+如果您后台添加了js，但是没有效果，您可以先从这几个部分入手
+
+1.按照上面的js添加后，打开pc页面，浏览器查看源代码html，查看您添加的js是否找到，
+如果能找到说明添加的没有问题，而是您的js有问题
 
 
+2.如果找不到，可以从代码角度找一下原因。
+
+2.1查看你页面的theme目录下的layout文件，是否存在？
+
+譬如文件：`@fecshop/app/appfront/theme/base/front/layouts/main.php`
+
+```
+<?= Yii::$service->page->widget->render('base/trace',$this); ?>
+```
 
 
+2.2您安装了扩展，或者自己开发添加的layout文件，如果没有这个代码，请添加上即可
 
-
-
-
-
-
-
+譬如，fecro 首页对应的layouts文件：`@fecro/app/appfront/theme/fecro/layouts/home.php`
 
 
 
