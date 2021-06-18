@@ -49,10 +49,10 @@ H5商城入口：http://fecbbch5.fecshop.com/cn/
 `Console入口`：平台商操作离线脚本的入口，进行一些批量数据的处理
 
 
-### 关于系统授权
+### 关于系统授权协议
 
 
-需要付费购买，应用市场购买地址
+开源BSD协议，商用免费授权，授权协议参看:https://www.fecmall.com/license
 
 应用市场地址：http://addons.fecmall.com/42575492
 

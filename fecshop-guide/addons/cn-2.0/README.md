@@ -16,6 +16,7 @@ Fecmall 应用安装，升级，卸载。
 *  [Fecmall-安装应用](fecmall-addons-install.md)
 *  [Fecmall-安装应用-超时问题](fecmall-addons-install-timeout.md)
 *  [Fecmall-升级卸载应用](fecmall-addons-upgrade-uninstall.md)
+*  [Fecmall-应用扩展优先级设置](fecmall-addons-score.md)
 *  [Fecmall-安装问题汇总](fecmall-addons-qa.md)
 
 Fecmall开发者中心
@@ -51,6 +52,7 @@ Fecmall 应用扩展文档
 
 *  [Fecmall扩展-Braintree支付方式](fecmall-addons-system-braintree-payment.md)
 *  [Fecmall扩展-Stripe支付方式](fecmall-addons-system-stripe-payment.md)
+*  [Fecmall扩展-Paygate（南非）支付方式](fecmall-addons-system-paygate-payment.md)
 *  [Fecmall扩展-阿里云OSS存储产品图片](fecmall-addons-alioss-product-image.md)
 *  [Fecmall扩展-七牛云OSS存储产品图片](fecmall-addons-qiniuoss-product-image.md)
 *  [Fecmall扩展-CDN-阿里云](fecmall-addons-cdn-alicdn.md)

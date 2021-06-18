@@ -47,6 +47,7 @@ FecMall 使用说明
 *  [Fecmall Fb Google登录](fecmall_fb_google_login.md)
 *  [Fecmall 国家](fecmall_country.md)
 *  [Fecmall 支付](fecmall_payment_method.md)
+*  [Fecmall Paypal支付](fecmall_payment_paypal_method.md)
 *  [Fecmall 微信支付](fecmall_payment_wx_method.md)
 *  [Fecmall 微信小程序](fecmall_wx_micro.md)
 *  [Fecmall 订单](fecmall_order.md)
@@ -54,6 +55,7 @@ FecMall 使用说明
 *  [Fecmall Robots](fecmall_robots.md)
 *  [Fecmall Url重写](fecmall_url_rewrite.md)
 *  [Fecmall 邮件](fecmall_email.md)
+*  [Fecmall Shell 脚本](fecmall_shell.md)
 *  [Fecmall cron脚本](fecmall_cron_script.md)
 *  [Fecmall cron脚本时间区间控制](fecmall_cron_script_date_control.md)
 *  [Fecmall 验证码](fecmall_yzm.md)
@@ -71,6 +73,8 @@ FecMall 使用说明
 *  [Fecmall Error Handler](fecmall_error_handler.md)
 *  [Fecmall breadcrumbs](fecmall_breadcrumbs.md)
 *  [Fecmall 错误处理](fecmall_errors_process.md)
+*  [Fecmall Zip压缩包文件](fecmall_zip_file.md)
+
 
 Fecmall手把手系列
 -----------

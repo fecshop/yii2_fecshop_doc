@@ -10,22 +10,73 @@ braintree是再商城内部填写支付信息，进行信用卡扣款的流程
 ![](images/1x9kwrNQ4Dfed7R.png)
 
 
-### 安装配置
+### Braintree支付扩展安装
 
-1.安装
+**扩展支持**：fecmall开源系统，fecro跨境单商户，fecwbbc跨境多商户系统
 
-应用市场地址：http://addons.fecmall.com/45263532
+1.应用市场地址：http://addons.fecmall.com/45263532
 
-购买后，直接应用管理部分，在线安装即可
+2.如何应用市场安装应用，请参看文档：[Fecmall安装应用](https://www.fecmall.com/doc/fecshop-guide/addons/cn-2.0/guide-fecmall-addons-install.html)
 
-刷新后台界面即可
+安装插件后，请设置支付插件的优先级，`fecbraintree扩展优先级需要高出`其他插件（譬如fecro，fecwbbc等），
+如何设置扩展插件优先级，请参看：[Fecmall-应用扩展优先级设置](https://www.fecmall.com/doc/fecshop-guide/addons/cn-2.0/guide-fecmall-addons-score.html)
 
 
-2.配置
+3.如果你使用的`fecro跨境单商户`，必须更改: (做兼容性处理)
+
+打开文件 `./addons/fecmall/fecpaygate/config.php `, 
+
+3.1大约109行,将代码
+
+```
+'view'	=> '@fecbraintree/app/appfront/theme/fecbraintree/checkout/onepage/index/payment.php'  
+```
+
+改为：
+
+```
+'view'	=> '@fecbraintree/app/appfront/theme/fecbraintree/checkout/onepage/index/fecro_payment.php'  
+```
+
+3.2大约152行,将代码
+
+```
+ 'view'	=> '@fecbraintree/app/apphtml5/theme/fecbraintree/checkout/onepage/index/payment.php'
+```
+
+改为：
+
+```
+ 'view'	=> '@fecbraintree/app/apphtml5/theme/fecbraintree/checkout/onepage/index/fecro_payment.php'  
+```
+
+
+4.如果您是fecwbbc多商户，必须更改: (做兼容性处理)
+
+打开文件 `./addons/fecmall/fecpaygate/config.php` , 
+
+4.1您需要操作上面的`第3`步骤,操作上面的`3.1`和`3.2`，进行配置文件更改
+
+4.2大约40行,将代码
+
+```
+ 'class'    => 'fecbraintree\services\payment\Braintree',
+```
+
+改为：
+
+```
+ 'class'    => 'fecbraintree\services\payment\BraintreeFecwbbc',
+```
+
+操作完成后，配置更改完成。
+
+
+### Braintree支付扩展配置
 
 > 目前是以沙盒环境配置
 
-2.1注册沙盒账户
+1.注册沙盒账户
 
 注册沙盒账户参看: http://www.fecmall.com/topic/2283
 
@@ -38,7 +89,7 @@ go to `Settings` -> `Processing` -> `CVV`, enable CVV verification rules, and re
 详细操作参看帖子：http://www.fecmall.com/topic/2287
 
 
-2.2后台填写配置信息
+2.后台填写配置信息
 
 将资料填写下面（正式生产环境，请填写相关信息）
 
@@ -47,6 +98,40 @@ go to `Settings` -> `Processing` -> `CVV`, enable CVV verification rules, and re
 appfront开启braintree支付
 
 ![](images/braintree2.png)
+
+
+### Fecro使用braintree的兼容性处理
+
+
+由于braintree是站内输入信用卡，很容易冲突，因此做了兼容性处理
+
+
+如果您在fecro上面安装braintree，那么需要进行如下配置更改
+
+
+打开配置文件：`./addons/fecmall/fecbraintree/config.php`
+
+
+```
+1.代码文件107行左右，将
+
+'view'	=> '@fecbraintree/app/appfront/theme/fecbraintree/checkout/onepage/index/payment.php'
+
+改为：
+
+'view'	=> '@fecbraintree/app/appfront/theme/fecbraintree/checkout/onepage/index/fecro_payment.php'
+
+2.代码文件150行左右，将
+
+'view'	=> '@fecbraintree/app/apphtml5/theme/fecbraintree/checkout/onepage/index/payment.php'
+
+改为：
+
+'view'	=> '@fecbraintree/app/apphtml5/theme/fecbraintree/checkout/onepage/index/fecro_payment.php'
+
+```
+
+### 支付测试
 
 apphtml5也需要开启braintree支付
 
@@ -74,7 +159,36 @@ CVV: `111`
 
 ![](images/braintree6.png)
 
+### Fecro使用braintree的兼容性处理
 
+
+由于braintree是站内输入信用卡，很容易冲突，因此做了兼容性处理
+
+
+如果您在fecro上面安装braintree，那么需要进行如下配置更改
+
+
+打开配置文件：`./addons/fecmall/fecbraintree/config.php`
+
+
+```
+1.代码文件107行左右，将
+
+'view'	=> '@fecbraintree/app/appfront/theme/fecbraintree/checkout/onepage/index/payment.php'
+
+改为：
+
+'view'	=> '@fecbraintree/app/appfront/theme/fecbraintree/checkout/onepage/index/fecro_payment.php'
+
+2.代码文件150行左右，将
+
+'view'	=> '@fecbraintree/app/apphtml5/theme/fecbraintree/checkout/onepage/index/payment.php'
+
+改为：
+
+'view'	=> '@fecbraintree/app/apphtml5/theme/fecbraintree/checkout/onepage/index/fecro_payment.php'
+
+```
 
 ### 注意：
 

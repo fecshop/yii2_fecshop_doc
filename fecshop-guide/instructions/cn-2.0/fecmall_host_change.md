@@ -190,7 +190,8 @@ Which environment do you want the application to be initialized in?
 
 5.后台store域名设置
 
-如果您不做域名更换，那么不需要操作该步骤，只需将域名解析到新的服务器ip即可，
+**如果您不做域名更换，那么不需要操作该步骤，只需将域名解析到新的服务器ip即可**
+
 如果您要做域名更换，那么需要执行下面的步骤
 
 访问后台域名，进入后台`配置store`
@@ -212,11 +213,44 @@ Which environment do you want the application to be initialized in?
 
 将图片域名改成您目前的域名。
 
-6.对于本地和线上，还要注意安全性，进行: [Fecmall开发环境切换成生产环境](fecmall_env_change.md)
+6.更改文件以及文件夹的所有者
+
+当您将文件上传到新的服务器，如果使用root账户操作的，那么您的fecshop文件的所有者以及用户组都是root，这个需要更改为
+php的用户组
+
+您可以通过命令查看（www.xxx.com是fecmall的根文件夹）
+
+```
+[root@VM-0-5-centos wwwroot]# ll 
+total 8
+drwxr-xr-x 18 root root 4096 May 12 09:11 www.xxx.com
+
+```
+
+php的用户名和用户组，一般为`www`, 您可以执行命名(如果您的php的用户名是其他用户名，请将`www`更改为您的`php用户名`)
+
+```
+chown www www.xxx.com/ -R
+chgrp www www.xxx.com/ -R
+```
+
+执行完成后查看
+
+```
+[root@VM-0-5-centos wwwroot]# ll 
+total 8
+drwxr-xr-x 18 www www 4096 May 12 09:11 www.xxx.com
+
+```
+
+您可以进入子文件夹查看一下文件所有者是否更改为`www`
+
+
+7.对于本地和线上，还要注意安全性，进行: [Fecmall开发环境切换成生产环境](fecmall_env_change.md)
 
 对于网站正式运营，已经要切换成prod生产环境。
 
-7.您可以访问您的前端商城了，查看是否有问题，如果有问题，可以在论坛发帖
+8.您可以访问您的前端商城了，查看是否有问题，如果有问题，可以在论坛发帖
 
 
 

@@ -46,22 +46,9 @@ fecyo扩展对应的微信小程序，[Fecyo微信小程序](http://www.fecmall.
 https://fecshop.appserver.fancyecommerce.com
 线上小程序必须`https`才行，因此需要nginx配置`https`
 
-3.2`appId`和`AppSecret`(小程序密钥)设置：  开发-->开发设置-->开发者ID ，在fecshop：
-@common/config/payment/wxpay/lib/WxPay.Micro.Config.php中设置
+3.2fecmall后台设置 微信配置信息
 
-```
-const APPID = 'wxedc77579191bc54f';
-const APPSECRET = '3b97c3fb4edeb1ca25e8386d753347a9';
-```
-
-3.3设置商户支付收款
-
-@common/config/payment/wxpay/lib/WxPay.Micro.Config.php中设置
-
-```
-const MCHID = '1517420921';
-const KEY = '8934e7d15483e97501ef794cf7b0519e';
-```
+后台菜单：`网站配置` --> `支付参数配置` --> `微信参数配置`
 
 该信息参看上面的`微信商户平台设置`，在微信商户平台获取
 

@@ -115,7 +115,7 @@ Fecmall Appapi 入口
 *  [Fecmall Api 分类图片同步](fecmall-api-category-image-sync.md)
 *  [Fecmall Api 订单 List](fecmall-api-order.md)
 *  [Fecmall Api 订单 FetchOne](fecmall-api-order-fetchone.md)
-*  [Fecmall Api 订单 UpdatePaymentStatus](fecmall-api-order-update-payment-status.md)
+*  [Fecmall Api 订单 UpdateOrderStatus](fecmall-api-order-update-payment-status.md)
 *  [Fecmall ShopFw采集工具api说明](fecmall-api-shopfw.md)
 *  [Fecmall Api ShopFw-产品新增](fecmall-api-shopfw-product-add.md)
 *  [Fecmall Api ShopFw-产品更新库存和价格](fecmall-api-shopfw-product-update-stock-and-price.md)

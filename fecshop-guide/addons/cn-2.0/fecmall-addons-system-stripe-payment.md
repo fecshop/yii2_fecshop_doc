@@ -8,12 +8,29 @@ Fecmall-Stripe支付方式
 
 ### Fecmall-Stripe扩展安装
 
-应用市场地址：http://addons.fecmall.com/57236781
+**扩展支持**：fecmall开源系统，fecro跨境单商户，fecwbbc跨境多商户系统
 
-购买后，直接应用管理部分，在线安装即可
+1.应用市场地址：http://addons.fecmall.com/57236781
 
-刷新后台界面即可
+2.如何应用市场安装应用，请参看文档：[Fecmall安装应用](https://www.fecmall.com/doc/fecshop-guide/addons/cn-2.0/guide-fecmall-addons-install.html)
 
+安装插件后，请设置支付插件的优先级，`fecbraintree扩展优先级需要高出`其他插件（譬如fecro，fecwbbc等），
+如何设置扩展插件优先级，请参看：[Fecmall-应用扩展优先级设置](https://www.fecmall.com/doc/fecshop-guide/addons/cn-2.0/guide-fecmall-addons-score.html)
+
+
+3.如果你使用的`fecwbbc跨境多商户`，必须更改：（非fecwbbc忽略下面内容，不需要操作）
+
+打开文件 `./addons/fecmall/fecstripe/config.php` , 大约40行,将代码
+
+```
+'class'    => 'fecstripe\services\payment\Stripe',
+```
+
+改为：
+
+```
+'class'    => 'fecstripe\services\payment\StripeFecwbbc',
+```
 
 
 ### Fecmall-Stripe扩展配置

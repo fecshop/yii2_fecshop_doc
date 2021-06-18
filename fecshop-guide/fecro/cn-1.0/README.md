@@ -73,10 +73,18 @@ Fecrot扩展（三级分销，积分，秒杀，批发）
 *  [Fecrot扩展-介绍: 三级分销](fecmall-fecrot-func-distributor.md)
 
 
+Fecroguest 游客下单扩展
+----------
+
+*  [Fecroguest 游客下单扩展](fecmall-fecroguest-about.md)
 
 
+Fecroshre 分享社交平台扩展
+----------
 
-
+*  [Fecro Share 分享社交平台扩展安装配置](fecmall-fecroshare-about.md)
+*  [Fecro Share addthis配置](fecmall-fecroshare-addthis.md)
+*  [Fecro Share addthis样式](fecmall-fecroshare-addthis-style.md)
 
 
 

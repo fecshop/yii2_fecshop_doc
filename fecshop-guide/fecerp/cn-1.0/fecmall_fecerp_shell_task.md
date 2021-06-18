@@ -5,7 +5,7 @@ Task任务脚本
 
 ### Task任务脚本
 
-
+对于一些手动操作，进行数据同步的工作，都是task完成，另外，
 对于一些耗时比较长的操作，譬如同步数据，不适合即时处理，适合通过任务的方式
 
 管理员在后台操作数据同步，就下了一个任务，然后通过离线脚本来处理任务内容
@@ -98,7 +98,8 @@ foreach ($sync_info as $item) {
 ```
 public function createTask($type, $taskContent)
 {
-    $this->initTaskServiceByType($type);
+    $siteId = $taskContent['condition']['site_id'];
+    $this->initTaskServiceByType($type, $siteId);
     $model = new $this->_modelName;
     $model->type = $type;
     $model->task_content = $this->_taskTypeService->getTypeTaskContent($taskContent);
@@ -109,29 +110,38 @@ public function createTask($type, $taskContent)
     return $model->save();
 }
 
-public function initTaskServiceByType($type)
+public function initTaskServiceByType($type, $siteId)
+{
+    $this->_taskTypeService = $this->_getTaskServiceByType($type, $siteId);
+    
+    return;
+}
+protected function _getTaskServiceByType($type, $siteId)
 {
     $obName = $type;
-    if (isset($this->taskTypeServices[$type]) && $this->taskTypeServices[$type]) {
-        $obName = $this->taskTypeServices[$type];
-        if (substr($obName,0,1) == '@') {
-            $currentService = Yii::getAlias($obName);
-            $this->_taskTypeService = new $currentService();
+    $siteM = Yii::$service->mallsite->getByTaskSiteId($siteId);
+    $siteType = isset($siteM['type']) ? $siteM['type'] : '';
+    if (!$siteType) {
+        throw new InvalidValueException('site type can not empty');
+    }
+    if (isset($this->taskTypeServices[$siteType]) && $this->taskTypeServices[$siteType]) {
+        $storagePath = $this->taskTypeServices[$siteType];
+        if (substr($storagePath,0,1) == '@') {
+            $currentService = Yii::getAlias($storagePath).'\\'.ucfirst($obName);
             
-            return;
+            return new $currentService();
         }
     }
     $className = get_class($this);
-    $storagePath = '\\'.strtolower($className).'\\';
+    $storagePath = '\\'.strtolower($className).'\\'.strtolower($siteType).'\\';
     $currentService =  $storagePath.ucfirst($obName);
-    $this->_taskTypeService = new $currentService();
     
-    return;
+    return new $currentService();
 }
 ```
 
 通过传递的`$type`,找到对应的`实例task`文件，实例化并赋值给`$this->_taskTypeService`,
-譬如：当`$type = 'GoodsMallToRemote'`，将会将`@fecerp\services\task\GoodsMallToRemote.php` 实例化并赋值于  `$this->_taskTypeService`
+譬如：当`$type = 'GoodsMallToRemote'` && 网站类型为`fecmall`，将会将`@fecerp\services\task\fecmall\GoodsMallToRemote.php` 实例化并赋值于  `$this->_taskTypeService`
 
 然后通过`实例task`, 处理数据，创建Task。
 
@@ -163,19 +173,22 @@ public function actionProcesstask($taskPageNum, $taskContentPageNum)
 public function processTask($taskPageNum, $taskContentPageNum)
 {
     $taskM = $this->getTaskMByPageNum($taskPageNum);
-    if (!$taskM || !$taskM['type']) {
+     if (!$taskM || !$taskM['type']) {
         
         return;
     }
     $type = $taskM['type'];
-    $this->initTaskServiceByType($type);
+    $task_content = $taskM['task_content'];
+    $taskContent = unserialize($task_content);
+    $siteId = isset($taskContent['condition']['site_id']) ? $taskContent['condition']['site_id'] : '';
+    $this->initTaskServiceByType($type, $siteId);
     
     return $this->_taskTypeService->processTask($taskM, $taskContentPageNum);
 }
 ```
 
-在第1部分，我们创建了`$type = 'GoodsMallToRemote'`的task，那么通过函数`$this->initTaskServiceByType($type);`,
-`$this->_taskTypeService`对应的是`@fecerp\services\task\GoodsMallToRemote.php`
+在第1部分，我们创建了`$type = 'GoodsMallToRemote'`的task，那么通过函数`$this->initTaskServiceByType($type, $siteId);`,
+`$this->_taskTypeService`对应的是`@fecerp\services\task\fecmall\GoodsMallToRemote.php`
 ，打开这个文件，找到函数`processTask($taskM, $taskContentPageNum)`
 
 ```
@@ -184,6 +197,8 @@ public function processTask($taskM, $taskContentPageNum)
     $task_content = $taskM['task_content'];
     $task_content = unserialize($task_content);
     $siteId = $task_content['condition']['site_id'];
+    // withImg or withNoImg
+    $taskType = $task_content['type'];
     $whereArr = isset($task_content['condition']['where']) ? $task_content['condition']['where'] : [];
     if (!$siteId) {
         
@@ -201,27 +216,30 @@ public function processTask($taskM, $taskContentPageNum)
     $collData = Yii::$service->goods->mallgoods->coll($filter);
     Yii::$service->logs->info("processTask############");
     
-    $apiUrlKey = '/v1/product/upsertone';
+    $apiUrlKey = '/v1/product/upsertone2';
     $apiDatas = $this->getApiData($collData['coll']);
     foreach ($apiDatas as $apiData) {
-        $image = $apiData['image'];
-        Yii::$service->logs->info($apiData['id']);
-        //Yii::$service->logs->info($image);
-        // 同步细节图
-        if (isset($image['gallery']) && is_array($image['gallery'])) {
-            foreach ($image['gallery'] as $imgOne) {
-                if (isset($imgOne['image']) && $imgOne['image']) {
-                    $this->syncProductImg($siteId, $imgOne['image']);
+        // 如果是同步产品图片的task，则进行产品图片更新
+        if ($taskType == 'withImg') {
+            // 同步产品图
+            $image = $apiData['image'];
+            Yii::$service->logs->info($apiData['id']);
+            //Yii::$service->logs->info($image);
+            // 同步细节图
+            if (isset($image['gallery']) && is_array($image['gallery'])) {
+                foreach ($image['gallery'] as $imgOne) {
+                    if (isset($imgOne['image']) && $imgOne['image']) {
+                        $this->syncProductImg($siteId, $imgOne['image']);
+                    }
                 }
             }
+            // 同步主图
+            if (isset($image['main']['image']) && $image['main']['image']) {
+                $this->syncProductImg($siteId, $image['main']['image']);
+            }
         }
-        // 同步主图
-        if (isset($image['main']['image']) && $image['main']['image']) {
-            $this->syncProductImg($siteId, $image['main']['image']);
-        }
-        
         //Yii::$service->logs->info('apiData####: ');
-        //Yii::$service->logs->info($apiData);
+        Yii::$service->logs->info($apiData);
         Yii::$service->task->taskApi($siteId, $apiUrlKey, 'post', ['product' => $apiData]);
     }
     
@@ -238,38 +256,58 @@ public function processTask($taskM, $taskContentPageNum)
 ### 二开扩展，创建新的task或者重写已有的Task
 
 
-当您创建了自己的fecmall扩展，或者本地开发，您可以在task services中添加配置`taskTypeServices`,
-进行指向。
+1.在fecmall的基础上`创建`新的task，或者`重写`已有的fecmall的task。您可以通过配置
 
-1.添加配置
 
 ```
 'services' => [
     'task' => [
         // 'class' => 'fecerp\services\Task',
         'taskTypeServices' => [
-            'GoodsBaseToMall'  => '@fecxxx/services/task/GoodsBaseToMall',
-            'CustomTask'  => '@fecxxx/services/task/CustomTask',
+            'magento' => [
+                'GoodsBaseToMall' => '@myerp/services/task/magento/GoodsBaseToMall' 
+            ],
         ],
     ],
 ],
-
-
 ```
 
+新建`@myerp/services/task/magento/GoodsBaseToMall.php`即可，在里面实现逻辑
 
-1.1对于`GoodsBaseToMall`，在erp中已经存在，通过该配置会重写`@fecerp/services/task/GoodsBaseToMall`，
-因此，该配置是重写配置
+2.添加新的类型站点
 
-1.2对于`CustomTask`，在erp中不存在，通过该配置，您可以创建您自己的Task，因此该配置是创建新Task的配置
+譬如添加`magento`类型的站点(如果已经添加，则忽略即可)
 
-2.创建Task实例
+详细参看[ERP站点配置管理](fecmall_fecerp_site_config.md)
 
-新创建的Task必须实现接口 `fecerp\services\task\TaskInterface`
+
+然后添加配置（设置文件夹路径）
+
+```
+'services' => [
+    'task' => [
+        // 'class' => 'fecerp\services\Task',
+        'taskTypeServicesStoragePath' => [
+            'magento' => '@myerp/services/task/magento',
+        ],
+    ],
+],
+```
+
+然后，新建：`@myerp/services/task/magento/GoodsBaseToMall.php`即可
+
+您可以在`@myerp/services/task/magento/`文件夹下面添加其他的task文件，
+
+
+3.创建Task实例
+
+完成第1和第2步骤的配置，我们就需要创建Task实例，新创建的Task必须实现接口 `fecerp\services\task\TaskInterface`
+
+譬如：
 
 ```
 <?php
-namespace fecxxx\services\task;
+namespace myerp\services\task\magento;
 
 use Yii;
 use yii\base\InvalidValueException;
@@ -280,7 +318,7 @@ use fecerp\services\task\TaskInterface
  * @author Terry Zhao <2358269014@qq.com>
  * @since 1.0
  */
-class CustomTask extends Service implements TaskInterface
+class GoodsBaseToMall extends Service implements TaskInterface
 {
     ...
 }
@@ -326,6 +364,17 @@ interface TaskInterface
 您可以在后台，创建任务，可以参看上面的`Task任务原理`部分，创建task任务
 ，将会往task任务数据表中插入任务数据
 
+譬如：
+
+![](fecerp21_3.jpg)
+
+执行批量推送已勾选，默认对应的taskType是`GoodsMallToRemote`, 在fecmall类型站点，对应的是
+`@fecerp\services\task\fecmall\GoodsMallToRemote.php`,您可以参考这个实现，来写一个magento类型
+站点的推送商品的实现
+
+打开@fecerp/services/task/fecmall您会发现有很多的具体的`taskType services`，
+如果您添加新类型站点，您可以根据需要进行实现这些task。
+
 
 4.执行任务
 
@@ -337,8 +386,10 @@ interface TaskInterface
 譬如：对接新的数据，或者新的平台，都可以用fecerp的task机制完成，非常容易扩展
 
 
+### 关于fecmall的`taskType services`说明
 
 
+参看：[ERP Fecmall Task](fecmall_fecerp_fecmall_task.md)
 
 
 

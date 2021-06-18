@@ -8,7 +8,7 @@ Fecmall 支付
 
 1.设置各个支付的信息，譬如下面设置微信和paypal支付
 
-![xx](images/as11.png)
+![xx](images/paypal1111.png)
 
 ![xx](images/as12.png)
 

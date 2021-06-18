@@ -123,4 +123,11 @@ Fecpresale预售扩展
 *  [Fecpresale预售详细操作说明](fecmall-fecpresale-detail.md)
 
 
+Fecyozz子账户扩展
+----------
+
+*  [Fecyozz 子账户扩展-简介](fecmall-fecyozz-about.md)
+*  [Fecyozz 扩展-安装和配置](fecmall-fecyozz-install.md)
+*  [Fecyozz 预售详细操作说明](fecmall-fecyozz-detail.md)
+
 
