@@ -53,6 +53,7 @@ FecMall 使用说明
 *  [Fecmall 订单](fecmall_order.md)
 *  [Fecmall SiteMap](fecmall_sitemap.md)
 *  [Fecmall Robots](fecmall_robots.md)
+*  [Fecmall Rss订阅](fecmall_rss.md)
 *  [Fecmall Url重写](fecmall_url_rewrite.md)
 *  [Fecmall 邮件](fecmall_email.md)
 *  [Fecmall Shell 脚本](fecmall_shell.md)

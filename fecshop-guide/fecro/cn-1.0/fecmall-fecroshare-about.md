@@ -33,6 +33,8 @@ h5分享按钮演示（如图）：
 
 `应用中心`  --->  `应用管理` ---> `已安装应用` , 将 `fecroshare` 的优先级数字值，大于`fecro`的的优先级数字值即可
 
+关于设置fecmall应用扩展优先级，更详细的文档参看：[Fecmall-应用扩展优先级设置](https://www.fecmall.com/doc/fecshop-guide/addons/cn-2.0/guide-fecmall-addons-score.html)
+
 
 ### Fecroshare配置
 

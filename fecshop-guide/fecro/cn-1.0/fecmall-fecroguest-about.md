@@ -12,7 +12,13 @@ Fecroguest 游客下单扩展
 
 3.您需要先安装fecro扩展，然后在安装fecrogusest游客下单扩展
 
-4.安装fecro扩展后，进入后台，开启游客下单设置,设置`Yes`保存即可
+4.安装完成后，后台设置应用优先级
+
+`应用中心`  --->  `应用管理` ---> `已安装应用` , 将 `fecroshare` 的优先级数字值，大于`fecro`的的优先级数字值即可
+
+关于设置fecmall应用扩展优先级，更详细的文档参看：[Fecmall-应用扩展优先级设置](https://www.fecmall.com/doc/fecshop-guide/addons/cn-2.0/guide-fecmall-addons-score.html)
+
+5.安装fecro扩展后，进入后台，开启游客下单设置,设置`Yes`保存即可
 
 
 ![](images/a_1.png)

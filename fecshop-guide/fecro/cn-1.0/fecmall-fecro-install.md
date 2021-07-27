@@ -61,10 +61,21 @@ sh initTbProduct.sh
 对于支付，物流等配置，请参看fecmall的文档。
 
 
+### Fecro 图片
 
+Fecro的图片在安装的时候自动复制，但有一些童鞋反应图片没有复制完全，如果出现这个情况，可以手动操作一下
 
+将文件夹`./addons/fecmall/fecro/app/appimage/common/addons/fecro/`下面所有的图片
+覆盖到`./appimage/common/addons/fecro/`文件夹下面
 
+譬如linux下执行cp命令
 
+```
+\cp -rf  {$fecmall_root_dic}/addons/fecmall/fecro/app/appimage/common/addons/fecro/*   {$fecmall_root_dic}/appimage/common/addons/fecro/
+
+```
+
+将`{$fecmall_root_dic}`替换成您的fecmall安装的文件路径，然后再执行cp命令。
 
 
 

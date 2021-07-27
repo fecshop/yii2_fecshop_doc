@@ -108,6 +108,12 @@ News扩展
 *  [News扩展-使用说明](fecmall-fecyo-news-about.md)
 
 
+Shipping快递运费扩展
+----------
+
+*  [FecCnShipping扩展](fecmall-feccnshipping-extension.md)
+
+
 Fecbo扩展
 ----------
 

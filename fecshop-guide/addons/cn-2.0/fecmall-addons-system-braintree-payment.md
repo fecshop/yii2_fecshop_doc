@@ -24,7 +24,7 @@ braintree是再商城内部填写支付信息，进行信用卡扣款的流程
 
 3.如果你使用的`fecro跨境单商户`，必须更改: (做兼容性处理)
 
-打开文件 `./addons/fecmall/fecpaygate/config.php `, 
+打开文件 `./addons/fecmall/fecbraintree/config.php `, 
 
 3.1大约109行,将代码
 

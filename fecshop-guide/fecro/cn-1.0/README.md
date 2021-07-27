@@ -71,7 +71,15 @@ Fecrot扩展（三级分销，积分，秒杀，批发）
 *  [Fecrot扩展-安装和介绍](fecmall-fecrot-about.md)
 *  [Fecrot扩展-介绍: 积分，秒杀，批发](fecmall-fecrot-func-info.md)
 *  [Fecrot扩展-介绍: 三级分销](fecmall-fecrot-func-distributor.md)
+*  [Fecrot扩展-console脚本](fecmall-fecrot-func-console-script.md)
 
+Fecrote扩展（媒体公司团长，达人红人 - 分销模式）
+----------
+
+*  [Fecrote团长达人分销扩展-安装和介绍](fecmall-fecrote-about.md)
+*  [Fecrote团长达人分销扩展-详细逻辑说明](fecmall-fecrote-info.md)
+*  [Fecrote团长达人分销扩展-操作流程](fecmall-fecrote-lc.md)
+*  [Fecrote团长达人分销扩展-Console脚本](fecmall-fecrote-console-script.md)
 
 Fecroguest 游客下单扩展
 ----------
@@ -87,7 +95,10 @@ Fecroshre 分享社交平台扩展
 *  [Fecro Share addthis样式](fecmall-fecroshare-addthis-style.md)
 
 
+Fecrob2b 企业B2B扩展
+----------
 
+*  [Fecrob2b 企业B2B扩展](fecmall-fecrob2b-b2b.md)
 
 
 

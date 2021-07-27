@@ -28,6 +28,9 @@ FecWbbc 跨境多商户系统
 *  [FecWbbc基础配置设置](fecwbbc-admin-base-config.md)
 *  [FecWbbc邮件设置](fecwbbc-admin-email-config.md)
 *  [FecWbbc静态块和Page页设置](fecwbbc-admin-cms.md)
+*  [FecWbbc设置Skype和QQ](fecwbbc-admin-skype-qq.md)
+
+
 
 批发和秒杀
 ----------

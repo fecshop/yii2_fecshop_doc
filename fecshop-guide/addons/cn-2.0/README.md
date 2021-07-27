@@ -47,12 +47,13 @@ Fecmall开发扩展插件实战解析
 
 
 
-Fecmall 应用扩展文档
+Fecmall 应用扩展插件列表
 --------------------
 
 *  [Fecmall扩展-Braintree支付方式](fecmall-addons-system-braintree-payment.md)
 *  [Fecmall扩展-Stripe支付方式](fecmall-addons-system-stripe-payment.md)
 *  [Fecmall扩展-Paygate（南非）支付方式](fecmall-addons-system-paygate-payment.md)
+*  [Fecmall扩展-OceanPayment钱海支付方式](fecmall-addons-system-oceanpayment.md)
 *  [Fecmall扩展-阿里云OSS存储产品图片](fecmall-addons-alioss-product-image.md)
 *  [Fecmall扩展-七牛云OSS存储产品图片](fecmall-addons-qiniuoss-product-image.md)
 *  [Fecmall扩展-CDN-阿里云](fecmall-addons-cdn-alicdn.md)
@@ -64,16 +65,26 @@ Fecmall 应用扩展文档
 *  [Fecmall扩展-分类产品翻译扩展](fecmall-addons-translate-product-and-category.md)
 *  [Cashback - Amazon导购返现独立站](fecyo-addons-amazon-cashback.md)
 *  [Fecmall扩展-聚水潭Erp对接](fecmall-addons-jst-erp.md)
+*  [Fecmall扩展-Head Meta自定义添加](fecmall-addons-head-meta-custom.md)
+*  [Fecmall扩展-Rss 以及 Pinterest Feed](fecmall-addons-rss-feed.md)
+*  [Fecmall扩展-Google Shopping Feed](fecmall-addons-google-feed.md)
+*  [Fecmall扩展-Facebook Pixel像素](fecmall-addons-fb-pixel.md)
+*  [Fecmall扩展-LiveChat在线聊天扩展](fecmall-addons-livechat.md)
+*  [Fecmall扩展-ShareAsale扩展](fecmall-addons-shareasale.md)
+*  [Fecmall扩展-Ip屏蔽国家访问扩展](fecmall-addons-ip-cloak.md)
+*  [Fecmall扩展-跨境电商 Shipping 运费扩展](fecmall-addons-global-shipping.md)
+*  [Fecmall扩展-订单编号无规则生成扩展](fecmall-addons-order-increment-id-generate.md)
 
 
+Fecmall Google Analytics (GA)电子商务扩展
+--------------------
 
-
-
-
-
-
-
-
+*  [Fecmall GA 电子商务插件介绍](fecmall-addons-ga-ecommerce.md)
+*  [Fecmall GA扩展插件安装和配置](fecmall-addons-ga-install-config.md)
+*  [Fecmall GA如何查看ga追踪代码，以及添加多个网站](fecmall-addons-ga-trace-js.md)
+*  [Fecmall GA关联Google Adwords](fecmall-addons-ga-ads.md)
+*  [Fecmall GA扩展功能说明以及疑问解答](fecmall-addons-ga-about.md)
+*  [Fecmall GA扩展插件 - 二次开发](fecmall-addons-ga-view.md)
 
 
 
