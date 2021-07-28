@@ -93,6 +93,24 @@ cd ./addons/fecmall/fecalioos/shell
 sh syncProductImageToAlioss.sh
 ```
 
+### 冲突处理conflict
+
+阿里云扩展，重写了images services，但是有一些扩展也重写了images services，那么就会产生冲突，
+譬如：fecyo，fecwbbc，fecbbc，解决如下：
+
+1.将fecalioos扩展的优先级设置最高，如何设置扩展插件优先级，请参看：[Fecmall-应用扩展优先级设置](https://www.fecmall.com/doc/fecshop-guide/addons/cn-2.0/guide-fecmall-addons-score.html)
+
+2.images services更改
+
+打开文件 ./addons/fecmall/fecalioos/services/Image.php
+
+找到21行代码：`class Image extends \fecshop\services\Image`
+
+2.1fecyo将其改为：`class Image extends \fecyo\services\Image`
+
+2.1fecwbbc将其改为：`class Image extends \fecwbbc\services\Image`
+
+2.1fecbbc将其改为：`class Image extends \fecbbc\services\Image`
 
 
 ### 补充

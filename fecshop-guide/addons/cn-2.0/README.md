@@ -74,7 +74,7 @@ Fecmall 应用扩展插件列表
 *  [Fecmall扩展-Ip屏蔽国家访问扩展](fecmall-addons-ip-cloak.md)
 *  [Fecmall扩展-跨境电商 Shipping 运费扩展](fecmall-addons-global-shipping.md)
 *  [Fecmall扩展-订单编号无规则生成扩展](fecmall-addons-order-increment-id-generate.md)
-
+*  [Fecmall扩展-自定义商城顶部菜单的扩展](fecmall-addons-custom-menu.md)
 
 Fecmall Google Analytics (GA)电子商务扩展
 --------------------
