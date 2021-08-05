@@ -3,8 +3,9 @@ Fecmall扩展-订单编号无规则生成扩展
 
 >  生成完全随机的订单编号
 
-### 订单编号无规则生成扩展，无规则订单编号生成
+需要fecmall版本：fecmall-2.16.2+
 
+### 订单编号无规则生成扩展，无规则订单编号生成
 
 Fecmall默认的订单号是基于`OrderId`生成的，而OrderId是有规律的，譬如：
 
@@ -15,11 +16,25 @@ Fecmall默认的订单号是基于`OrderId`生成的，而OrderId是有规律的
 
 另外对于一些支持`游客下单`的商城，可以仅凭`订单编号`就可以查询订单详细，这种规则的`订单号`无疑会存在订单数据泄露。
 
-
-
 本插件是`完全随机生成`的订单号，`16`位，毫秒级无重复订单。（首位为字母）
 
 譬如生成的订单号格式：`A721323962609762`
 
+应用市场地址：
 
-应用市场地址：http://addons.fecmall.com/63831771
+### Fecorderincrementid扩展
+
+您需要先安装fecmall开源系统，然后再进行插件的安装
+
+1.fecmall应用市场地址：http://addons.fecmall.com/63831771
+
+2.如何应用市场`安装`应用，请参看文档：[Fecmall安装应用](https://www.fecmall.com/doc/fecshop-guide/addons/cn-2.0/guide-fecmall-addons-install.html)
+
+3.设置完成后，即可生效，无需进行后台设置。
+
+
+
+
+
+
+

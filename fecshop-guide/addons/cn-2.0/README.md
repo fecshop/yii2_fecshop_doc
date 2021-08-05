@@ -87,7 +87,12 @@ Fecmall Google Analytics (GA)电子商务扩展
 *  [Fecmall GA扩展插件 - 二次开发](fecmall-addons-ga-view.md)
 
 
-
-
+Fecmall 通途ERP对接扩展
+--------------------
+*  [Fecmall 通途ERP插件安装和配置](fecmall-addons-tongtool-erp-install-config.md)
+*  [Fecmall 通途ERP获取AppKey和AppSecret](fecmall-addons-tongtool-erp-app-key-secret.md)
+*  [Fecmall 通途ERP操作说明](fecmall-addons-tongtool-erp-op.md)
+*  [Fecmall 通途ERP扩展插件使用逻辑](fecmall-addons-tongtool-erp-use.md)
+*  [Fecmall 需求整理： 通途erp，逻辑流程需求整理](fecmall-addons-tongtoolerp-xuqiu.md)
 
 
